@@ -1,0 +1,21 @@
+{
+  "author": {
+    "id": "srf27",
+    "name": "srf27",
+    "url": "https://srf-27.github.io/"
+  },
+  "posts": [
+    {
+      "title": "Agent",
+      "url": "https://srf-27.github.io/posts/Agent/",
+      "date": "2026-09-24",
+      "summary": "Agent 是什么？ 最初含义：Agent = 会“主动”做事的主体 “Agent”这个词来自拉丁语 agere，意思是「去做、去行动」。 所以最初含义非常简单：Agent = 能感知世界、形成意图、并主动行动的主体。 核心出现：Loop 最早的智能体模型，它的思维路径是一个闭环： 感知（Perceive） → 推理（Reason） → 行动（Act） → 获得反馈（Observe） → 调整策略（Loop） 这一框架之核心，就在于能闭环行动（Loop），它可以根据获得的反馈去进行调整。 LLM 时代的 Agent 大模型时代，机器具备了理解自然语言、推理问题、规划行动的能力。那么很自然的，研究者就想到，如果LLM可以根据行动后获得的反馈去决定下一步要做什么，是不是就能实现自动化？ 于是，LLM 时代下的 Agent 架构诞生了： 单 Agent： ReA..."
+    },
+    {
+      "title": "Headtail配置",
+      "url": "https://srf-27.github.io/posts/headtail%E9%85%8D%E7%BD%AE/",
+      "date": "2026-05-04",
+      "summary": "简单用docker配了一下headtail来连云服务器，这里随便塞一些指令吧 服务端注册节点 使用 PreAuth Key # 创建用户 docker exec headscale headscale users create <USER_NAME> # 查看用户ID docker exec headscale headscale users list # 生成预认证密钥 docker exec headscale headscale preauthkeys create --user <USER_ID> 客户端加入指令 tailscale up --login-server=http://<HEADSCALE_PUB_IP>:<PORT> --accept-routes=true --accept-dns=false --au..."
+    }
+  ]
+}

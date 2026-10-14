@@ -72,6 +72,14 @@
       <source url="https://lorexxar.cn/">LoRexxar</source>
     </item>
     <item>
+      <title>9月随笔</title>
+      <link>https://lightless.me/archives/2026-09.html</link>
+      <guid isPermaLink="true">https://lightless.me/archives/2026-09.html</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
+      <description>看了一下，又将近一个半月没有写东西了。 为了对冲一下 AI 带来的用脑不够的情况，希望自己可以坚持一下每个月写点东西，活动一下大脑。 以前为了锻炼身体，有健身房，以后脑力用的少了，不知道会不会出现健脑房，每个人一个小格子开始做高数题。 其实我不太知道这次要写什么东西，技术的事情似乎没有什么值得拿出来讲的，既没有挖到牛逼的漏洞，也没有做出什么创新的工具，甚至连一点有趣的点子都没有。 看看前几篇文章，似乎一直都在吐槽公司。 于是我思考了一下怎么会如此。 最后发现，公司榨干了我所有的创造力，被各种破事情占满了精力，不停的在切换上下文。 当上完一天班，没有足够的精力与专注力后，自然也没有心情去做一些安全的研究。 以前经历充沛，可能不太会思考这些。 但走下坡路的公司，确实会带来一些负作用。 公司股价下跌，我没有太大感受，毕竟我手里也就仨瓜俩枣的。 周围熟悉的人一个个逐渐离职，我也没有太大感受，毕竟留下的也有很多熟悉的人。 但是当公司开始抓考勤了，这事情就变得不一样了，也确实让我感受到公司开始走下坡路了。 虽然有句梗说是：一流公司抓业绩，三流公司抓考勤。 甚至当年假都请不出来的时候，我第一次感受到这个公司可能已经真的没招了。 我曾经一度很自豪的向大家分享公司的年假制度，想什么时候休假都可以，只要不耽误工作。 但是现在我曾经引以为豪的门，也被关上了。 为什么要抓考勤呢？公司业绩不好，无非是管理层决策失误，或者员工不努力。 利益既得者们怎么会承认自己的决策失误呢？他们依然在用二三十年前靠着站在风口的运气，当做自己成功的经历和经验。 甚至还会认为 “现在的年轻员工怎么都不服管了？” 但是互联网早已不是二三十年前的互联网了。 所以抓考勤就成了洗脱自己责任的最强有力的抓手，毕竟业务的抓手抓不动了。 “公司业绩不好，都是因为员工散漫不加班，都是因为员工请假太多” 反过来看就会得到一个很荒谬的逻辑，</description>
+      <source url="https://lightless.me/">lightless</source>
+    </item>
+    <item>
       <title>2026湾区杯wp</title>
       <link>https://dodor.top/2026/09/10/2026%E6%B9%BE%E5%8C%BA%E6%9D%AFwp/</link>
       <guid isPermaLink="true">https://dodor.top/2026/09/10/2026%E6%B9%BE%E5%8C%BA%E6%9D%AFwp/</guid>
@@ -246,6 +254,14 @@
       <pubDate>Wed, 05 Aug 2026 00:00:00 GMT</pubDate>
       <description>Maybe not so &quot;immediate&quot;.</description>
       <source url="https://csmantle.top/">Mantle</source>
+    </item>
+    <item>
+      <title>文化工作者要有文化</title>
+      <link>https://lightless.me/archives/cultural-workers-should-be-cultured.html</link>
+      <guid isPermaLink="true">https://lightless.me/archives/cultural-workers-should-be-cultured.html</guid>
+      <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
+      <description>最近很长一段时间，我都在探索 AI 在安全方面的应用，以及 AI 自身在安全方面的上限。 经过一段时间的摸索和思考，其实想了不少东西，当我准备把这些心得与小巧思记录一下的时候，不知道怎的，脑海里就蹦出了这句“文化工作者要有文化”，于是乎就用这个作为标题了。 本文纯古法手搓，无 AI 生成内容，可放心观看。 0x00 开头 文化工作者要有文化，安全工作者要懂安全，垃圾桶里要有垃圾。 这是再正常不过的道理，但确是稀缺的现实。 虽然这是一个技术博客，也打算写一篇 AI 和安全技术的文章，但是我并不想一上来就讲技术的东西。 我发现 AI 对我来说，也造成了不小的冲击。所以有必要先在开头，谈一谈我最近的思考与想法，抛砖引玉，希望可以引发各位看官的一些共鸣，如果能对各位带来一点小小的感悟，那是再好不过了。 AI 的出现，以及近期几乎每隔一个月就出现的更强模型，让我可以把脑海中的各种 idea 快速的实现，以前的各种“就差一个程序员了”，似乎不再是嘲讽。 在这个情况下，我造了很多轮子，也拉了很多屎山，试错成本似乎变低了。 但是我逐渐发现，除了几个对我真的有用的项目，其余的基本上都进入了垃圾场，白白消耗了大量的 Token，不过这也算一种学习和成长，正因为试错成本的降低，我可以同时尝试多个感兴趣的方向。 说起来很多人都认为 AI 来了就会提效，我认为 AI 确实把过程节省了，我们不再关心代码中的细节，只会对模型说：“你继续”、“按照你的建议”、“我只看结果”。 但是少的这部分过程，其实并没有真正的变成提效，而是卡在了人工 review 的各种环节。以前我会一边思考一边写代码，把每一处细节敲定。 然而现在我必须要 review AI 给出的 spec 和 plan，在脑海中对着空气不停的想象每一个细节应该是什么样子的。 甚至为了消磨等待时间，同时打开4个、6个甚至更多的 AI 对话，不停的切</description>
+      <source url="https://lightless.me/">lightless</source>
     </item>
     <item>
       <title>D^3CTF 2026 运维小记</title>
@@ -502,6 +518,14 @@
       <pubDate>Fri, 17 Apr 2026 00:00:00 GMT</pubDate>
       <description>欢迎来到我的网站！</description>
       <source url="https://lewis1766.github.io/">lewis</source>
+    </item>
+    <item>
+      <title>近期碎碎念</title>
+      <link>https://lightless.me/archives/sec-thoughts-and-notes.html</link>
+      <guid isPermaLink="true">https://lightless.me/archives/sec-thoughts-and-notes.html</guid>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
+      <description>[ 免责声明 / Disclaimer ] 请注意：本文完全由我的个人 AI 助手，在实时读取并分析了我近期的精神状态及血压波动后自动编译生成，非本人亲笔撰写。如果文中的某些字节不慎触碰了某些人脆弱的神经，请勿对号入座，更不要来找我。如有任何不满，请统一将投诉工单提交至“赛博龙虾委员会”（Cyber Lobster Committee）进行立案仲裁。 0x00 碎碎念与近况 确实有阵子没怎么更新博客了。 熟悉我的朋友大概都知道，我以前的精力基本都点在 AppSec 这块，搞搞漏洞、研究研究静态分析，平时写得最多的也是这方面的工具和轮子。但是最近这段时间，在未经我同意、甚至完全没有和我沟通的情况下，被强行调岗到了办公安全和数据安全的工位上。 说实话，技术领域的跨界倒不是最头疼的。真正让人窒息的是，有些管理层对这块业务根本就没有清晰的规划，主打一个一通乱搞。在一些毫无逻辑的对齐会里坐久了，感觉自己的技术敏锐度都要被磨平了。想想确实也很久没给自己做过阶段性的梳理了，正好最近也被 AI + Security 的浪潮推着走，干脆就借着这个契机，随便写写近期被这些烂事折腾出来的一些理解和感想。 主要是想聊聊在当前 AI 的加持下，我怎么看待一线安全负责人和“安全中台”的关系，以及在这个背景下，怎么真正把一线业务的防御体系落地。 0x01 薛定谔的违规与逻辑死锁 最近在办公安全这一块，这种“薛定谔的指标”玩得越来越溜。目前我建设的平台贡献了大约一半的违规事件发现，剩下的来自中台。但在某些管理者看来，这似乎并不是一种能力的体现。他们在会上直言“不想自己建设能力”，转头却又开始嫌弃部门的违规 case 数量太少。 这逻辑其实挺魔幻的：一边要求管控策略的覆盖面要比别人广，甚至恨不得把所有软件都禁了；一边又指望违规 case 蹭蹭往上涨。事实上，如果管控策略真的做到极致，所有的风险行为都在源头被</description>
+      <source url="https://lightless.me/">lightless</source>
     </item>
     <item>
       <title>虚拟数字人-多模态数据采集（ASR模型）</title>
@@ -782,29 +806,6 @@
       <pubDate>Sat, 20 Dec 2025 00:00:00 GMT</pubDate>
       <description>现象 在分离 HEAD 提交导致无法推送，检出头节点却丢失改动 在使用 Git 过程中，我遇到这样一个问题：修改了代码并提交，但 GitHub Desktop 显示“无法在分离的 HEAD 上同步到远程仓库”。切换回 master 分支时，所有改动好像“丢失”了，没有任何提交记录。 拉去git项目后</description>
       <source url="https://www.intmian.com/">mian</source>
-    </item>
-    <item>
-      <title>A POSIX-compliant rewrite of reresolve-dns.sh</title>
-      <link>https://csmantle.top/2025/12/14/a-posix-compliant-rewrite-of-reresolve-dns-sh.html</link>
-      <guid isPermaLink="true">https://csmantle.top/2025/12/14/a-posix-compliant-rewrite-of-reresolve-dns-sh.html</guid>
-      <pubDate>Sun, 14 Dec 2025 00:00:00 GMT</pubDate>
-      <description>The script Please be careful with line endings if you’re copy-pasting the script from below. If you’re interested in the story behind it, please scroll down to #background-story. #!/bin/sh # SPDX-License-Identifier: GPL-2.0 # # POSIX sh-compliant rewrite of reresolve-dns.sh. # # Notes for BusyBox-based coreutils: # * A POSIX-compliant tr(1) is expected for [:upper:] and [:lower:]. # # Copyright (C) 2015-2020 Jason A. Donenfeld &lt;Jason@zx2c4.com&gt;. All Rights Reserved. # Copyright (C) 2025 Rong Bao &lt;webmaster@csmantle.top&gt;. # # Link: https://github.com/WireGuard/wireguard-tools/blob/master/contrib/reresolve-dns/reresolve-dns.sh # Link: https://gist.github.com/CSharperMantle/ffff2a5e781fe2e4adff22a293315a65#file-reresolve-dns-posix-sh set -e export LC_ALL=C trim() { echo &quot;$1&quot; | sed &apos;s/^[[:spac</description>
-      <source url="https://csmantle.top/">Mantle</source>
-    </item>
-    <item>
-      <title>DASCTF 2025</title>
-      <link>https://sh10rl.top/posts/dasctf2025/</link>
-      <guid isPermaLink="true">https://sh10rl.top/posts/dasctf2025/</guid>
-      <pubDate>Mon, 08 Dec 2025 00:00:00 GMT</pubDate>
-      <description>ezmac 参考： https://blog.imipy.com/post/macos-shellcode-cheat-sheet.html https://github.com/radareorg/radare2/blob/master/libr/include/sflib/darwin-arm-64/ios-syscalls.txt https://github.com/radareorg/radare2/blob/master/libr/include/sflib/darwin-arm-64/ios-syscalls.txt 去掉一个花指令： __text:00000001000003A8 00 00 80 D2 MOV X0, #0 __text:00000001000003AC 00 00 00 CB SUB X0, X0, X0 [ ... ] __text:00000001000003C4 E4 03 00 AA MOV X4, X0 __text:00000001000003C8 9F 00 00 F1 CMP X4, #0 [ ... begin] __text:00000001000003CC 40 01 00 54 B.EQ loc_1000003F4 __text:00000001000003D0 25 00 00 90 A5 EC ADRL X5, input __text:00000001000003D0 00 91 __text:00000001000003D8 86 04 00 D1 SUB X6, X4, #1 __text:00000001000003DC A5 00 06 8B ADD X5, X5, X6 ; byte_10000403A __text:00000001000003E0 A7 00 40 39 LDRB W7, [X5</description>
-      <source url="https://sh10rl.top/">Shiori</source>
-    </item>
-    <item>
-      <title>eezzjs</title>
-      <link>https://blog.naclwww.com/blog/eezzjs/</link>
-      <guid isPermaLink="true">https://blog.naclwww.com/blog/eezzjs/</guid>
-      <pubDate>Mon, 01 Dec 2025 00:00:00 GMT</pubDate>
-      <source url="https://blog.naclwww.com/">NaCl</source>
     </item>
   </channel>
 </rss>

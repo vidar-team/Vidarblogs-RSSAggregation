@@ -1,0 +1,117 @@
+{
+  "author": {
+    "id": "陈斩仙",
+    "name": "陈斩仙",
+    "url": "https://mxgcccc4.github.io/"
+  },
+  "posts": [
+    {
+      "title": "[NDSS 18] IOTFUZZER: Discovering Memory Corruptions in IoT Through App Based Fuzzing",
+      "url": "https://mxgcccc4.github.io/post/2019-05-30-iotfuzzer-discovering-memory-corruptions-in-iot-through-app-based-fuzzing/",
+      "date": "2019-05-29",
+      "summary": "作者：Jiongyi Chen, Wenrui Diao, Qingchuan Zhao, Chaoshun Zuo, Zhiqiang Lin, XiaoFeng Wang,Wing Cheong Lau, Menghan Sun, Ronghai Yang, and Kehuan Zhang 单位：The Chinese University of Hong Kong, Jinan University, The University of Texas at Dallas, Indiana University Bloomington 出处：NDSS 2018 资料： PDF , Slides , Video Abstract 现有的针对IoT设备的安全分析工作都是基于固件来展开的，这样会引入如何获取固件以及如何分析固件的问题。 考虑到设备以及架构的多样性，作者借助IoT设备的移动端App设计了一个黑盒模糊测试工具来避开这类问题以分析IoT设备上的内存错误漏洞。 作者设计并实现了IOTFUZZER并测试了17个不同的IoT设备，最终发现15个内存错误漏洞，其中包括了8个未知的漏洞。"
+    },
+    {
+      "title": "[USENIX Security 18] Discovering Flaws in Security-Focused Static Analysis Tools for Android using Systematic Mutation",
+      "url": "https://mxgcccc4.github.io/post/2019-04-23-discovering-flaws-in-security-focused-static-analysis-tools-for-android-using-systematic-mutation/",
+      "date": "2019-04-23",
+      "summary": "作者：Richard Bonett, Kaushal Kafle, Kevin Moran, Adwait Nadkarni, and Denys Poshyvanyk 单位：The College of William & Mary 出处：USENIX Security 18 资料： PDF , Slides , Video Abstract 现有移动应用程序分析工具，特别是静态分析工具虽然有很高的覆盖率，但是在分析的精度和性能上有较大的损失——这是静态分析工具trade-off的结果。但是这些工具在设计中不够合理的分析和存在的缺陷通常不会在文档中描述，也通常不被研究人员，开发者和用户所知。作者实现了一个Mutation-based soundness evaluation (µSE) 框架，旨在系统地评估现行的Android静态分析工具并发现，记录和修复存在的缺陷，最终发现了FlowDroid的13个分析缺陷，并与工具的开发人员合作成功修复了其中一个缺陷。"
+    },
+    {
+      "title": "[NDSS 19] Understanding Open Ports in Android Applications: Discovery, Diagnosis, and Security Assessment",
+      "url": "https://mxgcccc4.github.io/post/2019-03-11-understanding-open-ports-in-android-applications-discovery-diagnosis-and-security-assessment/",
+      "date": "2019-03-11",
+      "summary": "作者：Daoyuan Wu, Debin Gao, Rocky K. C. Chang, En He, Eric K. T. Cheng, and Robert H. Deng 单位：Singapore Management University, The Hong Kong Polytechnic University, China Electronic Technology Cyber Security Co., Ltd 出处：NDSS 2019 资料： 原文 Abstract 众所周知，服务器是通过开放TCP / UDP端口来提供服务的，这些开放的网络端口页同样存在于许多Android应用程序中。在本文中，作者是针对这些应用程序提出了第一个开放式分析pipeline，包括 discovery, diagnosis和 security assessment，系统地了解Android应用程序中的开放端口及其潜在威胁。最后发现有15.3％的Android应用程序中开放了网络端口，远高于 之前 分析的6.8％，其中有61.8％的开放端口应用程序完全来自于应用中的SDK，开放端口的应用有20.7％存在使用不安全的API的情况。"
+    },
+    {
+      "title": "[S&P 19] SoK: Sanitizing for Security",
+      "url": "https://mxgcccc4.github.io/post/2019-02-20-sok-sanitizing-for-security/",
+      "date": "2019-02-20",
+      "summary": "作者：Dokyung Song, Julian Lettner, Prabhu Rajasekaran, Yeoul Na, Stijn Volckaert, Per Larsen, Michael Franz 单位：University of California, Irvine 会议：IEEE S&P 19 资料： Paper , Github I. ABSTRACT & INTRODUCTION 鉴于C/C++由于语言本身特性所带来臭名昭著的安全问题，开发者通常会在release之前通过人工review，静态分析工具和动态分析对代码进行安全检查。作者在这里把所有动态分析工具统称为 sanitizers ，sanitizers还会帮助找到一些其他的bugs，还可以在程序运行时辅助观察程序异常行为。目前已经有大量的sanitizers已经被提出并实现了原型，虽然有很多sanitizer已经被广泛使用，并发现了许多漏洞，但是只有很少一部分会被接受并推广。"
+    },
+    {
+      "title": "About",
+      "url": "https://mxgcccc4.github.io/about/",
+      "date": "2019-01-21",
+      "summary": "Me Also as known as mxgc, evilddog Education 2013 - 2017 HDU Vidar 2017 - now SJTU GoSSIP Intern Experience 2015.9 - 2016.1 DBAPPSecurity 2016.3 - 2016.8 Chaitin Security Research Web Security CTFer Binary Security This blog Just write sth in public&hellip; —— mxgcccc4"
+    },
+    {
+      "title": "[Euro S&P] Open Doors for Bob and Mallory: Open Port Usage in Android Apps and Security Implications",
+      "url": "https://mxgcccc4.github.io/post/2019-01-07-open-doors-for-bob-and-mallory-open-port-usage-in-android-apps-and-security-implications/",
+      "date": "2019-01-07",
+      "summary": "作者： Yunhan Jack Jia, Qi Alfred Chen, Yikai Lin, Chao Kong, Z. Morley Mao 单位： University of Michigan 出处： IEEE European Symposium on S&P 资料： PDF , Github Abstract 本文中，作者对移动平台上的开放端口使用及其安全影响进行了较为系统的研究。作者设计并实现了一种静态分析工具OPAnalyzer，可以有效分析Android应用程序中易受攻击的开放端口使用情况。作者使用OPAnalyzer，对具有超过100K Android应用程序的数据集进行了漏洞分析。 在作者随后的分析中，近一半的开放端口使用是不受保护的，可以直接远程利用。从已识别的易受攻击的用法中，发现了410个易受攻击的应用程序共956个潜在威胁。作者手动确认了57个应用程序的漏洞，包括在官方市场上下载量为1000万到5000万的应用程序，以及一些设备的预装app。这些漏洞可被利用远程窃取联系人，照片甚至安全凭证，还可以执行敏感操作，如恶意软件安装和恶意代码执行。"
+    },
+    {
+      "title": "[CCS 18] EviHunter: Identifying Digital Evidence in the Permanent Storage of Android Devices via Static Analysis",
+      "url": "https://mxgcccc4.github.io/post/2018-12-09-evihunter-identifying-digital-evidence-in-the-permanent-storage-of-android-devices-via-static-analysis/",
+      "date": "2018-12-09",
+      "summary": "作者： Chris Chao-Chun Cheng, Chen Shi, Neil Zhenqiang Gong, Yong Guan 单位： Iowa State University, NIST Center of Excellence in Forensic Science - CSAFE 出处： CCS&rsquo;18 资料： Paper , Slides , GitHub ABSTRACT & INTRODUCTION 由于移动网络的发展，智能手机上的数字证据在犯罪调查中发挥着越来越重要的作用。数字证据可以存在于智能手机的内存和文件系统中。虽然内存取证方面有很大的进展，但在针对文件系统的取证仍然比较困难。大多数关于文件系统取证的现有研究依赖于手动分析或基于关键字的静态扫描。手动分析代价很高，而关键字匹配通常会错过不包含关键字的数据。在本文中，作者开发了一个名为EviHunter的工具，用于自动识别Android设备文件系统中的数据。 作者认为数据是由应用程序产生的，应用程序的代码包含有关应用程序可能写入文件系统的数据类型以及所写入数据的文件相关的信息。因此，EviHunter首先通过对大量应用程序的静态分析来预先计算App Evidence Database（AED）。 然后，EviHunter将Android文件系统上的存在的文件与AED进行匹配，以识别可存储证据数据的文件，所以构建AED是EviHunter的重点。 事实上，已经有大量的静态分析工具用于检测Android应用程序中从Source到Sinks的敏感数据流。这些工具可以检测到App会收集GPS并将其保存到文件系统，但是它们并不关心GPS信息写入了哪个文件。作者认为，这些工具是出于安全和隐私检测的目的而设计的，在隐私泄漏方面写入敏感数据的文件的位置并不重要。所以EviHunter在几个方面扩展了An"
+    },
+    {
+      "title": "[ASIA CCS 18] Dazed Droids: A Longitudinal Study of Android Inter App Vulnerabilities",
+      "url": "https://mxgcccc4.github.io/post/2018-10-09-dazed-droids-a-longitudinal-study-of-android-inter-app-vulnerabilities/",
+      "date": "2018-10-09",
+      "summary": "作者： Ryan Johnson, Mohamed Elsabagh, Angelos Stavrou, Jeff Offutt 单位： Kryptowire, George Mason University 出处： ASIA CCS ’18 资料： Paper 1 ABSTRACT & INTRODUCTION 随着Android应用复杂性的提高和功能的丰富，Android更依赖于应用之间的代码和数据共享，以缩短响应时间并提供更丰富的用户体验。 绝大部分的Android App之间和其本身发生数据通信的时候使用的都是 intent 对象： intent 类似于消息的抽象，提供了一种便于数据交换的基本通信机制。但是有些时候开发者们有意或无意地暴露了一些App Components内部的接口，让它们可以被本地的其他的一些App可以访问。 这些暴露的接口有些没有实现较强的error catch或数据访问控制就会导致一些安全问题。在本文中，作者发现了如下问题：DoS、提权、系统crash和数据泄露。作者设计并实现了一个Fuzzing工具去自动化地检测inter-app通信时所存在的漏洞。Daze通过null和not-null但不为空的payloads去fuzz App中 export=\"True\" 的组件所公开的接口，并通过监控外置存储卡上文件的修改和系统设置的变化来验证漏洞是否存在。 作者分析的样本涵盖了32个不同的Android设备，AOSP4.4-8.0所有版本和18,583个Google Play上的免费App。平均每个设备分析的时间为3小时，每个应用的时间为2分钟。大约有51.7%的Android设备和Google Play上49%的Top300应用至少存在一个inter-app漏洞。"
+    },
+    {
+      "title": "[USENIX Security 18] Tackling runtime based obfuscation in Android with TIRO",
+      "url": "https://mxgcccc4.github.io/post/2018-09-08-tackling-runtime-based-obfuscation-in-android-with-tiro/",
+      "date": "2018-09-08",
+      "summary": "作者： Michelle Y. Wong and David Lie 单位： University of Toronto 出处： USENIX Security 18 资料： Paper , Slides 1 Abstract & Introduction 混淆技术经常被使用在恶意软件上对抗自动化的程序分析。在Android 平台恶意软件经常使用Java反射、加壳还有字符串加密等方式。作者把常见的混淆技术如字符串加密、动态解密、Java反射、调用native方法归类为 language-based 混淆，而完全避开Java完全在Native代码中执行的混淆方式叫做 full-native 混淆。作者在文中提出了一种新型的混淆技术，它会破坏Android运行时完整性的同时使用混淆技术，作者称之为 runtime-based 混淆。 runtime-based 混淆优于 language-based 混淆和 full-native 代码混淆。 虽然 language-based 的混淆技术必须在调用混淆代码之前立即发生，但 runtime-based 混淆技术可以在同地方发生，并在应用程序看似无关的部分中改变代码执行。一旦程序的完整性被破坏，在运行时就不会遵循正常情况下所期望的代码执行和方法调用流程， runtime-based 混淆修改了方法调用的解析方式和代码执行方式。 作者提出了一个Android平台去混淆的框架TIRO(Target-Instrument-Run-Observe)。TIRO既可以对抗传统的混淆方式，也可以处理 runtime-based 混淆技术。作者最后测评了来自VT的2000个恶意软件样本，最后有80%左右的样本都使用了runtime-based混淆。"
+    },
+    {
+      "title": "[SecureComm 2018] Understanding Android Obfuscation Techniques: A Large-Scale Investigation in the Wild",
+      "url": "https://mxgcccc4.github.io/post/2018-08-01-understanding-android-obfuscation-techniques-a-large-scale-investigation-in-the-wild/",
+      "date": "2018-08-01",
+      "summary": "作者： Shuaike Dong, Menghao Li, Wenrui Diao, Xiangyu Liu, Jian Liu, Zhou Li, Fenghao Xu, Kai Chen, XiaoFeng Wang, Kehuan Zhang 单位： The Chinese University of Hong Kong, Chinese Academy of Sciences, Jinan University, Alibaba Inc, Indiana University Bloomington 出处： SecureComm 2018 资料： Paper Abstract 在Android程序中，由于Java程序具有易于逆向的特性，所以其代码保护尤为重要。代码混淆技术被常规的应用程序开发人员和恶意软件作者广泛使用，为逆向分析增加了许多难度。尽管在混淆技术上已经有很多研究，但是对现实世界开发人员如何使用混淆技术的了解仍然有限。在本文中，作者通过大规模的野外调查来展现真实世界中Android混淆技术的使用情况。在文中作者重点关注4种流行的混淆方法：标识符重命名，字符串加密，Java反射和加壳。作者的APK数据集来自于Google Play，多个第三方市场和恶意软件数据库中。作者发现恶意软件作者更频繁地使用字符串加密，而加壳技术的应用在第三方市场中比Google Play更普遍。 截止2017年三月，仅仅在Google Play上已经有2.8m个app可供用户下载。同样混淆技术也无处不在，合法的软件公司使用混淆技术防止程序被轻易逆向或者被抄袭代码，恶意软件作者使用混淆技术规避杀软和自动化分析。有许多混淆器被开发并公开，有些混淆器的作者声称他们的工具被超过30万的app所使用。这一现象吸引了大量研究人员分析app混淆技术，但是到目前为止，所有研究的关注点在于使用了什么样"
+    },
+    {
+      "title": "[Asia CCS 18] Don’t throw me away: Threats Caused by the Abandoned Internet Resources Used by Android Apps",
+      "url": "https://mxgcccc4.github.io/post/2018-07-04-dont-throw-me-away-threats-caused-by-the-abandoned-internet-resources-used-by-android-apps/",
+      "date": "2018-07-04",
+      "summary": "作者： Elkana Pariwono, Daiki Chiba, Mitsuaki Akiyama, Tatsuya Mori 单位： Waseda University, NTT Secure Platform Laboratories 出处： Asia CCS&rsquo;18 资料： Paper 1 INTRODUCTION 现代APP为了提供更丰富的额外功能大多会采用一些网络服务，例如语音识别、天气预报等。这些直接由服务端提供的服务使开发者能偶较为容易地在移动端实现这些功能。但是这些支持移动应用的服务因为存在于服务端，当程序被发布之后，开发人员可能会因为维护成本渐渐地不再维护这些网络资源。本文中，作者对Android移动应用程序的开发者们进行调查，发现78%的开发人员没有定期更新发布的应用程序。还有66%的开发人员不是全职开发人员。因此这些应用程序使用的互联网资源将缺乏维护。而且这些资源的所有权会带来变更：域名或IP信息可能会被重新注册。本文中，作者进行了大规模的调查，通过对110万个应用的分析，作者发现尽管很多应用已经很久没有更新而且网络资源不再可用，但是依旧有很多来自移动用户的流量。本文中作者做了如下工作： 分析了移动应用中被废弃的网络资源可能存在安全问题。 通过对100万+的应用的分析，作者发现7331个应用中有3628个不再可使用的网络资源。其中有15个APP的安装次数超过一百万。 不仅仅是Android平台，很多应用同时有iOS版本，它们依旧存在这些问题。 作者讨论了对于由于网络服务归属权的变更带来的问题的解决方案。"
+    },
+    {
+      "title": "[NDSS 18] Finding Clues for Your Secrets: Semantics-Driven, Learning-Based Privacy Discovery in Mobile Apps",
+      "url": "https://mxgcccc4.github.io/post/2018-07-01-finding-clues-for-your-secrets-semantics-driven-learning-based-privacy-discovery-in-mobile-apps/",
+      "date": "2018-07-01",
+      "summary": "作者： Yuhong Nan, Zhemin Yang, Xiaofeng Wang, Yuan Zhang, Donglai Zhu, Min Yang 单位： Fudan University, Shanghai Insitute of Intelligent Electronics & Systems, Shanghai Key Laboratory of Data Science 出处： NDSS&rsquo;18 资料： Paper , Slide , Video 对于检测移动应用中的隐私泄露问题来说，自动化检测是一个长期存在的挑战。现有的解决方案则是通过系统API和APP服务端返回内容去着手分析。本文作者提出了一种分析Android APP的新方案。作者认为，程序代码中的方法名、变量名、常量等信息，尽管在轻量级混淆的情况下依旧包含着丰富的语义信息。所以作者通过自然语言处理（NLP）去自动化地定位程序中变量名、方法名等敏感元素，然后使用基于学习的程序框架分析这些真正存在敏感内容的代码。作者通过这种方法分析了445668个app。"
+    },
+    {
+      "title": "[ACSAC 2017] Supporting Transparent Snapshot for Bare-metal Malware Analysis on Mobile Devices",
+      "url": "https://mxgcccc4.github.io/post/2018-06-08-supporting-transparent-snapshot-for-bare-metal-malware-analysis-on-mobile-devices/",
+      "date": "2018-06-08",
+      "summary": "作者： Le Guan, Shijie Jia, Bo Chen, Fengwei Zhang, Bo Luo&hellip; 单位： Pennsylvania State University, Data Assurance and Communication Security Research Center, Michigan Technological University 出处： ACSAC 2017 资料： Paper ABSTRACT 随着针对移动设备的网络犯罪数量的激增，对于移动恶意软件分析平台有很大的需求。因为许多恶意软件都包含出虚拟机检测能力，所以大多数情况下都直接采用真机作为分析平台。然而现有的工作的关注点主要在如何能够通过真机分析提取恶意软件的行为。但是当恶意应用分析结束之后，能够把真机恢复到分析恶意软件之前也很重要。然而对于移动平台现有的最佳的解决方案只能恢复硬盘存储空间，并且需要花费时间重启。另外先有的工作还需要在分析平台中依赖一部分组件才能完成恢复工作。因此，有些kernel-level级别的恶意软件仍然能够检测到这些组件的存在。 作者提出了Bolt这样一个透明的恢复机制在不需要重启的情况下把移动分析平台恢复到恶意软件分析之前的状态。 Bolt这种不需要重启的恢复机制能够同时对disk和memory制作快照。内存快照是通过存在于ARM TrustZone的一个独立的操作系统（BoltOS）去实现的。而disk的快照是通过一块固件经过定制（BoltFTl）的闪存设备去实现的。因为BoltOS和BoltFTL都独立于guestOS（论文中为了方便，作者把所有直接运行恶意软件的操作系统统一称为guestOS），所以就算是kernel-level的恶意软件也不会影响恢复行为。而且，Bolt不需要对guestOS进行任何的修改。因此，Bolt是第一个做到能"
+    },
+    {
+      "title": "[NDSS 18] InstaGuard: Instantly Deployable Hot-patches for Vulnerable System Programs on Android",
+      "url": "https://mxgcccc4.github.io/post/2018-05-06-instaguard-instantly-deployable-hot-patches-for-vulnerable-system-programs-on-android/",
+      "date": "2018-05-06",
+      "summary": "作者： Yaohui Chen, Yuping Li, Long Lu, Yueh-Hsun Lin, Hayawardh Vijayakumar, Zhi Wang, Xinming Ou 单位： Northeastern University, University of South Florida, Northeastern University, JD Research Center, Samsung Research America 出处： NDSS 2018 资料： Paper , Video , Slide 由于hotpatch易于开发和更快的部署速度，而且在永久修复漏洞的补丁释出之前有效地阻止已发现漏洞被利用，研究人员建议把hotpatch应用于Android的系统程序和应用之中，以便于缩短严重漏洞在被修复之前被利用的窗口期。但是由于Android系统的碎片化，hotpatch技术虽然在PC上广泛使用，但是很少被厂商采用。作者认为阻碍hotpatch在Android平台推广的因素主要是对于一个漏洞的补丁在释放出来之后通常需要经过设备厂商在推送更新之前漫长的兼容性测试。这种测试和发布过程可能需要几个月的时间，那么hotpatch就失去了可以快速部署的优势。 作者提出了InstaGuard，这是一种新的移动设备的hotpatch方法。与现有的hotpatch技术不同，InstaGuard没有向需要patch的程序注入新的补丁代码，而是通过执行不包含代码的即时更新规则来及时阻止未修补的漏洞，这样做的优势在于不需要经过兼容性测试就可以即时推送给需要修复的设备。在设计InstaGuard的时候，作者使用了一种可以表达能够有效缓解各种漏洞在移动设备上执行的规则语言，其次编写这些规则并不需要使用过于复杂的表示方式。作者使用ARM CPU支持的基本调试原语为hotpatch"
+    },
+    {
+      "title": "[NDSS 17] Obfuscation-Resilient Privacy Leak Detection for Mobile Apps Through Differential Analysis",
+      "url": "https://mxgcccc4.github.io/post/2018-01-22-obfuscation-resilient-privacy-leak-detection-for-mobile-apps-through-differential-analysis/",
+      "date": "2018-01-22",
+      "summary": "作者： Andrea Continella, Yanick Fratantonio, Martina Lindorfer, Alessandro Puccetti, Ali Zand, Christopher Kruegel, and Giovanni Vigna 单位： Politecnico di Milano、UC Santa Barbara 出处： NDSS 2017 资料： Paper , Slide , Video 作者背景 这篇文章发表在2017年的NDSS上，第一作者是来自米兰理工大学（Politecnico di Milano）的PhD学生Andrea Continella，他本人还经常参加CTF，同时也是Shellphish的队员。作者的研究方向为针对高级恶意软件的分析和防御机制，包括trojan木马或ransomware家族，他本人的更多信息可以在 个人主页 上看到。而这篇文章具体内容就是作者在UCSB的 SecLab 进行为期六个月的交流的时候的工作成果，论文的其他作者就是该实验室的相关成员。"
+    },
+    {
+      "title": "[Asia CCS 18] Source Attribution of Cryptographic API Misuse in Android Applications",
+      "url": "https://mxgcccc4.github.io/post/2018-01-09-source-attribution-of-cryptographic-api-misuse-in-android-applications/",
+      "date": "2018-01-09",
+      "summary": "作者： Ildar Muslukhov, Yazan Boshmaf, Konstantin Beznosov 单位： The University of British Columbia, Qatar Computing Research Institute 出处： AsiaCCS‘18 资料： PDF 1 ABSTRACT & INTRODUCTION 根据最近的研究表明，88％使用Java密码学API的Android应用程序至少会出现一个密码学误用的问题。但是，目前还不清楚这些错误是来自应用程序还是第三方lib。而在本文中，作者弥补了这一gap，并将误用的来源归属引入到密码学API误用的分析中。本文研究的目标有两个：（1）将密码学API误用的来源归属，以及（2）研究2012年至2016年间误用的变化。 作者使用C#设计并实现了一个静态自动分析系统BinSight：（1）使用静态程序切片识别Java密码学API的调用，（2）验证这些调用 - 针对密码学中常见规则调用，最后（3）使用基于启发式的第三方库检测技术将误用的调用归因于其源。 作者分析了2012年，2015年和2016年收集的132K个Android应用程序。结果表明第三方库是密码学API误用的主要来源。90％的误用应用程序（至少包含一个Java密码学API调用）来自第三方lib。 与2012年相比，作者发现对于应用程序和第三方库代码，2016年对称密码的ECB模式使用率显着下降。然而与应用程序代码不同，第三方库显着增加了对用于CBC模式密码的对称密码和静态IV的静态加密密钥的依赖。最后，作者发现2016年误用的第二和第三大原因是使用了不安全的RC4和DES秘钥。"
+    },
+    {
+      "title": "[S&P 17] Stack Overflow Considered Harmful? The Impact of Copy&Paste on Android Application Security",
+      "url": "https://mxgcccc4.github.io/post/2017-12-06-stack-overflow-considered-harmful-the-impact-of-copypaste-on-android-application-security/",
+      "date": "2017-12-06",
+      "summary": "作者： Felix Fischer, Konstantin Bottinger, Huang Xiao, Christian Stransky, Yasemin Acar, Michael Backes, Sascha Fahl 单位： CISPA, Saarland University 出处： IEEE S&P 17 Paper: PDF 1.Introduction 越来越多的软件开发人员在Stack Overflow这样的在线技术平台讨论技术问题。尤其是缺乏编程经验的程序员会在这样的社区提问的时候，会得到一些技术指导和其他人回答问题的时候提供的代码片段。普遍认为，大量的程序员在开发软件的时候，经常会从这样的平台上复制代码。所以作者认为这样的行为会导致一些不安全的代码，虽然这些代码绝大多数情况下会解决问题，但还是由于其中许多代码片段是不安全的。那么就会存在这样一个传播周期： 社区提供代码片段->开发者复制粘贴代码->用户运行了包含这些代码的程序->攻击者利用这些程序中的漏洞 这篇论文中，作者就这个问题做了研究，发现Stack Overflow上的1161份不安全的代码被开发者复制粘贴进了130万个Android应用程序中。"
+    },
+    {
+      "title": "[USENIX Security 17] Detecting Android Root Exploits by Learning from Root Providers",
+      "url": "https://mxgcccc4.github.io/post/2017-10-25-detecting-android-root-exploits-by-learning-from-root-providers/",
+      "date": "2017-10-25",
+      "summary": "作者： Ioannis Gasparis, Zhiyun Qian, Chengyu Song, Srikanth V. Krishnamurthy 单位： University of California, Riverside 出处： USENIX Security 17 资料： Paper , Video Abstract 在android平台的众多恶意软件中，最危险的一类就是包含可以root用户手机的Malware。但是同时检测这种恶意软件也是非常困难的，这是因为这样的恶意软件所包含的root exp通常针对特定的设备或者系统版本，并且恶意程序在检测到不存在预期的运行时环境时就直接停止运行。使用Google Bouncer这种模拟器很难触发并分析这种root exp。所以作者设计了一个叫做RootExplorer的原型机去检测这种包含root exp的恶意软件。这个RootExplorer会根据一些商业公司提供给用户用来一键root的APP去分析学习exp的先决条件和环境要求，然后使用这些信息构建分析真机或者虚拟机的环境去检测包含root exp的恶意软件。"
+    }
+  ]
+}

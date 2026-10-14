@@ -1,0 +1,135 @@
+{
+  "author": {
+    "id": "c0d4",
+    "name": "c0d4",
+    "url": "https://c0d4.ink/"
+  },
+  "posts": [
+    {
+      "title": "x86asm(intel syntax)",
+      "url": "https://c0d4.ink/posts/x86asmintel-syntax/",
+      "date": "2026-10-08",
+      "summary": "x86-64 ASM Assembly Tutorial x86-64 Architecture , 练习平台 基础指令语法 register rax, rbx, rcx, rdx - al, ah, ax, eax, rax rsp - stack pointer rbp - base pointer rsi, rdi r10, r9, r8 r11, r12, r13, r14, r15 rip - instruction pointer mov mov rax, 5 mov rbx, rax mov rcx, 0x1234 mov rdx, [0x401000] add, sub, inc, dec add rax, 5 sub rbx, 3 inc rcx dec rdx RAM lea ( load effective address ) .text _start: lea rsp, [mem] .data mem: .byte 0x00, 0x01, 0x02 .word 0x1234 .long 0xdeadbeaf .quad 0x0123456789abcdef syscall 系统调用号通过 rax 传递，参数依次通过 rdi, rsi, rdx, r10, r8, r9 传递。 print \"Hello World!\" .intel_syntax noprefix .global _start .text _start: mov rax, 1 mov rdi, 1 lea rsi, [str] lea rdx, [strlen] syscall mov rax, 60 xor rdi, rdi syscall .data str: .ascii \"Hello World!\" strlen = . - str linux-syscall-table jm"
+    },
+    {
+      "title": "3DS离线本体更新",
+      "url": "https://c0d4.ink/posts/3ds%E7%A6%BB%E7%BA%BF%E6%9C%AC%E4%BD%93%E6%9B%B4%E6%96%B0/",
+      "date": "2026-08-21",
+      "summary": "Old 3DS 日版系统更新 适用：】9 0，已安装 Luma3DS，但官方“本体更新”失败。目标版本： Sys 11.17.0-50J 。 1. 确认当前状态 系统设置右下角显示 Sys 11.8.0-41J 这类字样，说明当前是 SysNAND 日版系统。 按住 SELECT 开机进入 Luma 配置。建议打开 Show NAND or user string in System Settings ，然后选 Save and exit 。 2. 先试官方更新 先试：系统设置 -> 其他设置 -> 本体更新。 如果失败，再试恢复模式：关机后按住 L + R + ↑ + A 开机更新。 如果恢复模式也失败，继续下面步骤。 3. CTRTransfer 修系统底座 按 3DS Hacks Guide 的 CTRTransfer 流程做。老小三日版只选这个包： Old 3DS or 2DS - 11.15.0 - JPN - CTRTransfer 不要选 New 3DS ，不要选 USA / EUR / KOR / CHN 。 完成后检查系统版本，应到 Sys 11.15.0-47J 。 4. 用 sysUpdater 离线更新到 11.17 在 SD 根目录建 updates 文件夹，把 Old 3DS / JPN / 11.17.0-50J 更新包里的所有 .cia 放进去。 进入 Homebrew Launcher，运行 sysUpdater ，选择 Update 。过程中不要关机、不要合盖、不要拔 SD 卡。 5. 检查结果 系统设置右下角显示 Sys 11.17.0-50J 就完成了。 资源链接 3DS Hacks Guide: Restoring / Updating CFW 3DS Hacks Guide: CTRTransfer Luma3DS Release"
+    },
+    {
+      "title": "NTE Movie Replacement",
+      "url": "https://c0d4.ink/posts/tutorial-for-nte-movie-replacement/",
+      "date": "2026-05-02",
+      "summary": "声明： 方法是基于3dmigoto和dx11渲染的图层替换，所以并非直接替换视频文件，是具有相同效果的伪视频。 别问为什么不直接替换，问就是即使解包了也还有一层视频加密搞不定。 由于同样的原因，方法无法实现音频替换，视频里的是后期配音。 这些问题留给大佬们解决。orz 云盘链接 下载工具包到本地，密码 2333 。 解压后打开文件夹，进入 3dmigoto ，用记事本编辑 d3dx.ini 。 按 Ctrl+F 输入 make any changes ，找到这一行下面的 target = D:\\NTE\\Neverness To Everness\\Client\\WindowsNoEditor\\HT\\Binaries\\Win64\\HTGame.exe 打开异环游戏目录，依次进入 Neverness To Everness → Client → WindowsNoEditor → HT → Binaries → Win64 找到 HTGame.exe ，选中后右键选择复制文件地址。 用复制的地址替换掉刚才 d3dx.ini 里找到的路径， 删去引号 ， 保留等号左右的空格 。 确保格式为 target = 你复制的地址 保存 d3dx.ini 并退出。 退回到 replace_movie 目录，将你想替换的视频（MP4格式）复制进该目录，重命名为 input.mp4 。（请展开文件扩展名，否则会变成 input.mp4.mp4 ） 双击 launcher.bat ，命令行会自动检测环境。 如果提示缺少python环境，请自行前往python官网下载并配置环境。 命令行提示“生成完成！”后，退出命令行，将新生成的 Cinema 文件夹放到 3dmigoto\\Mods 。 退回到 3dmigoto ， 双击运行该目录下的 3DMigoto Loader.exe ，授权管理员权限。 运"
+    },
+    {
+      "title": "Hgame Final 2026",
+      "url": "https://c0d4.ink/posts/hgame2026final/",
+      "date": "2026-04-12",
+      "summary": "https://hgame.vidar.club/games/10 juncrypt 汇编，好看爱看 main有一段诡异的逻辑 v4 = sub_12B0(s_1, _r_n); if ( v4 < 0 ) { puts(\"runtime error\"); return 1; } Wrong = \"Wrong\"; if ( v4 ) Wrong = \"Correct\"; puts(Wrong); 在sub_12B0函数的最后有 munmap(addr_1, 0x2DAu); } return 0xFFFFFFFFLL; } v4 < 0 恒成立， Wrong = 'Correct' 不可能执行 所以真正的校验没有在pseudocode里体现 sub_12B0调用sub_1260完成了对shellcode的加载，存入mmap申请的内存 只要获得shellcode，就能恢复校验逻辑 因为地址的动态性，只能下断点在转移控制流的位置dump shellcode 看一下 mprotect 附近的汇编 .text:0000000000001394 push rax .text:0000000000001395 mov rax, rbx .text:0000000000001398 jmp short loc_13A2 .text:00000000000013A2 push rax ; 把 Shellcode 的动态地址压入栈顶 .text:00000000000013A3 retn 断在loc_13A2即可 set disable-randomization on starti b *0x5555555553a2 commands dump binary memory shellcode.bin $rax $rax+0x2da quit end continue dump下 shell"
+    },
+    {
+      "title": "Notes on Cryptohack",
+      "url": "https://c0d4.ink/posts/cryptohack/",
+      "date": "2026-04-12",
+      "summary": "Introduction to Cryptohack _byte = chr(_integer) _integer = ord(_byte) # byte <=> acsii _bytes = bytes.fromhex(_str) _str = _bytes.hex() # bytes <=> hex _bytes = _str.encode(\"utf-8\") # str to bytes import base64 _bytes = base64.b64encode(_bytes) _bytes = base64.b64decode(_bytes) # base64 custom_table = \"\" std_table = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/\" _bytes = base64.b64decode(_bytes.translate(str.maketrans(custom_table, std_table))) # hacked_base64 from Crypto.Util.number import * _integer = bytes_to_long(_bytes) _bytes = long_to_bytes(_integer) # integer <=> bytes _bytes = bytes(_integers) # integers to btyes from pwn import xor _bytes = xor(A, B, [length]) # xor # 自动匹配长度(扩展至length) # 多类型支持(bytes/str/integer) https://cryptohack.org/courses/intro/xorkey1/ 根"
+    },
+    {
+      "title": "Hgame 2026",
+      "url": "https://c0d4.ink/posts/hgame2026/",
+      "date": "2026-03-06",
+      "summary": "https://hgame.vidar.club/training/9 week1 PVZ DIE 发现是一个封装在C++壳下的jar包 7zip打开gpvz.exe，解压 jadx分析一下gpvz文件夹，发现一个很扎眼的what_is_this.png 发现是“神秘仪式”的具体内容 运行游戏，用一点作弊技巧在结束前摆出神秘阵型，获得flag 看不懂的华容道 IDA分析 无符号表，一坨sub_xxxxx函数，没有头绪 先看看字符串 点进HuarongDao2026_Salt看看 跟踪到sub_1400266B0，发现是一个VM的depatcher VM控制华容道运作 game.bin就是操作码表 opcode： 0x15 ：读用户输入（交互输入“编号+方向”） 0x16 ：调用 sub_140011212 -> sub_14001EC40 ，重建棋盘状态编码 0x18 ：对状态做哈希，写入寄存器 0x17 ：打印两个 64-bit 组成的节点值 0xE0/E1/E2/E3 ：跳转与条件判断 0xFF ：结束 棋盘编码 分析game.bin恢复初始棋盘为 [ P1 ][ P0 ][ P0 ][ P2 ] [ P1 ][ P0 ][ P0 ][ P2 ] [ P5 ][ P5 ][ P4 ][ P3 ] [ P6 ][ P8 ][ P4 ][ P3 ] [ P7 ][ --- ][ --- ][ P9 ] 加密算法为md5，不过不重要，可以通过编写bfs脚本直接跑出符合题目要求的路径，直接运行exe输入，获得最终棋盘hash 特别要注意题目追加的条件：操作路径顺序按照棋子编号从小到大 操作顺序wasd from collections import deque START = (1, 0, 3, 11, 10, 8, 12, 16, 13, 19) DIRS = [('w', "
+    },
+    {
+      "title": "DontDebugMe",
+      "url": "https://c0d4.ink/posts/dontdebugme/",
+      "date": "2025-11-08",
+      "summary": "点开pseudocode, 发现是对buf2进行加密， 显然v5就是加密的key 而sub_401000这个函数就是为key赋值 那么只要复现sub_401000函数，得出key即可 这里有两个没见过的函数， HIWORD: 取出dword中的高位word HIBYTE: 取出dword中的高位byte 不知道没关系，在asm里有很清晰的解释 (pseudocode里遇到不懂的先看asm) #HIWORD uint32_t val; uint16_t hi = val >> 16; #HIBYTE uint32_t val; uint8_t hi = val >> 24; 注意Buf2的类型，是word，所以从.data段dump的时候注意一下 编写dec #include <bits/stdc++.h> using namespace std; uint16_t cipher[20] = { 0xA9E9, 0xA7F8, 0xA2F9, 0xD620, 0xD69A, 0xD9C8, 0xD399, 0x85CB, 0xD29B, 0xD5C7, 0x8496, 0xD4C9, 0xD89A, 0xD7CA, 0xD59C, 0x85C8, 0xD597, 0x859E, 0xD49C, 0x6DCA }; uint32_t key = 109440544; int main() { for (int i = 0; i < 20; i++) { cipher[i] ^= key; cipher[i] -= (key>>16); } for (int i = 0; i < 20; i++) { cout.write(reinterpret_cast<char *>(&cipher[i]),sizeof(cipher[i])); } return 0; } // DASCT"
+    },
+    {
+      "title": "整型与端序",
+      "url": "https://c0d4.ink/posts/%E6%95%B4%E5%9E%8B%E4%B8%8E%E7%AB%AF%E5%BA%8F/",
+      "date": "2025-11-07",
+      "summary": "整型 使用IDA分析pseudocode时，在变量名前往往会有cast，表示将这个变量视作这个类型 常见的定长整型有： BYTE WORD DWORD QWORD 与C类型有如下对应关系 Windows 类型 标准 C 类型 基础 C 类型 BYTE uint8_t char WORD uint16_t short DWORD uint32_t int QWORD uint64_t long long 2个16进制数=8个2进制数=1字节 DWORD example: 0x12345678(32bit四字节) QWORD example: 0x0001000200030004(64bit八字节) 地址 存放数据的地方，指针变量存放的就是地址 32位操作系统 地址位宽=32bit=4byte 64位操作系统 地址位宽=64bit=8byte 在计算机中，地址是 由小变大，从低到高 的 端序 端序(Endian)，计算机中字节的存储方式，又称字节序 分为小端序(Little endian)，大端序(Big endian) 在计算机 至少x86-64架构是 本地存储为小端序，即低地址（小端）的字节在前（左），高地址的字节在后（右） 由于整型数字是高位在左，低位在右，所以将整型从地址上提取出来时，会自动转为大端序*（实际上与端序无关，但形式是一致的）* e.g. 连续地址的四个byte: 01 02 03 04 DWORD: 0x04030201 大端序是网络传输与特定CPU架构使用的，RE一般不会碰到 小技巧：IDA在.data段，可以按U直接展开成按地址小端序，再按ctrl+z撤回 互转脚本 将十六进制定长整型转为字符串输出 uint32_t example = 0x44434241; cout.write(reinterpret_cast<char *>(&example),"
+    },
+    {
+      "title": "逆向常见加密",
+      "url": "https://c0d4.ink/posts/basic-encryptions-in-re/",
+      "date": "2025-11-06",
+      "summary": "base64 将字符从8bit表示转换为6bit表示，映射到给定的 字符表 （可换），padding为 \"=\" 特征：编码后长度是4的倍数，以及末尾的\"=\" 前面提到了字符表可换，实际上大部分用到base64的题目都需要换表，以下是b64换表dec import base64 import string #cipher str1 = \"\" #string1为替换表，string2为标准表 string1 = \"\" string2 = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/\" print (base64.b64decode(str1.translate(str.maketrans(string1,string2)))) 同理，还有base16，base32，事实上base后面的数字就代表了bit表示的数据量，如5bit为$2^{5}=32$ ，6bit为$2^{6}=64$ EasyUPX MD5 MD5消息摘要算法 （MD5 Message-Digest Algorithm），一种被广泛使用的 密码散列函数 ，可以产生出一个128位16字节的散列值（hash value），用于确保信息传输完整一致。 16bit/32bit Encryption import hashlib def md5_encrypt(text: str, length: int = 32) -> str: md5_value = hashlib.md5(text.encode()).hexdigest() # 32位小写 if length == 16: # 取中间16位，也可能是lowercase/uppercase，自行改索引即可 return md5_value[8:24] return md5_valu"
+    },
+    {
+      "title": "Hgame mini 2025",
+      "url": "https://c0d4.ink/posts/hgame-mini-2025/",
+      "date": "2025-11-06",
+      "summary": "EasyUPX https://hgame.vidar.club/games/8/challenges?challenge=121 根据题目名称， upx -d main.exe 成功解包，拖入IDA, 先看看Strings 显然这是一个b64换表，dump下custom_table和ciphertext解码即可 Z333333 https://hgame.vidar.club/games/8/challenges?challenge=105 先看Strings, 获知flag格式，且需要使用MD5加密 然后分析pseudocode 有一个reverse函数，看一下 发现实现了一串数字中每组偶数项和奇数项交换，这是一个预处理 然后看到有check1,check2 发现这其实是对用户输入argv[1]这串数字的一系列约束， v5,v4分别表示是否满足约束， 在main中最后的判断中，若v5,v4为true，且满足一个额外条件 argv[1][6] == 50 的输入即为plain 接下来编写脚本即可~~（这题暴搜脚本写起来太麻烦了，请gpt出手）~~ def reverse_pairs(s: str) -> str: lst = list(s) for i in range(0, len(lst)//2 * 2, 2): lst[i], lst[i+1] = lst[i+1], lst[i] return ''.join(lst) def verify(post: str) -> bool: a = [ord(c) for c in post] if len(a) < 10: return False array_dword = 0x00000AF0 #小端存储F0 0A 00 00 d404024 = 0x98 d404028 = 0x9F4 d40402C = 0x33 "
+    },
+    {
+      "title": "退役记",
+      "url": "https://c0d4.ink/posts/%E9%80%80%E5%BD%B9%E8%AE%B0/",
+      "date": "2024-02-01",
+      "summary": "永远怀念 rainy_night 同志 ps: 如果是Coda本人在看的话，搭配Nightyper、信竞之子食用更佳哦 <bh> <div class=\"bilibili\"> <iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=95707806&bvid=BV1yE411V7Pk&cid=169273356&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe> </div> <div class=\"bilibili\"> <iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=76747488&bvid=BV1XJ411d7mA&cid=131271182&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe> </div> <bh> 时值十月末，距离NOIP2023还有不短的时间（指20天），也即是信竞生涯的最后20天了。早早起笔退役记，也是为了记录最真实的感受吧。 总结性的话语等比完NOIP再update，先回忆一下。 <bh> <bh> Part1 刚上初中的时候，一节信息课上余老师让我们有想报C语言社团的可以找她（对没错当时说的是C语言不是信息竞赛，年幼的我feel confused）。 当时根本不知道C语言是什么，还是lzr拉我去报名。 甚至一开始报错成创客了，甚至该社团的申请书里的“望批”写成了“忘批”。 总之还是机缘巧合开始了编程之"
+    },
+    {
+      "title": "CSP-J/S 2023 游记",
+      "url": "https://c0d4.ink/posts/csp-j-s-2023-%E6%B8%B8%E8%AE%B0/",
+      "date": "2023-10-30",
+      "summary": "10.20 考前周五，大蓝书已经看不下去了，遂摆烂一上午 下午翘考试去机房摸鱼刷你谷讨论区 晚上直接回家 启动 休息，大江还打电话给我讲考试注意事项（ 熬到了23:30才睡，睡前vx祈祷rp++ <br> <br> 10.21 6:30 起床 8:00 抵达考场 杭师大缩写居然是ZJNU，是我Normal了 怎么现场还有成人自考的啊喂 8:15 抵达机房，三明治给没让我带进去（ 第一次打复赛感觉还是很新鲜的 杭师大机房感觉略小、略暗，隔板间距就是课桌间距，真心挤（ 发试题PDF密码还出锅了，福昕阅读器不能开得用Google <br> CSP-J2 <br> T1，隔二取一，一眼约瑟夫环，把板子打完之后突然发现是一趟趟从头扫到尾而非环， 心态小崩 于是开始手玩小数据找规律，一边推一边烦躁于T1写这么久， 心态小崩 ，又过了40min，才码完代码+调试，O(ans1) 估分100，实际100 <br> T2，此时已过去1h，烦躁 因为考前一周一直在看DP，给整魔怔了，遂先入为主一眼DP 但是DP太烂，线性DP状态转移方程都没推出来（ 心态小崩 ，开始打暴力，样例过了就没管了 考后得知正解贪心……，蚌埠住了，根本没想到贪 暴力甚至写挂了，bowling 估分30，实际0 <br> T3，很快啊，只剩1h力（喜 **题目描述，一眼大模拟，但是没看懂（当天绝对忌读题），遂打a,b,c均整数部分分 估分40，实际20（？CCF这题数据有点强） <br> T4，最后20min 乱打了一个BFS骗部分分，并cout<<-1 此时已经无所谓了，开摆 估分15，实际5 <br> luogu 165 小图灵 130 CCF 125 100+0+20+5 <br> <br> 中午 和J哥一起吃了顿饭，并分享了T1 O(ans1) 做法 因为J组就是玩玩，于是心态还行 趴桌上眯了一会，出发 <br>"
+    },
+    {
+      "title": "指针",
+      "url": "https://c0d4.ink/posts/%E6%8C%87%E9%92%88/",
+      "date": "2023-09-17",
+      "summary": "指针定义 指针类型 如： int a; int *p; //注意：定义指针时的*属于声明，并不是取值符 p = &a; //&为取地址符，p存放a的地址 所以 *p 等价于 a; //*为取值符 <br> <br> 指针类型 <br> 数组指针 指向数组的指针，存放数组的地址 注意：数组名是首地址，&数组名才是数组地址 <br> 指向数组的类型 （*指针变量）[数组中 元素个数 ] 如： int a[5] = { 1, 2, 3, 4, 5 }; int (*p)[5] = &a; for (int i = 0; i < 5; i++) { cout << (*p)[i] << \" \"; } 输出结果：1 2 3 4 5 <br> 函数指针 指向函数的指针，存放函数的地址 注意：函数名就是函数地址 <br> 指向函数的类型 （*指针变量)（ 函数的参数列表 ） 如： int max(int x, int y) { return x > y ? x : y; } int main() { int (*p)(int, int) = max; cout << (*p)(3, 5); //函数指针的调用，*p即运用取值找到该函数 return 0; } 输出结果：5 <br> <br> 指针操作 <br> int *p; p++; //指针p指向下一个 p--; //指针p指向上一个 int (*p)[5]= &arr; cout << *(p+1); //指向地址（下标）为1的元素，即arr[1] <br> <br> 动态数组 极其节省空间，动态分配数组空间 <br> 动态数组的使用有两种方式：1、指针（如*(p+1)） 2、数组下标（如a[1]） 指针可以当作数组名，如一级指针p可以当一维数组名，二级指针pp可以当二维数组名 <br> 动态一维数组 int main() { i"
+    },
+    {
+      "title": "字符串",
+      "url": "https://c0d4.ink/posts/%E5%AD%97%E7%AC%A6%E4%B8%B2/",
+      "date": "2023-09-14",
+      "summary": "基础操作 <br> 正序 for (int i = 0; i < len; i++) //数组第一个数下标为零，最后一个数n下标为n - 1 倒序 for (int i = len - 1; i >= 0; i--) <!-- more --> <br> <br> 函数 输入一行（字符串） string s; getline(cin, s) //cin吞空格，getline不吞 字符串拼接 string s1, s2; s1+=s2; //将s2拼接到s1后 字符串比较 string s1, s2; s1<s2; //比较s1的字典序是否在s2的字典序前 获取字符串长度 string s; s.size(); 截取 string s; s = s.substr(pos,len) //截取字符串s，从第pos个位置开始len个字符，并返回这个字符串 // 此时s为截取出的字符串 string s1, s2; s1.insert(pos, s2) //在字符串s1的第pos个字符之前，插入字符串s2，并返回这个字符串 string s1, s2; s1.find(s2, [pos]) //在字符串s1中从第pos个字符开始寻找s2，并返回位置，如果找不到返回-1（需强制转int），pos可以省略，默认值为0 操作 strcpy(p, p1) 复制字符串 strncpy(p, p1, n) 复制指定长度字符串 strcat(p, p1) 附加字符串 strncat(p, p1, n) 附加指定长度字符串 strlen(p) 取字符串长度 strcmp(p, p1) 比较字符串 strncmp(p, p1, n) 比较指定长度字符串 strchr(p, c) 在字符串中查找指定字符 strrchr(p, c) 在字符串中反向查找 strstr(p, p1) 查找字符串 strpbr"
+    },
+    {
+      "title": "古早的笔记(自不用)",
+      "url": "https://c0d4.ink/posts/%E5%8F%A4%E6%97%A9%E7%9A%84%E7%AC%94%E8%AE%B0-%E8%87%AA%E4%B8%8D%E7%94%A8/",
+      "date": "2023-09-07",
+      "summary": "数据结构 <br> 栈 栈 stack FILO(first in last out) 如一个试管，只有一端可以控制进入输出，且进入输出都只能在栈顶进行，将压入栈顶为push，弹出栈顶为pop <br> 手写栈 #include <bits/stdc++.h> using namespace std; char s[20000]; int n = 0; char pop() { return s[n--]; } void push(int val) { s[++n] = val; } int main(void) { return 0; } <br> STL #include <bits/stdc++.h> using namespace std; int main(void) { stack<int> s; // 定义一个栈，栈中元素类型为int s.push(5); // 将元素5压入栈顶 s.pop(); // 弹出栈顶元素, 但不返回其值 s.top(); // 返回栈顶元素, 但不删除该元素 s.size(); // 返回栈中元素的个数 s.empty(); // 判断栈是否为空，空则返回true，非空返回false return 0; } <br> 括号匹配 #include <bits/stdc++.h> using namespace std; int main() { stack<char> s; string str; cin >> str; for (int i = 0; i < str.length(); i++) { if (str[i] == '(') { s.push('('); } else { if (s.empty()) { cout << \"no\" << endl; return 0; } s.pop(); } } if (s.empt"
+    },
+    {
+      "title": "计算机基础知识",
+      "url": "https://c0d4.ink/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/",
+      "date": "2023-09-06",
+      "summary": "计算机常识 电子管——>晶体管——>集成电路——>超大规模集成电路 1946 美国宾夕法尼亚大学第一台电子计算机 ENIAC 冯·诺依曼核心理论 二进制 存储程序 五大部件 (I/O，运算器ALU，存储器，控制器) 图灵 英国人 <br> <br> 计算机系统 <br> <br> 硬件系统 <br> 速度：Cache > 内存 > 外存 <br> 软件系统 <br> 操作系统 桌面OS 类UNIX Windows 服务器OS UNIX Windows Linux <br> <br> 计算机语言 计算机指令： 操作码 & 操作数 <br> 机器语言 汇编语言 高级语言 编译性 C/C++ Pascal 解释性 PHP Java JavaScript Python Ruby <br> 面向对象 纯面向对象 Smalltalk 混合型 C++ 面向过程 C <br> <br> 计算机网络 <br> 局域网 (LAN) 城域网 (MAN) 广域网 (WAN) <br> Internet Internet采用的协议为TCP/IP，即 传输控制协议(Transmission Control Protocol，TCP) 与 网络协议(Internet Protocol，IP) <br> OSI协议 7 层 TCP/IP协议 4 层 <br> TCP/IP 应用层 Telnet (远程登录) FTP (文本传输) E-mail 传输层 TCP UDP 网络层 IP 接口层 <br> IP地址 识别Internet上节点的地址，IPV4为32位(4组*8位)，IPV6位128位(8组*16位) <br> IPV4 4个不大于255的数组成 A类地址： 1~126 B类地址：128~191 C类地址： 192~223 回环地址： 127.0.0.1 <br> 域名 字符形式的IP地址 (避免记"
+    },
+    {
+      "title": "数据结构",
+      "url": "https://c0d4.ink/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/",
+      "date": "2023-09-05",
+      "summary": "树 此处尤指二叉树Binary Tree 基本性质 性质1： 第i层上最多有$2^{i-1}$个节点 性质2： 深度为k(根节点深度为1)的二叉树最多有$2^k-1$个节点 性质3： $n_0=n_2+1$ 性质4： n个节点的完全二叉树的深度为 $\\lfloor \\log_2^n \\rfloor$+1 性质5： n个节点的二叉树的叶子节点个数最多有$\\frac{n+1}{2}$ 遍历 这个都会吧（ 前序： 根左右 波兰 中序： 左根右 投影 后序： 左右根 逆波兰 已知 前中、中后 都可画出唯一树 图 特殊图 欧拉图： 从任意点开始，都能找到一笔画 起点和终点重合 半欧拉图: 只有两个奇点（度为奇数的点） 一个奇点开始，一个奇点结束 哈密尔顿图： 经过每个点1次，遍历完全部点 链式前向星 void addEdge(int u, int v, int w) { edge[++tot].v = v; edge[tot].w = w; edge[tot].next = head[u]; head[u] = tot; }"
+    },
+    {
+      "title": "位运算",
+      "url": "https://c0d4.ink/posts/%E4%BD%8D%E8%BF%90%E7%AE%97/",
+      "date": "2023-09-03",
+      "summary": "优先级 运算符 优先级 （） 1 ! ~ 2 * / % 3 + - 4 << >> 5 < <= >= > 6 & 7 ^ 8 or 9 特殊用法 取反(~)改变符号位 取反保持正负性需加负号 ~-a or -~a a ^ a = 0 a ^ 0 = a a ^ -1 = ~a 交换a,b的值： a ^= b ^= a ^= b"
+    },
+    {
+      "title": "对拍",
+      "url": "https://c0d4.ink/posts/%E5%AF%B9%E6%8B%8D/",
+      "date": "2023-09-03",
+      "summary": "C++ 对拍详解 The Sample n个数选k个，和为sum的方案数 暴力程序 #include <bits/stdc++.h> using namespace std; int n, k; int ans; int sum; void dfs(int x, int start) { if (x == k+1) { if (sum == n) ans++; return; } for (int i = start; sum+i*(k-x+1) <= n; i++) { sum+=i; dfs(x+1,i); sum-=i; } } int main() { freopen(\"data.in\",\"r\",stdin); freopen(\"dfs.out\",\"w\",stdout); cin >> n >> k; dfs(1,1); cout << ans; return 0; } 待测程序 #include<bits/stdc++.h> using namespace std; int n,k,f[201][7]; //f[k][x] k 分成 x 份 ={f[k-1][x-1],f[k-x][x]} int main(){ freopen(\"data.in\",\"r\",stdin); freopen(\"dp.out\",\"w\",stdout); cin >> n >> k; for (int i=1;i<=n;i++) {f[i][1]=1;f[i][0]=1;}for (int x=2;x<=k;x++) {f[1][x]=0;f[0][x]=0;} // 边界，为了防止炸，我把有0的也处理了 for (int i=2;i<=n;i++) for (int x=2;x<=k;x++) if (i>x) f[i][x]=f[i-1][x-1]+f[i-x][x]; else f"
+    },
+    {
+      "title": "数论（OI）",
+      "url": "https://c0d4.ink/posts/%E6%95%B0%E8%AE%BA/",
+      "date": "2023-09-03",
+      "summary": "模运算 $a%b = a-b*floor(\\frac ab)$ 费马小定理 $a^{p-1} % p=1$ 最小公倍数&最大公约数 (a,b)表示最大公约数 [a,b]表示最小公倍数 $(a,b)*[a,b] = ab$ 辗转相除 if (a % b==0) return b; else return gcd(b, a % b); <br> <br> 质数 筛法 for (int i = 2; i <= n; i++) { if (is_prime[i]) for (int j = 2*i; j <= n; j+=i) is_prime[j]=false; //筛去当前素数的倍数 } <br> 欧拉函数 $\\phi$ 求互质(公约数只有1的两个整数)个数 <br> <br> 快速幂 在幂指数过大的情况下，快速幂运算 int power(int a, int n) { int tp = 1; while (n) { if (n & 1) tp = 1ll * tp * a % mod; a = 1ll * a * a % mod, n >>= 1; } return tp; } <br> 分治 将$a^{100}$化成$a^{50}*a^{50}$,递归处理 #include <bits/stdc++.h> using namespace std; typedef long long ll; ll a, b, m; int getRes(ll a, ll b, ll m) { if (b == 0) return 1; if (b % 2 == 1) { return a * getRes(a, b - 1, m) % m; } else { ll mul = getRes(a, b / 2, m); return mul * mul % m; } } int main() "
+    },
+    {
+      "title": "链表",
+      "url": "https://c0d4.ink/posts/%E9%93%BE%E8%A1%A8/",
+      "date": "2023-09-03",
+      "summary": "注意：链表中的每个元素在使用前都要申请一个空间（new）并指向NULL(->next = NULL)，即初始化操作 由于链表不能访问某一元素，所以每次操作前都要从头开始（p =head），并用j记录节点下标 单链表基本框架 结构体 struct Node { int data; Node *next; //自引用，构建链表，链表中每个结点有两部分，数据域data和指针域next，data存值，next指向下一个结点 } *head, *p, *r; //头指针，指针，尾指针 建表 void set(int a[], int n) { //尾插 head = new Node; head -> next = NULL; r=head; //刚开始是r和head是在一起的，便于尾插操作 for (int i = 1; i <= n; i++) { p = new Node; p -> data = a[i]; p -> next = NULL; r -> next = p; //将p插到r后面 r = p; //r后移 } } 插入 void insert(int a[], int pos, int val) { //详见模拟图 p = head; //从头开始 int i = 0; while (p != NULL && i < pos - 1) { p = p -> next; //p指向下一个结点 i++; } Node *s; s = new Node; s -> data = val; s -> next = p -> next; p -> next = s; } 删除 void del(int a[], int pos) { //详见模拟图 p = head; int i = 0; while (p != NULL && i < pos - 1) { p = p -"
+    }
+  ]
+}

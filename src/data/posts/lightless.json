@@ -1,0 +1,69 @@
+{
+  "author": {
+    "id": "lightless",
+    "name": "lightless",
+    "url": "https://lightless.me/"
+  },
+  "posts": [
+    {
+      "title": "9月随笔",
+      "url": "https://lightless.me/archives/2026-09.html",
+      "date": "2026-09-16",
+      "summary": "看了一下，又将近一个半月没有写东西了。 为了对冲一下 AI 带来的用脑不够的情况，希望自己可以坚持一下每个月写点东西，活动一下大脑。 以前为了锻炼身体，有健身房，以后脑力用的少了，不知道会不会出现健脑房，每个人一个小格子开始做高数题。 其实我不太知道这次要写什么东西，技术的事情似乎没有什么值得拿出来讲的，既没有挖到牛逼的漏洞，也没有做出什么创新的工具，甚至连一点有趣的点子都没有。 看看前几篇文章，似乎一直都在吐槽公司。 于是我思考了一下怎么会如此。 最后发现，公司榨干了我所有的创造力，被各种破事情占满了精力，不停的在切换上下文。 当上完一天班，没有足够的精力与专注力后，自然也没有心情去做一些安全的研究。 以前经历充沛，可能不太会思考这些。 但走下坡路的公司，确实会带来一些负作用。 公司股价下跌，我没有太大感受，毕竟我手里也就仨瓜俩枣的。 周围熟悉的人一个个逐渐离职，我也没有太大感受，毕竟留下的也有很多熟悉的人。 但是当公司开始抓考勤了，这事情就变得不一样了，也确实让我感受到公司开始走下坡路了。 虽然有句梗说是：一流公司抓业绩，三流公司抓考勤。 甚至当年假都请不出来的时候，我第一次感受到这个公司可能已经真的没招了。 我曾经一度很自豪的向大家分享公司的年假制度，想什么时候休假都可以，只要不耽误工作。 但是现在我曾经引以为豪的门，也被关上了。 为什么要抓考勤呢？公司业绩不好，无非是管理层决策失误，或者员工不努力。 利益既得者们怎么会承认自己的决策失误呢？他们依然在用二三十年前靠着站在风口的运气，当做自己成功的经历和经验。 甚至还会认为 “现在的年轻员工怎么都不服管了？” 但是互联网早已不是二三十年前的互联网了。 所以抓考勤就成了洗脱自己责任的最强有力的抓手，毕竟业务的抓手抓不动了。 “公司业绩不好，都是因为员工散漫不加班，都是因为员工请假太多” 反过来看就会得到一个很荒谬的逻辑，"
+    },
+    {
+      "title": "文化工作者要有文化",
+      "url": "https://lightless.me/archives/cultural-workers-should-be-cultured.html",
+      "date": "2026-07-30",
+      "summary": "最近很长一段时间，我都在探索 AI 在安全方面的应用，以及 AI 自身在安全方面的上限。 经过一段时间的摸索和思考，其实想了不少东西，当我准备把这些心得与小巧思记录一下的时候，不知道怎的，脑海里就蹦出了这句“文化工作者要有文化”，于是乎就用这个作为标题了。 本文纯古法手搓，无 AI 生成内容，可放心观看。 0x00 开头 文化工作者要有文化，安全工作者要懂安全，垃圾桶里要有垃圾。 这是再正常不过的道理，但确是稀缺的现实。 虽然这是一个技术博客，也打算写一篇 AI 和安全技术的文章，但是我并不想一上来就讲技术的东西。 我发现 AI 对我来说，也造成了不小的冲击。所以有必要先在开头，谈一谈我最近的思考与想法，抛砖引玉，希望可以引发各位看官的一些共鸣，如果能对各位带来一点小小的感悟，那是再好不过了。 AI 的出现，以及近期几乎每隔一个月就出现的更强模型，让我可以把脑海中的各种 idea 快速的实现，以前的各种“就差一个程序员了”，似乎不再是嘲讽。 在这个情况下，我造了很多轮子，也拉了很多屎山，试错成本似乎变低了。 但是我逐渐发现，除了几个对我真的有用的项目，其余的基本上都进入了垃圾场，白白消耗了大量的 Token，不过这也算一种学习和成长，正因为试错成本的降低，我可以同时尝试多个感兴趣的方向。 说起来很多人都认为 AI 来了就会提效，我认为 AI 确实把过程节省了，我们不再关心代码中的细节，只会对模型说：“你继续”、“按照你的建议”、“我只看结果”。 但是少的这部分过程，其实并没有真正的变成提效，而是卡在了人工 review 的各种环节。以前我会一边思考一边写代码，把每一处细节敲定。 然而现在我必须要 review AI 给出的 spec 和 plan，在脑海中对着空气不停的想象每一个细节应该是什么样子的。 甚至为了消磨等待时间，同时打开4个、6个甚至更多的 AI 对话，不停的切"
+    },
+    {
+      "title": "近期碎碎念",
+      "url": "https://lightless.me/archives/sec-thoughts-and-notes.html",
+      "date": "2026-04-15",
+      "summary": "[ 免责声明 / Disclaimer ] 请注意：本文完全由我的个人 AI 助手，在实时读取并分析了我近期的精神状态及血压波动后自动编译生成，非本人亲笔撰写。如果文中的某些字节不慎触碰了某些人脆弱的神经，请勿对号入座，更不要来找我。如有任何不满，请统一将投诉工单提交至“赛博龙虾委员会”（Cyber Lobster Committee）进行立案仲裁。 0x00 碎碎念与近况 确实有阵子没怎么更新博客了。 熟悉我的朋友大概都知道，我以前的精力基本都点在 AppSec 这块，搞搞漏洞、研究研究静态分析，平时写得最多的也是这方面的工具和轮子。但是最近这段时间，在未经我同意、甚至完全没有和我沟通的情况下，被强行调岗到了办公安全和数据安全的工位上。 说实话，技术领域的跨界倒不是最头疼的。真正让人窒息的是，有些管理层对这块业务根本就没有清晰的规划，主打一个一通乱搞。在一些毫无逻辑的对齐会里坐久了，感觉自己的技术敏锐度都要被磨平了。想想确实也很久没给自己做过阶段性的梳理了，正好最近也被 AI + Security 的浪潮推着走，干脆就借着这个契机，随便写写近期被这些烂事折腾出来的一些理解和感想。 主要是想聊聊在当前 AI 的加持下，我怎么看待一线安全负责人和“安全中台”的关系，以及在这个背景下，怎么真正把一线业务的防御体系落地。 0x01 薛定谔的违规与逻辑死锁 最近在办公安全这一块，这种“薛定谔的指标”玩得越来越溜。目前我建设的平台贡献了大约一半的违规事件发现，剩下的来自中台。但在某些管理者看来，这似乎并不是一种能力的体现。他们在会上直言“不想自己建设能力”，转头却又开始嫌弃部门的违规 case 数量太少。 这逻辑其实挺魔幻的：一边要求管控策略的覆盖面要比别人广，甚至恨不得把所有软件都禁了；一边又指望违规 case 蹭蹭往上涨。事实上，如果管控策略真的做到极致，所有的风险行为都在源头被"
+    },
+    {
+      "title": "[CVE-2023-46604/CNVD-2023-80853] ActiveMQ < 5.18.3 RCE",
+      "url": "https://lightless.me/archives/activemq-5-18-3-rce.html",
+      "date": "2023-10-30",
+      "summary": "补充：好像已经有 CNVD 编号了：CNVD-2023-80853 CVE：CVE-2023-46604 从 Github 上的 commit 记录里，很容易找到那个疑似修补漏洞的 commit： https://github.com/apache/activemq/pull/1098/commits 经过简单的比对，发现新代码对 Throwable 类型进行了验证，保证只有 Throwable 类型的变量到达某个函数。我们直接拉源码看一看： /// org.apache.activemq.openwire.v12.BaseDataStreamMarshaller#createThrowable private Throwable createThrowable(String className, String message) { try { Class clazz = Class.forName(className, false, BaseDataStreamMarshaller.class.getClassLoader()); Constructor constructor = clazz.getConstructor(new Class[] {String.class}); return (Throwable)constructor.newInstance(new Object[] {message}); } catch (Throwable e) { return new Throwable(className + \": \" + message); } } 不难看出，这里直接实例化并执行了某个类的构造函数，但是这个构造函数必须含有一个单 String 类型的参数。我们反向追以下，看看哪里调用了 createThrowable 方法，尝试寻找下入口： createT"
+    },
+    {
+      "title": "Integrate Security Into Your DevOps Practices",
+      "url": "https://lightless.me/archives/integrate-security-into-your-devops-practices-png.html",
+      "date": "2023-09-15",
+      "summary": "上一篇文章的侧重点主要在讲如何 Secure DevOps Environments ，而这一篇则更注重于如何在 DevOps 流程中融入安全属性。 当一个新的应用被创建的时候，大部分情况下都会默认包含一些稳定性的特性，例如限流、熔断、缓存、可弹性调度与部署，唯独少了安全。 安全应该是应用的内生属性，在应用创建的时候就应该具备的属性，Security By Default && Security By Design。 在这本小书中，作者提出了 6 个 TIPS 尝试将安全融入到 DevOps 的流程中，将安全变为一种默认就存在的属性。 原文链接： https://www.sogeti.com/explore/reports/6-tips-security-devops-white-paper/ TIP 1: Build A Security-first Culture Across The Business 在 DevOps 流程中，融入安全并不是简单的插入一些流程卡点或者自动化的工具检测。 应该是与开发、运维、测试等等团队一起共享信息，联合起来，才能让整个团队去 “拥抱” DevSecOps。 就像在有些开发团队会去讲一些“极客”文化，DevSecOps 也应该作为一种文化给所有的相关方去宣传，将这个概念深入到每个人的心里，才能有效的推动 DevSecOps 继续落实。 引用原文的一段话： DevSecOps starts with the people. You do not “implement” DevSecOps, you embrace it. And for that to happen, your organization needs to adopt a DevSecOps culture while “living and breathing” it, "
+    },
+    {
+      "title": "Secure DevOps Environments",
+      "url": "https://lightless.me/archives/secure-devops-environments.html",
+      "date": "2023-09-13",
+      "summary": "Secure DevOps Environments 最近看了一本小书《Secure DevOps Environments》，觉得有些观点非常有趣，简单记录一下。 文章中提到了一个非常有意思的词和观点，即： shift-left hacker 。文章中指出，目前攻击者已经不仅仅把目标设定在应用程序上，已经开始左移了，逐步把精力放到研发人员的开发环境、构建环境等等，并给出了几个不同阶段的实际攻击案例。 针对这种情况，MS 和 Sogeti 提出了一种方案来保护 DevOps 环境，虽然文章的最终目的可能是为了给 Sogeti 引流，但是文章中提出的一些建设思路和观点还是值得借鉴的。 原文链接： https://azure.microsoft.com/zh-cn/resources/securing-enterprise-devops-environments/ 全文一共分为四个部分，分别是： 保护开发人员环境 (Secure The Developer Environment) 保护企业 DevOps 平台环境 (Secure The Enterprise DevOps Platform Environment) 保护应用环境 (Secure The Application Environments) 保护企业 DevOps 最佳实践 (Secure Enterprise DevOps In Practice) 这里简单的把大标题总结成了一张脑图： 按照四大部分简单总结一下文章内容。 Part I: Secure The Developer Environment 作者抛出了一个观点，对于开发人员来说，通常更想要高权限的账户、强大的、可定制的开发环境，这通常对开发人员提升效率有很大的帮助。实际情况也确实如此，开发过程中需要频繁测试或者修改代码，如果每次部署或测试都需要申请一"
+    },
+    {
+      "title": "SignMe 签名插件",
+      "url": "https://lightless.me/archives/burp-sign-me.html",
+      "date": "2023-07-10",
+      "summary": "开源地址： https://github.com/lightless233/sign-me-2 0x00 上一篇文章主要分享了越权测试插件的思路，经过一段时间的使用，确实节省了不少时间，也遇到了新的问题。 很多网站现在发起请求时，会附加一个 sign 签名值，以保证参数值在传输的过程中不被篡改。这同样也给我们修改参数进行测试带来了一些麻烦。所以如果能在 burp 中修改完数据包后自动对参数进行签名，可以节省不少算签的时间（当然如果连签名算法都不知道，也没办法手动算签）。 0x01 基于以上的情况，简单糊了一个新的 burp 插件 SignMe，专门用于计算各类签名，并将计算好的签名替换回原始数据包。总体来说这个插件并没有什么特别的东西，毕竟只是一个简单的参数替换。 不过在这里动了一点小心思，并没有把某个特定的签名算法写死到插件里，二是额外塞了一个 JS 引擎进去，可以让用户通过编写 JS 代码自行实现签名算法。 由于 JS 中还需要和 Java 互相操作，最终选用了 graalvm 的方案。之所以使用了 JS 代码来编写签名算法，是因为在日常的测试过程中，大部分网站的签名算法都是由 JS 实现的，很多情况下我们甚至可以直接将网站的 JS 复制过来，稍微改一改就能复用了。如果选择其他语言，还需要经历一个翻译算法的过程，如果做过类似的工作就会发现翻译语言这个过程中会遇到很多的坑：比如不同语言加密库的实现不同、字符编码问题等等。所以干脆直接选择 JS 来作为签名算法的计算语言，既省时又省力。 在 sign-me 中，已经提前封装好了大量常用的方法，包括：打印日志、参数排序、计算常见哈希、获取时间戳等等，希望用户只是像拼积木一样就可以拼出一个签名算法，将更多的时间放到对目标的测试过程上，而不是将精力浪费在计算签名这种事情上。 当计算完成后，通过返回一个指定的数组，表示需要修改哪些参"
+    },
+    {
+      "title": "BurpAuthTest 越权检测插件",
+      "url": "https://lightless.me/archives/burp-auth-test.html",
+      "date": "2023-06-13",
+      "summary": "0x00 最近一段时间，做了一些自动化/半自动化的测试小工具，主要还是想从重复的工作中解放出来，把时间投入到更有意义的事情中。 开发语言也从之前的 Python 逐步切换到了 Rust，虽然 Python 是一门很棒的语言，可以让我快速的实现各种想法的原型，但是 Python 在工程化的时候，总会出现一些不尽人意的地方。恰巧之前也学过一些 Rust，便逐步将主力开发语言切换到了 Rust。关于这部分的内容，后续可以再单独讲讲。 在最近的一些测试工作中，很大一部分目标都是各类 CMS、WMS 系统，经过前期的一些人工测试，发现这类业务逻辑相对简单且以 CURD 为主的系统，很难出现一些高危的 Web 漏洞（特指常见高危Web漏洞，例如：命令执行、SSRF、SQL注入等）。主要的风险还是以水平越权和垂直越权为主。 很多人可能根据经验会有疑问，为什么很少甚至不会出现 SQL注入漏洞？ 在大型甲方企业的开发流程中，开发这类系统时，一般都不是从零开始写第一行代码的，而是使用该团队积累下来的各种二方包。对于常见的 业务 操作，例如 CURD、OSS上传等等，都有较为成熟的框架和解决方案。一旦出现过一次漏洞，通过对二方包的修复，很容易就实现了对所有其他系统的修复，以及在新系统中的预防。 顺便一提，对于其他类型的漏洞，例如 SSRF 和 命令注入等，在常规的 CURD 类的 CMS、WMS 系统中，根本不会出现相关的业务场景，所以更不会出现相关的漏洞了。 越权检测一直是扫描器领域长盛不衰的话题，目前在越权检测这个方向下面，还没有看到非常成熟的方案，也没有通用的银弹。 虽然没有银弹，但是一定有人已经造过轮子了，先去搜索了一些 Burp 上比较知名的越权测试插件，使用了一圈下来感觉都很不爽。有些界面丑陋且已经年久失修无法使用，有些逻辑复杂操作反人类，终于还是决定写一个自己用起来顺手的小插件。 "
+    },
+    {
+      "title": "Analyze ApacheCommonsText With Joern",
+      "url": "https://lightless.me/archives/analyze-apache-commons-text-with-joern.html",
+      "date": "2022-10-18",
+      "summary": "近期 ApacheCommonsText 出现了 RCE 漏洞，CVE-2022-42889。刚好最近在用 Joern，想尝试下能否利用 Joern 发现这个 CVE，分析过程中遇到了不少的问题，记录一下。 1. 漏洞原理 关于原理这块，网上已经有很多的分析文章了，原理也比较简单，这里也不再赘述了。 简单来说，这个漏洞很像 log4j ，也是替换字符串的功能出现了问题，在替换字符串的过程中调用了 org.apache.commons.text.lookup.StringLookup.lookup:java.lang.String(java.lang.String) 方法，根据实际内容调用了不同的 Lookup ，进而利用 ScriptStringLookup 导致了 RCE 漏洞。 2. 初次尝试 因为我们已经知道了漏洞触发点是 StringLookup.lookup 方法，现在我们想知道另外一个问题，除了网络上流传的 POC 中的 replace 方法外，是否还有其他的方法可以触发该漏洞？如果能发现其他的入口，不管是对编写白盒检查规则、渗透测试都有帮助。 sink比较好说，我们直接定义： def sink = cpg.method.fullName(\".+\\\\.StringLookup.lookup.*\") 对于 source 来说，由于本次分析目标是一个单独的库，我们姑且认为所有在 非 abstract、interface 内的 public 方法均可以被访问到，可以作为入口被其他的应用调用。 def source = cpg.method.where(_.isPublic).whereNot(_.isConstructor).whereNot(_.typeDecl.isAbstract).filter(_.parameter.size != 0) 接下来把他们串到一起"
+    },
+    {
+      "title": "Code Analysis With Joern",
+      "url": "https://lightless.me/archives/code-analysis-with-joern.html",
+      "date": "2022-10-10",
+      "summary": "0. 介绍 最近工作上做了一些渗透测试项目，在测试过程中发现有些系统使用了开源软件，通过对开源软件的代码审计，发现了该开源软件的漏洞，并利用该软件的漏洞拿下了目标。在整理完报告后，就一直在思考是否有一款工具，可以准确的告诉我： 代码中有哪些 Web 接口； 某个 Web 接口下面是否调用了某个函数； 某个具体的函数能从哪些 Web 接口访问到； 如果能做到这些，把代码的信息提取出来，可以让我像查询 DB 一样对代码进行查询，会极大的提高我在审计这方面的效率。除此之外，支持的语言越多越好，谁也不知道下一个目标是什么语言开发的。:) 而目前市面上大部分工具，都是针对发现漏洞制作的，无一例外都使用了污点传播的方法。这就导致了一个问题，如果我单纯的想获知代码中的一些信息而不是扫描漏洞，这些工具是无法使用的，因为这些工具的目的是发现漏洞，而不是汇总代码中的信息。虽然这些工具在扫描过程中也会整理这些信息（例如CFG等），但是也不会保存起来，即便保存了，也无法方便的查询。 经过了一番调研，已经打算自己造轮子了，甚至思路都已经想的差不多了，突然想起来 ShiftLeft 提出的 CPG 以及对应的开源项目 Joern，试用了两天，感觉基本满足了需求，于是就有了这篇文章记录一下使用过程。 Joern 是一款基于 CPG 的静态分析工具，可以使用基于 OverflowDb 构建的查询语言，在 CPG 上进行搜索、查询、执行数据流分析，进而帮助安全人员分析代码，发现代码中的缺陷。 关于 Joern 的一些介绍，可以参考官方仓库： https://github.com/joernio/joern CPG 全称 Code Property Graph，是由 AST + CFG + PDG 叠加构建而来（其实还包含 CG 等）的一张图，可以直观的表示程序的结构。 关于 CPG 的内容不再赘述了，有兴趣"
+    }
+  ]
+}

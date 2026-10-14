@@ -1,0 +1,129 @@
+{
+  "author": {
+    "id": "GeruzoniAnsasu",
+    "name": "GeruzoniAnsasu",
+    "url": "https://pnck.github.io/"
+  },
+  "posts": [
+    {
+      "title": "⧉ Wire foobar2000 to AVFoundation",
+      "url": "https://pnck.github.io/2026/06/26/portal-foo-out-avfoundation/",
+      "date": "2026-06-26",
+      "summary": "（正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "聊聊即将出现的 AGI 图景",
+      "url": "https://pnck.github.io/2026/06/05/AGI-and-LLM/",
+      "date": "2026-06-05",
+      "summary": "该文章已加密，请访问站点原文"
+    },
+    {
+      "title": "OpenWrt 编译踩坑记录",
+      "url": "https://pnck.github.io/2026/05/07/compile-openwrt/",
+      "date": "2026-05-07",
+      "summary": "本文包含以下章节： 入门必知 挑选硬件 基础概念 Docker Build 实用经验 UBOOT FINAL FailSafe ROM Source Tree initramfs VS squashfs package-y VS package-m mtwifi （正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "AI 与复调",
+      "url": "https://pnck.github.io/2026/01/27/ai-polyphony/",
+      "date": "2026-01-27",
+      "summary": "本文包含以下章节： Piece of Reimagined Blob Opera A Tiny Fugue （正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "运用现代 AI 工业基础设施玩小游戏",
+      "url": "https://pnck.github.io/2025/11/16/play-game-with-cv/",
+      "date": "2025-11-16",
+      "summary": "本文包含以下章节： 0x0. 楔子 0x1. 框架设计 0x11. 双机屏幕识别方案 0x12. 程控输入方案 0x2. Detector 0x21. annotate（打标） 0x211. 数据集生成 0x212. 标注 0x213. 数据集增强 0x22. Training 0x221. Training on Google Colab 0x3. Let it play 0x4. 后记 & 不足之处 （正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "关于柴静谈陈虻和崔永元的回忆的摘录",
+      "url": "https://pnck.github.io/2025/03/30/v=9L60q0fQHu8/",
+      "date": "2025-03-30",
+      "summary": "（正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "到新城市工作后的两周里，我遇到了两个叫住我的孤寡老人",
+      "url": "https://pnck.github.io/2024/07/02/two-olds/",
+      "date": "2024-07-02",
+      "summary": "（正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "An Invisible Gorilla in Our Enlightenment of Programming",
+      "url": "https://pnck.github.io/2024/05/02/cpp-standard-and-switch/",
+      "date": "2024-05-02",
+      "summary": "本文包含以下章节： Let me ask an “ancient” question: If you look up in the stackoverflow Now the Invisible Gorilla shows up: This little discovery surprised me about two things. Conclusion （正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "Story - 末日列车与维度奇遇",
+      "url": "https://pnck.github.io/2024/04/12/story-dimensional/",
+      "date": "2024-04-12",
+      "summary": "本文包含以下章节： I. II. III. IV. V. VI. VII. （正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "关于 TOC 机制的测试文档",
+      "url": "https://pnck.github.io/2024/03/03/test-toc/",
+      "date": "2024-03-03",
+      "summary": "该文章已加密，请访问站点原文"
+    },
+    {
+      "title": "⧉ HGAME 2024 Pwn - _IO_FILE Attack",
+      "url": "https://pnck.github.io/2024/02/29/hgame2024-_IO_FILE/",
+      "date": "2024-02-29",
+      "summary": "（正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "⧉ HGAME 2024 Pwn - Large Bin",
+      "url": "https://pnck.github.io/2024/02/15/hgame2024-large-bin/",
+      "date": "2024-02-15",
+      "summary": "（正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "A Strange Alignment Issue with GDB behind A Simple Challenge",
+      "url": "https://pnck.github.io/2024/02/05/gdb-align-issue/",
+      "date": "2024-02-05",
+      "summary": "本文包含以下章节： Story from a simple format string vulnerable The Amazing, The Weired Reflections （正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "⧉ HGAME 2024 Writeups",
+      "url": "https://pnck.github.io/2024/01/29/portal-hgame2024/",
+      "date": "2024-01-29",
+      "summary": "（正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "学海遗珠 —— GeekPwn 2015 胸牌到底在玩什么？",
+      "url": "https://pnck.github.io/2024/01/23/play-with-gp2015-badge/",
+      "date": "2024-01-23",
+      "summary": "本文包含以下章节： Revealing 硬件检查 设置「调试桥」 连线 软件 一探究竟 Dump / 下载原程序脚本 通过 wifi 模块来相互通信 程序逻辑分析 Hack to the END! 修改程序 重写预设图片 Own the ROM Over WiFi! Reverse Engineering, the Bitter Dive into the ROM Make Our Arts 成果 （正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "Story - 被子困人救援纪实",
+      "url": "https://pnck.github.io/2023/12/25/story-rescue/",
+      "date": "2023-12-25",
+      "summary": "该文章已加密，请访问站点原文"
+    },
+    {
+      "title": "Story - 网瘾与旧购物中心",
+      "url": "https://pnck.github.io/2023/11/01/story-old-mall/",
+      "date": "2023-11-01",
+      "summary": "该文章已加密，请访问站点原文"
+    },
+    {
+      "title": "MoeCTF 2023 - RE500 EzNet",
+      "url": "https://pnck.github.io/2023/08/25/moectf2023-re500/",
+      "date": "2023-08-25",
+      "summary": "本文包含以下章节： Patch 逻辑 Main() SetFlag() VmeFlag() 调试 （正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "⧉ MoeCTF 2023 - Leak LIBC with puts()",
+      "url": "https://pnck.github.io/2023/08/15/moectf2023-leak-libc-puts/",
+      "date": "2023-08-15",
+      "summary": "（正文已省略，请访问站点阅读全文）"
+    },
+    {
+      "title": "⧉ HGAME Mini 2023 Pwn - Stack Master Salute!",
+      "url": "https://pnck.github.io/2023/08/14/hgamemini2023-stack-master/",
+      "date": "2023-08-14",
+      "summary": "（正文已省略，请访问站点阅读全文）"
+    }
+  ]
+}

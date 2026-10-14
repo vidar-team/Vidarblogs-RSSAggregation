@@ -1,0 +1,105 @@
+{
+  "author": {
+    "id": "1s",
+    "name": "1s",
+    "url": "https://www.yizishun.com/"
+  },
+  "posts": [
+    {
+      "title": "Weekly Report 2026-03-16",
+      "url": "https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-03-16/",
+      "date": "2026-09-08",
+      "summary": "工作任务 1.Linux内核中RV相关部分有哪些，存量代码有多少（行） 2.RV增量代码每周大概有多少行（关键问题），每周更新频率，维护人多少 3.已有RV相关Linux内核CVE特性分析，尤其是RV特有的漏洞 4.用什么工具去挖漏洞（不限制手段，以挖到为目标，后期考虑增量代码与方法架构） 5.现有工具调研 工作进展 Linux内核riscv存量代码分析 本周进展 使用python脚本将riscv代码存量代码基本全部找出，并且按照子系统进行分类，并且使用一个简单的前端进行成果展示 [image: 电脑萤幕画面 AI 生成的内容可能不正确。] [image: image3.png] [image: image4.png] [image: 图形用户界面, 文本, 应用程序, 聊天或短信 AI 生成的内容可能不正确。] 遇到的问题及解决方法 问题就是不知道怎么找riscv相关的代码，解决方法是三种方案找riscv的代码 Maintainer标注的dir下所有的files 使用find通过关键词寻找文件名匹配的files 使用grep通过关键词和过滤寻找文件内容匹配的files Linux内核riscv代码增量分析 本周进展 通过分析riscv代码上一部找出的所有文件的分文件git log，找他近2年（可配置）的commit log，对其代码行数和commit进行取一周平均值，并收集所有对这个文件commit的contributer [image: 电脑萤幕的截图 AI 生成的内容可能不正确。] [image: 图形用户界面 AI 生成的内容可能不正确。] Linux内核riscv CVE漏洞分类以及特性分析 本周进展 这个任务仅仅只是做了基本的按照子系统分类，但是前端有机制让我能进行自定义分类，这需要手工进行一个一个分析并分类（暂时没做） [image: 图形用户界面, 应用程序"
+    },
+    {
+      "title": "Weekly Report 2026-03-23",
+      "url": "https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-03-23/",
+      "date": "2026-09-08",
+      "summary": "工作任务 1、看最近riscv子系统活跃度有没有下降 2、分类分析一下近两年的cve，把通用一般的漏洞和rv专有的漏洞分开 3、针对rv相关的文件跑一个工具看看，尝试挖一些riscv cve 工作进展 看最近riscv子系统活跃度有没有下降 本周进展 从整体趋势看，RISC-V 活跃度并未下降；从最近短周期看，活跃度出现了阶段性回落。这一变化与近期 Linux 7.0 merge window 关闭后的节奏切换一致。 具体数据为 5周：Commits/Week = 2.80，Lines/Week = 8.80 10周：Commits/Week = 14.90，Lines/Week = 390.30 20周：Commits/Week = 13.70，Lines/Week = 310.60 50周：Commits/Week = 17.94，Lines/Week = 444.46 104周：Commits/Week = 17.88，Lines/Week = 363.56 分类分析最近两年的cve 本周进展 分类逻辑概述 本报告的漏洞分类框架主要由三大板块构成：RISC-V 特有漏洞、通用漏洞，以及一个汇总性质的漏洞原因 (Cause) 分类。 其中，针对“RISC-V 特有漏洞”和“通用漏洞”，报告又分别从两个不同的维度进行了交叉拆解： 按组件 (Component) 分类：侧重于漏洞发生的具置或受影响的模块。 按漏洞类型分类：侧重于漏洞本身的表现形式和技术特征。 1. riscv特有漏洞（按漏洞类型） API Misuse 涉及 CVE：CVE-2025-38407 Incomplete Implementation / Missing Functionality 说明：笔误或者cv的时候失误，导致的不完整实现 涉及 CVE：CVE-2025-37966, CVE-2025-3"
+    },
+    {
+      "title": "Weekly Report 2026-03-29",
+      "url": "https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-03-29/",
+      "date": "2026-09-08",
+      "summary": "工作任务 1.尝试跑论文KNighter: Transforming Static Analysis with LLM-Synthesized Checkers的工具KNighter 2.调研从riscv isa文档到具体代码实现的中间层pattern的形式 工作进展 ====周一到周四的工作====== 对于RISC-V CVE类型分类的重构 <table> <colgroup> <col style=\"width: 21%\" /> <col style=\"width: 30%\" /> <col style=\"width: 48%\" /> </colgroup> <thead> <tr> <th style=\"text-align: left;\">分类维度 (Taxonomy)</th> <th style=\"text-align: left;\">子类别 (Category)</th> <th style=\"text-align: left;\">包含的 CVE 列表</th> </tr> </thead> <tbody> <tr> <td rowspan=\"2\" style=\"text-align: left;\"><p><strong>RISC-V or</strong></p> <p><strong>通用漏洞</strong></p></td> <td style=\"text-align: left;\">RISC-V专有漏洞</td> <td style=\"text-align: left;\">CVE-2024-53687, CVE-2024-56673, CVE-2024-57945, CVE-2025-22069, CVE-2025-37822, CVE-2025-37966, CVE-2025-38261, CVE-2025-38407, CVE-2025-384"
+    },
+    {
+      "title": "Weekly Report 2026-04-05",
+      "url": "https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-05/",
+      "date": "2026-09-08",
+      "summary": "工作任务 （周四开会后） 1.统计各个工具扫到的漏洞中缺乏RV语义能力，统计占比 2.找语义强相关的RV漏洞例子，论证“传统工具缺乏语义背景知识，难以检测出RV漏洞” 3.拿语义强相关的漏洞跑一下Knighter 工作进展 ======周一-周四（开会前）===== 调研从riscv isa文档到具体代码实现的中间层pattern的形式 由于上周只是做了调研以及一些头脑风暴，这周主要将上周的调研结果和头脑风暴结果做了一些整合，把他们统一起来，放到了一个漏洞挖掘的思维模型里面 （源drawio格式模型图见附件） 此模型分为四层，layer0是最终的目标（dest），即漏洞，layer3是所有的起点（src），他是各种规范以及各种行为（用圆圈表示），然后希望能使用这个模型 1.囊括几乎所有漏洞挖掘方法。2.不说给解决问题提供框架，只能说至少让我能知道还存在什么问题。 下面是各层的描述 Layer0: 漏洞/bugs ，即最终的目标 Layer1: CodeBase ，即需要研究/挖掘的对象，简单来说就是arch/riscv目录（这是第一周做的事情） Layer2: 能直接产出漏洞的工具 ，即使用他们分析codebase能直接产生漏洞，他们包括“状态探索器Fuzzer”，“LLM直接代码分析”，“需要做什么的golden reference”，“禁止做什么的Checker”，本质就是需要将所有其他形式转换/加强成layer2的形式，才能产生真正的漏洞（工具调研是第一周/第二周做的事情） Layer3: 各种语义模型 ，即最开始的起点，包括ISA规范，codebase本身的行为，微架构特定的行为，编译器行为，SBI执行环境行为 但是他们和layer2的工具有很大的语义差异，需要一步一步将这些源语义转换成其他语义模型（需要证明转换等价或者保留部分原意），或者与其他语义模型横向碰撞/融"
+    },
+    {
+      "title": "Weekly Report 2026-04-12",
+      "url": "https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-12/",
+      "date": "2026-09-08",
+      "summary": "工作任务 工作进展 Knight的召回率测试实验 Knight对于一个patch会尝试生成10个checker，每一个checker如果出现编译失败会尝试5次，所以其速度极慢，所以对于速度和准确率的权衡，使用Qwen3.5-122B-A10B的软件所chatbox中转模型进行实验 将在 https://has2lab.github.io/RISCV_CVE_Dashboard/ 提取的CVE分为通用漏洞（9个）和RISC-V专有漏洞（10个），分别给Knight运行其gen阶段从而测试其召回率 CVE编号 Best Score 特殊/边缘情况遗漏（逻辑错误）|CVE-2024-42267 TP=0, TN=1 隐式ABI规定违反|Unaligned Memory|CVE-2024-43868 TP=0, TN=0 隐式API规定违反|CVE-2024-46792 TP=0, TN=1 分支路径遗漏（逻辑错误）|Resource Leak|CVE-2024-53075 TP=1, TN=1 隐式API规定违反|CVE-2024-57939 TP=1, TN=1 特殊/边缘情况遗漏（逻辑错误）|CVE-2025-37975 TP=0, TN=1 特殊/边缘情况遗漏（逻辑错误）|CVE-2025-38433 TP=0, TN=0 特性/机制冲突|CVE-2025-40358 TP=1, TN=1 隐式时间规定违反|CVE-2025-38681 待测 表 1 通用漏洞 CVE编号 Best Score RISC-V_MMU|隐式API规定违反|CVE-2024-53687 TP=0, TN=0 RISC-V_MMU|隐式API规定违反|CVE-2024-56673 TP=0, TN=1 RISC-V_MMU|隐式ABI规定违反|CVE-2024-57945 TP=-10, TN=-"
+    },
+    {
+      "title": "Weekly Report 2026-04-19",
+      "url": "https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-19/",
+      "date": "2026-09-08",
+      "summary": "工作任务 调研所有的内核漏洞扫描的sota工具 对其中的某些sota工具进行实验 工作进展 调研内核扫描sota工具 首先通过布尔表达式从四大顶会中搜索相关论文，找到了130篇论文，然后将这130篇论文进行筛选，最终筛选出50篇，并分类，在分类的过程中也了解到了整个漏洞扫描工具的整体研究方向，以下是分类 一、静态SOTA工具 1. LLM直接分析 • LLMxCPG: Context-Aware Vulnerability Detection through Code Property Graph-Guided Large Language Models (USENIX Security 2025) 2. 符号执行 • KRover: A Symbolic Execution Engine for Dynamic Kernel Analysis (ICSE 2023) • Symbolic Execution for Dynamic Kernel Analysis (ICSE 2024) 3. 静态Checker 通用： • KNighter: Transforming Static Analysis with LLM-Synthesized Checkers (arXiv 2025) • Type-Based Call Graph: Unleashing the Power of Type-Based Call Graph Construction by Using Regional Pointer Information (USENIX Security 2024) 特定： • APP-Miner: Detecting API Misuses via Automatically Mining API Path Patterns (ICSE 2024) • LR-Mine"
+    },
+    {
+      "title": "Weekly Report 2026-04-26",
+      "url": "https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-26/",
+      "date": "2026-09-08",
+      "summary": "工作任务 1.对sota工具进行实验 工作进展 对sota工具进行实验 0.knight（已实验，待做推理） <u>工具原理：</u>通过llm分析某个cve的commit，然后编写出对应的checker，用这个checker扫描全内核 假说-演绎法： <u>提出假说：</u>由于通用llm对强riscv语义理解不透彻，或者llvm的checker对riscv语义的api支持较差，所以生成的checker对强riscv语义的漏洞难以检测或者生成的checker质量差或者难以编译成功。 演绎推理：如果上述假设成立，那么对于强riscv语义commit生成的checker，checker会难以生成成功，召回率一定更差，误报率也一定更高，对于浅riscv语义或者通用语义的commit生成的checker则是反之。 <u>实验验证：</u> 将在 https://has2lab.github.io/RISCV_CVE_Dashboard/ 提取的CVE分为通用漏洞（9个）和RISC-V专有漏洞（10个），分别给Knight运行其gen阶段从而测试其召回率 CVE编号 Best Score 特殊/边缘情况遗漏（逻辑错误）|CVE-2024-42267 TP=0, TN=1 隐式ABI规定违反|Unaligned Memory|CVE-2024-43868 TP=0, TN=0 隐式API规定违反|CVE-2024-46792 TP=0, TN=1 分支路径遗漏（逻辑错误）|Resource Leak|CVE-2024-53075 TP=1, TN=1 隐式API规定违反|CVE-2024-57939 TP=1, TN=1 特殊/边缘情况遗漏（逻辑错误）|CVE-2025-37975 TP=0, TN=1 特殊/边缘情况遗漏（逻辑错误）|CVE-2025-38433 TP=0, TN="
+    },
+    {
+      "title": "Weekly Report 2026-04-30",
+      "url": "https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-30/",
+      "date": "2026-09-08",
+      "summary": "工作任务 工作进展 “通过手册增量，分析已有riscv代码”的idea Idea Quik View 1. 问题定义 **- 依赖先验数据的瓶颈：**现有 SOTA 漏洞挖掘过度依赖历史补丁，只能“横向寻找”已知变种，难以发现因误解硬件规范（Specification）导致的全新架构级漏洞。 **- 漏洞Pattern跨平台泛化差：**传统提取的漏洞 Pattern 往往是 Software-specific（如绑定 Linux 特有机制），无法直接迁移到 FreeBSD 等其他系统。 **- LLM 上下文瓶颈：**底层架构手册极其庞杂，现有工具无法让 LLM 宏观理解整本手册来定位“语义歧义”区域。 2. 输入输出 (Input & Output) 输入 (Input)： RISC-V 官方开源手册 RISC-V 官方开源手册的 Pull Requests/Commits 目标系统的源代码。 输出 (Output)： 目标系统中因规范同步滞后/误解导致的潜在漏洞位置。 以硬件文档为桥梁提取出的、跨生态系统的普适性漏洞 Pattern。 3. 应用场景 (Application Scenarios) **操作系统内核安全审计：**自动化检测 Linux、FreeBSD 等内核中翻译 RISC-V 规范时的代码缺陷。 **底层固件漏洞挖掘：**应用于 OpenSBI 等强架构相关固件的安全检测。 **硬件/模拟器实现验证：**向下延伸至硬件 CPU RTL 实现的语义对齐检测。 **RISC-V 生态持续集成：**作为一个自动化的“规范守护者”，监控生态系统中软硬件对官方规范迭代的同步情况。 解决的问题： **突破“横向挖掘”局限：**无需已知漏洞数据，基于官方修正的“语义盲区”直接发掘全新的 0-day 漏洞。 **打破软件生态隔离：**将分析基准从“软件特性”提升到“硬"
+    },
+    {
+      "title": "Weekly Report 2026-05-10",
+      "url": "https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-05-10/",
+      "date": "2026-09-08",
+      "summary": "工作任务 工作进展 “通过手册增量，分析已有riscv代码”的idea Idea Quik View 1. 问题定义 **- 依赖先验数据的瓶颈：**现有 SOTA 漏洞挖掘过度依赖历史补丁，只能“横向寻找”已知变种，难以发现因误解硬件规范（Specification）导致的全新架构级漏洞。 **- 漏洞Pattern跨平台泛化差：**传统提取的漏洞 Pattern 往往是 Software-specific（如绑定 Linux 特有机制），无法直接迁移到 FreeBSD 等其他系统。 **- LLM 上下文瓶颈：**底层架构手册极其庞杂，现有工具无法让 LLM 宏观理解整本手册来定位“语义歧义”区域。 2. 输入输出 (Input & Output) 输入 (Input)： RISC-V 官方开源手册 RISC-V 官方开源手册的 Pull Requests/Commits 目标系统的源代码。 输出 (Output)： 目标系统中因规范同步滞后/误解导致的潜在漏洞位置。 以硬件文档为桥梁提取出的、跨生态系统的普适性漏洞 Pattern。 3. 应用场景 (Application Scenarios) **操作系统内核安全审计：**自动化检测 Linux、FreeBSD 等内核中翻译 RISC-V 规范时的代码缺陷。 **底层固件漏洞挖掘：**应用于 OpenSBI 等强架构相关固件的安全检测。 **硬件/模拟器实现验证：**向下延伸至硬件 CPU RTL 实现的语义对齐检测。 **RISC-V 生态持续集成：**作为一个自动化的“规范守护者”，监控生态系统中软硬件对官方规范迭代的同步情况。 解决的问题： **突破“横向挖掘”局限：**无需已知漏洞数据，基于官方修正的“语义盲区”直接发掘全新的 0-day 漏洞。 **打破软件生态隔离：**将分析基准从“软件特性”提升到“硬"
+    },
+    {
+      "title": "Weekly Report 2026-05-17",
+      "url": "https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-05-17/",
+      "date": "2026-09-08",
+      "summary": "工作任务 论文/学报阅读 书籍阅读 实践环节 工作进展（由于与考研时间的平衡，下周以及之后的进度可能会减缓） 所有spechunter找到的漏洞的patch （绿色链接是已被comfirm） 总发现问题数量：12 已提交patch数量：11 已被确认数量：10 Qemu： https://patchew.org/QEMU/20260511102627.3120140-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260511080904.3049446-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260511072705.3015986-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260511051736.2916225-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260511040534.2862443-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260508174917.371667-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260511124828.3210477-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260512052240.330815-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260512062310.348208-1-vulab@iscas.ac.cn/ Xiangshan: https://github.com/OpenXiangShan/C"
+    },
+    {
+      "title": "Weekly Report 2026-05-24",
+      "url": "https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-05-24/",
+      "date": "2026-09-08",
+      "summary": "工作任务 论文/学报阅读 阅读：RFCAUDIT: AI Agent for Auditing Protocol Implementations Against RFC Specifications 工作进展 当前IDEA和现有工作的区别 – 1.精读：RFCAUDIT: AI Agent for Auditing Protocol Implementations Against RFC Specifications 核心insight 0. LLM为中心的，通过网络RFC手册找到功能bug的静态检测工具 1. 提前用LLM给整个项目建立index 2. 使用retrieval-guided detection，不断迭代获取需要漏洞检测的代码上下文 3. 上述insight都是通过学习人类是如何从手册找到代码中的inconsistent的workflow从而想出来的 Code semantic index 自下（function）而上（file,dir,repo）给每一个层级建立1-2行的描述 （疑惑：每一个function如果需要有关的的数据结构描述怎么办（后面发现这个工作在后面的retrieval部分）？如果这个funtion call了另一个，但是另一个的描述还没建立怎么办？（我认为可以通过迭代数据库解决）） retrieval-guided detection preprocess 将手册首先分成每个小subsection，给每一个小subsection提取一个或多个semantic properties （疑惑：subsection之间如果有依赖怎么办？这个preprocess是不是可以建立一个长期数据库，如果有新的commit改变了某个properties就意味着需要重新扫描？） retrieval-guided detection 对每一个semantic p"
+    },
+    {
+      "title": "Weekly Report 2026-06-07",
+      "url": "https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-06-07/",
+      "date": "2026-09-08",
+      "summary": "工作任务 工作进展 审查漏洞报告 [image: image2.png] [image: image3.png]"
+    },
+    {
+      "title": "RISC-V Linux Security Internship",
+      "url": "https://www.yizishun.com/security/riscv-linux-security/internship/",
+      "date": "2026-09-08",
+      "summary": "1.1. Timeline以及回顾 1.1.1. Phase1 RISC-V在linux中的基本调查 3.16: - riscv存量代码行数分析 - riscv增量代码分析（行/周，commit/周） - riscv CVE简单按照子系统分类 - 主流内核静态动态漏洞挖掘工具的调研 3.23 - Riscv子系统增量趋势（commit 行数） - 对CVE进行分类 - 发现用AI进行漏洞挖掘效果很好(使用gemini)，提了3个patch 3.29 - 对CVE分类进行重构 这个阶段做的不好的部分： 完全没有考虑任何RISC-V的特性进行的存量/增量代码分析，比如我依然不知道Linux对于riscv的RVA23的支持是怎么样的，也不知道现在增量部分他们在给riscv加什么支持，代码行数我个人认为其实没有意义，总之这一阶段做了很多无用功， 唯一有用的就是我对于CVE的分类根据了RISC-V的子系统，但是也并没有完全分类完（只分类了19个） 这部分我认为能重新去做 1.1.2. Phase2 评测其他工具在RISC-V上的能力 3.29 - 复现Knighter工具 - 调研isa文档到代码的中间层形式(了解到了sail) 4.5 - （Brainstorm）一个漏洞挖掘Layer思维模型，现依旧存在在我的思维体系中 - 统计各个工具在riscv上的能力（smatch） 4.12 - 统计各个工具在riscv上的能力（Knight，syzkaller） 4.19 - 调研内核漏洞挖掘的SOTA工具 - 初次尝试用AI复现论文 4.26 - 对SOTA工具进行实验（Knight，bugstone，app-miner，kernelGPT） - （Brainstorm）思考如何开始研究一个科研问题（问题的层次） - 内核中riscv代码是怎么组织的（但是这部分完全了解清楚很困难） 这"
+    },
+    {
+      "title": "欢迎来到 yzs 的 blog",
+      "url": "https://www.yizishun.com/help/",
+      "date": "2026-09-07",
+      "summary": "这里既是个人博客，也是一个真实、临时的 FreeBSD jail。你可以像使用普通终端一样阅读、 浏览和留言；退出后，本次会话中创建的文件会被丢弃。 English version: blog help-en.md 快速开始 blog # 列出文章 blog help.md # 阅读中文帮助 blog help-en.md # Read the English guide less ~/help.md # 查看 Markdown 原文 play # 列出终端录像 play demo # 播放本站演示 cat /proc/stat # 查看根目录的访问、访客和评论统计快照 exit # 结束会话 阅读文章时按 j / k 向下/向上滚动，按 q 返回终端。播放录像时， 按 Space 暂停或继续，暂停时按 . 单步播放，按 q 或 Ctrl-C 停止。 留言与回复 每次打开并写入当前目录的 comment FIFO，会提交一条留言： echo 'alice: hello' > ~/comment echo 'bob: #1: thanks for sharing' > ~/comment 格式是 名字: 内容 ；省略名字时会显示为 guest 。 #1 是当前目录中已公开留言的局部 编号，上面的第二条命令会回复第 1 条留言。也可以先编辑一个多行文件，再提交一次： bob: #1: How can I comment/reply with multiple lines? 1. Write a file. 2. cat file > comment. cat reply.txt > ~/comment 一次 cat 的完整内容只会成为一条留言，文件中的换行会原样保留。每条留言最多 512 字节，提交后先进入审核队列；当前会话中的评论与统计都是启动时的快照，审核通过后请 重新连接"
+    },
+    {
+      "title": "Welcome to yzs's blog",
+      "url": "https://www.yizishun.com/help-en/",
+      "date": "2026-09-07",
+      "summary": "This is both a personal blog and a real, temporary FreeBSD jail. Read, explore, and leave a message as you would in a normal terminal. Files created during your session disappear when you exit. Chinese guide: blog help.md Quick start blog # List articles blog help.md # Read the Chinese guide blog help-en.md # Read this English guide less ~/help-en.md # View the Markdown source play # List terminal recordings play demo # Play the site demo cat /proc/stat # View the root scope's frozen statistics snapshot exit # End the session While reading, press j / k to scroll down/up and q to return to the shell. During playback, Space pauses or resumes, . advances one frame while paused, and q or Ctrl-C stops playback. Comments and replies Each time you open and write the current directory's comment FI"
+    },
+    {
+      "title": "FreeBSD",
+      "url": "https://www.yizishun.com/freebsd/empty/",
+      "date": "2026-09-07",
+      "summary": "This section is temporarily empty."
+    }
+  ]
+}
