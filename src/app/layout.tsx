@@ -18,6 +18,10 @@ const chironSungHK = Chiron_Sung_HK({
 export const metadata: Metadata = {
   title: "Vidarblogs | 博客聚合",
   description: "Vidar-Team 成员博客 RSS 聚合",
+  icons: {
+    shortcut: "/favicon.ico",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

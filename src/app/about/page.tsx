@@ -30,8 +30,12 @@ export default function About() {
             <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
               收录成员
             </h2>
-            <p className="mt-4 text-base font-normal leading-[1.5] text-muted-foreground">
-              目前共收录 {members.length} 位成员的博客。若您的博客未被收录，十分抱歉。您可以编辑 该文件 并提交 PR 以添加自己的博客。
+            <p className="mt-4 text-base font-normal leading-normal text-muted-foreground">
+              目前共收录 {members.length} 位成员的博客。若您的博客未被收录，十分抱歉。您可以编辑
+              <a href="https://github.com/vidar-team/Vidarblogs-RSSAggregation/blob/main/script/feeds.json" target="_blank" rel="noopener noreferrer" className="hover:underline mx-1">
+                该文件
+              </a>
+              并提交 PR 以添加自己的博客。
             </p>
             <ul className="px-2 mt-6 grid gap-x-10 gap-y-1 sm:grid-cols-2 lg:grid-cols-2">
               {members.map((member) => (
