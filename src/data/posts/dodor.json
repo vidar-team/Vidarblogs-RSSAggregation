@@ -1,0 +1,45 @@
+{
+  "author": {
+    "id": "DODOR",
+    "name": "DODOR",
+    "url": "https://dodor.top/"
+  },
+  "posts": [
+    {
+      "title": "2026湾区杯wp",
+      "url": "https://dodor.top/2026/09/10/2026%E6%B9%BE%E5%8C%BA%E6%9D%AFwp/",
+      "date": "2026-09-10",
+      "summary": "更新中（working Pwn logd 保护基本全开，仅有Partial RELRO。不出意外是格式化字符串改GOT表。看了一下题目架构，大概是程序会循环收ticket,格式为p16+ChaCha8（明文部分），nonce（密钥）硬编码在二进制里。 总的来说是一个crypto-pwn 解密过程 因为没有隐藏符号表，可以用nm读出符号，我就列几个关键的 CHACHA_KEY @ .rodata 0x2060 : \"ChaCha8T1ck3tK3y20260psChannelXX\" (32B)BF_KEY @ 0x2080 : \"L06d-S3cr3t-K3y!\" (16B Blowfish 密钥)PW_CT @ 0x2090 : 登录口令密文 用 BF_KEY ECB 解密 PW_CT 即得 L0gd-Ma1nT-2026!。 #!/usr/bin/env python3 \"\"\"Client-side crypto for logd: Blowfish (pi-digit tables, key schedule, decrypt)and ChaCha8 keystream, matching the service implementation.\"\"\" import struct # ---------------- Blowfish ---------------- def _arctan_inv ( x , scale ) : total = 0 k = 0 x2 = x * x term = scale // x while term : t = term // ( 2 * k + 1 ) total += t if k % 2 == 0 else - t term //= x2 k += 1 return total def _pi_words ( ) : n ="
+    },
+    {
+      "title": "Rust的虚表与胖指针及其安全应用",
+      "url": "https://dodor.top/2026/08/23/rust-vtable-fat-pointer/",
+      "date": "2026-08-23",
+      "summary": "真是好久没更新了，上次的知识补全计划也咕咕咕了（ 还是用一个程序作为例子展开讲罢 trait Greet { fn greet ( & self ) -> String ; } struct Cat ; impl Greet for Cat { fn greet ( & self ) -> String { \"meow\" . into ( ) } } fn main ( ) { let c = Cat ; let d : & dyn Greet = & c ; println! ( \"{}\" , std :: mem :: size_of :: < & Cat > ( ) ) ; // 8 println! ( \"{}\" , std :: mem :: size_of :: < & dyn Greet > ( ) ) ; // 16 } 胖指针 上面的&dyn Greet是16字节 &[u8] 同样是 16 字节： println! ( \"{}\" , std :: mem :: size_of :: < & [ u8 ] > ( ) ) ; // 16 let s : & [ u8 ] = & [ 1 , 2 , 3 ] ; // 内存布局: (数据指针, 长度) 因为切片要支持 s.len() ，光有一个起始地址不够，得把长度带上。于是 &[T] 变成”数据指针 + usize 长度”两个 word。 &str 同理，str 的元数据也是长度。 Rust 把这种指针 + 附加信息的结构叫胖指针（fat pointer）。元数据类型由 Pointee trait 的关联类型 Metadata 决定，目前只有两种： 切片 / str：长度（usize） trait object：虚表指针 瘦指针（thin pointer）就是一个裸地址，比如 &Cat 、 *const u8"
+    },
+    {
+      "title": "DODOR的hgame复现与知识点总结",
+      "url": "https://dodor.top/2026/02/27/DODOR%E7%9A%84hgame%E5%A4%8D%E7%8E%B0%E4%B8%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/",
+      "date": "2026-02-27",
+      "summary": "看过wp后的复现wwwww,留档做个记录。 打好基础 之前一直不知道Base100就是将每个字节（8位，值域0-255）映射到一个特定的表情符号。编码表通常包含256个不同的表情符号，每个符号对应一个唯一的字节值。编码过程直接将字节流转换为表情符号序列，解码则是反向操作。 例如，原始文本“Hello”（十六进制：48 65 6C 6C 6F）可能被编码为一串表情符号，如：🐟 🐠 🐡 🐡 🐢（具体符号因编码表而异）‌ 扔给ai识别说有85个表情自然就陷入了Base85(虽然后面还是会用到)非常明确肯定是base大家族。但是无论是从已知的形式hgame{}来看还是首字母来看都无法解密。（其实应该看到打好基础就知道是base的嵌套，当时没有想到。。。 经过base100,92，91，85，64，62，58，45，32后即可得到flag。 shiori不想找女朋友 这题完全是因为我自己的问题，直接用windows打开解压后发现只有一张图片，通过exiftool发现其中有一段json： { \"block\" : 1 , \"start_x\" : 10 , \"start_y\" : 10 , \"step_x\" : 7 , \"step_y\" : 7 , \"column_num\" : 450 } 一种隐写，起始位置和步长全标出来了写脚本复原： from PIL import ImageCHALLENGE_FILE = \"shiori.png\" OUTPUT_FILE = \"key.png\" def solve ( ) : img = Image . open ( CHALLENGE_FILE ) b = 1 sx = 10 sy = 10 dx = 7 dy = 7 w_blocks = 450 canvas_w = w_blocks * b canvas_h = 600 restored_im"
+    },
+    {
+      "title": "DODOR#000a01-WEEK2-WP",
+      "url": "https://dodor.top/2026/02/21/DODOR-000a01-WEEK2-WP/",
+      "date": "2026-02-21",
+      "summary": "Misc: Invest on Matrix 解锁hint1就知道是一个version2的二维码，剩下的就是不断解锁补全直到可以通过纠错识别出来，这是基础结构，我们优先补全右下角再逐渐保持中心完整，最后脚本如下： from PIL import Image import os def make_matrix ( ) : m = [ [ 0 ] * 25 for _ in range ( 25 ) ] def place_finder ( r , c ) : for i in range ( 7 ) : for j in range ( 7 ) : v = 1 if ( i in ( 0 , 6 ) or j in ( 0 , 6 ) or ( 2 <= i <= 4 and 2 <= j <= 4 ) ) else 0 m [ r + i ] [ c + j ] = v place_finder ( 0 , 0 ) place_finder ( 0 , 18 ) place_finder ( 18 , 0 ) for j in range ( 25 ) : m [ 6 ] [ j ] = 1 if j % 2 == 0 else 0 for i in range ( 25 ) : m [ i ] [ 6 ] = 1 if i % 2 == 0 else 0 for i in range ( 5 ) : for j in range ( 5 ) : r = 16 + i c = 16 + j v = 1 if ( i in ( 0 , 4 ) or j in ( 0 , 4 ) or ( i == 2 and j == 2 ) ) else 0 m [ r ] [ c ] = v return m def apply_block ( m , k , vals ) : r = "
+    },
+    {
+      "title": "DODOR#000a01-WEEK1-WP",
+      "url": "https://dodor.top/2026/02/09/DODOR-000a01-WEEK1-WP/",
+      "date": "2026-02-09",
+      "summary": "misc: [REDACTED] 题目为（涂黑，修改）过后的一个pdf，我们可以在第一个涂黑位置找到第一段敏感字符串，直接通过文字编辑功能将颜色改为白色再复制出来得到第一个字符串 1:PAR4D0X 。( 然后在第二个涂黑的位置在文字编辑的模式下可以看到以下内容 因为字体原因无法直接复制，选着直接图像识别。三段经典JWT，第一段是加密方式，第二段为内容，第三段为签名，经过base64解码得出第二个字符串 2:AllCl3arToPr0ceed 随后在图片位置有处涂黑，拉对比度和亮度识别出第三个字符串 3:Sh4m1R 最后在检查pdf的文件结构时发现其尾部有2个%EOF为结尾，可知为pdf的增量更新，第四个字符藏在旧版本被删掉的那一页里。 我们现在要做的就是将那删掉的一页恢复，也就是定位到第一个%EOF的位置对pdf进行切片，通过grep找到%EOF的位置。 计算%EOF的代码如下 with open ( \"manual.pdf\" , \"rb\" ) as f_in : file = f_in . read ( ) with open ( \"manual_old.pdf\" , \"wb\" ) as f_out : f_out . write ( file [ : 234721 ] ) 打开manual_old.pdf 找到第四段字符串 4:D0cR3qu3st3r_Tutu ,最后连接得到flag。 web 魔理沙的魔法目录 用F12及网络保存日志可知，每过一定时长，服务器会发送一个record和一个check的请求，record请求荷载为{“time”:10}，而题目对身份没有做限制，可以直接对/record用post的application/json传参{“time”:7200}(大于1小时) 最终访问/check得到flag为： 博丽神社的绘马挂 题目说明紫在归档完毕的绘"
+    },
+    {
+      "title": "DODOR-blog",
+      "url": "https://dodor.top/2025/12/20/DODOR-blog/",
+      "date": "2025-12-20",
+      "summary": "hello,this is my first blog.In my blog ,I’ll share sth interesting and public my wp.Thanks for reading."
+    }
+  ]
+}

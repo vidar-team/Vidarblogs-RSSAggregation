@@ -1,0 +1,63 @@
+{
+  "author": {
+    "id": "4nsw3r",
+    "name": "4nsw3r",
+    "url": "https://4nsw3r.top/"
+  },
+  "posts": [
+    {
+      "title": "由一道题看 Linux 的ptrace调试机制——cyber-apocalypse-2022\\indefinite",
+      "url": "https://4nsw3r.top/2022/05/21/%E7%94%B1%E4%B8%80%E9%81%93%E9%A2%98%E7%9C%8B%20Linux%20%E7%9A%84ptrace%E8%B0%83%E8%AF%95%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94cyber-apocalypse-2022indefinite/",
+      "date": "2022-05-21",
+      "summary": "由一道题看 Linux 的 ptrace 调试机制——cyber-apocalypse-2022\\indefinite 前置知识 ptrace 函数 ptrace 函数是 Linux 下用来控制进程的函数，可以检查和改变子进程的功能，如获取和写入寄存器的值，修改内存（Peek and poke）等。典型的使用 ptrace 的应用：gdb，strace（用来查看某进程运行过程中的系统调用） ptrace函数的定义 1 2 # include <sys/ptrace.h> long ptrace ( enum __ptrace_request request, pid_t pid, void *addr, void *data) ; request : 表示要执行的操作类型。//反调试会用到 PT_DENY_ATTACH ，调试会用到 PTRACE_ATTACH pid : 要操作的目标进程ID addr : 要监控的目标内存地址 data : 保存读取出或者要写入的数据 request 的类型 PTRACE_TRACEME：tracee表明自己想要被追踪，这会自动与父进程建立追踪关系，这也是唯一能被tracee使用的request，其他的request都由tracer指定。 PTRACE_ATTACH：tracer用来附着一个进程tracee，以建立追踪关系，并向其发送SIGSTOP信号使其暂停。 PTRACE_SEIZE：像PTRACE_ATTACH附着进程，但它不会让tracee暂停，addr参数须为0，data参数指定一位ptrace选项。 PTRACE_DETACH：解除追踪关系，tracee将继续运行。 PTRACE_POKETEXT, PTRACE_POKEDATA：往内存地址中写入一个字（32位为4字节，64位为8字节），内存地址由addr给出。 PTRACE"
+    },
+    {
+      "title": "IDA Python 常用函数",
+      "url": "https://4nsw3r.top/2022/02/11/IDA%20Python%20%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/",
+      "date": "2022-02-11",
+      "summary": "IDA Python 常用函数 官方文档 https://www.hex-rays.com/products/ida/support/idapython_docs/ 读取 读取汇编信息 获取指定地址助记符 print_insn_mnem(ea) 获取上一条/下一条指令的地址 prev_head(ea) next_head(ea) 超出当前函数边界后会跳至下一个函数 获取指定地址的第 n 个操作数 print_operand(ea,n) 如对于 0x40100 vpxor ymm3,ymm4,ymm5 1 2 3 4 >>>print_operand( 0x40100 , 0 ) ymm3 >>>print_operand( 0x40100 , 1 ) y4 获取指定地址的第 n 个立即数 get_printable_immvals(ea, n) 获取指定地址处的反汇编 GetDisasm(ea) 读取函数信息 获取一个地址范围内所有函数的地址 Functions(start_ea,end_ea) 返回一个 Python ·迭代器·对象 获取函数边界 get_func_attr(0x140008070,FUNCATTR_START) get_func_attr(0x140008070,FUNCATTR_END) 获取当前地址的下一个/上一个函数 get_next_func(ea) get_prev_func(ea) 读取数据 获取指定地址的字符串 get_strlit_contents(ea) 返回 Python bytes 类型 获取指定地址指定数量的bytes get_bytes(ea,num) 返回 Python bytes 类型 获取指定地址的数据 1 2 3 4 5 6 7 ida_bytes.get_qword() ida_bytes.get_dword() id"
+    },
+    {
+      "title": "SCTF REVERSE CplusExceptionEncrypt 赛后复现",
+      "url": "https://4nsw3r.top/2022/02/03/SCTF-REVERSE-CplusExceptionEncrypt-%E8%B5%9B%E5%90%8E%E5%A4%8D%E7%8E%B0/",
+      "date": "2022-02-03",
+      "summary": "SCTF REVERSE CplusExceptionEncrypt 赛后复现 知识点 C++异常处理机制，如何 patch 代码使得 IDA 可以分析异常处理代码 C++ 异常处理机制 C++ 的异常处理机制非常灵活，相比于原来使用 SEH 等可以自定义异常类型等。不同编译器对 C++ 异常处理的编译结果不同。使用如下测试代码进行编译： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 # include <iostream> int main () { try { int a; std::cin >> a; if (a == 0 ) { throw ( \"a==0\" ); } } catch ( const char * msg) { std::cout << msg<< \"error\" ; } } MSVC x86 对于 MSVC x86编译器，会变成类似 windows SEH 进行处理： 使用 _CxxThrowException 函数抛出异常，之后在 SEH 异常处理器中捕获异常并转到异常处理代码中。而使用 IDA 进行反编译时，是无法正常分析出反编译结果的： 需要对汇编代码进行一些修改。将 0x401042 地址处的 call 指令修改为 jmp 到catch块内（0x401063），使得强制发生跳转，即可使得 IDA 进行分析： MSVC x64 MSVC x64 的情况较为复杂，其进行了更为严重的封装，暂时没找到什么好办法。 Clang x64 clang x64 编译结果和 MSVC x86 相似，都是在代码中就可以看到 try 块内和 catch 块内的代码： 对其进行处理也和 MSVC x86 一样，将 0x4015E8 处的 call 语句改成 jmp 到 catch 块内（0x4015F2）即可使 IDA 正常识"
+    },
+    {
+      "title": "动态反调试技术",
+      "url": "https://4nsw3r.top/2021/08/06/%E5%8A%A8%E6%80%81%E5%8F%8D%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF/",
+      "date": "2021-08-06",
+      "summary": "动态反调试技术 使用 SEH 异常进行动态反调试 正常运行的进程发生异常时，在 SEH 机制作用下，OS 会接收异常，然后调用进程中注册的 SEH 处理。若进程在调试运行中发生异常，调试器就会接收处理。利用该特性可以判断程序是否处于调试状态，然后根据不同结果执行不同操作。 常见 SEH 异常： 1 2 3 4 5 EXCEPTION_ACCESS_VIOLATION 非法访问异常 EXCEPTION_BREAKPOINT int 3 断点异常 EXCEPTION_ILLEGAL_INSTRUCTION 无法解析指令异常 EXCEPTION_INT_DIVIDE_BY_ZERO 整数除 0 异常 EXCEPTION_SINGLE_STEP 单步工作模式异常 示例1：利用 SEH 在调试运行时跳转到非法地址处使调试终止： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 ;注册SEH push handler push DWORD ptr fs : [0] mov DWORD ptr fs : [0] , esp ;触发 int 3 断点 int 3 ;若无视异常则跳转到非法地址 mov eax, 0xFFFFFFFF jmp eax ;若非调试状态则正常运行 handler: ;ss : [esp + 0xc]是 CONTEXT *pContext结构体指针，ds:[eax+0xb8]指向EIP成员，使异常处理返回后跳转到正常代码处 mov eax, dword ptr ss : [esp + 0xc] mov ebx, normal_code mov dword ptr ds : [eax + 0xb8] , ebx xor eax, eax retn normal_code : pop dword pt"
+    },
+    {
+      "title": "对 SEH 的浅显认识",
+      "url": "https://4nsw3r.top/2021/08/04/%E5%AF%B9%20SEH%20%E7%9A%84%E6%B5%85%E6%98%BE%E8%AE%A4%E8%AF%86/",
+      "date": "2021-08-04",
+      "summary": "对 SEH 的浅显认识 SEH 是 Windows 操作系统提供的异常处理机制。 使用 __try 关键字注册 SEH 使用 __try 关键字可以创建 SEH： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 int FilterFunc (DWORD dwExceptionCode) { if (dwExceptionCode == EXCEPTION_ACCESS_VIOLATION) //非法访问异常 { printf ( \"SEH catch\\n\" ); return EXCEPTION_EXECUTE_HANDLER; } return EXCEPTION_CONTINUE_SEARCH; } int main () { __try { int *a= NULL ; *a= 1 ; } __except (FilterFunc(GetExceptionCode())){ printf ( \"SEH final\\n\" ); } printf ( \"in main\" ); return 0 ; } 该段代码在 32 位和 64 位上均有效，不过在汇编层面的具体实现方式不同。 其中 __try 关键字和 __except 关键字共同完成异常处理， __try 关键字用来捕获异常， __except 关键字根据后面表达式的值来确定当前的异常处理模块是否可以处理该种异常。括号内表达式值有三种： 1 2 3 4 //https://docs.microsoft.com/en-us/cpp/cpp/try-except-statement?view=msvc-160 EXCEPTION_CONTINUE_EXECUTION (– 1 ) //异常被忽略，控制流将在异常出现的点之后，继续恢复运行。 EXCEPTION_"
+    },
+    {
+      "title": "静态反调试技术",
+      "url": "https://4nsw3r.top/2021/08/03/%E9%9D%99%E6%80%81%E5%8F%8D%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF/",
+      "date": "2021-08-03",
+      "summary": "静态反调试技术 PEB (进程环境块)反调 PEB 的概念 PEB(Process Environment Block)是存放进程信息的结构体，与之概念类似的是 TEB(Thread Environment Block)，即线程环境块，PEB 的指针 是 TEB 结构体的成员，因此想要访问 PEB ，就可以通过系统 API Ntdll.NtCurrentTeb() 访问 TEB 再加上 0x30 得到。而在汇编层面中，FS 段寄存器用来指示当前线程的 TEB ， FS:[0x30] 就是 PEB 的地址， FS:[0x18] 就是 TEB 的地址。 注意：PEB 在各个版本的系统中不太一样，因此使用库函数即可准确获取到自己想要的信息，是最稳妥的办法。 win10 PEB 附在文后。 PEB 中比较重要的成员 +002 BeingDebugged(XP、win7、win10 都适用) 该成员用于判断当前进程是否处于调试状态。 BeingDebugged 可由 Kernelbase.dll 中的 IsDebuggerPresent() API 来得到，示例代码如下： 1 2 3 4 if (IsDebuggerPresent()) { exit ( 0 ); } 注意：在使用调试器附加到进程时，该值也会生效。 +0xC Ldr 注意：Ldr 的反调试仅适用于 XP 系统。 在调试时，堆内存区域会出现一些特殊的标识，未使用的堆内存区域填充为 0xEEFEEEFE ，而Ldr指向 _PEB_LDR_DATA 结构体，该结构体是在堆内存中创建的。 +0x18 ProcessHeap 注意：ProcessHeap 的反调试仅适用于 XP 系统。 该成员是指向 HEAP 结构体的指针，而 HEAP 结构体中的 Flags(+0xC)和 ForceFlags(+0x10)成员在正常运行时为"
+    },
+    {
+      "title": "TLS 回调函数",
+      "url": "https://4nsw3r.top/2021/07/27/TLS%20%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0/",
+      "date": "2021-07-27",
+      "summary": "TLS 回调函数 简单介绍 TLS(Thread Local Storage, 线程局部存储)回调函数，TLS 回调函数的调用运行要先于 EP 代码的执行，并且每次创建或结束线程都会再次调用，故常用于反调试。 函数定义 1 2 3 4 typedef VOID (NTAPI *PIMAGE_TLS_CALLBACK) ( PVOID DllHandle, DWORD Reason, PVOID Reserved) ; 其与 DllMain() 函数的定义十分相似。 细节 TLS 和 TLS 的特征 TLS 是各线程的独立的数据存储空间，使用 TLS 技术可以在线程内部独立使用或修改进程的全局数据或静态数据。 若启用 TLS 功能，PE 头文件中会设置 TLS 表（TLS Table）项目： 未启用则是这样的： 并且如果使用 IDA 打开，会在 Exports 选项卡看到 TlsCallBack 字样： TLS 调用原因（Reason） 1 2 3 4 5 //winnt.h # define DLL_PROCESS_ATTACH 1 //进程创建 # define DLL_THREAD_ATTACH 2 //线程创建 # define DLL_THREAD_DETACH 3 //线程销毁 # define DLL_PROCESS_DETACH 0 //进程销毁 TLS 回调函数代码示例 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 //本代码在vs2019x86平台上通过测试 # include <stdio.h> # include <Windows.h> # pragma comment(linker, \"/INCLUDE:__tls_used\" ) void NTAPI TLS_CALLB"
+    },
+    {
+      "title": "googleCTF RE-CPP解题思路",
+      "url": "https://4nsw3r.top/2021/07/21/theSecond/",
+      "date": "2021-07-21",
+      "summary": "__INCLUDE_LEVEL__ 表示包含深度，和 #include\"cpp.c\" 构成递归，这个递归用处不大，只是在一次次根据S的值执行不同代码，可以不管他 通过对每个 #if 分析可得知每个块的功能 S 相当于 loc ，然后对 R 、 Z 、 X 等等做运算，根据结果进行跳转到不同 S 得到主要逻辑： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 I = 0 ; M = 0 ; N = 1 ; P = 0 ; Q = 0 ; while ( 1 ) { B = 0xE5 ; //1110 0101 B = B + I; if (B == 0 ) break ; //if(Q==0) success B = 0x80 ; //1000 0000 B = B + I; L = B; A = RAM[B]; L = I; B = RAM[I]; R = 1 ; X = 1 ; Y = 0 ; while ( 1 ) { if (X == 0 ) break ; Z = X; Z = Z & B; if (Z != 0 ) Y = Y + A; X = X + X; A = A + A; } A = Y; R = ~R; Z = 1 ; R += Z; R += Z; O = M; O += N; M = N; N = O; A += M; B = 0x20 ; //0010 0000 B += I; L = B; C = RAM[L]; A = A ^ C; P = P + A; B = 0x40 ; //0100 000"
+    },
+    {
+      "title": "Hello World",
+      "url": "https://4nsw3r.top/2021/07/21/hello-world/",
+      "date": "2021-07-21",
+      "summary": "I’m 4nsw3r. Welcome to my Blog!"
+    }
+  ]
+}

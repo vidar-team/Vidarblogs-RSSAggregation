@@ -1,0 +1,399 @@
+{
+  "author": {
+    "id": "At0m",
+    "name": "At0m",
+    "url": "https://homeboyc.cn/"
+  },
+  "posts": [
+    {
+      "title": "使用 Bird2 + WireGuard 快速加入 DN11",
+      "url": "https://homeboyc.cn/blog/%E4%BD%BF%E7%94%A8-bird2-wireguard-%E5%BF%AB%E9%80%9F%E5%8A%A0%E5%85%A5-dn11/",
+      "date": "2024-02-18",
+      "summary": "前言 鉴于本文被 DN11 群友评价为“误人子弟”，因此如果你想学习更好的配置流程，请向 DN11 群友请教。本文仅作为个人实践出来的配置方案分享，旨在和好友分享"
+    },
+    {
+      "title": "PVE 与 KubeSphere AllInOne 安装坑点与解决方案",
+      "url": "https://homeboyc.cn/blog/pve-%E4%B8%8E-kubesphere-allinone-%E5%AE%89%E8%A3%85%E5%9D%91%E7%82%B9%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/",
+      "date": "2024-01-19",
+      "summary": "情况 参考pve配置虚拟机教材安装系统 安装系统完成后执行 KubeSphere 的 AllInOne 安装教程 https://kubesphere.io/zh/docs/v3.4/quick-start/all-in-one-on-linux 安装完成后重启虚拟机发现域名解析出错: Unable to connect to the server: dial tcp: lookup lb.kubesphere.local on 127.0.0.53:53: server misbehaving 原因"
+    },
+    {
+      "title": "GORM 与 SQLite 的特性、坑点与缓解方式",
+      "url": "https://homeboyc.cn/blog/gorm-%E4%B8%8E-sqlite-%E7%9A%84%E7%89%B9%E6%80%A7%E5%9D%91%E7%82%B9%E4%B8%8E%E7%BC%93%E8%A7%A3%E6%96%B9%E5%BC%8F/",
+      "date": "2024-01-13",
+      "summary": "前言 近期在用 GORM + SQLite 做客户端信息存储的时候发现了诸如：no such table、table is locked等诸多问题，特总结一篇 GORM 与 SQLite 的特性、坑点与缓解"
+    },
+    {
+      "title": "Nginx Ingress & Grpc 端口复用配置",
+      "url": "https://homeboyc.cn/blog/nginx-ingress-grpc-%E7%AB%AF%E5%8F%A3%E5%A4%8D%E7%94%A8%E9%85%8D%E7%BD%AE/",
+      "date": "2023-12-07",
+      "summary": "前言 书接上回Caddy & GRPC 端口复用配置，新在集群上部署了一个带端口复用的服务，除了 Caddy 换成了 Nginx 之外，其他还是一样的配方。 看到有些教程给出的解决"
+    },
+    {
+      "title": "Termium 如何保护您的信息安全？",
+      "url": "https://homeboyc.cn/blog/termium-%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8A%A4%E6%82%A8%E7%9A%84%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/",
+      "date": "2023-11-06",
+      "summary": "在 Termium，我们非常注重保护您的信息安全、以负责任的方式处理您的信息，并确保您拥有控制权。说得容易做的难，我们之所以有信心保护您的信息"
+    },
+    {
+      "title": "浅谈 OPAQUE 安全远程密码",
+      "url": "https://homeboyc.cn/blog/%E6%B5%85%E8%B0%88-opaque-%E5%AE%89%E5%85%A8%E8%BF%9C%E7%A8%8B%E5%AF%86%E7%A0%81/",
+      "date": "2023-11-06",
+      "summary": "继前一篇谈 SAP 协议之后，我们来浅了解一下 OPAQUE。（一个已经被WhatsAPP用于生产的新兴协议） 和 SAP 的建立于“反复打磨”上的安全性不同，"
+    },
+    {
+      "title": "浅谈 SAP 安全远程密码",
+      "url": "https://homeboyc.cn/blog/%E6%B5%85%E8%B0%88-sap-%E5%AE%89%E5%85%A8%E8%BF%9C%E7%A8%8B%E5%AF%86%E7%A0%81/",
+      "date": "2023-10-31",
+      "summary": "密码是一个让不少人头疼的问题，大多数人会立即承认密码很难记住和管理，特别是当密码要求变得越来越复杂时。幸运的是，有一些很棒的软件包和浏览器插"
+    },
+    {
+      "title": "浅谈代码模块化设计",
+      "url": "https://homeboyc.cn/blog/%E6%B5%85%E8%B0%88%E4%BB%A3%E7%A0%81%E6%A8%A1%E5%9D%97%E5%8C%96%E8%AE%BE%E8%AE%A1/",
+      "date": "2023-09-07",
+      "summary": "前言 最近遇到了一些开发者使用团队内部框架时不太能够接受代码模块化设计理念的问题，因此特此开一篇文章浅谈在软件架构设计中，一些模块化的设计以及"
+    },
+    {
+      "title": "组合优于继承",
+      "url": "https://homeboyc.cn/blog/%E7%BB%84%E5%90%88%E4%BC%98%E4%BA%8E%E7%BB%A7%E6%89%BF/",
+      "date": "2023-08-17",
+      "summary": "前言 你可能听过“组合优于继承”这个观点，但是这个说法可能有点笼统，所以我想通过这篇文章详细解释一下：组合和继承分别是什么？为什么前者优于后者"
+    },
+    {
+      "title": "解决 gRPC 中 oneof 类型未导出的问题",
+      "url": "https://homeboyc.cn/blog/%E8%A7%A3%E5%86%B3-grpc-%E4%B8%AD-oneof-%E7%B1%BB%E5%9E%8B%E6%9C%AA%E5%AF%BC%E5%87%BA%E7%9A%84%E9%97%AE%E9%A2%98/",
+      "date": "2023-07-30",
+      "summary": "场景 proto 中有个项是 oneof，但是最新的 gRPC generator并没有将此字段的接口导出。 Proto: message Setting { string item_id = 1; // 设置项的内部唯一id string item_label = 2; // 设置项的"
+    },
+    {
+      "title": "Golang 性能调优速查笔记",
+      "url": "https://homeboyc.cn/blog/golang-%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98%E9%80%9F%E6%9F%A5%E7%AC%94%E8%AE%B0/",
+      "date": "2023-07-24",
+      "summary": "技巧 unsafe转换字符串/字节切片的技巧 字符串 -> 字节切片：*(*[]byte)(unsafe.Pointer(&s)) 缓冲区不能修"
+    },
+    {
+      "title": "把“用VSCode打开”按钮加入MacOS右键菜单",
+      "url": "https://homeboyc.cn/blog/%E6%8A%8A%E7%94%A8vscode%E6%89%93%E5%BC%80%E6%8C%89%E9%92%AE%E5%8A%A0%E5%85%A5macos%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/",
+      "date": "2023-07-24",
+      "summary": "打开自动操作 新建文稿 选择快速操作 设置“工作流程收到当前”为文件或文件夹 在左上方搜索栏搜索“运行” -》 找到“运行 Shell 脚本” 并将其拖入右侧 -》 将下"
+    },
+    {
+      "title": "分布式系统测试工具 muxy 初探",
+      "url": "https://homeboyc.cn/blog/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7-muxy-%E5%88%9D%E6%8E%A2/",
+      "date": "2023-07-17",
+      "summary": "前言 本篇文章主要简单介绍分布式系统测试工具 muxy 工具，在介绍前，我想先谈谈分布式系统测试。 Coding is easier than testing 编程比测试简单。我认为一个程序你把它写出来不"
+    },
+    {
+      "title": "Mikrotik RouterOS 通过 VRRP 实现单线多拨",
+      "url": "https://homeboyc.cn/blog/mikrotik-routeros-%E9%80%9A%E8%BF%87-vrrp-%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E5%A4%9A%E6%8B%A8/",
+      "date": "2023-04-24",
+      "summary": "前言 现在ROS使用PCC负载均衡已经很成熟了，通常来说接入多条线路，需要RouterOS路由器安装更多的以太网卡，以便接入更多的线路，如果1"
+    },
+    {
+      "title": "Golang常用release命令",
+      "url": "https://homeboyc.cn/blog/golang%E5%B8%B8%E7%94%A8release%E5%91%BD%E4%BB%A4/",
+      "date": "2023-04-10",
+      "summary": "前言 因平时需要发布 Golang 二进制文件，所以特此记录一下发布时一些常用的命令。（虽然平时是把通用的Workflow配置文件一搬就行） 命令列表 编译二进"
+    },
+    {
+      "title": "设计模式学习笔记",
+      "url": "https://homeboyc.cn/blog/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/",
+      "date": "2023-03-05",
+      "summary": "单一职责原则 干活专一 开放——封闭原则 软件实体（类、模块、函数）可拓展但不可修改 （open for extension, close for modification） 依赖倒转原则 高层模"
+    },
+    {
+      "title": "Golang唯一ID生成库特征比较",
+      "url": "https://homeboyc.cn/blog/golang%E5%94%AF%E4%B8%80id%E7%94%9F%E6%88%90%E5%BA%93%E7%89%B9%E5%BE%81%E6%AF%94%E8%BE%83/",
+      "date": "2023-01-05",
+      "summary": "前言 前段时间碰到友人在看到唯一ID的时候判断不出种类，故专门整理一下不同唯一ID的特征。 概览 包名 样例 组成成分 特征 github.com/rs/xid 9m4e2mr0ui3e8a215n4g 4 bytes of time (seconds) + 3 byte machine id + 2"
+    },
+    {
+      "title": "彻底解决docker在windows上的端口绑定问题",
+      "url": "https://homeboyc.cn/blog/%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3docker%E5%9C%A8windows%E4%B8%8A%E7%9A%84%E7%AB%AF%E5%8F%A3%E7%BB%91%E5%AE%9A%E9%97%AE%E9%A2%98/",
+      "date": "2022-11-10",
+      "summary": "我相信不少开发者正在或曾经使用 docker 起后端开发环境，那么肯定有不少人遇到过这个莫名奇妙的错误： Error invoking remote method &lsquo;docker-start-container&rsquo;: Error: (HTTP code 500) server error - Ports are not available: listen tcp 0.0.0.0:xxxx: bind: An attempt was made to"
+    },
+    {
+      "title": "生日快乐鸭",
+      "url": "https://homeboyc.cn/%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90%E9%B8%AD/",
+      "date": "2022-09-26",
+      "summary": "之前送你的车车我实在是不会用，只好自己再捏一辆啦！ 这辆车车的开发难度比之前那个简单一些，应该适合猪猪上手。 由于我比较猪，所以一时还调不好驱动"
+    },
+    {
+      "title": "Caddy & GRPC 端口复用配置",
+      "url": "https://homeboyc.cn/blog/caddy-grpc-%E7%AB%AF%E5%8F%A3%E5%A4%8D%E7%94%A8%E9%85%8D%E7%BD%AE/",
+      "date": "2022-09-12",
+      "summary": "前言 最近自己摸一个小玩具，开始尝试 GRPC 和 Gateway，于是顺道体验了一下端口复用。 正文 本专案的具体细节： 层级 软件 / 包 1 Caddy 2 cmux 3 GPRC & Getaway 后端先启"
+    },
+    {
+      "title": "使用Caddy配置同一域名下的前后分离",
+      "url": "https://homeboyc.cn/blog/%E4%BD%BF%E7%94%A8caddy%E9%85%8D%E7%BD%AE%E5%90%8C%E4%B8%80%E5%9F%9F%E5%90%8D%E4%B8%8B%E7%9A%84%E5%89%8D%E5%90%8E%E5%88%86%E7%A6%BB/",
+      "date": "2022-08-15",
+      "summary": "倒腾了小半个下午，平时配的都是不同域名下的前后分离，头一回使用 Caddy 配置同一个域名下的前后分离。 不同域名下的前后分离（这个不在本文详解，很好配置"
+    },
+    {
+      "title": "EnergyStar——Windows的续航优化工具",
+      "url": "https://homeboyc.cn/blog/energystarwindows%E7%9A%84%E7%BB%AD%E8%88%AA%E4%BC%98%E5%8C%96%E5%B7%A5%E5%85%B7/",
+      "date": "2022-08-08",
+      "summary": "GitHub 上有人用 Windows EcoQoS API 做了一个工具，原理就是把白名单之外的后台进程应用 EcoQoS 省电，通俗来说就是把笔记本当手机用，你的电池续航就会暴涨。 需求：Intel"
+    },
+    {
+      "title": "小团队的CI&CD该如何处理",
+      "url": "https://homeboyc.cn/blog/%E5%B0%8F%E5%9B%A2%E9%98%9F%E7%9A%84cicd%E8%AF%A5%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86/",
+      "date": "2022-08-04",
+      "summary": "0x00 前言 最近开始自己摸一些小鱼，算是拓展一下知识面。因此开始寻找可以降低配置量的 CI 与 CD 方案。 因为我所在的团队以及我个人的业务非常非常小，机子的"
+    },
+    {
+      "title": "记得给你的 commit 签名",
+      "url": "https://homeboyc.cn/blog/%E8%AE%B0%E5%BE%97%E7%BB%99%E4%BD%A0%E7%9A%84-commit-%E7%AD%BE%E5%90%8D/",
+      "date": "2022-07-28",
+      "summary": "今天在倒腾 dn42，得给自己生一个 GPG key，顺便来谈谈如何给自己的 commit 签名。毕竟 Git 作为一个信任用户的系统，Git commit 信息的中的 author 是一个可以零成本"
+    },
+    {
+      "title": "Zerotier在群晖DMS6的安装",
+      "url": "https://homeboyc.cn/blog/zerotier%E5%9C%A8%E7%BE%A4%E6%99%96dms6%E7%9A%84%E5%AE%89%E8%A3%85/",
+      "date": "2022-07-05",
+      "summary": "前言 说来惭愧，自己因为穷所以买了星际蜗牛安了黑群晖来做 nas，但自己对 nas 相关的知识实在是不了解，不敢随便升级系统（事实证明好像不升级系统是正"
+    },
+    {
+      "title": "关于CTF平台的一些大致构想",
+      "url": "https://homeboyc.cn/blog/%E5%85%B3%E4%BA%8Ectf%E5%B9%B3%E5%8F%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%A4%A7%E8%87%B4%E6%9E%84%E6%83%B3/",
+      "date": "2022-06-24",
+      "summary": "0x00 前言 因为最近稍微闲下来一点了，所以重新开始发掘需求，然后就盯上了 CTF 平台。 一方面是因为自己目前还没遇到相对稳定且通用的 CTF 平台，另一方面也是觉"
+    },
+    {
+      "title": "QQ机器人防风控部署方案",
+      "url": "https://homeboyc.cn/blog/qq%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%98%B2%E9%A3%8E%E6%8E%A7%E9%83%A8%E7%BD%B2%E6%96%B9%E6%A1%88/",
+      "date": "2022-02-08",
+      "summary": "前言 因为业务需求不得不部署一个Go语言写的QQ机器人用户群管理，但是在经过长达小半年的与腾讯风控间的拉锯战之后，我重新开始另一种尝试：本地部"
+    },
+    {
+      "title": "阳光长跑小程序逆向",
+      "url": "https://homeboyc.cn/blog/%E9%98%B3%E5%85%89%E9%95%BF%E8%B7%91%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%80%86%E5%90%91/",
+      "date": "2021-11-03",
+      "summary": "网上一堆教程都是使用手机版微信来逆向，假期在家的时候越狱了pad来逆向小程序，上课后就没有越狱或root的设备了。 所以这回逆向使用Windo"
+    },
+    {
+      "title": "Scrapy对抗Cloudflare反爬5秒盾",
+      "url": "https://homeboyc.cn/blog/scrapy%E5%AF%B9%E6%8A%97cloudflare%E5%8F%8D%E7%88%AC5%E7%A7%92%E7%9B%BE/",
+      "date": "2021-08-25",
+      "summary": "对抗 5 秒盾用到库 cloudscraper pip install cloudscraper 以中间件的形式插到 Scrapy 爬虫中 首先在爬虫中引入库： import cloudscraper 然后在爬虫的类中按下面的结构插入代码： class YourSpider(scrapy.Spider): name = 'xxxx' allowed_domains = ['xxxx.xxx'] browser = cloudscraper.create_scraper() # 这行"
+    },
+    {
+      "title": "易班登录流程逆向小记",
+      "url": "https://homeboyc.cn/blog/%E6%98%93%E7%8F%AD%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B%E9%80%86%E5%90%91%E5%B0%8F%E8%AE%B0/",
+      "date": "2021-08-12",
+      "summary": "因为有一点学习的需求，所以花了一天时间倒腾易班的登录流程 首先需要一台越狱了的 IOS 设备 安装易班 打开易班 ssh 连上 IOS，然后： ps -A 找到易班的应用名称"
+    },
+    {
+      "title": "快速照片扫描方法记录",
+      "url": "https://homeboyc.cn/blog/%E5%BF%AB%E9%80%9F%E7%85%A7%E7%89%87%E6%89%AB%E6%8F%8F%E6%96%B9%E6%B3%95%E8%AE%B0%E5%BD%95/",
+      "date": "2021-08-01",
+      "summary": "假期找了点时间把家里的老照片都扫成了电子版，下面记录一下简单快捷的照片扫描方法 法1 因为不太清楚photoshop有自动裁切的功能，所以我最开"
+    },
+    {
+      "title": "留言站开发手记 跨域相关",
+      "url": "https://homeboyc.cn/blog/%E7%95%99%E8%A8%80%E7%AB%99%E5%BC%80%E5%8F%91%E6%89%8B%E8%AE%B0-%E8%B7%A8%E5%9F%9F%E7%9B%B8%E5%85%B3/",
+      "date": "2021-04-05",
+      "summary": "nginx 配置 在 api 服务的 nginx 配置中添加以下几行 add_header Access-Control-Allow-Origin $http_origin; # add_header Access-Control-Allow-Origin \"http://wall.study.homeboyc.cn\"; add_header Access-Control-Allow-Methods POST,GET,OPTIONS; add_header Access-Control-Allow-Headers $http_access_control_request_headers; add_header Access-Control-Allow-Credentials true; 第一行和第二行都是设置允许的源站地址，如果将允许来源设置为 * 的话有些东西"
+    },
+    {
+      "title": "hgame-week4-writeup",
+      "url": "https://homeboyc.cn/blog/hgame-week4-writeup/",
+      "date": "2021-02-20",
+      "summary": "这周好困好困，每天醒来只能保持 3h 的精力，哎。题目卡住以后倒是把寒假计划中的其他事情摸完了。 Web Unforgettable 这道题是截止前几个小时静下心来做的，本来都打算"
+    },
+    {
+      "title": "hgame-week3-writeup",
+      "url": "https://homeboyc.cn/blog/hgame-week3-writeup/",
+      "date": "2021-02-13",
+      "summary": "Web Liki-Jail Liki 上周提到这周要盲注，这就来了。 登录页，盲猜后端查询语句是这样的： select xxx from xxx where username='xxxx' and password='xxxx'; 然后就开始基于时间的盲注 慢慢试，摸了好几天，然后学了雨"
+    },
+    {
+      "title": "laosb的春节红包打开方式",
+      "url": "https://homeboyc.cn/blog/laosb%E7%9A%84%E6%98%A5%E8%8A%82%E7%BA%A2%E5%8C%85%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/",
+      "date": "2021-02-10",
+      "summary": "0x00 First one F12 查看网页源码 hint藏在注释里 第一个链接看一下 直接把传入的参数 urldecode 一下 获得：https://paste.ubuntu.com/p/qh"
+    },
+    {
+      "title": "hgame-week2-writeup",
+      "url": "https://homeboyc.cn/blog/hgame-week2-writeup/",
+      "date": "2021-02-06",
+      "summary": "Web LazyDogR4U 这是道代码审计题，访问： http://d37a87870f.lazy.r4u.top/www.zip 拿到网站源码 可还行，可以看到用户名和密码 这个 testuser开头是 0e 可能会有机会可乘，去看一下登录相关的代码。"
+    },
+    {
+      "title": "完成OpenCV分类器训练的最简单方法",
+      "url": "https://homeboyc.cn/blog/%E5%AE%8C%E6%88%90opencv%E5%88%86%E7%B1%BB%E5%99%A8%E8%AE%AD%E7%BB%83%E7%9A%84%E6%9C%80%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95/",
+      "date": "2021-02-05",
+      "summary": "前言 实验室招人的考核要求做图像识别、目标侦测。 本来想着使用现成的轮子，用 yolov3 做侦测，自己搞一点数据集训练一个新的丹出来就好了。但是做一半和老师"
+    },
+    {
+      "title": "hgame-week1-writeup",
+      "url": "https://homeboyc.cn/blog/hgame-week1-writeup/",
+      "date": "2021-01-30",
+      "summary": "2021年hgameWeek1WP Web Hitchhiking_in_the_Galaxy 这题拿到手打开是这样 那必然是直接冲去搭顺风车，url：http://hitchhiker42.0727"
+    },
+    {
+      "title": "配置OpenCV+VisualStudio最快的方法",
+      "url": "https://homeboyc.cn/blog/%E9%85%8D%E7%BD%AEopencv-visualstudio%E6%9C%80%E5%BF%AB%E7%9A%84%E6%96%B9%E6%B3%95/",
+      "date": "2021-01-27",
+      "summary": "本来想用CLion写OpenCV，但是倒腾了好久没弄好，索性换成了OpenCV+VisualStudio 下面是配置OpenCV+Visual"
+    },
+    {
+      "title": "USB接口的定义",
+      "url": "https://homeboyc.cn/blog/usb%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%9A%E4%B9%89/",
+      "date": "2021-01-14",
+      "summary": "因为打算自己画电路板，所以提前预习一下USB接口的定义，做一些笔记 Type-C硬件接口引脚定义 母头 公头 引脚定义"
+    },
+    {
+      "title": "SSD1306库显示图片的方法",
+      "url": "https://homeboyc.cn/blog/ssd1306%E5%BA%93%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/",
+      "date": "2021-01-11",
+      "summary": "因为最近做东西有用到ssd1306的库，所以顺手在这里做笔记。 dinosaurInEsp8266 首先前往图片转XBM，将图片转换为XBM 下载XBM之后使用vscode之类的"
+    },
+    {
+      "title": "SSD1306库自定义字体的方式",
+      "url": "https://homeboyc.cn/blog/ssd1306%E5%BA%93%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E7%9A%84%E6%96%B9%E5%BC%8F/",
+      "date": "2021-01-11",
+      "summary": "因为最近做东西有用到ssd1306的库，所以顺手在这里做笔记。 dinosaurInEsp8266 先去字体生成站生成，拷贝进程序里 在线字体生成站 然后在打印文字之前设置字体即可"
+    },
+    {
+      "title": "laosb的新年红包打开方式",
+      "url": "https://homeboyc.cn/blog/laosb%E7%9A%84%E6%96%B0%E5%B9%B4%E7%BA%A2%E5%8C%85%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/",
+      "date": "2020-12-31",
+      "summary": "0x00 新年快乐 放出时间：2021.01.01 地址：https://xn--xv9h.of.sb/ 难度：容易（chrome上装的各种插件给我自己平"
+    },
+    {
+      "title": "超大 Cookie 拒绝服务攻击",
+      "url": "https://homeboyc.cn/blog/%E8%B6%85%E5%A4%A7-cookie-%E6%8B%92%E7%BB%9D%E6%9C%8D%E5%8A%A1%E6%94%BB%E5%87%BB/",
+      "date": "2018-05-26",
+      "summary": "有没有想过，如果网站的 Cookie 特别多特别大，会发生什么情况？ 不多说，马上来试验一下： for (i = 0; i < 20; i++) document.cookie = i + '=' + 'X'.repeat(2000) 什么，网站居然报错了？ 众所周知，"
+    },
+    {
+      "title": "QC（quick charge）快速充电技术",
+      "url": "https://homeboyc.cn/blog/qcquick-charge%E5%BF%AB%E9%80%9F%E5%85%85%E7%94%B5%E6%8A%80%E6%9C%AF/",
+      "date": "2018-04-29",
+      "summary": "QuickCharge（QC）是由高通主导的快速充电技术 高通soc自带的qc3.0协议，cpu根据需要调节，具体请去高通官方文档查看 小米高通"
+    },
+    {
+      "title": "中国人很少会用的表达心情的单词",
+      "url": "https://homeboyc.cn/blog/%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%BE%88%E5%B0%91%E4%BC%9A%E7%94%A8%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BF%83%E6%83%85%E7%9A%84%E5%8D%95%E8%AF%8D/",
+      "date": "2017-05-30",
+      "summary": "中国人大概只会用happy, angry, surprised, disappointed这些词表示心情，再也没别的，因为这些词在汉语中能够有完美对应的词，而且都是常用。但毕"
+    },
+    {
+      "title": "那些源自“军方”的英语流行黑话",
+      "url": "https://homeboyc.cn/blog/%E9%82%A3%E4%BA%9B%E6%BA%90%E8%87%AA%E5%86%9B%E6%96%B9%E7%9A%84%E8%8B%B1%E8%AF%AD%E6%B5%81%E8%A1%8C%E9%BB%91%E8%AF%9D/",
+      "date": "2017-05-20",
+      "summary": "Roger——“Roger/Roger that”表示“收到/清楚了/明白/懂了” 很多人可能会纳闷，“Roger”只是一个普通英文名字，怎么在"
+    },
+    {
+      "title": "隐藏运行bat批处理,浏览器等程序的方法",
+      "url": "https://homeboyc.cn/blog/%E9%9A%90%E8%97%8F%E8%BF%90%E8%A1%8Cbat%E6%89%B9%E5%A4%84%E7%90%86%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AD%89%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%96%B9%E6%B3%95/",
+      "date": "2017-04-03",
+      "summary": "在电脑启动时或者设置时间时运行指定的程序很容易实现。但是有时候还需要运行时不显示主界面,隐藏到后台运行。比如:开机时一段Bat批处理执行删除"
+    },
+    {
+      "title": "wordpress、Typecho、zblog和emlog留言自动填写个人信息方法",
+      "url": "https://homeboyc.cn/blog/wordpresstypechozblog%E5%92%8Cemlog%E7%95%99%E8%A8%80%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%86%99%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E6%96%B9%E6%B3%95/",
+      "date": "2017-03-11",
+      "summary": "经常，我们要去其他的博客互访，可是有的并不是使用的社会化评论，那么我们就要慢慢输入个人信息，可是访问量的了，慢慢输入同样枯燥的文字总是感觉很"
+    },
+    {
+      "title": "绿叶",
+      "url": "https://homeboyc.cn/blog/%E7%BB%BF%E5%8F%B6/",
+      "date": "2016-03-07",
+      "summary": "ＮＯ．１ 我叫绿天，鸡蛋灌饼胡同三十二号小尺家的一棵枣树。对不起，请原谅我的吹嘘，我只是树上的一枚叶子。我叫绿天，是一枚小叶子，但我却无时无刻"
+    },
+    {
+      "title": "靠岸",
+      "url": "https://homeboyc.cn/blog/%E9%9D%A0%E5%B2%B8/",
+      "date": "2016-03-07",
+      "summary": "三月的风叩醒瓯江每一寸温暖的春泓，水面摇晃着细碎的阳光。船夫摇橹浅浅唱着渔歌，萦绕在江心掀起翠色的波浪。 渡口横着一只木帆船，少年枕着臂弯斜躺"
+    },
+    {
+      "title": "在下雨的夜晚遇见妖精",
+      "url": "https://homeboyc.cn/blog/%E5%9C%A8%E4%B8%8B%E9%9B%A8%E7%9A%84%E5%A4%9C%E6%99%9A%E9%81%87%E8%A7%81%E5%A6%96%E7%B2%BE/",
+      "date": "2016-03-07",
+      "summary": "遇见妖精的时候，是深秋夜晚，冰冷的雨水不停地从天空掉落下来，溅起晶亮的水花。 妖精的两只手搭在腰上，半个身体露在巴士亭的屋檐之外。雨水顺着他的"
+    },
+    {
+      "title": "当橙子遇上一只叫扁担的猫",
+      "url": "https://homeboyc.cn/blog/%E5%BD%93%E6%A9%99%E5%AD%90%E9%81%87%E4%B8%8A%E4%B8%80%E5%8F%AA%E5%8F%AB%E6%89%81%E6%8B%85%E7%9A%84%E7%8C%AB/",
+      "date": "2016-02-29",
+      "summary": "一 加德满都的天气总是那么好。天蓝得像深海里的鱼，让人炫目，至少扁担是这样认为的。扁担是整个加德满都最有学问的猫。他曾经告诉别人他的祖父的祖父"
+    },
+    {
+      "title": "天堂的篮球场很孤单",
+      "url": "https://homeboyc.cn/blog/%E5%A4%A9%E5%A0%82%E7%9A%84%E7%AF%AE%E7%90%83%E5%9C%BA%E5%BE%88%E5%AD%A4%E5%8D%95/",
+      "date": "2016-02-18",
+      "summary": "盖火锅的马尾女孩 中考结束的那个夏天,炎热而乏味的暑假冗长到无从打发,窝在拉紧窗帘的卧室,第九十八次把超级玛丽打过通关后,周路叹了口气,看了看"
+    },
+    {
+      "title": "年华是不淋漓尽致不痛快",
+      "url": "https://homeboyc.cn/blog/%E5%B9%B4%E5%8D%8E%E6%98%AF%E4%B8%8D%E6%B7%8B%E6%BC%93%E5%B0%BD%E8%87%B4%E4%B8%8D%E7%97%9B%E5%BF%AB/",
+      "date": "2016-02-18",
+      "summary": "/////每个人都有三种面孔 我不喜欢跟周围的人变成完全一样的。身边这群人像聒噪的鸟群，千篇一律，爱凑热闹，爱做白日梦，爱追随年级最出风头的人"
+    },
+    {
+      "title": "绣球花变成蓝色了",
+      "url": "https://homeboyc.cn/blog/%E7%BB%A3%E7%90%83%E8%8A%B1%E5%8F%98%E6%88%90%E8%93%9D%E8%89%B2%E4%BA%86/",
+      "date": "2016-02-18",
+      "summary": "我的灵魂会顺着花的血脉，再一次重见阳光和亲爱的你。 1.睡美人即将变成精灵 暑假期间，因为妈妈喜欢喝岳麓山上的山泉，向晚每天都早早地爬上山，选最"
+    },
+    {
+      "title": "像牛奶一般彼此香甜",
+      "url": "https://homeboyc.cn/blog/%E5%83%8F%E7%89%9B%E5%A5%B6%E4%B8%80%E8%88%AC%E5%BD%BC%E6%AD%A4%E9%A6%99%E7%94%9C/",
+      "date": "2016-02-17",
+      "summary": "1 说起我和凌非的相识，那可真是一场史无前例的灾难。我嘴巴里含着一袋蒙牛纯牛奶，耳朵里插着MP3，尽管我走得横行霸道，摇头晃脑，嘴巴吃着东西还"
+    },
+    {
+      "title": "仲夏夜之魔鬼的长发",
+      "url": "https://homeboyc.cn/blog/%E4%BB%B2%E5%A4%8F%E5%A4%9C%E4%B9%8B%E9%AD%94%E9%AC%BC%E7%9A%84%E9%95%BF%E5%8F%91/",
+      "date": "2016-02-17",
+      "summary": "世界上的帅哥都需要一番教训 热干面是武汉苏醒的味道。 这句话被镌在巨大的白色城市广告牌上，醒目而和谐。 但是眼前却有如此不和谐的一幕：一个8岁的男"
+    },
+    {
+      "title": "-黏受-",
+      "url": "https://homeboyc.cn/blog/%E9%BB%8F%E5%8F%97/",
+      "date": "2016-02-10",
+      "summary": "一听见爆竹声就想逃跑 体内可能有一只沉睡的年兽"
+    },
+    {
+      "title": "成长",
+      "url": "https://homeboyc.cn/blog/%E6%88%90%E9%95%BF/",
+      "date": "2016-02-10",
+      "summary": "围着篱笆的小院，小小的狗儿晒着太阳慵懒的打着哈欠。梦里，我还是那个扎着冲天小辫，背着满是铅笔印的书包，口袋干瘪只得在校门口看着小糖人流着哈喇"
+    },
+    {
+      "title": "一起来画像素画",
+      "url": "https://homeboyc.cn/blog/%E4%B8%80%E8%B5%B7%E6%9D%A5%E7%94%BB%E5%83%8F%E7%B4%A0%E7%94%BB/",
+      "date": "2001-01-01",
+      "summary": "这是一幅像素风格的城市画，第一眼就给人一种萌萌的感觉。这幅画让我想起了PocketPC上的模拟人生。 感觉像素画和12864是一种很好的配和。"
+    },
+    {
+      "title": "关于我",
+      "url": "https://homeboyc.cn/about/",
+      "date": "2001-01-01",
+      "summary": "姓名：杨成锴 曾用和现用英文名：Atom、asjdf、Homeboyc 网络与信息安全管理员二级技师、杭州市E类人才 工作经验 杭州凌武科技有限公司"
+    },
+    {
+      "title": "关于礼物",
+      "url": "https://homeboyc.cn/%E5%85%B3%E4%BA%8E%E7%A4%BC%E7%89%A9/",
+      "date": "2001-01-01",
+      "summary": "关于小猫猫 这是一个钧瓷猫猫，我感觉挺可爱的，而且钧瓷特色是一窑万色，同一批瓷器烧出来的颜色都不会完全相同，每一只猫猫都是独一无二的。猫猫身上"
+    },
+    {
+      "title": "友链",
+      "url": "https://homeboyc.cn/friendlinks/",
+      "date": "2001-01-01",
+      "summary": "下面是Atom的小伙伴们 Goo Wr‘small*house Summer 小吴玉麒麟 liki 0x4qE 一个全是生活毫无学习的小站 ek1ng pancake Esonhugh 暮森の小屋"
+    },
+    {
+      "title": "百宝箱",
+      "url": "https://homeboyc.cn/toolbox/",
+      "date": "2001-01-01",
+      "summary": "资源分享站 主要是书籍，也可能会塞入其他东西 个人项目 about-me-page 一个应付备案的个人介绍单页，精简且轻量 点击此处查看效果 wechat-mp-server Go 版本的微信公众号后端框架 包含消"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "author": {
+    "id": "lewis",
+    "name": "lewis",
+    "url": "https://lewis1766.github.io/"
+  },
+  "posts": [
+    {
+      "title": "CobaltStrike的容器化实现",
+      "url": "https://lewis1766.github.io/posts/20260918/",
+      "date": "2026-09-18",
+      "summary": "Cobalt Strike 4.8 Client Docker 部署指南 为解决java环境不兼容问题，将 Cobalt Strike 4.8 汉化版客户端 （Java Swing GUI）完整容器化，通过浏览器远程桌面访问。 Github项目链接 📋 前置要求 Docker Desktop : 20.10+（含 Compose v2） 内存 : 至少 4GB 可用（容器限制 2GB） CPU : 建议 2 核以上 🏗️ 技术架构 ┌─────────────────────────────────────────────┐ │ Docker Container (Ubuntu 20.04) │ │ │ │ entrypoint.sh (PID 1 入口) │ │ ├─ [启动前] start_vnc.sh 清理残留 │ │ │ (锁文件/socket/孤儿进程/shm) │ │ └─ exec supervisord │ │ ├─ [vncserver] Xvnc :99 │ │ │ └─ 内联再清一次锁后启动 (:5900) │ │ ├─ [noVNC] websockify (:6080) │ │ │ └─ 浏览器 WebSocket→VNC │ │ └─ [csclient] start.sh → CS GUI │ │ (DISPLAY=:99) │ └─────────────────────────────────────────────┘ ↑ port 6080 / 5900 浏览器 http://localhost:6080 关键设计点 ："
+    },
+    {
+      "title": "一次对学校内网的渗透",
+      "url": "https://lewis1766.github.io/posts/20260601/",
+      "date": "2026-06-01",
+      "summary": "前言 最近对渗透测试特别感兴趣，越来越想找一个真实的环境练手，最后瞄准了校园网。我想如果被发现入侵，好歹是自己学校，应该不会过于为难我。 搞笑的是，我真的被导员联系了，说是上网有关问题，当时我心中一悸，心想是不是渗透的太过火了，结果竟然是因为fq问题，并且我被告知不能再fq，我写了检讨书。。。我现在连github都不敢打开，那么这几天的学习就暂时停一阵吧。 我把校园网攻击了反而没人问。。。 Spring Boot 信息泄露 我最近在学校的专利成果转化中心勤工俭学，不得不说学校的岗位就是清闲不少。我没事干的时候就扫了一下 这里的wifi密码他们告诉了我。连接后发现网段是192.168.5.x/24，是我们校园网里的一个配网。扫描发现 192.168.5.15 开放 Spring Boot Actuator 端点： | /heapdump | 严重 - 可下载堆转储文件 | | /env | 严重 - 泄露环境变量配置 | 直接访问断点，得到heapdump文件和env配置，使用jdumpspider分析一下，这个工具用来springboot内存取证简单好用，本质就是一个提取关键字的脚本。比较初步的分析就不必惊动EclipseMemoryAnalyzer了。我整理了一下所有泄露的信息。 华为AX3PRO路由器 (192.168.5.1) 发现弱密码：和wifi密码相同，为门牌号输三次 成功登入管理界面 看配置 这里的手动设置显示的是路由器的身份，说明了他们是如何接入校园网的 10.4.175.87试了一下，403，这个网关底下应该有好几个重要资产 dns服务器防线也很深 还有一个有意思的点，之前的那个专利申请系统不止192.168.5.15，还有很多ip，但是有时候我扫描不到。我想了好久。因为一个专利申请服务器怎么会时断时续的开着，并且在办公室里并没有发现物理服务器。 今天在路"
+    },
+    {
+      "title": "GitHub Copilot CLI 体验",
+      "url": "https://lewis1766.github.io/posts/20260519/",
+      "date": "2026-05-19",
+      "summary": "前言 最近在 GitHub 学生包里发现了一个好东西—— GitHub Copilot CLI &hellip; Copilot CLI 听说这个产品是 Claude Code 的竞品，刚看新闻说微软让员工从Claude Code转用它 正好对比体验一下 大一 C 语言实践作业 翻到之前大一的 C 语言作业—— 学生管理系统 &hellip; 当时懵懂无知，完全不懂什么是 agent&hellip; 用 DeepSeek 改了又改，虽然（but still）仍然不会古法编程&hellip; 现在用 Copilot CLI，几分钟就能写好，完全不用手。 搭一个网页版吧 核心代码 from flask import Flask, g, render_template, request, redirect, url_for import sqlite3 import os BASE_DIR = os . path . dirname(__file__) DB_PATH = os . path . join(BASE_DIR, 'student.db' ) app = Flask(__name__, instance_path = BASE_DIR) def get_db (): db = getattr(g, '_database' , None ) if db is None : db = g . _database = sqlite3 . connect(DB_PATH) db . row_factory = sqlite3 . Row return db def init_db (): db = get_db() cur = db . cursor() cur . execute( ''' CREATE TABLE IF NOT EXISTS students ( id T"
+    },
+    {
+      "title": "挖到第一个漏洞：杭州鼎文国际学校API未授权访问",
+      "url": "https://lewis1766.github.io/posts/20260504/20260504/",
+      "date": "2026-05-04",
+      "summary": "前言 入行漏洞挖掘以来，终于成功提交并通过审核第一个正式漏洞，记录下这次完整挖洞全过程，也算是给自己网络安全学习之路留下一份纪念。 漏洞基础信息 关联厂商：杭州鼎文国际学校 漏洞编号：QTVA-2026-10612190 漏洞类型：信息泄露 官方评级：中危 漏洞发现过程 日常使用FOFA进行资产测绘搜集站点资产，成功捕获到该校一体化校园管理平台地址： https://pr.dingwenacademy.com/login?redirect=%2Fdashboard 进入登录页面后常规查看前端源码与静态JS文件，在页面加载的JS资源中： https://pr.dingwenacademy.com/static/js/app.ac0b7b5b.js 这种网页一般都是前后端分离的架构，提升了用户体验不假，但是容易出现api未授权访问 搜索关键字“api”，发现暴露了后端大量业务API接口地址，逐一筛选测试接口可用性。 漏洞核心问题 发现/api/student/selectAllBy, /api/student/selectDocBy, /api/source/getSelect, /api/source/getSelectByUser 暴露大量人员信息，包含姓名，邮箱，用户名 /api/student/selectAllBy这个接口暴露微信wxpass、人员唯一ID 等核心隐私数据。 多组未授权接口组合利用，可批量抓取学校师资、生源、部门配置、业务资源等内部数据，极易造成校内人员信息批量外泄，存在隐私泄露与后续社工攻击风险。 漏洞详情总结 平台后端整站API接口设计存在严重权限管控缺失，前端JS明文批量泄露接口路径，后台未统一做登录态校验。 公开查询类数据接口全部放任外网无权限人员任意调用，大范围触发信息泄露风险。 安全修复方案 统一对站点所有 /api/* 路由接口增设全局请"
+    },
+    {
+      "title": "关于我",
+      "url": "https://lewis1766.github.io/about/",
+      "date": "2026-04-17",
+      "summary": "很高兴你能来到这里。 本人目前处在CTF（Capture the Flag，夺旗赛）知识的学习中，研究主要是web方向，萌新一枚，请多指教。 本人对AI也非常感兴趣，欢迎志同道合的人和我畅所欲言。在这里我将主要分享我的学习过程和实战心得，也可能夹带一些个人生活（说实话我还没想好发什么）。 我的爱好：音乐/电影/美剧/旅游 我的微信：Q2FsaWYwcm5pYWRyZWFtaW4=（请解码） 最后是乔布斯的一句话，我认为终身受用 &ldquo;Stay Hungry, Stay Foolish.&rdquo;"
+    },
+    {
+      "title": "第一篇文章",
+      "url": "https://lewis1766.github.io/posts/my-first-post/",
+      "date": "2026-04-17",
+      "summary": "欢迎来到我的网站！"
+    },
+    {
+      "title": "Zip伪加密 + DLL调用逆向题解",
+      "url": "https://lewis1766.github.io/posts/20251106/",
+      "date": "2025-11-06",
+      "summary": "题目描述 下载附件得到一个加密的 Zip 压缩包，需要密码才能解压。 解题思路 用 010 Editor 打开 Zip 文件，分析 Zip 文件结构。 Zip 文件结构要点 压缩源文件数据区 50 4B 03 04 头文件标记 压缩源文件目录区 50 4B 01 02 目录文件头标记 压缩源文件目录结束标志 50 4B 05 06 目录结束标记 全局方式位标记 50 4B 03 04 14 00 **后 2 字节** | 数据区加密标记 | 50 4B 01 02 14 00 **后 2 字节** | 目录区加密标记 | 判断标准 无加密 00 00 00 00 伪加密 00 00 09 00 （或 01 00 ）"
+    }
+  ]
+}

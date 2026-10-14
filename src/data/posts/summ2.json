@@ -1,0 +1,129 @@
+{
+  "author": {
+    "id": "summ2",
+    "name": "summ2",
+    "url": "https://summ2.link/"
+  },
+  "posts": [
+    {
+      "title": "D^3CTF 2026 运维小记",
+      "url": "https://summ2.link/categories/%E6%97%A5%E5%B8%B8/d3ctf-op/",
+      "date": "2026-07-26",
+      "summary": "一年一度的 D^3CTF 也是已经接近尾声了，而似乎我负责 Vidar 的运维工作起也过去快 1 年了的样子 （虽然感觉自己没做什么事情） 。 于是很自然地，D^3 似乎没有足够的人手（指抓不到其他小登），我就来帮忙做今年 D^3CTF 的运维了，本篇以我的视角记录一下今年运维的基本情况。 基本架构 今年 @shiori 师傅为我们争取到了咕咕噜的赞助，有一张 500$ 的 coupon，对于一个 24 小时的比赛来说，是非常充足的了。事前我还在尽量控制成本，后面发现根本用不完。 我们全部服务都打算部署在 GCP 上，平台单独运行在一台 VM 上，然后使用 KubernetesEngine 自动分配好一个 k8s 集群。不过，前期资源划分、平台部署的工作都是 rx 师傅做的（伟大！），毕竟办赛经验充足许多，我刚开始的时候被 gcp 一大堆菜单整头晕了（比起网页，其实 gcloudcli 可能会更好用）。 与往年一样，平台使用的是「高性能ですから！(∠・ω<)⌒☆」的 ret2shell ，平台机器在准备阶段使用 2c4g，赛时 8c8g 就足够满足需求了。 一台 Golang、Rune、TLS 上的 灵车 由于 ret2shell 已经是一个开源项目了，所以我想我们可以详细的说说今年整的一些活。 众所周知，传统的远程环境一般都是平台去运行一个容器，然后将服务暴露到公网 ip 的某个端口上。很明显，我们在一个 ip 上很可能有多个暴露的服务，这就会导致选手有意或无意地访问其他选手的服务，甚至获取不属于自己的 flag。 由于 ret2shell 具备强大的反作弊机制，这种行为很容易被办赛方认为相关选手产生了一些不明的 py 交易。（事实上，扫描平台本身也应当是不被允许的） 为了防止这种情况出现，我们想到的一个方案是尝试把端口编码 / 加密在域名中，直接扫描别人的服务几乎就不会"
+    },
+    {
+      "title": "HGAME FINAL 2026 题解",
+      "url": "https://summ2.link/categories/Study/hgame-letyoudive/",
+      "date": "2026-03-21",
+      "summary": "letyoudive : 一道探索中设计的入门内核题 Background syscall 系统调用（systemcall）是由操作系统内核向上层应用程式提供的应用接口，操作系统负责调度一切的资源，当用户进程想要请求更高权限的服务时，便需要通过由系统提供的应用接口，使用系统调用以陷入内核态，再由操作系统完成请求。 entry: 怎么从用户态陷入 在执行 syscall 后，CPU 将跳转到 entry_SYSCALL_64 ，保存用户态的上下文，并进入内核态。 //arch/x86/entry/entry_64.S SYM_CODE_START ( entry_SYSCALL_64 ) UNWIND_HINT_ENTRY ENDBR swapgs /* tss.sp2 is scratch space. */ movq % rsp , PER_CPU_VAR ( cpu_tss_rw + TSS_sp2 ) SWITCH_TO_KERNEL_CR3 scratch_reg = % rsp movq PER_CPU_VAR ( cpu_current_top_of_stack ) , % rsp SYM_INNER_LABEL ( entry_SYSCALL_64_safe_stack , SYM_L_GLOBAL ) ANNOTATE_NOENDBR /* Construct struct pt_regs on stack */ pushq$__USER_DS /* pt_regs->ss */ pushq PER_CPU_VAR ( cpu_tss_rw + TSS_sp2 ) /* pt_regs->sp */ pushq % r11 /* pt_regs->flags */ pushq$__USER_CS /* pt_regs->cs */ pushq % rcx /"
+    },
+    {
+      "title": "论文阅读笔记：Apple Silicon 上的地址预测和侧信道",
+      "url": "https://summ2.link/categories/Study/apple-slap/",
+      "date": "2026-02-09",
+      "summary": "Paperreading: SLAP: Data Speculation Attacks via Load Address Predictionon Apple Silicon https://ieeexplore.ieee.org/document/11023377 Abstract 这篇论文研究了 Apple Silicon 上的 Load Address 预测机制 (LAP).通过对 LAP 的分析、利用实现了通过侧信道的信息泄漏，绕过 ASLR, 影响控制流，并且在 Safari 中构造了一个越界读原语. Speculation and Spectre 现代 CPU 为了提升性能，往往会引入预测执行技术 (Speculative Execution).例如分支预测 (branch prediction),其中动态分支预测会基于运行时的动态执行信息，自适应地对分支预测情况做动态调整: State diagram of 2-bit saturatingcounter Spectre 是一个利用预测执行来获取敏感数据的漏洞，它通过侧信道，获取 CPU 预测执行错误产生的敏感数据. 为了进一步提高 CPU 的性能，架构师还提出了对数据流的预测来缓解数据冒险 (Data Hazards).本篇论文主要聚焦于这种现代 CPU 上的数据预测机制以及其安全性的研究. Background Cache Organizationon Apple Silicon Apple CPUs 使用大小核的架构将核心分为 Performance (P)cores 和 Efficiency (E) cores. 每个核心都有私有的 L1caches 和同种核心共享的 L2 caches. 这些缓存划分为缓存组，对于任何一个内存地址，只能存放到由这个地址部分确定的缓存组中. Side-Channel "
+    },
+    {
+      "title": "0CTF 2025 Writeup",
+      "url": "https://summ2.link/categories/CTF/0ctf2025/",
+      "date": "2025-12-21",
+      "summary": "赛时做了一题，总觉得自己越来越没有心力和时间投入 CTF 了... easypwn checksec 为了提高可读性，在 IDA 中修改了一些变量和函数名. 根据程序逻辑，或者观察输入输出可以发现这是一个大数计算器，支持 + - * / ( ) 和十进制数字的输入. 程序有一个操作是将栈指针放入堆中 且有对其的自增、自减操作: 很遗憾这里限制在了 DWORD , 所以并没有实际的栈溢出问题，不过存在整数的上溢和下溢. 一开始我并没有找到可利用的漏洞点，不过由于本题的输入非常结构化，我们可以考虑对其 fuzzing. 大约 20 分钟后，确实找到了一些可引起 crash 的输入: 使用 casr-cli , 得到了一些有趣的分析结果: 着重对 ReturnAv 的 case 进行分析.先将这几组输入在 gdb 中复现一遍，发现程序出现了返回地址非法引起的段错误 Vulnerabilities 调试发现，这是由于在 main 中程序尝试将计算结果写回到栈中时，对指针的自增操作缺乏边界检查，导致了栈溢出: Exploit 接下来的工作就是如何找到哪个输入影响到了返回地址，已知如下的输入可以产生溢出 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111/*/1/*//1111111111 观察到这里只有 * 和 / ,我们猜测程序进行了乘除相关的运算。为了方便验证，可以把上面的大数换成相近的以 2 为底的指数. 1119872371088902105278721140284222139060822748617324767449994550481895935590080472690438746635803557888/*/1/*//"
+    },
+    {
+      "title": "git send-email 配置 Outlook 邮箱",
+      "url": "https://summ2.link/categories/Study/git-outlook/",
+      "date": "2025-11-27",
+      "summary": "git send-email 当我们想发送一个 patch 时，一般会使用 git send-email ,可以方便地把邮件发送给开发者. How to use 如果你使用的是 Gmail, 那么随便在上网找一篇文章跟着配置即可: git config --global sendemail.smtpencryption tls git config --global sendemail.smtpserver smtp.gmail.com git config --global sendemail.smtpuser your-email@gmail.com git config --global sendemail.smtppass \"your-application-specific-password\" 与此同时，另外一边 借助 SMTP, 我们可以很容易通过 git send-email 直接发送邮件.然而 Microsoft Outlook 为了安全性，使用了更现代的 OAuth2 方法 然而，git 显然不支持这样的验证方式.所以如果没有必须使用 Outlook 的需求或者某种强迫症，请使用 Gmail . 配置 msmtp 为了使用 Outlook 的 SMTP, 我们先使用一个支持 OAuth2 的 SMTP Client:msmtp. 修改 ~/.msmtprc : # Default settingsdefaultsauth ontls ontls_trust_file /etc/ssl/certs/ca-certificates.crtlogfile ~/.msmtp.log# Outlook account with OAuth2account outlookhost smtp.office365.comport 587auth xoauth2from e"
+    },
+    {
+      "title": "Linux Kernel: build, boot and debug in QEMU",
+      "url": "https://summ2.link/categories/Study/kernel-build/",
+      "date": "2025-10-31",
+      "summary": "一次内核编译到运行的尝试 编译内核 拉取源码 $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git 调整配置 为了让 gdb 可以调试内核并加载符号，需要更改一些编译选项. $ make menuconfigKernel hacking --- > [ * ] Kernel debugging Compile-time checks and compiler options --- > Debug information ( Rely on the toolchain's implicit default DWARF version ) [ * ] Provide GDB scripts for kernel debugging 编译 $ make -j $( nproc ) $ make bzImage 内核启动流程 我们并不需要弄清楚启动过程的所有细节，这里只简略介绍以便于解释后文的操作 Kernel Initialization 这个阶段内核会将映像自解压到内存中，并且进行硬件相关的初始化，设置中断处理 (interrupt handling)、内存管理 (memory management),挂载根文件系统 (/) 或者初始 RAM 磁盘 (initrd), 加载驱动. Init process 内核初始化后，就会准备我们所熟悉的用户空间 (Userspace) 的初始化. 事实上内核会执行 /sbin/init , /etc/init 或initramfs/initrd 中指定的第一个用户空间程序 (通常是 Systemd、SysVinit 或OpenRC), 作为用户空间中的第一个进程 (PID=1),当然它可以是任何可执行的文件，包括 shell script."
+    },
+    {
+      "title": "羊城杯 hello_iot 复现",
+      "url": "https://summ2.link/categories/CTF/ycb2025/",
+      "date": "2025-10-21",
+      "summary": "2025 年十月羊城杯 hello_iot Vulnerabilities checksec 题目基于 Libmicrohttpd 在 9999 端口提供一个 http 服务，分析程序逻辑可得知有如下功能: login , work , log . 而且要求输入密码进行验证， 分析登录相关逻辑，是一个换盒 AES: 注意到 AES 中 sub bytes 操作使用了逆 Sbox, 可认为是解密流程，因此我们只需要写一个自定义 Sbox 的 AES ECB 加密脚本. 在 log 中有明显越界读， 在 work 中存在两种逻辑，一种是将数据存放在堆区并记录地址，另一种是进入一个后门函数. stack overflow Exploit 首先编写一个脚本，计算出登录密码. from pwn import u64 # ======================================================== # 纯 Python 实现 AES-128 加密 (支持自定义 S-box) # ======================================================== # 默认 AES S-box，可自行修改实现「换表 AES」 S_BOX = [ 0x29 , 0x40 , 0x57 , 0x6e , 0x85 , 0x9c , 0xb3 , 0xca , 0xe1 , 0xf8 , 0xf , 0x26 , 0x3d , 0x54 , 0x6b , 0x82 , 0x99 , 0xb0 , 0xc7 , 0xde , 0xf5 , 0xc , 0x23 , 0x3a , 0x51 , 0x68 , 0x7f , 0x96 , 0xad , 0xc4 , 0xdb , 0xf2 , 0x9 , 0x20 , 0x37 , 0x"
+    },
+    {
+      "title": "ARM Bare metal try",
+      "url": "https://summ2.link/categories/Pwn/arm-bare-metal-helloworld/",
+      "date": "2025-07-14",
+      "summary": "Foreword 想给今年的 HGAME Mini2025 出一道简单的 Pwn 题，突然想着之前的题目似乎没有涉及到 IoTPwn 的（虽然可能是因为不太算 pwn 的入门内容？），打算来一道比较简单的，正好学习一下 IoT 的相关知识吧。 Choose a Platform IoT 设备的 ISA 一般使用 ARM, RISC-V, MIPS。题目考虑使用 nRF51822 based onARM Cortex-M0 SoC, QEMU 对其有较好支持。 qemu-system-arm \\ -M microbit \\ -cpu cortex-m0 \\ -nographic \\ -serial tcp:127.0.0.1:2333,server,telnet \\ -kernel main.elf \\ --gdb tcp::1234 Hello World To communicate - UART 1 In QEMU, a simulated serial port can serve as stdio .nRF51822 has one UART peripheral, we would use it to interact. For convenience, using the official library nrfx to implementrelated functions, instead of defining addresses and operations bymyself. Also, you can finish it with the manual. Pin configuration How to Transmit Transmission process nrfx defines a struct for parameters controll"
+    },
+    {
+      "title": "简单神经网络搭建",
+      "url": "https://summ2.link/categories/Study/simple-nn/",
+      "date": "2025-05-26",
+      "summary": "前言 程序设计课期末作业要求实现一个「基于可穿戴传感器数据的人体活动识别」，具体是实现一个分类任务。 数据采集设备以每秒 1 次的频率记录传感器信息，涵盖加速度（x、y、 z轴）、陀螺仪角速度（x、y、z 轴）、温度、湿度、心率、皮肤电反应等共计 561个数值型特征维度。每条数据均标注了活动类别标签，包括以下六类： WALKING：行走，标记为 1 WALKING_UPSTAIRS：上楼梯，标记为 2 WALKING_DOWNSTAIRS：下楼梯，标记为 3 SITTING：坐着，标记为 4 STANDING：站着，标记为 5 LAYING：平躺，标记为 6 基本设计 以下代码依赖 C++ libtorch 库，使用 CUDA 数据处理 读入给定的训练集 X_test.txt 和对应的标签 y_test.txt ，并且使用 from_blob 转换为张量类型 torch::tensor() class CustomDataset : public torch :: data :: Dataset < CustomDataset > { private : std :: vector < torch :: Tensor > features_ ; std :: vector < torch :: Tensor > labels_ ; public : CustomDataset ( const std :: string & feature_file , const std :: string & label_file ) { std :: ifstream ffile ( feature_file ) ; std :: ifstream lfile ( label_file ) ; if ( ! ffile . is_open ( ) || ! lfile . is_ope"
+    },
+    {
+      "title": "QEMU PWN - EasyDMA",
+      "url": "https://summ2.link/categories/CTF/easydma/",
+      "date": "2025-05-07",
+      "summary": "EasyDMA From: ACTF 2025 题目给出一个去符号的 qemu 二进制文件 qemu-system-x86_64 ，启动参数如下 #!/bin/sh timeout --foreground 300 ./qemu-system-x86_64 \\ -L pc-bios \\ -m 1024 \\ -kernel bzImage \\ -initrd rootfs.cpio \\ -drive file = null-co://,if = none,id = mydisk \\ -device virtio-blk-pci,drive = mydisk,ioeventfd = off \\ -device readflag \\ -append \"priority=low console=ttyS0\" \\ -monitor /dev/null \\ -nographic 添加两个设备 virtio-blk-pci , readflag 。 反汇编可以找到 readflag 通过 mmio 的读、写回调函数： __int64 __fastcall readflag_mmio_read ( __int64 opaque , unsigned __int64 addr , int size ) { __int64 result ; // rax if ( addr > 0x7F ) { result = - 1LL ; if ( size != 4 ) return result ; } else if ( size != 4 ) { result = - 1LL ; if ( size != 8 ) return result ; } result = 0xDEADBEEFLL ; if ( addr ) { if ( addr == 8 ) return * ( _QWORD *"
+    },
+    {
+      "title": "NJU ICS PA 一些笔记",
+      "url": "https://summ2.link/categories/Study/nju-ics-pa/",
+      "date": "2025-03-31",
+      "summary": "NJU PA 实验笔记（半完结） Do you know 本人代码水平拙劣🥲，实现部分仅供参考 南京大学计算机科学与技术系 计算机系统基础 课程实验 2024 PA1 - 开天辟地的篇章 RTFSC 文件： nemu/src/monitor/sdb/sdb.c 原因：退出时 nemu_state.state 不是 “正常” 的 解决办法： static int cmd_q ( char * args ) { nemu_state . state = NEMU_QUIT ; return - 1 ; } 监视点 基本框架 添加 w <expr> 和 d <index> 命令，来添加和删除监视点。 并且需要实现监视点池中链表的维护，监视点表达式的计算。 为了提高 NEMU 的性能，提供监视点功能的开关选项。 链表维护 监视点池中涉及监视点链表和空闲链表，通过 init_wp_pool() 来对其初始化。 void init_wp_pool ( ) { int i ; for ( i = 0 ; i < NR_WP ; i ++ ) { wp_pool [ i ] . NO = i ; wp_pool [ i ] . next = ( i == NR_WP - 1 ? NULL : & wp_pool [ i + 1 ] ) ; } head = NULL ; free_ = wp_pool ; } 接着，通过 new_wp() 和 free_wp() 实现监视点的管理 int new_wp ( char * args ) { WP * p = NULL , * q = NULL ; if ( free_ == NULL ) { printf ( \"Watchpoints Limit\" ) ; return - 1 ; } p = free_ ; bool success = 1"
+    },
+    {
+      "title": "Vidar 分享会 - FSOP",
+      "url": "https://summ2.link/categories/CTF/vidarshare-fsop/",
+      "date": "2025-03-31",
+      "summary": "I. FSOP FSOP 是 File Stream Oriented Programming 的缩写。 FSOP 的核心思想就是劫持 _IO_list_all 的值来伪造链表和其中的 _IO_FILE 项，但是单纯的伪造只是构造了数据还需要某种方法进行触发。FSOP选择的触发方法是调用 _IO_flush_all_lockp ，这个函数会刷新 _IO_list_all 链表中所有项的文件流，相当于对每个FILE 调用fflush，也对应着会调用 _IO_FILE_plus.vtable 中的 _IO_overflow 。 II. RTFSC 下面我将以 glibc-2.39 源码为例，分析 FSOP 的一个实际应用 ---House ofApple (2) 1 涉及的原理。 _IO_FILE /libio/bits/types/struct_FILE.h 中有如下定义： struct _IO_FILE { int _flags ; /* High-order word is _IO_MAGIC; rest is flags. */ /* The following pointers correspond to the C++ streambuf protocol. */ char * _IO_read_ptr ; /* Current read pointer */ char * _IO_read_end ; /* End of get area. */ char * _IO_read_base ; /* Start of putback+get area. */ char * _IO_write_base ; /* Start of put area. */ char * _IO_write_ptr ; /* Current put pointer. */ char *"
+    },
+    {
+      "title": "HGAME 2025 Final 复现",
+      "url": "https://summ2.link/categories/CTF/hgame-2025-final/",
+      "date": "2025-03-19",
+      "summary": "Backto2016 但你必须先向我们证明自己有回到 2016 的实力！ 祝你玩的开心 o (￣▽￣) ブ 没有附件是正常的喵 这个分数或许也考虑了买 hint 这件事，别害怕嘻嘻 这道题是没有给出附件的，我们需要根据输入和程序的输出获取一切信息。 Vulnerabilities 随便输入一些字符会发现，程序存在 栈溢出 漏洞，出题人很友好地提供了程序崩溃的更多信息（***stack smashing detected ***: terminated） 存在 Canary 保护 。 注意到在交互进程结束后，会保持连接，返回一个 PID+1 的新进程，这提示我们程序使用 fork() 实现功能。 赛后放出的源码 因此，子进程的 Canary 值不会改变。 Exploit 从题目的提示可以知道，其实这是类似于 HCTF2016 brop 1 的一道题目。 运用的攻击方法叫做 Blind Return Oriented Programming (BROP) 2 。 BROP 的主要流程： 绕过 Canary 和 PIE 的保护； 寻找 \"stop gadget\"; 寻找控制寄存器的 gadget; dump memory to get the binary 获得 libc base，然后 get shell Canary bypass BROP 首先需要我们绕过 Canary： Stack reading. A single byte on the stackis overwritten with guess X. If the service crashes, the wrong value wasguessed. Stop gadget Stop gadget 指的是可以将程序挂起的一段 gadget。 为什么需要 Stop gadget? 如果我们将 Returnaddre"
+    },
+    {
+      "title": "Cloudflare Worker 反向代理尝试",
+      "url": "https://summ2.link/categories/Web/cloudflare-worker-proxy/",
+      "date": "2025-03-01",
+      "summary": "前言 由于友链页面有使用图片的要求，同时为其他人的站点提供相关的图片资源（虽然使用现成的 GitHubPage 就可以基本实现，但是 Page 所在的仓库是公开的），尝试通过 GitHub 作为图床解决这个问题。然而，访问速度和稳定性都无法得到保证，为此通过网上搜索学习了一下反向代理(Reverse Proxy) 的相关知识。 什么事反向代理 在这之前，先来看看什么是正向代理 1 (Forward Proxy)： 客户端通过代理服务器去请求服务器的资源。 Two computers connected via a proxyserver. The first computer says to the proxy server: \"ask the secondcomputer what the time is\". 使用正向代理需要客户端进行一些设置，即配置代理服务器。 而反向代理 2 是指代理服务器向服务器转交请求，并返回内容给客户端，客户端将其认为是原始服务器。 A proxy server connecting the Internet toan internal network. 搭建反向代理服务 创建图床仓库 在 GitHub 中创建一个仓库，可以选择是否是私密的。 在 Personal AccessTokens (Classic) 处创建一个新的 token，勾选 repo 下所有权限。 过期时间我偷懒选了永不过期，不过这样肯定会导致安全性降低的。生成 token 后放在安全的地方，刷新后就看不见了。 配置 Worker CloudflareWorkers 提供了这样的服务，但是免费使用具有一定的请求限制。在仪表板中添加一个Worker，这里命名为 assets。使用的代码如下： const upstream = \"raw.githubusercontent.com"
+    },
+    {
+      "title": "HGAME 2025 Week 2 Writeup",
+      "url": "https://summ2.link/categories/CTF/hgame-2025-week2-wp/",
+      "date": "2025-02-17",
+      "summary": "Signin2Heap Vulnerabilities 存在 off-by-null 漏洞，当 prev_size 域复用时，可置零相邻chunk 的 prev_inuse 位。 只能申请至多 0xFF 大小的堆块，考虑 fastbin attack。 Exploit 由于程序没有编辑功能，只能使用 add 功能修改堆数据。布置大小分别为 0xf0 , 0x68 , 0xf0 的三个堆块，然后将 0xf0 大小的 tcache bin 填满。此时释放 chunk 0，将进入 unsorted bin 。为了泄露出 libc 有关地址，我们需要利用 show 功能输出 freed chunk上的指针 (即 fd )。通过如下操作可以实现类似 UAF 的效果： 修改 chunk 2 的 prev_size 和 prev_inuse ； 释放 chunk 2，引起向后合并，此时堆管理器认为 chunk 0 ~ chunk 2都已经为空闲状态，放入 unsorted bin ； 先清空优先级更高的 tcache bin ，然后申请 chunk 0大小的堆，从 unsorted bin 中取，此时 fd 移动到 chunk 0的后面。 经过以上操作后，chunk 1 的位置恰好是 unsorted bin 的头部。但同时程序逻辑上 chunk 1 并没有被释放，引起了 UAF，doublefree。 再次填满 tcache bin ，利用 fastbin double free可实现任意写。 from pwn import * context . log_level = \"debug\" p = remote ( \"node1.hgame.vidar.club\" , 32253 ) e = ELF ( \"./vuln\" ) libc = ELF ( \"./libc-2.27.so\" )"
+    },
+    {
+      "title": "HGAME 2025 Week 1 Writeup",
+      "url": "https://summ2.link/categories/CTF/hgame-2025-week1-wp/",
+      "date": "2025-02-09",
+      "summary": "counting petals Vulnerabilities 存在越界写入漏洞。 存在任意读漏洞。 Exploit 观察栈结构，构造数据使 v9=16 时令 v8,v9 为不合法的值，从而泄露栈上的 libc 地址。 第二次循环时利用任意写，构造 ROP 链。 from pwn import * context . log_level = \"debug\" p = remote ( \"node2.hgame.vidar.club\" , 32442 ) libc = ELF ( \"./libc.so.6\" ) e = ELF ( \"./vuln\" ) pop_rdi_off = 0x2a3e5 pop_rsi_off = 0x2be51 pop_rdx_r12_off = 0x11f2e7 p . sendlineafter ( \"How many flowers have you prepared this time?\" , \"16\" ) for i in range ( 15 ) : p . sendlineafter ( \"the flower number\" , str ( 0 ) ) p . sendlineafter ( \"the flower number\" , str ( 0x1400000013 ) ) p . sendlineafter ( \"latter:\" , str ( 1 ) ) p . recvuntil ( b\"+ 1 + \" ) number = p . recvuntil ( b\" +\" , drop = True ) number = number . decode ( ) . strip ( ) libc_address = int ( number ) log . info ( hex ( libc_address ) ) libc_"
+    },
+    {
+      "title": "DASCTF12 月赛复现",
+      "url": "https://summ2.link/categories/CTF/dasctf2025-12-wp/",
+      "date": "2025-01-07",
+      "summary": "前言 本次 DASCTF12 月赛尝试了 pwn 方向的两道题目，最终还是如愿以偿的爆零了。首先看到题目我就有种陌生的感觉，给定程序是去掉调试符号的，并且有多个函数，大大降低了可读性，和我先前遇见的题目有不小的区别。 BaseMachine checksec 保护全开 逆向分析 main 读入 ./flag 后传入 sub_3990 ，图中的乱码是表情，是 IDA 的编码问题。后面是循环读入用户输入，同样传入 sub_3990 。 进入 sub_3990 继续分析： v9 根据传入的参数 a1 , a2 决定程序后续流程，具体是编码类型 (base64, base85...)。 有意思的是，程序将字符串的加解密流程放在在 _data ，即数据段中。 v10 = ( ( __int64 ( __fastcall * ) ( char * , const char * ) ) * ( & off_7260 + v8 ) ) ( s , a3 ) ; .data: 0000000000007260 off_7260 dq offset sub_1D6A ; DATA XREF: sub_3990+155↑o .data: 0000000000007260 ; sub_3990+1C8↑o .data: 0000000000007268 dq offset sub_1ED6 .data: 0000000000007270 dq offset sub_22B2 .data: 0000000000007278 dq offset sub_27D4 .data: 0000000000007280 dq offset sub_2B94 .data: 0000000000007288 dq offset sub_2E17 .data: 0000000000007290 dq offset s"
+    },
+    {
+      "title": "钱塘江边",
+      "url": "https://summ2.link/categories/%E6%97%A5%E5%B8%B8/20241106-daily/",
+      "date": "2024-11-05",
+      "summary": "一叶舟轻，双桨鸿惊。水天清、影湛波平。鱼翻藻鉴，鹭点烟汀。过沙溪急，霜溪冷，月溪明。 重重似画，曲曲如屏。算当年，虚老严陵。君臣一梦，今古空名。但远山长，云山乱，晓山青。 ——《行香子・过七里濑》 摄于 2024/11/5 17:18 沿江大道"
+    },
+    {
+      "title": "shellcode - 有长度限制的 shellcode 解法",
+      "url": "https://summ2.link/categories/CTF/241103-shellcode/",
+      "date": "2024-11-02",
+      "summary": "shellcode shellcode 是一段用于利用软件漏洞而执行的代码，shellcode 为 16进制之机械码，以其经常让攻击者获得 shell 而得名。shellcode常常使用机器语言编写。 程序分析 题目来源： 第七届浙江省大学生网络与信息安全竞赛预赛 image-20241103161301251 checksec 保护全开 逆向分析 IDA 伪代码 程序的功能很直接，执行输入的一段 shellcode，但是有 0xa 的长度限制。 并且存在 memmem 函数，检查输入的内容，使用 IDA 继续查看 unk_203D 的内容，发现是出题人禁止了 syscall 的机器码。 syscall('0f') 动态调试 在程序执行 shellcode 之后，观察寄存器和栈的情况。当时比赛时发现 r8 中存有 syscall 指令的地址，我的一个想法是控制寄存器 rax , rdi , rsi , rdx 执行系统调用 read 。 mov rsi , rax xor rax , rax xor rdi , rdi add rdx , 0x50 call r8 不过这样的长度已经超出 0xa 的限制了。后面我又想了很久，想继续利用 r8 跳转到某个 main 函数上的指令，调试发现从 r8 到一个 main 函数的地址需要减去三位十六进制数，也就是说操作数占据了 shellcode 中 0x4的长度了。哎，结果我就这样忽视了 rsp 上的 <main+0132> ，一直到比赛结束。 攻击流程 这里的思路是白夜学长提供的。 调整传参寄存器，控制程序流程 ELF 中的 read 函数参数如下 栈中的数据如下 由于程序中使用 callrax 执行 shellcode，返回地址存在栈顶 第一段 shellcode pop rdx ; 返回地址出栈 pop rdi ; fd po"
+    },
+    {
+      "title": "Heap1sEz - 堆漏洞的简单利用",
+      "url": "https://summ2.link/categories/CTF/heap1sEz/",
+      "date": "2024-10-06",
+      "summary": "堆的内部结构 在程序的执行过程中，我们称由 malloc 申请的内存为 chunk 。这块内存在 ptmalloc 内部用 malloc_chunk 结构体来表示。 /* This struct declaration is misleading (but accurate and necessary). It declares a \"view\" into memory allowing access to necessary fields at known offsets from a given base. See explanation below.*/ struct malloc_chunk { INTERNAL_SIZE_T prev_size ; /* Size of previous chunk (if free). */ INTERNAL_SIZE_T size ; /* Size in bytes, including overhead. */ struct malloc_chunk * fd ; /* double links -- used only if free. */ struct malloc_chunk * bk ; /* Only used for large blocks: pointer to next larger size. */ struct malloc_chunk * fd_nextsize ; /* double links -- used only if free. */ struct malloc_chunk * bk_nextsize ; } ; 关于堆的结构很重要的一点在于，其使用和 free状态下的结构一致，只是相应功能有区别。例如使用时 fd段用于存储数据，可以通过某些方法把不合法的数据写入一个 free chu"
+    }
+  ]
+}

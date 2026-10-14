@@ -1,0 +1,585 @@
+{
+  "author": {
+    "id": "woshiluo",
+    "name": "woshiluo",
+    "url": "https://blog.woshiluo.com/"
+  },
+  "posts": [
+    {
+      "title": "盛夏日本急行（二）",
+      "url": "https://blog.woshiluo.com/posts/2026/07/rush-in-japan/",
+      "date": "2026-07-26",
+      "summary": "#import \"/typ/templates/blog.typ\": * #show: main.with( title: \"盛夏日本急行（二）\", desc: [趁着端午节前后又一次前往日本。], date: \"2026-07-26\", categories: ( \"notes\", ), show-outline: false, ) == 序 #strike[不是这东西为什么会有二] 其实一直在计划再去一趟日本，想再攒钱去个大的。但是有时形势和人也不知道哪个跑得快，开始实习后想要有大片的时间就比较困难。 这个时候突然有个学长说，想去日本刷个旅行经历，好搞美签，问我要不要端午节走一遭。 那我走是肯定想走的。虽然之前总是想找个计划待够短期滞留的 15 天，想去这里哪里，但是自去年某位首相上台后，就能更加意识到要去抓住每一束光芒。既然如此，牙一咬，直接再请两天假。虽然搞不了 15 天，但是 5 天也是万策尽的结果。 周三凌晨出发，在周一和周二晚上做了一点初步规划，接下来就出发吧！ 本篇游记比较有价值的部分可能是 Day3 和 Day4 的圣地巡礼部分，有打算巡礼白色相簿 2，CLANNAD，NEW GAME，路人女主的养成方法的读者可以适当参考相关内容。 == 0 Day 0 06/16 下班后发现自己的箱子并不能带上飞机，但是如果托运的话会对行程造成很大的负面影响。心一横，直接把几天的换洗衣物放进电脑包，竟然放下了。 自从来了上海实习，其实去雾雨咖啡店的频率反而大大下降了。下班后去雾雨咖啡店坐了一会儿，顺带和老板聊聊天。老板人很好，提醒了我一些注意事项和指点。 #figure( image(\"./assets/20260725-012148-b253.webp\"), caption: [ BarKirasame ]) 时间差不多就乘坐 2 号线向浦东开摇，真的是摇到天昏地暗。"
+    },
+    {
+      "title": "HGAME 2026 运维秘话",
+      "url": "https://blog.woshiluo.com/posts/2026/02/hgame-magic/",
+      "date": "2026-02-24",
+      "summary": "#import \"/typ/templates/blog.typ\": * #show: main.with( title: \"HGAME 2026 运维秘话\", desc: [又一年的 HGAME 2026 结束了！今年我负责运维背锅，特写此文记录遇到的各种情况。], date: \"2026-02-24\", categories: ( \"notes\", ), show-outline: false, ) == 前情提要 又一年的 HGAME 结束了！HGAME 是一个历史悠久的比赛了，有幸作为 HGAME 的运维还是很高兴的。 今年我们继续使用了 rx 佬的 ret2shell 平台。在我负责 Vidar Team 相关赛事的运营后，我一直希望平台能够维持稳定的长期的运营。HGAME 系列赛事几乎贯穿全年，从 MINI 的 8 月一路到 Final 的 4 月，每次都用新的平台也不利于数据的继承。 在非赛时，我们的平台会运行在协会的 PVE 上的一个 VM 中，并通过种种奇技淫巧反代到我们的公共外网服务器上。 == 意外和选型 === 美好的原计划 今年的比赛赛制继承了去年，由于已经没有提早开放平台或者关闭平台的概念，主要的问题就是如何维持赛时两周的负载。 同样继承自去年的还有来自杭电网络与计算协会（ICU）的支持，不过 ICU 的支持是要走流程联络的。今年是我和 NaCl 负责，这方面的进程在当时的我看来出乎意料的慢，现在来看应该是催的不够紧，还是不够理解学校的办事方法。 基于去年的成熟经验和杭电网络的现实情况，一开始的想法是这样的。从协会 PVE 迁移上云，前期完全上云，择机从云上迁移到协会 PVE 和 ICU 机器构成的多节点集群。 这里的困难其实是如何无痛迁移，数据库和队列尚且好说，ret2shell 会需要一个本地目录存取题目信息等数据。正常来说，一个 local"
+    },
+    {
+      "title": "如何从 WordPress 逃离到 Astro",
+      "url": "https://blog.woshiluo.com/posts/2026/02/wordpress-to-astro/",
+      "date": "2026-02-23",
+      "summary": "#import \"/typ/templates/blog.typ\": * #show: main.with( title: \"如何从 WordPress 逃离到 Astro\", desc: [我迁移到 Astro 的简要经历。任何一个选择都有代价，离开一个成熟平台应当是在作死。], date: \"2026-02-23\", categories: ( \"notes\", ), show-outline: false, ) == 0 想法与选型 由于我苦 WordPress 久矣，因此迁移博客系统是一个隔两天就会被放到脑子里过一遍的想法。 但是你真要说苦什么，其实用起来也挺正常的。无非是攻击面大一点，技术栈陈旧一点，服务器资源消耗大一点什么的，都是一些不痛不痒的事情。 但是人总是要折腾一下自己的，既然要换，就得先选型。 其实我是很倾向于动态博客的，毕竟写个博客非要个 Git 环境什么的有点不爽。但是大部分动态博客框架和 WordPress 大同小异，要么做得不够好，要么做得不够全。 那就考虑静态博客了。Hexo 也不是没有用过，但是感觉上一方面也有历史包袱，另一方面之前用下来也确实不好用。剩下的框架基本上也是一个德性。 Astro 其实和上面这些也差不多，当然有更多好用的语法糖和更自然的定义形式，毕竟不是为博客特化的，这会带来额外的灵活性。但是真正引起我注意的是，有人给 Astro 做了 Typst 支持，这个之前没有想过，但是一想就很诱人。Latex 的数学语法在大多数情况还是不如 Typst，而且完整的 Typst 支持意味着比 MathJax / Katex 多了很多灵活度，比如说 Typst 模版可以广泛运用到每一个文件中。 理想是美好的，那么现实呢？ == 1 Typst 与 HTML Typst 的 html export 其实依旧在绝赞#link(\"https://"
+    },
+    {
+      "title": "编译原理课程设计报告",
+      "url": "https://blog.woshiluo.com/posts/2026/02/compiler-labs/",
+      "date": "2026-02-21",
+      "summary": "#import \"/typ/blog.typ\": * // #import \"/typ/templates/blog.typ\": * #show: main.with( title: \"编译原理课程设计报告\", desc: [笔者在杭电编译原理课程设计所提交的实验报告中，自认为比较有趣的部分。], date: \"2026-02-21\", categories: ( \"notes\", ), show-outline: false, ) == Lab 2 === 实验任务 2.1 正规表达式转 NFA 算法及实现 尽管推荐使用中缀表达式转后缀表达式以完成次任务，但是事实上 Thompson 构造法直接递归实现也很自然。 具体来说，我们可以认为我们在处理的一定是一个由单个节点开始，单个节点终止的 NFA。 对于普通字符只需要在当前节点后新增一条对应节点对应边即可。 那么对字符串流的操作（ * + 等，以及 () ）都可以看作创建一个新的 NFA，并将该新 NFA 连接到当前状态上。区别在于重复类的只需要创造一个 NFA 并做好相关链接后返回，而括号需要进入新的 NFA 递归新增节点。 特殊的是 | ，实践上可以认为移动当前指针到开始节点即可。需要注意的是在收尾的时候需要从每一个分支连接到结束节点。 自此即可自然递归实现，可见于源代码中 src/nfa.rs 的 Nfa::new 函数及其相关函数。 === 实验任务 2.2 NFA 转 DFA 算法及实现 子集构造算法和 $epsilon$-闭包的求解过程本身已经相当程序化，在实现过程中并无值得注意的细节。 具体来说，$epsilon$-闭包的实现为了抽象性以存于 src/utils.rs 的 Nodes::empty_closure 中。 而子集构造算法则位于 src/dfa.rs 中 From<&Nfa> trait 对 Df"
+    },
+    {
+      "title": "江城漫步 - 武汉圣地巡礼笔记",
+      "url": "https://blog.woshiluo.com/posts/2025/11/%E6%B1%9F%E5%9F%8E%E6%BC%AB%E6%AD%A5-%E6%AD%A6%E6%B1%89%E5%9C%A3%E5%9C%B0%E5%B7%A1%E7%A4%BC%E7%AC%94%E8%AE%B0/",
+      "date": "2025-11-03",
+      "summary": "先前 StudyingFather 问我要不要去打星，我说，好，我冲。最后申到武汉区域赛的非正式才赛名额，恰好在贵校运动会之后，连着运动会一起加上两趟夕发朝至的硬卧列车，就可以获得 4 天的武汉之行。 江城，或者说其真名「武汉」，是国内诸多 Galgame 的取景地。既然有机会来一趟，还是要尝试一下圣地巡礼。在国内圣地巡礼其实感觉有点微妙，特别是我说去武汉圣地巡礼好多人说是不是去武大图书馆…… 出发前几天一直在生病状态，自然是没有精力做规划的。上了火车躺下来越想越发现想去的地方很多，要是纯粹随机游走时间可能会很紧张。赶紧爬起来对着地图打了一堆点，决定以从武昌站出发到西北再到东南最后回武昌站的顺序进行。 本文涉及到的作品 高考恋爱一白天（下称高恋） 三色绘恋（下称三色） 恋爱绮谭 泡芙爱情故事（下称泡芙） <!--more--> 武汉市长江大桥 武汉市长 江大桥（确信）。 先在武昌站地铁的客服中心购买三日票。45cny 的三日票很容易回本。再买个哈啰单车七日票，较短距离的移动用单车显然方便许多。而且这两个结合，就有了自由移动权力，不用担心移动错误/绕路产生的票价，接下来三天就是武汉最自由的人。 从武昌站出发，四号线从复兴路换乘五号线到司门口黄鹤楼站，从 A 口出来后沿民主路向长江方向行走，还能顺带经过户部巷吃个早饭。早上正好下雨，因此地面非常非常滑，这路修的实在一般。 走到长江大桥就有了标志性的一幕。高恋和泡芙中都有此幕，作为城市背景。 <figure> <figcaption> 武汉市长江大桥 </figcaption> </figure> 到桥的另一层即可爬楼上武汉市长江大桥建成纪念碑，「一桥飞跨南北，天堑变通途」。随后沿长江大桥即可走回地铁站 A 口。 公安街 / 孱陵路 接着乘坐 5 号线到徐家棚，换乘 7 号线到三阳路，从 K2 口出。 需要注意的是，公安路和公安街"
+    },
+    {
+      "title": "访存实现漫谈 -- 龙芯杯参赛笔记",
+      "url": "https://blog.woshiluo.com/posts/2025/09/%E8%AE%BF%E5%AD%98%E5%AE%9E%E7%8E%B0%E6%BC%AB%E8%B0%88-%E9%BE%99%E8%8A%AF%E6%9D%AF%E5%8F%82%E8%B5%9B%E7%AC%94%E8%AE%B0/",
+      "date": "2025-09-14",
+      "summary": "笔者在暑假参加了今年的龙芯杯竞赛，然后三等奖遗憾跑路了。虽然奖项上不尽如人意，但是也确实是有很多很多工作做的不好，在此处整理一些 LA32R 访存系统相关和参赛的思路，留作记录。 <!--more--> 0 我们有什么条件 硬件上： LUT 限制 BRAM 限制 时序限制 软件上： LA32R 使用指令维护数据缓存和指令缓存的一致性 TLB 理论上需要全相连实现 LUT 时序和 BRAM 时序我在做的时候一般也叫面积限制。 实践上面积限制，时序限制和性能限制会是三个几乎正交方向，三者间的 trade-off 乃至于和后端（特别是发射，写回部分）与前端（特别是刷回部分）的 trade-off 会是文中的主因。 一个很容易发生的错误是认为模块间的耦合度不高，事实上在硬件的限制下，理想的抽象很难存在，因此常常会有妥协抽象以满足限制的情况。特别是和前后端的交互往往会对两边产生较大影响，往往也会耦合的越高。 1 访存类型 在报告时我没有谈及 uncache 部分，因为给定的报告时间很有限。这里可以多说几句。 首先我们会分成访（load）和存（store）两部分，再这基础上还有一致可缓存和强序非缓存的区别。原子访存较为特殊，可以和上面两者并列。剩下的部分则是缓存一致性操作（cacop/*bar）。 因此我们可以这么讨论： uncache load/store cache load/store atomic load/store 2 如何超标量 访存由于要和外界交互，因此自然会面临最多的不确定性，也就更难进行推测执行和多发射。但是如果既不推测执行，也不做多发射，那将会成为非常棘手的瓶颈。（试想一下，隔几条指令就要等一次 AXI 交互。） 对于储存器只有一个读写口的问题有比较通行的解决方案，使用 bank 就可以了。另一个比较棘手的问题则是 store 指令如何推测执行。 store 的后"
+    },
+    {
+      "title": "盛夏日本急行",
+      "url": "https://blog.woshiluo.com/posts/2025/07/%E7%9B%9B%E5%A4%8F%E6%97%A5%E6%9C%AC%E6%80%A5%E8%A1%8C/",
+      "date": "2025-07-18",
+      "summary": "序 怎么办，现在还在沼津戒断反应，我要去沼津～～～ 大概在去年 6 月的时候 Aqours Finale LoveLive 就公告了。不过那个时候还在忙于 XCPC 乃至 BW 相关。不过再怎么说没去缪 FL 还能说自己年少无知，水 FL 就在眼前，不拼一把实在说不过去。 然后就是某次数字电路实验课上公布的在西武巨蛋。老家是老家，但是作为 FL 是不是有点不够格。不过看起来大家相比较骂更多还是猛叠抽选，人民群众还是太能当韭菜了。 <!--more--> 在和同行叠了 ~30 张抽选后，最速先行中了两个 Day1，然后同行的朋友中了两个 Day2。大家友好交换一下就可以全勤了。 大概春节期间办了护照买了机票，万事俱备只欠东风，了吗？ 在一切的一切之前，我们要先看看贵校的校历。不难发现，水水 FL 的时间在期末周正中间。我们当然一开始就注意到了，但是本着「不冲万一期末考试没冲就很后悔」的精神，我们决定战术性忽略这一点。 期末考试安排在五月出来，而我则被喜闻乐见的冲了一天，不得不重新买张机票。自此，除了飞机延误、赶飞机和被入场拦截，至少在 FL 相关的变数已经很小了。 现在让我们整理一下 0620 (UTC-8) 1345-1545 计算机网络 考试 1800-2000 最优化原理与方法 考试 2200 市域机场线 虹桥始发末班车 0621 0225 航班预计起飞 上海浦东 (UTC-9) 0620 航班预计落地 东京成田 Aqours Finale LoveLive Day1 0622 Aqours Finale LoveLive Day2 0623 2225 航班预计起飞 东京成田 0624 （UTC-8）0050 航班预计落地 上海浦东 1345-1545 计算机组成原理 考试 具体实施上，如何从杭州赶到浦东会是第一个问题。由于考试后赶到杭州东还需时间，从杭州东赶到上海虹桥"
+    },
+    {
+      "title": "D^3CTF 2025 运维笔记",
+      "url": "https://blog.woshiluo.com/posts/2025/06/d3ctf-2025-%E8%BF%90%E7%BB%B4%E7%AC%94%E8%AE%B0/",
+      "date": "2025-06-01",
+      "summary": "致歉 比赛开始后约一小时内，比赛平台因不明原因（目前来看应为平台程序负载过高）导致平台响应速度极慢。如果有参赛的师傅读到这篇文章，再次向您表达歉意。 前传 尽管我常常自称运维，但是我确实没有实打实的运维过 CTF 比赛，更没有运维过 k8s 集群。这几年协会不少比赛的运维也都是由凌武学长负责。 先前 HGAME Final 2025 虽已有相关经验，但是 Final 毕竟是，线下赛，校内赛，当时也没出锅，况且出锅了就大不了走到前面给大家鞠躬。 今年 D^3CTF 的准备时间相较往年有所减少（两个月 -› 一个月）。运维任务我一开始以为不会在 Vidar-Team 手中，结果最后还是落到我们手里。 <!--more--> 餐前 首先，毋庸置疑使用了 ret2shell 作为 CTF 平台。首先他是 D^3 成员写的平台，其次就算 ret2shell 有一些小瑕疵，但是其仍比大多数平台更加好用。 ret2shell 需要跑在 k8s 系平台上，考虑 HGAME 时校内网络稀烂，我们决定全量上云。 由于路径依赖，我仍然选择腾讯云。就在我已经在腾讯云一台机器上装好 k3s 时，队长告诉我我们已经成功要到了 Google Cloud Platform 的赞助。那云平台也就自然需要使用 GCP 了。 我一登录 GCP 就好像刘姥姥进了大观园。虽然国内的云平台的应用名也都挺花里胡哨，但是一般还是可以看最后几个字确定的。但是 GCP 上来一个 \"Compute Engine\" 给我干晕了，这在引擎什么呢？ 不过这倒是我的英文水平不济的问题。我们现在可以创建虚拟机了，让我们试试水。等等，为什么没有带宽选项？查了一下，原来是自动配置的，谷歌还是太有带宽了。 随后我开始在 GCP 上乱翻，发现了一个叫 GKE 的东西，竟然谷歌有全自动托管的 k8s 集群，为什么不用呢？ 我一开始尝试使用 aut"
+    },
+    {
+      "title": "Fish 7 日之行",
+      "url": "https://blog.woshiluo.com/posts/2025/02/fish-7-%E6%97%A5%E4%B9%8B%E8%A1%8C/",
+      "date": "2025-02-12",
+      "summary": "本着总想折磨一下自己这个本源愿望，最近尝试了从 zsh 迁到 fish。 尽管 fish 有很多不错的功能（比 zsh 阳间许多的配置文件管理，条理清晰的变量控制 etc），但是事实上各个 shell 的生态并不完全相同。 我曾经使用 p10k + zinit，它很好，我很喜欢它。但是 p10k 已经打出了 「THE PROJECT HAS VERY LIMITED SUPPORT」 ，所以也许搬家总是好的。而在 fish，我则在尝试 starship。 但是 fish 则没有那么完善，fish 自带良好的 tab 补全，但是代价是没有人试图做的更好。我很喜欢 fzf-tab 插件，他能允许你在 tab 补全时多选。fish 当然也有 fzf 插件，也有人在尝试做这个事情，但是看起来由于「searching completions is better left to the fish-shell devs」被 closed 了（ https://github.com/PatrickF1/fzf.fish/pull/293 ）。而至于 fish 自己，则有一个 10 年老 issue： https://github.com/fish-shell/fish-shell/issues/1898 。 <!--more--> 另一个问题是 git status，p10k 使用 git_status 来获取 git status，并且使用 lazy load 手段来避免在过大项目时的卡顿。同时，他有良好的情况处理和不同颜色的高亮，比如显示 rebase cherry-pick merge 的状态。 <figure> <figcaption> P10K 和 Starship 的差距 </figcaption> </figure> starship 在速度上到也还好，但缺乏对状态机的提示。"
+    },
+    {
+      "title": "熙熙攘攘又一年",
+      "url": "https://blog.woshiluo.com/posts/2025/02/%E7%86%99%E7%86%99%E6%94%98%E6%94%98%E5%8F%88%E4%B8%80%E5%B9%B4/",
+      "date": "2025-02-06",
+      "summary": "其实不是特别有些年终总结的喜好，本博客几年来应该是没有写过的。但是上了大学之后发现生活节奏没有那么固定了，一段时间有一段时间的重点。有的时候感觉总是感觉变得太多太快，可能确实需要写点闲杂琐碎，留下一点记忆。 <!--more--> 特别是去年暑假没有回家，也算是理解为何说在外「漂荡」。由于回家还是可预期的，父母也疑似没有我过得更开心了，所以没有强烈的「思乡」之情，可无根的感觉总是环绕在身旁。看起来已经在这个城市生活许久，却又有太多小细节提醒到自己不是这里长大的。至于自己毕业后何去何从，就更不已是城市的问题了。 AI 带来的冲击一轮接着一轮。作为算是科班出生的人，大语言模型工作原理也算是知道个皮毛。原理说来简单，可也没人能解释清楚为什么他的准确率能到这个范围。LLM 能处理的问题越来越多，说好是又解决了一个问题，说坏就是随便扩展一下就开始胡言乱语了。可问题还是那个问题 -- 没人知道为什么对，没人知道为什么错。你甚至不知道他是不是算能思考了，因为你也不知道什么是所谓「思考」。 似乎琐碎太多，是时候进入正文了。 生活 感觉去年最失败的事情就是在生活上完全没有平衡。别说身体健康，心理健康也往往在线上徘徊。其实有的时候说「都是 XCPC 害的」真不是一句笑谈。上半年的身心健康水平显著优于下半年。 感觉心理健康其实是身体健康的前提，你在关心你的身体健康的前提是你认为你还有明天。 ACGN 去年去了上海 6 次，4 次都是 ACGN 相关。我甚至一度怀疑我去年我在上海的时间比在乌鲁木齐长（当然，其实没有）。 一月份去了齐藤朱夏上海演唱会。细算算是自己第二次去这种类型的活动，演出效果和氛围非常好，也算是初步认识了一轮日式应援。当然然并卵，我每次都是在旁边现学现卖。 五一去的是 DizzyMarket & 逆转裁判联动咖啡店。然后和初中同学一天随机游走，大学同学一天随机游走。DM 是好活动"
+    },
+    {
+      "title": "一次有趣的尝试 -- 最小化 Hello，World",
+      "url": "https://blog.woshiluo.com/posts/2024/04/%E4%B8%80%E6%AC%A1%E6%9C%89%E8%B6%A3%E7%9A%84%E5%B0%9D%E8%AF%95-%E6%9C%80%E5%B0%8F%E5%8C%96-helloworld/",
+      "date": "2024-04-24",
+      "summary": "0 起因 计算机系统导论课上老师说可以内联汇编来尽可能减小 Hello，World！的大小。 我觉得既然要做，不如就做到极致。何不试试直接写汇编呢！ 1 汇编的尝试 直接用 as 有点不理想，因为没有 db 用来往文件里写字符串。 不妨试试 nasm ，我们只需要一次 write 和一次 exit ，很容易编出这样的 asm： <!--more--> section.text: global _start data db \"Hello, World!\", 0 _start: xor eax, eax add eax, 1 mov edi, eax mov rdx, 13 mov esi, data syscall mov eax, 0x3C mov rdi, 0 syscall 编译一下： nasm -f ELF64 hello.s -o hello 编出来的文件没有可执行权限， +x 后运行一下。然后报错了： zsh: exec format error: ./hello 发现文件并没有被 link 过！让 ld 来链接一下： ld -g ./hello -o ./hello 然后程序成功运行了，我们来看看多大。 -rwxr-xr-x 1 woshiluo woshiluo 4.7K Apr 24 13:38 hello 2 链接的问题 怎么这么大！这很奇怪，我们只有几行汇编指令，这么大的文件是从哪里来的呢？ readelf 可以看到， ld 贴心的为我们添加了 bss 段等 padding，但是我们这里并不需要。 怎么办呢？其实我们可以考虑自己构建一个合法 ELF 结构。 而我们自然不是第一个这么想的，所以这里有一个前人的轮子： https://github.com/tchajed/minimal-elf 那么我们很成功的得到了一个 210B 大小的可执行文件！ 3 压"
+    },
+    {
+      "title": "清明厦门游记",
+      "url": "https://blog.woshiluo.com/posts/2024/04/%E6%B8%85%E6%98%8E%E5%8E%A6%E9%97%A8%E6%B8%B8%E8%AE%B0/",
+      "date": "2024-04-07",
+      "summary": "动机 这段时间糟心事一堆，比如什么因体测痛失一等奖学金，什么 XCPC 在校内连省赛名额都打不到，亦或是越来越听不懂的数分高代和从来没有听懂过的大物。 虽然这些问题说到底就是菜就多练，但是发生了还是让人很难过。 所以在清明期间出去散散心是一个早就有预谋的事情，但是去厦门则不是。 本来的计划是，杭州市内晃晃，最多到上海或者浙江省内乱晃，当日去当日回。 不过清明前几天整了张交通联合的实体卡。一看发卡地是厦门 e 通卡。一下子回想起高三网课时期，每天都在听 一道厦门 写作业，非常向往去厦门看海。内心的欲望点起来就不会轻易熄灭呢。 与此同时，学校发布了清明节多放一天的消息。掐指一算，便感天时地利人和。订票，订酒店，出发！ <!--more--> Day -1 尽管我没有想翘工程伦理，但是一觉醒来已经下课了。于是就想着连写作与沟通一同翘掉。 不过 mantle 师傅指出，明天就放假了，万一一对一点名就不好玩了。于是还是去了。当然最后还是没有点名。 在经过叙事逻辑的轰炸后，回到寝室接着调 PA。在成功让两个 user process 跑起来后，一看表惊觉已经 2130 了！在飞速打包完行李后，便冲出宿舍去不知名小教室过夜 -- 以便能够赶上第二天 0700 的高铁。 Day 0 在不知名小教室接着写 PA，糊出来了多前台用户切换。于是就算是写完 PA4 了，选做任务什么的就交给未来的 woshiluo 吧。 被防御性定下的 0530 的闹钟干醒。赶首班地铁前往杭州东站。 <figure> <figcaption> 清晨的文泽路地铁口 </figcaption> </figure> 到了地铁站后发现还有一点点点点时间，于是就决定前往和 ch405 师傅前往全家买点盒饭。 刚到检票口就听到了「即将开始检票」的广播，然后一扭头发现已经开始检票了…… 检票，吃完盒饭，便开始闭目养神。迷迷糊糊起"
+    },
+    {
+      "title": "Codeforces Round 1934 解题报告",
+      "url": "https://blog.woshiluo.com/posts/2024/03/codeforces-round-1934/",
+      "date": "2024-03-03",
+      "summary": "A Too Min Too Max 排序，选前 2 后 2。 B Yet Another Coin Problem 整出 LCM。 容易发现要么是对 LCM 的余数，要么就是对 LCM 的余数 + LCM。 <!--more--> C Find a Mine 如果只有一个矿，对两个点查询就可以得到结果。 不放考虑四个顶点，显然查询 3 个至少有两个指向的是同一个点。 那么我们可以问 3 个，得到两个点。 试询一个，成了就成了，不成另外一个可以成。 D1 XOR Break — Solo Version 要么直接转，要么先转全 1，然后转到目的。 D2 XOR Break — Game Version 考虑 popcount。 容易发现 popcount 为奇数的时候是必败状态。 否则必胜。 直接做下去即可。"
+    },
+    {
+      "title": "Codeforces Round 1937 解题报告",
+      "url": "https://blog.woshiluo.com/posts/2024/03/codeforces-round-1937-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/",
+      "date": "2024-03-02",
+      "summary": "A Shuffle Party 容易观察到在 $2 \\cdot x$ 的时候一就会被交换出去。 输出最小的 2 的次幂即可。 B Binary Path 开始和结尾是固定的。 扫描两层中间的部分，只能走上面就归 0，都能走 +1， 只能走下面就结束。 <!--more--> C Bitwise Operation Wizard 先 n 次打擂台，找到最大值。 很容易发现 $a_i \\oplus a_j$ 的最大值应该是 $2^k-1$。 所以我们可以可以再打一次擂台，找到 $a_m | a_i$ 的最大值及其合法 $a_i$ 序列（其中 $a_m$ 是已经找到的最大值）。 然后现在要想异或是也能这么优，我们需要找到最小的 $a_i$，再打一次擂台即可。 D Pinball 什么史诗级分类讨论大题。 容易发现球在滚来滚去，最后出去。 球会因为在其左边的 > 和在其右边的 < 的反弹一次。 故事实上求会反弹有限次，且反弹的点位是确定的。 前缀和优化即可。 E Pokémon Arena 建图题。 考虑直接建图描述这个情况，很容易发现复杂度是 $O(n^2m)$ 的，绷不住。 考虑将每个属性的当前值抽出来建图，这样建图复杂度就是 $O(nm)$ 的，就可以正常通过此题。"
+    },
+    {
+      "title": "Codeforces Round 1929 解题报告",
+      "url": "https://blog.woshiluo.com/posts/2024/03/codeforces-round-1929-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/",
+      "date": "2024-03-02",
+      "summary": "A Sasha and the Beautiful Array 直接最大值减最小值即可。 B Sasha and the Drawing 容易发现，首先填第一行和最后一行是较优的，只有四个端点处有可能重复，别的点每加一个都会覆盖两条对角线。 对四个端点特判即可。 <!--more--> C Sasha and the Casino 神秘贪心题。 容易发现，我们并不能堵自己一定会输 $x$ 次然后下一次赢回来，因为中间也是有可能赢的。 这是的我们不能够最优化分配金钱。 考虑每一局，我们都应当能够赢回所有本金且有富裕，才能保证一定能够获得任意金钱。 扫描一遍即可。 D Sasha and a Walk in the City 这 D 感觉不如和 C 换个位置。 考虑 $f_{i,0/1/2}$。 表示 $i$ 为根的字数下面，以 $i$ 往下的链最多有几个危险路口。 2 的情况显然不能再加，1 的情况要讨论自己是不是危险路口，0 的情况显然恒定为 1。 直接 dp 即可。 E Sasha and the Happy Tree Cutting 暴力加边，事实上会发现如果我们考虑状态压缩，即记录每一个边所覆盖到的点对集合。此时集合的种类是 $O(k)$ 的。 那么我们只需要把这些集合拉出来跑状压 DP 即可。"
+    },
+    {
+      "title": "Codeforces Round 1923 解题报告",
+      "url": "https://blog.woshiluo.com/posts/2024/03/codeforces-round-1923-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/",
+      "date": "2024-03-02",
+      "summary": "A Moving Chips 从最后往前，每一格都得点一次。 B Monsters Attack! 这坐标正负显然没关系。 绝对值，排序，前缀和，判断每个点是否可行即可。 <!--more--> C Find B 不妨考虑将所有 1 换成 2，将所有别的换成 1。 如果这样能成，那肯定存在满足题目条件的序列。 D Slimes 一个序列可以被合并一个史莱姆，要么是他本来就是只有一个，要么就是一个连续段含有两个以上不同血量的史莱姆。 考虑对于每一个史莱姆，分别考虑其能不能被左右的临近史莱姆吞，或者先找到一个最短的含有两个史莱姆的左临近和右临近序列。 然后二分寻找合法值即可。 E Count Paths 虚树。 考虑令 $f_i$ 表示以 i 为根往下有多少个符合颜色的点且没有被在其他符合颜色的点下面。 好像有不是虚树的写法，找个时间看看。"
+    },
+    {
+      "title": "HGAME 2024 Week4 WriteUP",
+      "url": "https://blog.woshiluo.com/posts/2024/02/hgame-week4-writeup/",
+      "date": "2024-02-29",
+      "summary": "Written by woshiluo. 给官方怎么交的我交原模原样发过来了，如有错误烦请各位大佬斧正。 Crypto lastrsa 令 $f=p \\operatorname{\\texttt{xor}} (q>>13), t=2 \\times 114512$。 给出了 $e_1 = \\sum_{i=1}^{40} (ft)^i, e_2 = \\sum_{i=1}^{40} (f+t)^i$。 其实这两个都是多项式啊。 不妨二项式定理展开，然后对两个多项式求 GCD，发现是一个一次方程，那么我们就得到了 $f$。 <!--more--> 有了 $f$ 之后看看怎么得到 $p,q$。这个难度不太大，很容易注意到 $n$ 的最后 $k$ 位可以由 $p,q$ 的最低 $k$ 位决定，而 $f$ 又给出了 $p,q$ 中大多数位的关系。 考虑爆破 $q$ 的低 $13$ 位，然后向前递推即可。 n=136159501395608246592433283541763642196295827652290287729738751327141687762873360488671062583851846628664067117347340297084457474032286451582225574885517757497232577841944028986878525656103449482492190400477852995620473233002547925192690737520592206832895895025277841872025718478827192193010765543046480481871 enc1=24819989814781521691643786741949111114756687344969147316822041728730452738892328562"
+    },
+    {
+      "title": "HGAME 2024 Week3 WriteUP",
+      "url": "https://blog.woshiluo.com/posts/2024/02/hgame-week3-writeup/",
+      "date": "2024-02-24",
+      "summary": "Written by woshiluo. 给官方怎么交的我交原模原样发过来了，如有错误烦请各位大佬斧正。 Crypto matrix_equation 考虑构造格对应格求最短向量，即可得到一组合法的 $p,q,r$。 <!--more--> #! /usr/bin/env python3 # vim:fenc=utf-8 # # Copyright © 2024 Woshiluo Luo <woshiluo.luo@outlook.com> # # Distributed under terms of the GNU AGPLv3+ license. \"\"\" \"\"\" from Crypto.Util.number import * import hashlib f rom sage.all import * k1=73715329877215340145951238343247156282165705396074786483256699817651255709671 k2=61361970662269869738270328523897765408443907198313632410068454223717824276837 M = matrix(ZZ, [[2**256,0,0],[k1,1,0],[k2,0,1]]) # L = M.LLL() # # or # L = M.BKZ(block_size=2) # shortestV = L[0] # print(shortestV) L1 = [ 5851117074945081723062478, -9396324357950573888994599, -15154059265021257630097517] # L2 = [ 65301243525031258000907285, 33281308486653930"
+    },
+    {
+      "title": "HGAME 2024 Week2 WriteUP",
+      "url": "https://blog.woshiluo.com/posts/2024/02/hgame-week2-writeup/",
+      "date": "2024-02-24",
+      "summary": "Written by woshiluo. 给官方怎么交的我交原模原样发过来了，如有错误烦请各位大佬斧正。 Crypto babyRSA 一般来说 e 不会太大，考虑枚举质数，很快就能求得 e。 注意到 e 和 $\\varphi(n)$ 不互质，故逆元不存在。 注意到 $\\varphi(q)$ 和 $e$ 互质。 <!--more--> 故可求得 $m' = c^d \\equiv m \\pmod q$ 而 $m$ 显然为 $m' + kq$，枚举即可。 #! /usr/bin/env python3 # vim:fenc=utf-8 # # Copyright © 2024 Woshiluo Luo <woshiluo.luo@outlook.com> # # Distributed under terms of the GNU AGPLv3+ license. from Crypto.Util.number import * import gmpy2 e=73561 p=14213355454944773291 q=61843562051620700386348551175371930486064978441159200765618339743764001033297 c=10500213872246694649593663865603821400004347575163902508525511396508874927246 \\ 1906892586616250264922348192496597986452786281151156436229574065193965422841 gift=9751789326354522940 # n=e # while True: # if n == 1: # n = 2 # else: # n = gmpy2.next_prime(n"
+    },
+    {
+      "title": "HGAME 2024 Week1 WriteUP",
+      "url": "https://blog.woshiluo.com/posts/2024/02/hgame-week1-writeup/",
+      "date": "2024-02-24",
+      "summary": "Written by woshiluo. 给官方怎么交的我交原模原样发过来了，如有错误烦请各位大佬斧正。 Misc SignIn 有请 GIMP 自由拉伸。 <!--more--> 来自星尘的问候 提示的挺明显，直接去游戏官网能够找到该字体。 六位弱加密，stegseek 直接爆破。 爆破完了后给了字体查看器。 拖搞到的字体进去。 肉眼观察可以得到答案。 simple_attack 明文爆破。 试了半天才发现是 bandzip 压的。 希儿希儿希尔 直接 binwalk 得到密文。 LSB 得到密钥。 提示了 Hill 密码。解密即可。 签到 谢谢，已经取关了。 Web 2048*16 抓个包，发现没给服务器发请求。 直接魔改 js，让方块只会生成 32756。 移动一下就能得到 flag 了。 Bypass it 开扫。 逮捕到 register.php curl \"http://47.100.137.175:31227/register.php?username=1&password=1\" --data \"username=1&password=1\" 登录，得到 flag。 jhat 显然有任意读，相关办法搞回显。 直接抛出字符串。 throw (new java.io.BufferedReader( new java.io.InputStreamReader( (java.lang.Runtime.getRuntime().exec('cat /flag')).getInputStream() ) )).readLine() Select Courses 搞了半天也没看出来咋搞。 乱点发现小概率能选上课。 我是脚本小子！ while true; do for i in $(seq 1 5); do curl 'http://47.100.137.175:30995/a"
+    },
+    {
+      "title": "村庄外有大世界 - OI 回忆录",
+      "url": "https://blog.woshiluo.com/posts/2023/06/2280/",
+      "date": "2023-06-12",
+      "summary": "0 序 对我个人而言，我的 OI 生涯并不美满。 但同样，他也是我不可割舍的，难以忘怀的青春。 在百日誓师的时候，台上的教师代表说起你们的青春年华都在教学楼里时，我突然想起，我的青春年华都给了小机房。 <!--more--> 1 开始 六年级的时候，种种机缘巧合，开始维护一个博客（是的，就是你看到的这个）。 家里人是做计算机相关的，并不反对。但是他们认为应该做些更有意义的事情，于是他们把我扔到了某个竞赛培训机构。 当时的我已经在和 PHP 的搏斗中懂得了一点点编程，于是在入门班中也就悠然自得了。 老师是很开明的，既然你有闲心，就欢迎你去任何班。于是我就来到了中等班。 中等班的人数相当多，在那一个个拥挤的夏日中，我一点点跟上了中等班的强度。 当时中等班的老师其实是一位刚高考完的学长，他告诉我们，新疆的差距和内地的差距是很大的。 我便想，这样的差距是不可弥补的吗，我要试试看。于是，拿上那年普及一等奖就是我的第一个目标。 然而，那年我 205pts，一等奖分数线 210pts。 2 发展 虽然我没考上一等奖，但是在普及也算得上优秀，老师选择让我来到一中机房。 和我一起来的还有那一届的特长生，学长们轮流讲课，我则在每天的自习课翻过大绿谷，在 vjudge 上将学长们白天做的题目补完。 那一段时光相当快乐，也相当快。转眼到了暑假，我和学长们的水平都有了很大的长进。我们到常州进行集训。 在常州的日子，我们真切的感受到了什么叫「内地选手」。也算得上是开了眼界，知道了诸多未曾听说过的方法，也见到了新疆之外的学校是如何训练，如何生活的。 回到新疆，伴随着 NOIP 的临近，人渐渐多了起来。每一场比赛都有几十个人，每一次打盘都一呼百应。然而我的成绩算不上理想，一度到教练劝我只打普及的地步。但我觉得还是可以一试的。 出分，我的成绩出乎意料的高，在所有高一选手的前面。突如其来的喜悦冲淡了很多事情，"
+    },
+    {
+      "title": "歪理随记",
+      "url": "https://blog.woshiluo.com/posts/2023/01/%E6%AD%AA%E7%90%86%E9%9A%8F%E8%AE%B0/",
+      "date": "2023-01-29",
+      "summary": "和 朋友 聊天的时候说的几句话，想想应该记下来自勉： 个人精力的极限就在哪里，你试图压它提高效率，它会在别的地方降低你的效率。 我能做的就是在我有精力的时候好好学，然后努力做好精力分配。 剩下的我急就是浪费精力"
+    },
+    {
+      "title": "直播，从延迟到卡顿",
+      "url": "https://blog.woshiluo.com/posts/2022/11/%E7%9B%B4%E6%92%AD%E4%BB%8E%E5%BB%B6%E8%BF%9F%E5%88%B0%E5%8D%A1%E9%A1%BF/",
+      "date": "2022-11-27",
+      "summary": "0 序 同学们整了个直播平台。 他们跑起来了！他们用的服务器没有前端！ 他们自己写了！他们写挂了！他们来折磨我了！ 1 技术栈 他们用的是这玩意 https://github.com/ZLMediaKit/ZLMediaKit 。其实我是不开心的，因为这种大而全的东西往往代码都比较离谱，而且文档和沟通记录全中文，怎么看怎么离谱。 不过我不趟这浑水，跑都跑起来了管他干啥。 <!--more--> 2 HLS HTTP Live Streaming，缩写为HLS，是由苹果公司提出基于HTTP的流媒体网络传输协议。是苹果公司QuickTime X和iPhone软件系统的一部分。它的工作原理是把整个流分成一个个小的基于HTTP的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。在开始一个流媒体会话时，客户端会下载一个包含元数据的扩展 M3U (m3u8) 播放列表文件，用于寻找可用的媒体流。 source: https://zh.wikipedia.org/wiki/HTTP_Live_Streaming 支持上，Chrome 原生支持，Firefox 需要 hls.js 之类的插件。 HLS 支持事实上最广泛，很容易在 Github 上找到一车 HLS 的库。 缺点是标准的 HLS 受到切片时间限制，延迟往往会超过 5s 甚至 15s。 后来果子又整了个 LLHLS，但是技术栈不支持这东西。 直接套用 video.js 就可以获得良好的体验。 延迟太大了，得解决一下。 3 HTTP-FLV 你说的 FLV，是不是那个已经进了坟墓的 Flash？ 还真是。 技术细节没啥可讲的，只要我不发 context-length ，浏览器就不断连。 Flash 坟头草都比人高了，需要 flv.js 续"
+    },
+    {
+      "title": "高中数学学习笔记 - 椭圆",
+      "url": "https://blog.woshiluo.com/posts/2022/11/%E9%AB%98%E4%B8%AD%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%A4%AD%E5%9C%86/",
+      "date": "2022-11-24",
+      "summary": "我怎么也沦落到发这种文章了。 整理都整理完了，不发白不发。 1 定义 给定两点 $F_1, F_2$，令 $|F_1F_2| = 2c$，存在动点 $P$ 满足 $|PF_1| + |PF_2| = 2a(2a>2c)$，则 P 的轨迹曲线为椭圆。 $2a = 2c$ 时 P 的轨迹为线段，也就是线段 $F_1F_2$； $2a < 2c$ 时 P 不存在。 $F_1, F_2$ 称为焦点。 <!--more--> 第二定义： 准线：$x = \\pm \\frac{a^2}{c}$ 令 $P$ 到左准线距离为 $d_1$，到右准线距离 $d_2$。 有 $$ \\frac{PF_1}{d_1} = \\frac{PF_2}{d_2} = e ( e \\in (0,1) )$$ 2 几何性质 2.1 标准式 焦点在 $x$ 轴上： $$ \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 ( a > b > 0 ) $$ 焦点在 $y$ 轴上： $$ \\frac{y^2}{a^2} + \\frac{x^2}{b^2} = 1 ( a > b > 0 ) $$ 2.2 一般式 $$ Ax^2 + By^2 = 1 (A>0,B>0,A \\neq B)$$ 注意 $A \\neq B$ 不然就是圆了。 2.3 a, b, c 的关系 $$ a^2 = b^2 + c^2 $$ 2.4 范围 $$ x \\in [-a,a], y \\in [b,-b] $$ $(a^2-e^2x_0^2)$ 最大值：$x_0 = 0$ 时，取 $a^2$； 最小值：$x_0 = a$ 时，取 $a^2-c^2=b^2$。 2.5 对称性 关于坐标轴，$(0,0)$ 对称。 2.6 长短轴 长轴：$2a$ 短轴：$2b$ 焦距：$2c$ 半焦距：$c$ 2.7 离心率 表示椭圆的圆扁。"
+    },
+    {
+      "title": "折腾小记 - Service Worker",
+      "url": "https://blog.woshiluo.com/posts/2022/10/%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%B0-service-worker/",
+      "date": "2022-10-29",
+      "summary": "0 序 退役了，文化课了。于是每天写代码的时间连 20min 都没有了。 但我还是想写！那就整点乐子吧 1 Service Worker The service worker is designed first to redress this balance by providing a Web Worker context, which can be started by a runtime when navigations are about to occur. This event-driven worker is registered against an origin and a path (or pattern), meaning it can be consulted when navigations occur to that location. Events that correspond to network requests are dispatched to the worker and the responses generated by the worker may override default network stack behavior. This puts the service worker, conceptually, between the network and a document renderer, allowing the service worker to provide content for documents, even while offline. https://www.w3.org/TR/service-workers/#motivations 翻译一下就是 Service Worker 提供了一种在请求前进"
+    },
+    {
+      "title": "NOI 2022 游记 SP - 上海之旅",
+      "url": "https://blog.woshiluo.com/posts/2022/10/noi-2022-%E6%B8%B8%E8%AE%B0-sp-%E4%B8%8A%E6%B5%B7%E4%B9%8B%E6%97%85/",
+      "date": "2022-10-01",
+      "summary": "漫天闪烁的繁星 伴着我独自前行 越过光年的距离 照亮我的眼睛 化作繁星 0 启程 上海，中国对外开放的中心。 这场上海之旅来之不易。伴随着紧急疏散的要求，我和抹茶和 dyf_dyf 一同打的前往花桥，乘坐上海轨道交通 11 号线，前往上海。 <!--more--> <figure> <figcaption> 花桥站 </figcaption> </figure> 伴随着痛苦的安检（小米纸袋子终究还是破了）和另外两位同志漫长的买票，我们终于坐上了地铁。 来的太紧急，去哪住还是一个问题。尽管虹桥火车站可能很方便出行（根据之后的情况，实际上一点都不方便。），但是考虑到各种各样的影响 & 稍微逛逛上海的愿望，最后决定直接在南京东路。 在江苏路下车，告别两位同志。换乘 2 号线。 2 号线的风实在是太大了。惊讶于南京东路和南京西路的站名如此相近，险些下错站。然后喜闻乐见的出错口了。然后手机喜闻乐见的没电了。 根据我的直觉在地上往另一个出站口走。一出站，看到繁华的南京东路，突然一下有种想哭的感觉。直到这个时候，我才真正意识到这场 NOI 已经结束了，我的现役生涯结束了。逛着繁华的步行街，却不知前途何方。但是总归得先找到口，绕了 10min 后总算找到酒店（这附近怎么还有修游戏机的店？）。匆匆忙忙的整理完东西后，还是决定出去逛逛。 走向外滩，一抬头就是东方明珠塔。心中更是五味杂陈，唯有加快脚步前往外滩。 <figure> <figcaption> 从南京东路拍摄外滩 </figcaption> </figure> <figure> <figcaption> 外滩夜景 </figcaption> </figure> 走到人声鼎沸的外滩，看船只来来往往，霓虹灯五光十色，感叹于这座城市的生命力。尽管有新冠疫情防控的层层阻挠，这里依然繁忙。 回到酒店，躺在床上缓慢入睡。 1 Day 1 在关于 "
+    },
+    {
+      "title": "NOI 2022 游记",
+      "url": "https://blog.woshiluo.com/posts/2022/08/noi-2022-%E6%B8%B8%E8%AE%B0/",
+      "date": "2022-08-31",
+      "summary": "0 序 今年是最感到时间如白马过隙的。每天窝在机房看自己不会的东西，每天都在想明天要学什么新的东西，然后日子就一天天的过去了。 想学的东西还没有学完，CCF 要求所有选手先到昆山的通告倒是先来了。不管如何，参赛为重，只得踏上前往昆山的旅途。 1 愉快的七天 因为雅礼人的高铁经过温州 & 他们订票的时候也没带上我，我就自己整了个别的列车。 在 08 月 13 日到达的昆山。 一到昆山就跑去找 dyf_dyf 和 Lucky_Yukikaze 聊天。 整理一下情况是几乎整个新疆省队都在一起（除了 Arachv）。接下来的日子就很简单了，蜜雪冰城，Among us，写模版，聊天。 <figure> <figure> <figcaption> 0817 吃的华莱士 </figcaption> </figure> </figure> 简单欢乐的日子永远过的很快，眨眼见就到了 20 号。 <!--more--> 2 Day -1 2022/08/20 进去要扫码，然后手机没电了。 行程码还有非苏州的，不过似乎是普遍现象，没人管我。进去先写防疫承诺书，然后交健康卡，换来一张住宿卡！ 跑去签名墙，一眼 Karry5307。 <figure> <figure> <figcaption> 节目效果 </figcaption> </figure> </figure> 宿舍的环境相当豪华，美中不足是没有给选手提供盆。过去看了眼洗衣机和烘干机，感觉非常高端。吃饭前跑去和雅礼选手吹水，被 dyf_dyf 戏称为「罕见」。 吃完饭睡觉，起来写了个 LCT 板子就跑去吃饭了。 晚上跑去参加「聚沙成塔」的「迎新晚会］。参加之前大胆猜测是 WC 文艺汇演的精神继承，主办方倒也大胆承认了。 一开始已经做好了观看烂活集合的准备，结果发现竟然有些好活。 上来唱 Euphoria ，然后整了个自制曲。认真说这群组委会"
+    },
+    {
+      "title": "Codeforces Round 1699 解题报告",
+      "url": "https://blog.woshiluo.com/posts/2022/07/codeforces-round-1699-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/",
+      "date": "2022-07-05",
+      "summary": "考试链接： https://codeforces.com/contest/1699 考试的时候 30min 写完 ABC 发现 D 没几个人就摸了。考完看了眼 E 发现一眼切。最后竟然上分了，我大受震撼。 A The Third Three Number Problem 求能否找到任意三个数字 $a,b,c$ 使得 $(a \\oplus b) + (a \\oplus c) + (b \\oplus c) = n$ 。 容易发现奇数根本不可能，偶数随便构造。 B Almost Ternary Matrix 给表格染色。使得对于任意一个格子，有且只有两个相邻格子和这个颜色不同。 以 2x2 为一个单位，交叉构造即可。 <!--more--> C The Third Problem 给定一个 $0 \\cdots n - 1$ 的排列 $a$ ，求有多少个排序 $b$ 满足 $\\forall i,j$ ，有 $mex_a(i,j) = mex_b(i,j)$ ，模 $10^9 +7$ 。 $n \\leq 10^5$ 思路 容易注意到 $0$ 是固定的，考虑从 0 出发维护当前的满足 $mex = i$ 的最小区间。 如果在移动 $i$ 的时候，区间没有变大，这 $i$ 可以在这个区间的任意位置。 否则这个数字的位置就是确定的。 $O(n)$ 处理即可。 Code /* * c.cpp * Copyright (C) 2022 Woshiluo Luo <woshiluo.luo@outlook.com> * * 「Two roads diverged in a wood,and I— * I took the one less traveled by, * And that has made all the difference.」 * * Distributed under ter"
+    },
+    {
+      "title": "虚树",
+      "url": "https://blog.woshiluo.com/posts/2022/07/%E8%99%9A%E6%A0%91/",
+      "date": "2022-07-02",
+      "summary": "用途 对于大多数情况，树中只有很少一部分点是对当前要处理的信息是有意义的。 我们可以在保留这些有意义的点，不破原树结构的情况下得到一个很精简的树，这样我们就不用遍历整颗树了。 这种做法就叫虚树。 <!--more--> 做法 我们管这些有意义叫关键点，对这些关键点按 dfn 序排序。 考虑构造一个栈，表示当前的维护的琏。 考虑遍历关键点，当前遍历到 $x$ ，则有如下情况 令 $p$ 为 $x$ 和栈顶的 lca。 如果 $p$ 是栈顶，直接将 $x$ 加入栈； 如果栈中 次 顶的 dfn $< dfn_p$ ，则证明当前结点和栈顶不在同一条链上，则需加入 $p$ 到栈中。 如果不是以上两种情况，弹出栈顶回到步骤 1。 在弹出栈顶的时候连边。 容易发现，令 $k$ 为关键点个数，则总结点个数在 $O(k)$ 中，则构造复杂度在 $O(k \\log n)$ 内，如果使用 $O(1)$ LCA，则构造复杂度可以优化到 $O(k)$ 。 例 Luogu P2495 [SDOI2011] 消耗战 题目链接: https://www.luogu.com.cn/problem/P2495 题目大意 给定一个根为 $1$ ，大小为 $n$ 的树。 $q$ 次询问，每次询问给定一些关键点，最小化需要删除的边的边权，使得所有关键点和 $1$ 不联通。 $\\sum k \\leq 5 \\times 10^5, n \\leq 2.5 \\times 10^5$ 做法 首先考虑只有一次询问怎么做。 容易构造 DP： $$ f(x) = \\sum_{y \\in son_{x}} \\begin{cases} e(x,y) & y 是关键点 \\ \\min( e(x,y), f(y) ) & y 不是关键点 \\end{cases} $$ 发现对于不是关键点的结点，其转移值事实上等于到最近的往下的关键点的最小边"
+    },
+    {
+      "title": "Dirichlet 前缀和",
+      "url": "https://blog.woshiluo.com/posts/2022/06/dirichlet-%E5%89%8D%E7%BC%80%E5%92%8C/",
+      "date": "2022-06-27",
+      "summary": "和后缀和。 0 序 求 $$ b_k = \\sum_{i|k}a_i $$ 或 $$ b_k = \\sum_{k|d}a_d $$ 都一样，没啥区别。 <!--more--> 1 内容 前缀和的写法： for( auto &p: primes ) for( int j = 1; 1LL * j * p <= N; j ++ ) b[ j * p ] += a[j]; 后缀和翻过来就行。 2 证明 一种比较野蛮的办法是参见 Sum over Subsets DP 的证明，这个东西实际上就是以质数为轴的高维前缀和。 另一种是循环不等式，没看懂。 这里考虑证明前缀和的形式，后缀和同理： 令 $p_i$ 表示从小到大第 $i$ 个质数，假设 $S_{i,j} = { x | x = k \\cdot j \\land k = \\sum_{i=1}^p p_i^{a_i} ( a_i \\in N )}$ 我们令在第 $k$ 轮结束后，$b_i = \\sum_{j \\in S_{i,j}} a_i$。 在 $k = 0$ 显然成立。 在 $k \\neq 0$ 时，如果 $p_k | i$ ，令 $i' = \\frac{i}{p_k}$，则有 $$ \\begin{aligned} b_i &= b_i + b_{i'} \\ &= \\sum_{j \\in S_{ k - 1, i }} a_j + \\sum_{j \\in S_{k,\\frac{i}{k}}} a_j \\ &\\because S_{ k - 1, i} \\cap S_{ k, i' } = \\emptyset, S_{ k - 1, i } \\cup S_{k,i'}=S_{k,i} \\ &\\therefore b_i = b_i + b_{i'} = \\sum_{j \\in S_{k,i}} a_j \\ \\end{aligne"
+    },
+    {
+      "title": "斯坦纳树入门",
+      "url": "https://blog.woshiluo.com/posts/2022/06/%E6%96%AF%E5%9D%A6%E7%BA%B3%E6%A0%91%E5%85%A5%E9%97%A8/",
+      "date": "2022-06-23",
+      "summary": "0 序 这个东西看了半天没想明白为啥不是最小生成树，然后发现最小生成树实际上是最小斯坦那树的特殊形式 -- 最小生成树里的所有点都是关键点。 最小斯坦那树是指在一个无向图中，求其最小生成网络使得其 包含所有关键点 总权值在满足 1 的情况下最小。 <!--more--> 1 做法 考虑构造 DP $f_{i,S}$ 表示当前以 $i$ 为根，联通了集合 $S$ 内所有的关键点。 则有： $$ \\begin{align} f_{i,S} &= \\min_{ s1 \\in S } { f_{i,s1} + f_{i, S \\oplus s1} } \\ f_{i,S} &= \\min_{ \\text{j 和 i 直接连接} } { f_{j,S} + e(i,j) } \\ \\end{align} $$ 方程 1 显然成立并易于转移，考虑如果转移方程 2。 注意到方程二实质性是三角形不等式，用最短路算法解决即可。 复杂度大约是 $O(3^{k}n + 2^nm \\log n)$（ $k$ 是关键点的数量）。前者是方程 1 的复杂度，后者是方程 2 的复杂度。 2 例 Luogu P4294 [WC2008]游览计划 非常显然的斯坦那树，但是需要注意这里不是边权而是点权。 方案输出就是传统的记录上一次转移点。 Code /* * luogu.4294.cpp * Copyright (C) 2022 Woshiluo Luo <woshiluo.luo@outlook.com> * * 「Two roads diverged in a wood,and I— * I took the one less traveled by, * And that has made all the difference.」 * * Distributed under terms of the GNU"
+    },
+    {
+      "title": "XJOI 2022 游记",
+      "url": "https://blog.woshiluo.com/posts/2022/04/xjoi-2022-%E6%B8%B8%E8%AE%B0/",
+      "date": "2022-04-23",
+      "summary": "-1 序 寄啦，哈哈。 今年是新疆维吾尔自治区第一次组织省选。 今年有很多神奇的事情，比如特派员换了，新疆成立竞赛组委会了，办省选了，有 $\\frac{1}{3}$ 了，有实体 NOI Linux。当然也不都是好事，疫情精准防控的代表上海已经被奥米克戎攻陷，全国疫情更是此起彼伏，见不到头。这种情况下信息学竞赛还能基本上「出淤泥而不染」，维持较为正常的赛季流畅已是相当不易。 在疫情的限制下，XJOI 最终未能选择新疆大学作为考点，而是选择了一所高中 -- 乌鲁木齐市第一中学。 <!--more--> 0 Day 0 上午做真题模拟，联合省选 2021 Day 2。T1 一眼 $\\log^2$ 然后写了一万年，一看表发现时间寄了，算了，反正是模拟赛。 下午边摸边改题，还在该能特派员就来了，教练让我们打扫好机房就再也不让进了。过了一会儿，特派员给机房贴了封条，走了。 一些趣闻则是我们对于 CCF 横幅的处理， 我们使用了一种最简单的办法，拿纸糊！ 1 Day 1 起床吃饭洗漱打理物品一气呵成。 冲到学校发现已经 0805 了，但是门口人挺多。 和袁纳海张雯越进行了友好的交涉，进了考场后寒暄了一阵，林乐天和杜宇丰就来了。 老一辈的人都齐了，大家还没能充分交流，考场就开始放人了。 进去问 NOI Linux 怎么办 -- 「后面单独拷题」，行吧。 题目到了，开题！ T1 开幕雷击。真出模拟啊 wdnmd。大概看了一下发现复杂度应该不是重点，所以就直接上手指针实现。经过粗略分析发现指针的空间还是无法估计，于是就用 vector 了。写完决定先看后面的题，然后再改 HashMap。 T2 简单推了一下，考虑针对区间做 DP，发现根本没写过这种东西，10pts 跑路告辞。 T3 不懂出题人为什么这么喜欢字符串。先来一个 HashMap，然后 20pts 随手写一下。开始写 4pts 的暴力"
+    },
+    {
+      "title": "Atcoder Beginner Contest 246 解题报告",
+      "url": "https://blog.woshiluo.com/posts/2022/04/atcoder-beginner-contest-246-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/",
+      "date": "2022-04-09",
+      "summary": "A Four Points 题目大意 给定矩形的三个顶点，求其剩下的顶点。 思路 签到 B Get Closer 题目大意 给定直线过点 $(0,0)$, $(a,b)$，求从 $(0,0)$ 出发，方向朝右，长度为一的线段的右端点。 思路 一开始是二分硬做的，然后被卡精度了。 求出两点距离，对 $a,b$ 分别除于这个这个距离即可。 <!--more--> C Coupon 题目大意 给定序列 $a$，数字 $x,m$。 可以将每个数字改为 $max(0,a_i-b_ix)$。 求在 $\\sum b \\leq m$ 的情况下，最小的 $\\sum a$ $1 \\leq a_i,x,m \\leq 10^9$ $1 \\leq n \\leq 2 \\times 10^5$ 思路 简单贪心。 第一轮使用 $x$ 的时候使得 $a_i = a_i \\bmod x$。 第二轮排序选就行。 D 2-variable Function 题目大意 给定 $n$，求最小 $x$ 满足 $x \\geq n, \\exists a,b, x=a^3+b^3+a^2b+b^2a$ $0 \\leq n \\leq 10^{18}$ 思路 注意到对于 $\\forall i_1,i_2,i_1 < i_2$，令 $g(i)$ 表示使得 $f(i,j) \\geq n$ 最大的 $j$，则有 $g(i_1)>g(i_2)$。 同时注意到，对于 $n \\leq 10^{18}$，有 $i,j \\leq 10^6$ 双指针即可。 Code /* * d.cpp * Copyright (C) 2022 Woshiluo Luo <woshiluo.luo@outlook.com> * * 「Two roads diverged in a wood,and I— * I took the one less travele"
+    },
+    {
+      "title": "Codeforces 383E Vowels",
+      "url": "https://blog.woshiluo.com/posts/2022/04/codeforces-383e/",
+      "date": "2022-04-04",
+      "summary": "题目链接： https://codeforces.com/contest/383/problem/E 1 题目大意 给定 $n$ 个长度为 $3$，字符集为 a-x 的字符串。 对于 $s, s \\subseteq [ \\texttt{a}, \\texttt{x} ]$，有 $f(s)$ 表示有多少个给定字符串和 $s$ 交集非空。 输出 $\\sum^{\\oplus}_s f(s) * f(s)$ 2 思路 注意到基本上是 SOS DP 的模版，除一个问题 -- 对于一个字符串可能会被统计多次。 简单容斥即可。 <!--more--> 3 Code /* * e.cpp * Copyright (C) 2022 Woshiluo Luo <woshiluo.luo@outlook.com> * * 「Two roads diverged in a wood,and I— * I took the one less traveled by, * And that has made all the difference.」 * * Distributed under terms of the GNU AGPLv3+ license. */ #include <cstdio> #include <cstdlib> #include <cstring> #include <vector> #include <algorithm> typedef long long ll; typedef unsigned long long ull; inline bool isdigit( const char cur ) { return cur >= '0' && cur <= '9'; }/*{{{*/ template <class T> T Max( T a, T b ) { retu"
+    },
+    {
+      "title": "Sum over Subsets DP 入门",
+      "url": "https://blog.woshiluo.com/posts/2022/04/sum-over-subsets-dp-%E5%85%A5%E9%97%A8/",
+      "date": "2022-04-04",
+      "summary": "0 引 为什么没在标题里写 SOS DP ？因为这 SOS 这个名字我第一次看的时候怎么看怎么觉得不正经，所以写全称让他看着正经一些。 个人感觉这个东西更像是一个套路而不是 DP 类型。 1 什么是 SOS DP Sum over Subsets DP，即求子集和的 DP。更具体的说，用于在 $O(k \\cdot 2^k)$ 的时间求出以下式子： $$ f_{mask} = \\sum_{i \\subseteq mask} a_i $$ <!--more--> 2 做法 一种非常朴素的方式是直接对于每个子集枚举其子集，复杂度是 $O(4^n)$。这个复杂度显然是无法接受的。 定义 $S(k,i) = { x | x \\subseteq k \\land k \\oplus x < 2^{i+1} }$。 则显然有 $$ S(k,i) = \\begin{cases} S(k,i-1) & k & 2^i = 0 \\ S(k,i-1) \\cup S( k \\oplus 2^i, i - 1 ) & otherwise \\end{cases} $$ 注意到现在已经可以递推 S 来得到我们想要的结果了。 但是更广为人知的是这个滚动数组的写法： for( int st = 0; st < ( 1 << K ); st ++ ) f[i] = a[i]; for( int j = 0; j < K; j ++ ) { for( int st = 0; st < ( 1 << K ); st ++ ) { if( st & ( 1 << j ) ) f[i] += f[ i ^ ( 1 << j ) ]; } } 3 例题 Codeforces 165E Codeforces 383E Codeforces 1208F"
+    },
+    {
+      "title": "Codeforces 165E Compatible Numbers",
+      "url": "https://blog.woshiluo.com/posts/2022/04/codeforces-165e/",
+      "date": "2022-04-04",
+      "summary": "题目链接： https://codeforces.com/contest/165/problem/E 1 题目大意 给定一个长度为 $n$ 的序列 $a$。 对于每一个 $a_i$，询问是否存在 $a_j$ 使得 $a_i & a_j = 0$，如果有输出 $a_j$（如果有多个，输出任意一个），否则输出 $-1$。 $1 \\leq n \\leq 10^6, 1 \\leq a_i \\leq 4\\cdot 10^6$。 2 思路 注意到 $a_i & a_j = 0$，其实就是询问是否有数字满足其是 $a_i$ 的补集的子集。 SOS DP 求出每个集合是否有数字是其子集即可。 <!--more--> 3 Code /* * e.cpp * Copyright (C) 2022 Woshiluo Luo <woshiluo.luo@outlook.com> * * 「Two roads diverged in a wood,and I— * I took the one less traveled by, * And that has made all the difference.」 * * Distributed under terms of the GNU AGPLv3+ license. */ #include <cstdio> #include <cstdlib> #include <cstring> #include <algorithm> typedef long long ll; typedef unsigned long long ull; inline bool isdigit( const char cur ) { return cur >= '0' && cur <= '9'; }/*{{{*/ template <class T> T Max( T "
+    },
+    {
+      "title": "Codeforces 1208F Bits And Pieces",
+      "url": "https://blog.woshiluo.com/posts/2022/04/codeforces-1208f/",
+      "date": "2022-04-04",
+      "summary": "题目链接： https://codeforces.com/contest/1208/problem/F 1 题目大意 给定一个长度为 $n$ 的序列 $a$ 求最大 $a_i|(a_j&a_k)$ 满足 $i < j < k$ $3 \\leq n \\leq 10^6, 0 \\leq a_i \\leq 2 \\cdot 10^6$ 2 思路 先考虑 $a_j&a_k$，显然可以通过 SOS DP 来求出对于任意 $s$，其最靠后 $j$ 的能够有 $k$ 使得 $s \\subseteq a_j&a_k$ 的位置。 然后考虑贪心来最大化按位或，从高位往低位处理，如果能够有一位新为 $1$，则有限选择位数高的。 <!--more--> 3 Code /* * f.cpp * Copyright (C) 2022 Woshiluo Luo <woshiluo.luo@outlook.com> * * 「Two roads diverged in a wood,and I— * I took the one less traveled by, * And that has made all the difference.」 * * Distributed under terms of the GNU AGPLv3+ license. */ #include <cstdio> #include <cstdlib> #include <cstring> #include <algorithm> typedef long long ll; typedef unsigned long long ull; inline bool isdigit( const char cur ) { return cur >= '0' && cur <= '9'; }/*{{{*/ template <clas"
+    },
+    {
+      "title": "Codeforces 1549E / 1548C",
+      "url": "https://blog.woshiluo.com/posts/2021/11/codeforces-1549e-1548c/",
+      "date": "2021-11-15",
+      "summary": "原题链接： https://codeforces.com/contest/1549/problem/E 题目大意 给定 $n$，$q$ 次询问。 每次询问给定一个 $x$，求 $\\sum_{i=0}^n \\binom{3i}{x}$ 思路 考虑定义 $f_{i,j}$ 表示 $\\sum_{k=0}^{n-1} \\binom{3k + j}{i}$，令 $0 \\leq j < m$ 注意到 $\\sum_{j=0}^{m-1} f_{i,j} = \\sum_{j=0}^{3n - 1} \\binom{j}{i} = \\binom{3n}{i + 1}$ $f_{i,j} = f_{ i - 1, j - 1 } + f_{i, j - 1 }$ 发现可以解出 $f_{i,0}$ $O(n)$ 递推即可。 <!--more--> 拓展 对于每天有 $m$ 只羊而不是 $3$ 只的情况。 显然可以 $O(nm)$ Code /* * e.cpp * Copyright (C) 2021 Woshiluo Luo <woshiluo.luo@outlook.com> * * 「Two roads diverged in a wood,and I— * I took the one less traveled by, * And that has made all the difference.」 * * Distributed under terms of the GNU AGPLv3+ license. */ #include <cstdio> #include <cstdlib> #include <cstring> #include <algorithm> typedef long long ll; typedef unsigned long long ull; inline "
+    },
+    {
+      "title": "NOI 2021 游记",
+      "url": "https://blog.woshiluo.com/posts/2021/07/noi-2021-%E6%B8%B8%E8%AE%B0/",
+      "date": "2021-07-31",
+      "summary": "为了适应传统的 Day1 Day2 定义，本文中 Day 1 为 2021/07/26，Day1.5 为一个地球日。 0 Day -3 正睿提供了一场信心赛，打开发现是大家都做过的题目，便回去看各自之前做过的题目了。 中午去忆九家吃的饭，恍惚间发现是可能最后一顿在忆九家吃饭，心情竟有点沉重。怀着敬重的心情吃完了这顿饭。 下午则是看看题目顺便唆使还在新疆的选手快跑，结果催着催着 CCF 突然发通知要求 07/23 到校。 走之前大家都拍了几张照 <!--more--> 1 Day -2 早上坐了许久地铁，到了长沙南。本来希望拍一下站牌，然后喜闻乐见的在错误的出站口出来了…… 懒得绕圈了，就直接进站了。 进候车厅后去买了瓶茶颜，喝完刚好开始检票。进去一看觉得是 CRH3C？抢铁真有你的。 上车听说去过南京的人被遣返了，心里不由得害怕。写了阵代码，又听说被安排到余姚本部了，才得以安心。 一下车发现几乎整个湖南省队都在这次列车上，于是志愿者都去迎接湖南省队。去找志愿者问，「你是新疆的？那去跟到那路湖南人后面。」。 到达余姚后去问其他人什么时候到，然后去门口等人。等了 1h 等到了兵二的。一起去吃了晚饭。吃完发现一中的人还没有来，于是拉上兵二的人一起等。等到了他们两位食堂都快没饭了。 晚上大家聊了许久的天。 2 Day -1 台风「烟花」还是来了。 经过新疆省队全体人员投票，得到绝对多数的结果 -- 「冲去食堂！」。于是大家冒着雨到了食堂吃早饭。 吃完回去换了套干衣服，然后开始复习笔试。中午吃饭时听说笔试移到今天，十分害怕。然后在从食堂回到宿舍的路上成功收到了要笔试的消息。 回去复习一下开始睡大觉。到了考场打开测试题目， -std=c++11 -lm -O2 不错，该有的都有了。 T1 一眼过去只会 50pts，有点慌。接着笔试开始了。 「选手丢失密码条会 _ 」这是啥？你笔试题库有"
+    },
+    {
+      "title": "MSSCTF 2021 Writeup",
+      "url": "https://blog.woshiluo.com/posts/2021/07/mssctf-2021-writeup/",
+      "date": "2021-07-18",
+      "summary": "审核也过了我就顺手发一下 实际上主要是想吐槽 Web 出题人题目里夹带私货，但是没什么好地方吐槽。 我当时看 Web1 的时候还不知道这个 HS 是啥ㄟ<(=▔.▔=)>ㄏ，结果下午打美团杯的时候恍然大悟。 有一说一，我也挺喜欢 Hanser 的歌的 以下是正文 <!--more--> CRYPTO OldAffineSignin 打开下发文件发现是给定了码表的替换 反过来映射即可 Web HS.com 先 curl -vv 链接 < HTTP/1.1 405 Method Not Allowed < Server: nginx/1.14.2 < Date: Sun, 11 Jul 2021 08:48:44 GMT < Content-Type: text/html; charset=UTF-8 < Content-Length: 0 < Connection: keep-alive < Allowed-Request-Method: HS < X-Powered-By: PHP/8.0.8 注意到给定了 Request Method，将 Request Method 替换成 HS 后开始代码审计 $fake_data = $_GET['innerspace']; $data = $_REQUEST['innerspace']; 题目要求上面两个变量不相同，注意到 $_REQUEST 是可以从 Cookies 读入的，所以直接提交即可 curl --cookie \"innerspace=mssctf\" -X HS url babyphp 打开发现是套了三层娃的代码审计 第一层是很常见的 PHP 弱类型，构造 level1=0x91d 第二层则是流注入，构造 level2=data:text/plain,mssCTF is interesting! 第三层是绕过正则匹配，但"
+    },
+    {
+      "title": "WQS 二分入门 - Codeforces 739E",
+      "url": "https://blog.woshiluo.com/posts/2021/07/wqs-%E4%BA%8C%E5%88%86%E5%85%A5%E9%97%A8-codeforces-739e/",
+      "date": "2021-07-01",
+      "summary": "0 碎碎念 实数二分，永远的调不出来(｡◕∀◕｡) 但是这算法还挺有意思的，故写到博客 <!--more--> 1 WQS 二分 1.1 概念 一部分题目会有一个限制条件使得本来可以 $O(n)$ 解决问题需要再 $O(nk)$ 的复杂度解决 这时可以考虑 WQS 二分 WQS 是解决形如以下的问题： 存在函数 $f(x)$ 在值域内为凸包， 即保证函数值域内 $\\forall a,b,c$ 满足 $a<b<c$， 有 $\\frac{f(b)-f(a)}{b-a} <\\frac{f(c)-f(b)}{c-b}$ 我们不能快速求出 $f(x)$ ，但我们可以知道 $g(x) = kx + b$ 与 $(x,f(x))$ 有没有交点。 因为 $f(x)$ 是凸壳，满足斜率单调递减，故 $g(x)$ 与 $(x,f(x))$ 是否相交关于 $k$ 单调，故可以二分求 $k$ 。 随后是怎么确定 $b$ 的问题，对于函数 $g(x)$ 来说，其截距就是 $f(x) - kx$，令计算 $f(x)-kx$ 的时间复杂度为 $T$ 则这个算法的时间复杂度为 $O(T\\log_2n)$($n$ 是 $f$ 值域大小) 1.2 做法 感性理解则是给定 $n$ 个物品，有权重 $w_i$，选择 $k$ 个，求最大权值。 容易发现没有 $k$ 的限制很容易在 $O(n)$ 内求出答案。 注意到如果给每个权重加一个 $x$，则 $x$ 上涨时选择的数量会下降，即构成单调性。 故可以二分 $x$ 使得此时恰好选择 $k$ 个，此时答案救为我们所求。 2 Codeforces 739E 2.1 题意 给定两个序列 $p,q$，对于每一位，你有三个选择 消耗一个 $a$，答案加 $p_i$ 消耗一个 $b$，答案加 $p_i$ 消耗一个 $a$ 和一个 $b$，答案加 $p_i + q_i - p_i"
+    },
+    {
+      "title": "Luogu P1552 「APIO2012」派遣",
+      "url": "https://blog.woshiluo.com/posts/2021/06/luogu-p1552-apio2012%E6%B4%BE%E9%81%A3/",
+      "date": "2021-06-05",
+      "summary": "1 题目大意 给定一棵树，每个结点两个权值 a,b 。 令一个合法的方案为一个点 u 和一个点集 v，满足以下要求 $\\forall x \\in v$ ，满足 x 是 u 子树中的结点（包括 u 本身） $\\sum b_{v_i} \\leq m$ 令一个方案的贡献为 $a_u \\cdot |b|$ 求最大贡献 <!--more--> 2 思路 注意到一个点的最优方案显然是其子树中尽可能选择小的。 发现问题可以合并。如果完成了一个结点所有直接儿子的处理，那么将儿子所选的结点合并到一起然后再选择即可。 实际上可以考虑维护可并堆和堆中值的和。每次合并完后弹出堆顶直到合法为止。 注意到每个结点最多被插入一次，删除一次，故复杂度 $O(n\\log(n))$ 3 Code #include <cstdio> #include <algorithm> const int N = 1e5 + 1e4; typedef long long ll; // Leftist Tree struct HeapNode { int val, dist, cnt; ll sum; HeapNode *son[2]; HeapNode( int _val, int _dist, int _cnt, ll _sum) { val = _val; dist = _dist; cnt = _cnt; sum = _sum; son[0] = son[1] = 0; } inline void push_up() { cnt = ( son[0]? son[0] -> cnt: 0 ) + ( son[1]? son[1] -> cnt: 0 ) + 1; sum = ( son[0]? son[0] -> sum: 0 ) + ( son[1]? son[1] -> sum: 0 ) + val; dist ="
+    },
+    {
+      "title": "PKUSC 2021 游记",
+      "url": "https://blog.woshiluo.com/posts/2021/05/pkusc-2021-%E6%B8%B8%E8%AE%B0/",
+      "date": "2021-05-17",
+      "summary": "-1 申请 在今年五月的时候突然发现 PKU 和 THU 要举办夏令营的消息先后到来 THU 的报名不需要学生做什么，我就没有在意。 PKU 的报名需要填写不少资料还需要去打印并盖章申请书。人不在鸟市，就让教练帮忙了。 随后前往镇海中学参加训练。 天天都有的考试一直持续到 10 号，虽然 THU 方面似乎抛弃了新疆一直没有给我们教练回话，但是 PKU 还是通过了我的申请。 0 Day 0 5.13 镇海中学 -> 宁波火车站 -> 余姚北站 -> 余姚中学 在上午考试的时候向镇海教练询问，发现他们将会于明天早上出发。考虑到由镇海到余姚由 1h + 的车程，但我并没有教练或者家长随行，故选择在 13 日自行前往余姚。 <!--more--> 容易发现如果使用公共交通时间瓶颈在从宁波到余姚（因为镇海到宁波火车站有地铁），故选择通过高铁通行从宁波到余姚北，然后通过余姚公共交通到达宁余姚中学。 考完试之后拉肚子，不得已打破了坐地铁去宁波火车站的计划，改选出租车方案。 <figure> <figcaption> 刚到站台火车就来了 </figcaption> </figure> 本计划乘坐 15:55 发车的 G7792 次列车从宁波到余姚北。但到达宁波火车站时已 15:40 分，取完票已经 15:45。好消息则是当时宁波站的安检队列并不长，而安检口一过就是对应检票口，没有错过列车。 在到达了余姚北后，我选择乘坐 余姚102路 -> 余姚205路。因为余姚北站为余姚 102 路始发站，故没有能够做到座位。但是 余姚205路 则没有这般运气，而好巧不巧的是这一段路有许多上下坡。于是我站得非常艰难。 到达酒店后在附近的店铺采购了一些生活必需品并打印了入营通知书和获奖证书复印件。 回去看了阵 「是，大臣」就去睡觉了。 1 Day 1 5.14 余姚中学 报道/试机/机式第一轮 1.1 报道"
+    },
+    {
+      "title": "玄学，从入门到炼丹 -- 初识遗传算法",
+      "url": "https://blog.woshiluo.com/posts/2021/02/%E7%8E%84%E5%AD%A6%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%82%BC%E4%B8%B9-%E5%88%9D%E8%AF%86%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/",
+      "date": "2021-02-13",
+      "summary": "0 说在之前 正常来说，一个正常的 Oier 是不会碰这种东西 但是我们综合实践小组的组长不知道为啥对这东西出奇的感兴趣， 我就试着理解一下 因为也仅仅是试着理解，如有理论错误还往各位在评论区斧正 本文的代码实现可以在 https://gitee.com/yingziyu/task 看到 <!--more--> 1 什么是遗传算法 先来搬运维基百科 遗传算法 （英語：genetic algorithm (GA) ）是 计算数学 中用于解决 最佳化 的搜索 算法 ，是 进化算法 的一种。进化算法最初是借鉴了 进化生物学 中的一些现象而发展起来的，这些现象包括 遗传 、 突变 、 自然选择 以及 杂交 等等。 Wikipedia - 遗传算法 2 使用遗传算法求得旅行商问题近似解 旅行商问题 （最短路径问题）（英語： travelling salesman problem , TSP ）是这样一个问题：给定一系列城市和每对城市之间的距离，求解访问每一座城市一次并回到起始城市的最短回路。它是 组合优化 中的一个 NP困难 问题，在 运筹学 和 理论计算机科学 中非常重要。 Wikipedia - 旅行推销员问题 首先明确遗传算法要做什么 生成数个随机生物，形成环境 交配突变产生新的随机生物 计算适应度，筛选掉不合适生物 回到第 2 步 那么这样就会有几个变量 环境中初始生物个数，我们令其为 pn 突变概率，我们令其为 pm 交配概率，我们令其为 pn 在一些算法实现中会加权交配，但是这东西实在是不想写…… 2.1 理论实现 如何计算适应度？ 这个倒是简单，路径长度的倒数就是其适应度 那么算法就是 随机生成 pn 条路径 路径之间随机交叉，生成预备进入下一代环境的生物 生物根据概率突变 排序，去除 pn 名后的路径 回到第 2 步 如何交叉？ 随机确定第一个路径中的 $\\frac{"
+    },
+    {
+      "title": "树上启发式合并(dsu on tree)简介",
+      "url": "https://blog.woshiluo.com/posts/2021/01/%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6dsu-on-tree%E7%AE%80%E4%BB%8B/",
+      "date": "2021-01-28",
+      "summary": "1 树上启发式合并 1.1 启发式算法 我并没有找到比较正式的定义，在这里引用 OI Wiki 里的 启发式算法是基于人类的经验和直观感觉，对一些算法的优化。 例子：并查集的按秩合并 1.2 树上启发式合并 基于「减少节点多的子树的处理次数」的思想为主的算法 1.3 实现 我们希望节点多的子树处理次数尽可能少，也就是我们希望重儿子的处理次数尽可能少 注意到许多树上问题的处理过程是可延续的，即当前子树的处理完后可以直接将数据移交到父亲节点继续处理 基于这点，我们可以优先处理重儿子，然后直接继承到父亲节点。这样对于一个节点来说，其重儿子只需要处理一次，其轻儿子需要处理两次。 因为从树上任意一条路径上，关键点（即轻儿子）在 $O(\\log(n))$ 范围内，所以这东西的复杂度是 $O(n\\log(n))$ 的。 <!--more--> 2 例题 2.1 CF 600E Lomsat gelral 题目链接: https://codeforces.com/problemset/problem/600/E 大意 给定一棵根为 $1$ 的树，每个节点都有一个颜色，对于 每一个 子树，求其出现最多的颜色的编号的和。 思路 维护一个 sum[] 和 maxcnt ，每当有颜色的 sum 更大时更新 maxcnt ，相等则加入 ans 显然可以启发式合并 Code 代码太丑了，大概会重构 // Woshiluo<woshiluo@woshiluo.site> // 2021/01/25 12:34:45 // Blog: https://blog.woshiluo.com #include <cstdio> #include <cstdlib> #include <cstring> #include <map> #include <algorithm> template <class T> "
+    },
+    {
+      "title": "Codeforces Round 1467 题目大意 & 解题报告",
+      "url": "https://blog.woshiluo.com/posts/2021/01/codeforces-round-1467-%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/",
+      "date": "2021-01-11",
+      "summary": "即 Codeforces Round #695 (Div. 2) 许久不打变得更菜了... A. Wizard of Orz 0 大意 给定 $n$ 个板子，每个板子上有一个相同的数字 $x ( 0 \\leq x \\leq 9 )$ 随机选择一个数字 $y(1 \\leq y \\leq n)$，令板子 $i$ 上的数字变成 $ x + |y - i| \\pmod 10$ 1 Code 显然，输出 $98{987654321}$ 的前 $n$ 位即可 #include <cstdio> int main() { int T; scanf( \"%d\", &T ); while( T -- ) { int n; scanf( \"%d\", &n ); if( n == 1 ) printf( \"9\" ); else { printf( \"98\" ); int cur = 9; for( int i = 3; i <= n; i ++ ) { printf( \"%d\", cur ); cur ++; if( cur >= 10 ) cur = 0; } } printf( \"\\n\" ); } } <!--more--> B Hills And Valleys 0 大意 给定一个长度为 $n$ 的序列，对于$\\forall i (1 \\leq i \\leq n)$，如果满足 $ a_i < a_{i-1},a_i < a_{i+1} $ 或 $ a_i > a_{i-1}, a_i > a_{i+1} $ 则对答案贡献 $1$ 现在，你可以随意修改仅 $1$ 个数字，求最小的贡献和 1 思路 对于 $i$, 我们令 $max = \\max( a_{i+1}, a{i-1} ), min = \\min( a_{i+1}, a{i-1} )$ 则显然只有 $ a_i = { max - 1,"
+    },
+    {
+      "title": "NOIP 2020 游记",
+      "url": "https://blog.woshiluo.com/posts/2020/12/noip-2020-%E6%B8%B8%E8%AE%B0/",
+      "date": "2020-12-07",
+      "summary": "0 说在之前 本来把，今年是没有打算写 NOIP 游记的 但是题目实在是太神仙了，所以还是来写写把 -2 Day -1 传统是周五中午吃香锅，结果拜疫情所赐，现在中午是吃不了香锅了（现在连三楼香锅都没得了<(%>_<%)>） 于是就周三吃了 Rush 到食堂，环视一圈。诶，怎么就我一个高一的来了。 算了，和高三一起恰就行了。 <!--more--> -1 Day 0 本来早上还想学点东西，人来齐后 狼人杀 这次的准考证不是选手打印了 -- 是学校打印，人裂开来 贴照片，盖章，回家 1 Day 1 1 清晨 今年和往年不一样，前往的并非往熟悉的七十中，而是八一中学 总之是件好事，起码从 Windows XP 变成了 Windows 7 （虽然还是 32 bit）（虽然还是不是 NOI Linux） 不过坏处大概是离家远了 和以往考试一样的洋葱面下肚，踏上雪地，前往考场 到了门口，发现刚好拍完照。行呗，又被开除了。 教练给了个巧克力，刚好没 Arcahv 让我给他带瓶水，直接安排了瓶 2L 的 (｡◕∀◕｡) 2 考试 8:30 题目下发 虽然还是极域下发的文件，不过这次好歹是踏点下发的 尝试用 Google Chrome 打开这个 PDF，结果电脑给我卡死了…… 反正经历了 10 min 左右的事故时间，总算可以开始写题了 T1 一眼往过去拓扑排序，感觉 long long 模拟分数似乎会 boom，但是不这么写也没得办法，不管了 T2 一看字符串，完蛋，想了一会儿似乎可以二维偏序累计贡献？不管，先跳 T3 翻到数据范围，诶数据范围呢？再往下一看 checker.cpp ,完蛋 T4 一眼过去 30 pts，仔细一看 $k=1$ 似乎可写？ 回去看 T2，发现可以枚举 C，仔细思考了一阵子发现 $\\sum \\frac{n}{i} = O(n\\ln n)$ 海星，然后套个 $\\"
+    },
+    {
+      "title": "Luogu P4616 [COCI2017-2018#5] Pictionary",
+      "url": "https://blog.woshiluo.com/posts/2020/10/luogu-p4616-coci2017-20185-pictionary/",
+      "date": "2020-10-12",
+      "summary": "1 题意 在第 $i$ 天，如果 $\\gcd(a,b) = m - i + 1$，那么 $a,b$ 之间会建立一条边 给定 $a,b$，求 $a,b$ 最早什么时候 连通 多组询问，离线 $1 \\leq n ,q \\leq 10^5, 1 \\leq m \\leq n, 1 \\leq a, b \\leq n$ $n,m,q,a,b \\in \\mathbb{Z}$ <!--more--> 2 思路 首先，对于 $\\gcd(a,b) = i$，当且仅当 $a = ci,b = di, \\gcd( c, d ) = 1$ 而对于 $\\gcd( i, ki ) ( k \\in \\mathbb{N}^{*} )$ 显然等于 $i$ 所以当第 $i$ 天时，所有 $m - i + 1$ 的倍数（包括其本身）都可以连通 容易发现，如果只有单次询问，只需要并查集顺序维护即可 由于 $O(\\sum^n_{i=1} \\frac{n}{i}) = O(n \\log n)$，所以程序是不会超时的 但是对于多组询问，直接使用这个方法就不行了 考虑并查集等同于从 $i$ 开始给每个 没有连通 的 $i$ 的倍数建边 （这里的没有连通指 $i$ 到 $i$ 的倍数不在同一集合内） 那么可以按照这个思路建出来一棵树，将每条边的边权设为连接时的 $i$ 那么对于询问 $a,b$，只需要求两者最短路径中的瓶颈即可（即最小值） 这就是个求 lca 的操作，随便什么板子都能做 3 Code #include <cstdio> #include <cstring> #include <algorithm> const int INF = 0x3f3f3f3f; const int N = 2e5 + 1e4; const int K = 25; int n, m, q; int fa[N][K], min[N][K]"
+    },
+    {
+      "title": "POJ 3071 Football",
+      "url": "https://blog.woshiluo.com/posts/2020/09/poj-3071-football/",
+      "date": "2020-09-24",
+      "summary": "1 题目大意 给定 $2^n$ 个整数，从 $1$ 到 $2^n$ 编号 给定 $p_{i,j}(1\\leq i \\leq n, 1 \\leq j \\leq n)$ 定义一次操作为 选中 $2k$ 和 $2k+1$ ( $0 \\leq k, k \\in Z, 2k+1 \\leq n$ ) 其中有 $p_{2k,2k+1}$ 的概率选中 $2k$ 其中有 $p_{2k+1,2k}$ 的概率选中 $2k+1$ 把所有选择的数字组成一个新的数列，大小为 $\\frac{n}{2}$ 显然最后会只剩 $1$ 个数字 问剩哪个数字的概率最大 <!--more--> 2 思路 这东西显然是个满二叉树，大力 dfs，每次分成两半 每次向上的时候，把两边概率和一下，就没事了 3 Code #include <cstdio> const int N = 1100; int n; double p[N][N]; double f[N]; void dfs( int left, int rig ) { if( left == rig ) { f[left] = 1; return ; } int mid = ( left + rig ) >> 1; dfs( left, mid ); dfs( mid + 1, rig ); double la[N]; for( int i = left; i <= rig; i ++ ) la[i] = f[i]; for( int i = left; i <= mid; i ++ ) { double cur = f[i]; f[i] = 0; for( int j = mid + 1; j <= rig; j ++ ) { f[i] += ( cur * la[j] * p[i][j] ); } } for( int i = mid + 1; i <= ri"
+    },
+    {
+      "title": "AtCoder Regular Contest 084 D Small Multiple",
+      "url": "https://blog.woshiluo.com/posts/2020/09/atcoder-regular-contest-084-d-small-multiple/",
+      "date": "2020-09-07",
+      "summary": "题意 题目链接: https://atcoder.jp/contests/arc084/tasks/arc084_b 要求 $ x = ak(a \\in N) $，定义 $f(x)$ 为 $x$ 在十进制下每一位数字的和 思路 一开始肯定想的是大力枚举，但是很快就可以发现大力枚举可以被卡掉，因为另一个数字可以非常大 然后就考虑缩小另一个数字的范围 一开始的思路顺着质因数分解走的，但是想了半天没有想出来 考后发现顺着质因数的过于复杂，我们可以直接考虑 $x \\bmod k$ 意义下的情况 从 $ x $ 到 $ x + 1 $，答案显然增加 1 但是如果 x 一直加 1 会加到 10 ，这个情况答案在事实上没有增加 1 我们可以发现只有其在某一步变成 10 倍才会发生这种事件，那么再加一条边 从 $x$ 到 $10x$，答案不增加 这样就构成了一条图，从 $0$ 到 $1$ 的最短路就是所求答案 <!--more--> Code Submission #16551083: https://atcoder.jp/contests/arc084/submissions/16551083 考虑边权 $\\in {0,1}$，所以直接 bfs 即可 #include <cstdio> #include <queue> const int N = 1e5 + 1e4; int k; bool vis[N]; struct node { int cur, val; }; int main() { scanf( \"%d\", &k ); std::deque<node> q; q.push_front( (node){ 1, 1 } ); while( !q.empty() ) { node top = q.front(); q.pop_front(); if( vis[ top.cur ] "
+    },
+    {
+      "title": "LibreOJ 2789 「CEOI2015 Day2」世界冰球锦标赛",
+      "url": "https://blog.woshiluo.com/posts/2020/09/libreoj-2789-ceoi2015-day2%E4%B8%96%E7%95%8C%E5%86%B0%E7%90%83%E9%94%A6%E6%A0%87%E8%B5%9B/",
+      "date": "2020-09-07",
+      "summary": "题意 题目链接: https://loj.ac/problem/2789 给定 $m$ 和一个长度为 $n$ 数列 $a$ 一种方案为从 $a$ 中选择 $k (0 \\leq k \\leq n)$ 个数字出来（在一个方案中，每一位只能选择一次） 一种合法的方案为选择的所有数字加起来不超过 $m$ $n \\leq 40$ <!--more--> 思路 一开始是大力搜嘛，毕竟 $2^n$ 也不是很大，还是要有梦想的 然后就只有 40pts 了，然后就想背包，发现背包也就 70pts，后面那几个 $10^{16}$ 怎么想都不可能背包 后来发现虽然 $2^{40}$ 会爆炸， $2^{20}$ 并不会 那就枚举前一半和后一半，然后合并即可 枚举可以搜索和二进制枚举，但是搜索会快一点（可以剪枝），但是二进制枚举不费脑子，我写的是二进制枚举 合并可以二分或者直接双指针，双指针又快又不费脑子，我写的是双指针 Code 提交链接: https://loj.ac/submission/926831 #include <cstdio> #include <vector> #include <algorithm> const int N = 40; const int BIT = 22; int n; long long m, ans; long long a[N], sum[N]; inline int full_bit( int k ) { return 1 << k; } inline int has( int k, int i ) { return ( k >> ( i - 1 ) ) & 1; } int main() { scanf( \"%d%lld\", &n, &m ); for( int i = 1; i <= n; i ++ ) { scanf( \"%lld\", &a[i] "
+    },
+    {
+      "title": "Codeforces Round #666 (Div. 2) 题目大意 & 解题报告",
+      "url": "https://blog.woshiluo.com/posts/2020/09/codeforces-round-666-div-2-%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/",
+      "date": "2020-09-02",
+      "summary": "即 Codeforces Round 1397 比赛链接: https://codeforces.com/contest/1397 A Juggling Letters 题目大意 给你 $n$ 个字符串，问能不能打乱成相等的三个字符串 思路 因为可以随意打乱，所以统计每个字母个数，只要每个字母的个数模 $n$ 余 $0$ 即可 <!--more--> Code // Woshiluo<woshiluo@woshiluo.site> // 2020/08/30 22:37:13 // Blog: https://blog.woshiluo.com #include <cstdio> #include <cstdlib> #include <cstring> #include <algorithm> template <class T> T Max( T a, T b ) { return a > b? a: b; } template <class T> T Min( T a, T b ) { return a < b? a: b; } template <class T> void chk_Max( T &a, T b ) { if( b > a ) a = b; } template <class T> void chk_Min( T &a, T b ) { if( b < a ) a = b; } int T; int n; char a[1100]; int sum[200]; int main() { scanf( \"%d\", &T ); while( T -- ) { memset( sum, 0, sizeof(sum) ); scanf( \"%d\", &n ); for( int i = 1; i <= n; i ++ ) { scanf( \"%s\", a )"
+    },
+    {
+      "title": "Codefoces #1382 解题报告 & 部分翻译",
+      "url": "https://blog.woshiluo.com/posts/2020/07/codefoces-1382-%E8%A7%A3%E4%BD%93%E6%8A%A5%E5%91%8A-%E9%83%A8%E5%88%86%E7%BF%BB%E8%AF%91/",
+      "date": "2020-07-22",
+      "summary": "A Common Subsequence 0 题目大意 给你两个序列 $a,b$，求两个序列 最短 的公共子序列 1 代码 对，是最短…… <!--more--> // Woshiluo<woshiluo@woshiluo.site> // 2020/07/21 22:41:11 // Blog: https://blog.woshiluo.com #include <cstdio> #include <cstdlib> #include <cstring> #include <algorithm> template <class T> T Max( T a, T b ) { return a > b? a: b; } template <class T> T Min( T a, T b ) { return a < b? a: b; } template <class T> void chk_Max( T &a, T b ) { if( b > a ) a = b; } template <class T> void chk_Min( T &a, T b ) { if( b < a ) a = b; } const int N = 11000; int T; int a, b; bool ta[N]; int main() { scanf( \"%d\", &T ); while( T -- ) { scanf( \"%d%d\", &a, &b ); memset( ta, 0, sizeof(ta) ); for( int i = 1; i <= a; i ++ ) { int tmp; scanf( \"%d\", &tmp ); ta[tmp] = 1; } int res = 0; for( int j = 1; j <= b; j ++ ) { int tmp; scan"
+    },
+    {
+      "title": "AC 自动机 -- LOJ 3089 「BJOI2019」奥术神杖",
+      "url": "https://blog.woshiluo.com/posts/2020/07/ac-%E8%87%AA%E5%8A%A8%E6%9C%BA-loj-3089-bjoi2019%E5%A5%A5%E6%9C%AF%E7%A5%9E%E6%9D%96/",
+      "date": "2020-07-21",
+      "summary": "0 说在之前 我吐了，这题我写了两天…… 考虑到我自己写的博客还没有 AC 自动机的，我会简单写一下 1 AC 自动机 1.0 什么是 AC 自动机 有一个说烂但是很形象的说法 Trie + KMP AC 自动机用于多模式串匹配 就是你拿一个字符串，和一堆字符串 然后 AC 自动机可以让你快速的知道这一堆字符串中，那些是你这一个字符串的子串 <!--more--> 1.1 构建 AC 自动机的第一步是建立 Trie 树，这并不复杂 问题在于，如果仅仅建立一个 Trie 树，想要很快的完成上面的任务还是略显艰难 跟 KMP 一样，如果我们可以使用一个类似 next 数组的指针，告诉我们失配后应该跳到哪里能最大化效率就好了 这个东西就叫做 fail 指针（失配指针） 建立完 Trie 树之后，我们可以像建立 next 数组一样建立 fail 指针 假设到遍历到某一节点时，其父亲节点及深度比他小的 fail 指针已经建立完毕 那么对于其子节点，如果存在，那么我们需要顺延现在节点的 fail 指针即可 如果不存在，那么就直接指向 fail 的对应点即可 2 LOJ 3089 2.1 思路 AC 自动机上 DP 事实上我是第一次接触这种科技 首先对所有模式串跑 AC 自动机 原来的答案带根号，取 ln 然后就变成了喜闻乐见的 01 分数规划 $$ \\begin{aligned} & \\ln\\sqrt[k]{\\Pi_{i=1}^k maigc_i} \\ = & \\frac{1}{k} \\ln \\Pi_{i=1}^k maigc_i \\ = & \\frac{ \\sum_{i=1}^k \\ln maigc_i }{k} \\end{aligned} $$ （关于为什么能这么变 Wikipedia - 对数 ） 设 f[i][j] 表示到了到了第 $i$ 位第 $j$ 个节点的结果 剩下就是 "
+    },
+    {
+      "title": "重学后缀数组 -- LOJ 2122 「NOI2015」品酒大会",
+      "url": "https://blog.woshiluo.com/posts/2020/07/%E9%87%8D%E5%AD%A6%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84-loj-2122-noi2015%E5%93%81%E9%85%92%E5%A4%A7%E4%BC%9A/",
+      "date": "2020-07-20",
+      "summary": "0 说在之前 jt 学长说的没错，SA 果然是写一次忘一次…… 于是这次重新学了一次，发现之前的 Blog 问题比较多，于是重写一次算了 实际上这些东西就是变相重写 Oi Wiki 后缀数组那一页，不过是写给自己的罢了 <!--more--> 1 什么是后缀数组 1.0 一些约定 字符串下标从 1 开始 $s[ x \\dots y ]$ 表示从 s[x] 到 s[y] 的连续子串 $s[ x \\dots ]$ 表示从 s[x] 到字符串结尾的连续子串 $s[x \\dots y ] = t[ a \\dots b ]$ 表示这两个子串的每一位都相同 1.1 后缀数组的定义 后缀数组，即 SA(Suffix Array) 后缀数组通常是两个数组， sa[] 和 rank[] sa[i] 表示第 $i$ 名的后缀开始位置 rank[i] 表示从 $i$ 开始的后缀的排名 也就是 rank[ sa[i] ] = i 1.2 倍增求法 后缀数组最暴力的求法应该是 $O(n^2\\log(n))$，但是这个显然太慢了…… 后缀数组常见的比这个快的有两种 $O(n)$ 的求法，和 $O(n\\log(n))$ 的倍增法 鉴于我确实还没有见到过 $O(n)$ 求后缀数组的题目（实际上是有的，但是我都不会） 所以本篇博客还是只写倍增求后缀数组 1.2.1 倍增什么 注意到每个后缀之间是有包含关系的。所以我们可以将长度为 $k$ 的字符串看作一个数字，即其现在的排名 然后就可以快速的求出 $2k$ 的字符串排名（即双关键字排序） 使用快速排序的话就是 $O(n\\log^2(n))$ 使用基数排序的话就是 $O(n\\log(n))$ 1.2.2 优化常数 注意到基数排序的桶大小是不断变化的，所以我们可以在每次倍增的时候更改桶的大小 没有必要给第二关键字跑基数排序。由于我们已经有了在 $k$ 长度下确定"
+    },
+    {
+      "title": "笔记 -- 如何快速的配置一台新手机到我想要的样子",
+      "url": "https://blog.woshiluo.com/posts/2020/07/%E7%AC%94%E8%AE%B0-%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%80%E5%8F%B0%E6%96%B0%E6%89%8B%E6%9C%BA%E5%88%B0%E6%88%91%E6%83%B3%E8%A6%81%E7%9A%84%E6%A0%B7%E5%AD%90/",
+      "date": "2020-07-05",
+      "summary": "0 事出有因 因为老手机被拿来腾讯会议了，加之确实也算得上时代的眼泪了（ 所以换了一台 Redmi K30 5G picasso 那么，开始迁移吧 1 选择 ROM 拿老账号一下就解锁了，没有等待时间，赞美小米 到 XDA 论坛上看一眼没有什么坏处 目测这个手机没有什么好包，Lineageos 都只有一个 alpha 的非官方版，还是 3 个月前的产物了... 详情看这个帖子 不过有一个 eu 版的 miui 包，走起 在这个帖子里 事实上 CN 版的 MIUI 也不错，不过人在 CN 身不由己。我相信小米有保护用户信息的决心（至少 MIUI 12 中可见一二），但是不清楚小米能不能做到。 而且 EU 版有 Google 全家桶，so why not? <!--more--> 2 迁移 上来先 Google 迁移，把原来手机上软件都迁移过来 然后 Magisk 一把梭，虽然 MIUI 的功能挺多的，但是还是需要改改 使用 钛备份 迁移 Wechat 和 TIM 两大毒瘤 在完成这一步过后，实际上就迁移的差不多了 3 优化 Magisk 里 Riru 一把梭，Magisk 里仓库使用 Riru 的所有软件都挺好用的 使用 yc9559/uperf 和 yc9559/qti-mem-opt 来获取一些内核上的优化 使用 MIUI Debloater 来扬掉小米的一些奇奇怪怪的软件，这些用不到还存在， 使用 Nevolution 改进 TIM 和 Wechat 的通知（真的太拉跨了） 本来有考虑过上 IFW，但是 MIUI 的优化够强了... 4 总结 差不多了，后面会花点时间补图和链接 总得来说，主要是针对的是国产的几个毒瘤，以及对 MIUI 的激进优化和内核的调整， 就如同那句话说的「人品不高智商低，慎用安卓智能机」。对于安卓的优化是一个理性对比的过程，也是一个经验的过程。本"
+    },
+    {
+      "title": "随记 - Firefox 扩展",
+      "url": "https://blog.woshiluo.com/posts/2020/06/%E9%9A%8F%E8%AE%B0-firefox-%E6%89%A9%E5%B1%95/",
+      "date": "2020-06-14",
+      "summary": "0 事出有因 之前手滑执行了一次命令，导致 Firefox 的配置文件没了 然后操作失误，把云端备份的插件列表搞没了 万幸的是目前整理到的损失似乎只有这些，那就顺便整理一下自己的插件吧 1 插件 1.1 美化 事实上，Firefox 默认主题挺好看的 配合 Arc Theme 可以得到更好的显示效果，何乐而不为 Firefox 默认的标签页有点单调。啥都不显示没意思，显示的东西又没啥用…… 所以使用 Tabliss 是一个不错的选择 1.2 标签页 当你标签页血多的时候，Firefox 会在标签栏提供一个滚动条 虽然很人性化，但是明显不够用啊 使用 OneTab 可以归档标签页。毕竟一般开那么多个标签页，真正在用的也没几个 使用 Tree Style Tab 可以给以树形结构管理标签页，改变线性的标签页整理方式 1.3 屏蔽一些恼人的东西 uBlock Origin 广告屏蔽，比 AdblockPlus 快多了 uBlacklist 配合 cobaltdisco/Google-Chinese-Results-Blocklist 使用，可以在 Google 屏蔽掉大部分 SEO 站 什么时候中文互联网的 SEO 站能少一点 1.4 功能扩展 Violentmonkey 暴力猴，在 https://greasyfork.org/zh-CN 或者是 Github 上搞到脚本后就往这东西里面放 我使用的脚本有这些 the1812/Bilibili-Evolved Bilibili 的功能越砍越残缺了，破站迟早药丸。这个脚本可以 增强/美化 Bilibili 的页面，省得被 Bilibili 强奸大脑 CSDN 净化 这没什么说的，CSDN 你马死了 woshiluo/syzoj-copy-button 给 SYZOJ 增加 Copy 样例到剪切版的功能。请问 syzoj-ng 什么"
+    },
+    {
+      "title": "Lilac Train Writeup",
+      "url": "https://blog.woshiluo.com/posts/2020/05/lilac-train-writeup/",
+      "date": "2020-05-04",
+      "summary": "0 写在之前 应该是一场新手入门欢乐赛 打着也确实快乐，应该是我 CTF 比赛第一次做出 Oi 之外的题目 绝大多数知识点都在 CTF Wiki 上，剩下就是脑洞了 管他呢，mcfx txdy！ 1 PWN 1 坤坤の地址 同志，用 Linux！ 然后就是 nc 一把梭 $ nc 47.94.239.235 4001 welcome to Lilac@HIT Here is kunkun's address: flag{zonghelou_714} 2 坤坤の唱 放进 IDA 去，一看，就是打开 $signer/$music ，不允许你写 ../ 然后 Hint 告诉你要访问 ../flag 然后就是傻逼题目了 nc 47.94.239.235 4002 input the singer's name: .. input the song's name: /flag here is the lyric: flag{w0w_you_successfully_escape_the_r3strict} 3 坤坤の石头剪刀布 打开一看，发现 rand() 函数的种子是 time()%10 那为什么要动脑子，写个种子是 0 的情况 试一下就行了 #include <cstdio> int num = 0; int myRand() { num = (num * num + 233) % 23333; return num; } void mySrand(unsigned int seed) { num = seed; } int playOnce() { fflush(stdout); int ai = myRand() % 3; if( ai == 0) return 1; if( ai == 1) return 2; if( ai == 2) return 0; } int ma"
+    },
+    {
+      "title": "Fcitx5 & Rime 配置小记",
+      "url": "https://blog.woshiluo.com/posts/2020/04/fcitx5-rime-%E9%85%8D%E7%BD%AE%E5%B0%8F%E8%AE%B0/",
+      "date": "2020-04-30",
+      "summary": "<figure> <figcaption> Fcitx5 输入截图 </figcaption> </figure> 0 Rime 是什么 在很多情况下，如果你直接带着 Linux 输入法 这样的关键字去 Google 搜索 那么你得到的通常都是 Google Pinyin，或者 Sogou Pinyin Google Pinyin 年久失修，Sogou 的话，维护也不算多上心 如果你再认真一点，你也许可以找到 Sunpinyin 和 Libpinyin 这两个的体验已经相当不错了，但你也会发现，在准确率上，还是差了点，而且在词库大的时候，还会很卡 这个时候，你就会查到 Rime —— 中州韵输入法引擎 聪明的输入法懂我心意 这是 Rime 自己的标语 Rime 具有更强大的 定制性 ，更优秀的 词语联想 ，以及 跨平台 的支持 如果你不相信 Sogou（相信我， 没几个人 相信 Sogou 不会 上传你的数据），那么 Rime 是目前最优秀的选择 0.1 环境 & 我的需求 Arch Linux 小鹤双拼用户 1 Rime 的安装 对于 Arch Linux，我们首先需要选择一个 输入平台 ，我选择的是 Fcitx5 关于 Fcitx5，你可以查阅 Fcitx5 - ArchWiki （虽然这个东西在 Waylnd 下的功能还很残缺，但是，Wayland 本身问题也不少） 关于 Rime，Arch Wiki 有 这个页面 这个页面简单的介绍了 Rime 的安装方式与使用方式，不过并没有关于 Fcitx5 的介绍 所以我来简单的记录一下 1.1 Fcitx5 的安装 pacman -S fcitx5 fcitx5-qt fcitx5-gtk pacman -S fcitx5-chinese-addons fcitx-rime 此时， Fcitx5 的配置文件在 ~/.conf"
+    },
+    {
+      "title": "i3wm 从初识到真香",
+      "url": "https://blog.woshiluo.com/posts/2020/04/i3wm-%E4%BB%8E%E5%88%9D%E8%AF%86%E5%88%B0%E7%9C%9F%E9%A6%99/",
+      "date": "2020-04-14",
+      "summary": "本篇文章是一个配置案例，而并非入门指南 0 怎么认识的 i3wm 我一开始用 Linux 是 DDE 玩家（Deepin 对萌新及其友好），后来改用 Debian ，就开始当 Gnome 人了 Gnome 作为一个几乎开箱即用的桌面环境还是很不错的。后来也试用过 KDE，被复杂的控制劝退了，于是就一直用 Gnome 后来听机房的 c0per 学长说过 i3，不过在他 laptop 上的 i3wm 真的好简洁简陋，大概是一名高三生实在是没有时间，所以我也就没有在意过这个东西。 前两天又双遇到了 Gnome 的一堆 Bug，大概是每逢 Gnome 版本更新都有的，于是在 LK 的大力安利下入坑了 1 什么是 i3wm 「i3 是一种动态的平铺式窗口管理器」 ArchWiki - I3_(简体中文) 反正我是没有看懂这个简介，不过让我们顺着查一下 「平铺式（或直译瓦片式）窗口管理器，其中的窗口不能够重叠，而是像瓦片一样挨个摆放。这种窗口管理器一般比较依赖键盘操作，较少使用鼠标。此类窗口管理器一般也是高度可定制的。」 [ArchWiki - Window_manager_(简体中文)](https://wiki.archlinux.org/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) 简单来讲，i3wm 作为一个 窗口管理器 ，默认会将你的窗口像瓦片一样放置于屏幕上，但你也可以令其变成浮动窗口 i3wm 和 Gnome 最大的区别，是一个是 DE，一个是 WM，前者对后者实际上是包含关系 不过我在更换 i3wm 后并没有继续使用 gdm，而是使用了 LightDM i3wm 有 i3bar，用于显示系统的信息等 2 配置 相比较 Gnome 的一套环境，i3wm 只是一个 WM，很多功能都要自己配置 "
+    },
+    {
+      "title": "Codeforces Contest #1325 解题报告 & 题目大意",
+      "url": "https://blog.woshiluo.com/posts/2020/03/codeforces-contest-1325-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A-%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F/",
+      "date": "2020-03-16",
+      "summary": "A EhAb AnD gCd 题目大意 给定一个整数 $x（2\\leq x \\leq 10^9)$ 求 $a,b$ 满足 $\\gcd(a,b) + \\operatorname{lcm}(a,b) = x$ 多组解输出任意一个 Code 这有啥说的，随便找个质因数让后输出 $p, x$ 就可以 // Woshiluo Luo<woshiluo@woshiluo.site> // 2020/03/14 22:36:48 #include <cmath> #include <cstdio> #include <cstring> #include <algorithm> template<class T> T Min( T _a, T _b ) { return _a < _b? _a: _b; } template<class T> T Max( T _a, T _b ) { return _a > _b? _a: _b; } template<class T> T chk_Min( T &_a, T _b ) { return _a = (_a < _b? _a: _b); } template<class T> T chk_Max( T &_a, T _b ) { return _a = (_a > _b? _a: _b); } int t, x; int main() { scanf( \"%d\", &t ); while( t -- ) { scanf( \"%d\", &x ); int sq = std::sqrt(x) + 1; for( int i = 1; i <= sq; i ++ ) { if( x % i == 0 ) { int tmp = ( x / i ) - 1; if( tmp == 0 ) continue; printf( \"%d %d\\n\", i"
+    },
+    {
+      "title": "Codeforces Contest #1312 解题报告 & 部分翻译",
+      "url": "https://blog.woshiluo.com/posts/2020/03/codeforces-round-1312-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A-%E9%83%A8%E5%88%86%E7%BF%BB%E8%AF%91/",
+      "date": "2020-03-10",
+      "summary": "比赛链接： Educational Codeforces Round 83 (Rated for Div. 2) A Two Regular Polygons 1 题目大意 给你两个正多边形，一个 $n$ 条边 $A$ ，一个 $m$ 条边 $B$ 问 $B$ 有没有可能被 $A$ 包含且所有顶点都与 $A$ 的某一个节点重合 有输出 YES ，否则输出 NO 2 Code 判 $n \\bmod m = 0$ 就可以了 #include <cstdio> int T; int n, m; int main() { scanf( \"%d\", &T ); while( T -- ) { scanf( \"%d%d\", &n, &m ); printf( \"%s\\n\", ( n % m == 0 )? \"YES\": \"NO\" ); } } B Bogosort 1 题目大意 给你一个长度为 $n$ 的序列 $a$, 你可以将 $a$ 重新排序，使其满足 $j - a_j \\neq i - a_i$ 输出任何一个即可 保证有解 $n \\leq 100$ 2 思路 $$ \\begin{aligned} j - a_j & \\neq i - a_i \\ j - i & \\neq a_j - a_i \\end{aligned} $$ 直接从大到小输出 3 Code // Woshiluo Luo<woshiluo@woshiluo.site> // 2020/03/09 22:40:32 #include <cstdio> #include <cstring> #include <algorithm> template<class T> T Min( T _a, T _b ) { return _a < _b? _a: _b; } template<class T> T Max( T _a"
+    },
+    {
+      "title": "AGC 034 F RNG and XOR",
+      "url": "https://blog.woshiluo.com/posts/2020/02/agc-034-f-rng-and-xor/",
+      "date": "2020-02-29",
+      "summary": "题目连接: https://atcoder.jp/contests/agc034/tasks/agc034_f 道理我都懂，可是不看题解不到啊…… $$\\newcommand \\xor{\\mathbin{\\mathbf{xor}}}$$ 1 题意 给定一个数字 $n$ 对于 $0 \\cdots 2^n - 1$ 中每个数字都有一个 $a_i$ 现在有一个数 $X$, 一开始为 $0$ 每一次操作会随机选择一个数字 $i$ （其中 $0 \\leq i \\leq 2^n - 1$，选中 $i$ 的概率为 $\\frac{a_i}{\\sum a}$） 然后令 $X = X \\oplus i$ 问使 $X=i$ 的期望次数 2 思路 先令 $$p_i=\\frac{a_i}{\\sum a}$$ 令 $f_i$ 表示从 $i$ 到 $0$ 的期望次数，这和从 $0$ 到 $i$ 显然是一样的 接着有一个非常显然的式子 $$ \\begin{aligned} f_i &= f_{i \\xor j} \\times p_j + 1 ( i \\neq 0 )\\ f_i - 1 &= f_{i \\xor j } \\times p_j ( i \\neq 0 ) \\end{aligned} $$ 然后我们就可以得到这个式子 $$ (f_0, f_1, f_2, \\cdots, f_{2^{n-1}}, f_{2^n-1}) \\oplus (p_0, p_1, p_2, \\dots, p_{2^{n-1}}, p_{2^n}) \\ = ( x, f_1 - 1, f_2 - 1, \\cdots, f_{2^{n-1}} - 1, f_{2^n-1} - 1 ) $$ 但是 $x$ 是未知的 注意到 $\\sum p = 1$ 所以左边右边的和是相等的 所以 $$ \\begin{aligned} x &= \\"
+    },
+    {
+      "title": "将 Bilibili 缓存转换成视频",
+      "url": "https://blog.woshiluo.com/posts/2020/02/%E5%B0%86-bilibili-%E7%BC%93%E5%AD%98%E8%BD%AC%E6%8D%A2%E6%88%90%E8%A7%86%E9%A2%91/",
+      "date": "2020-02-27",
+      "summary": "0 环境 & 提示 电脑 PHP Bash 手机 Bilibili 国内版 5.54.0 这样子转换出来还是有水印的，请不要在未经 UP 主同意的情况下传播或用在非法行为 1 过程 因为要备份手机，就想着能不能把 Bilbili 的缓存转换成普通视频留在电脑上 然后看了一下下载目录，里面有一个 video.m4s 和 audio.m4s 拿 mpv 一打开，发现刚好一个是视频一个是音频... 剩下的事情就是拿 ffmpeg 合并一下的事情... 随便胡个脚本就行了 2 脚本 covert.sh # Author: Woshiluo<woshiluo@woshiluo.site> #!/bin/bash work_dir=`pwd`; fa_php=`pwd`\"/fa.php\"; part_php=`pwd`\"/part.php\"; echo $part_php; mkdir -p \"$work_dir/output\" function covert() { cp \"$fa_php\" ./ cp \"$part_php\" ./ fa=`php fa.php` part=`php part.php` echo \"[INFO] Coverting $fa $part...\" rm fa.php part.php mkdir -p \"$work_dir/output/$fa\" for file in `ls`; do if [ -d $file ]; then cd $file ffmpeg -i video.m4s -i audio.m4s -c copy \"$work_dir/output/$fa/$part.mkv\" -y >/dev/null 2>&1 cd .. fi done echo \"[INFO] Done!\" } for file in `ls`; do if [ "
+    },
+    {
+      "title": "Atcoder ARC 103 F Distance Sums",
+      "url": "https://blog.woshiluo.com/posts/2020/02/atcoder-arc-103-f-distance-sums/",
+      "date": "2020-02-22",
+      "summary": "0 写在之前 这几天写的题目并不算少 然而这道题是唯一一个看过去傻了的题目... 应该以前听过，题面看着眼熟 可是死活不会做... 1 思路 基本上可以明确是到构造题 这里依赖两个性质： 树的中心的 $D$ 值是最小的 $$ D(fa) = D(x) - n + 2 \\times size[i] $$ 这个就是标准的树和树的重心的性质 可以推出来如果以重心做根，那么 $D$ 越大越在下面 所以尝试生成一颗以重心为根的树就行了 然后我发现我不会判否 结果发现最后生成出来树判断一次就行了... 2 实现 读入 $D$ 排序 从大到小依此根据上面的式子找父亲 最后判断一下是否正确就可以了 3 Code // User: woshiluo // Email: woshiluo@woshiluo.site // Problem link: https://atcoder.jp/contests/arc103/tasks/arc103_d // Comment: // Why the problem id is 'F', but the link is 'arc103_d' // Interesting #include <cstdio> #include <cstdlib> #include <map> #include <algorithm> const int N = 1e5 + 1e3; int n; int size[N], father[N]; struct node{ int id; long long d; } a[N]; std::map<long long, int> mp; void wrong() { printf( \"-1\\n\" ); exit(0); } bool cmp( node _a, node _b ) { return _a.d < _b.d; }"
+    },
+    {
+      "title": "HDU 4507 恨7不成妻",
+      "url": "https://blog.woshiluo.com/posts/2020/02/hdu-4507-%E6%81%A87%E4%B8%8D%E6%88%90%E5%A6%BB/",
+      "date": "2020-02-08",
+      "summary": "思路 裸的要死的数位 DP 题目 一眼看过去，平方和，有点懵 但是维护平方和也是老套路了 维护 $sum$, $cnt$, $pow_sum$ 就可以了 代码 代码写的着急，会有一些不太好看 #include <cstdio> const int mod = 1e9 + 7; inline int add( int a, int b ) { return ( a + b ) % mod; } inline int mul( int a, int b ) { return ( 1LL * a * b ) % mod; } inline int power( int a ) { return mul( a, a ); } int T, max_len; long long left, rig; int _count[110][2][10][10][10], _sum[110][2][10][10][10], _pow[110][2][10][10][10]; int max_count[110][2][10][10][10], max_sum[110][2][10][10][10], max_pow[110][2][10][10][10]; bool _vis[110][2][10][10][10]; int a[110]; inline int length( int cur, int len ) { int res = cur; while( len > 0 ) { res = mul( 10, res ); len --; } return res; } struct node { int len, cur, seven, rem, base_rem; bool max; int& count() { if( max ) return max_count[len][sev"
+    },
+    {
+      "title": "Luogu P3177 [HAOI 2015] 树上染色",
+      "url": "https://blog.woshiluo.com/posts/2020/02/luogu-p3177-haoi-2015-%E6%A0%91%E4%B8%8A%E6%9F%93%E8%89%B2/",
+      "date": "2020-02-06",
+      "summary": "题目链接: https://www.luogu.com.cn/problem/P3177 0 说在之前 树形 DP 要么模板题，要么神仙题 这个题就属于不太正常的 1 思路 $f_{i,j}$ 其中 $i$ 代表当前节点 $j$ 代表子树中选择 $j$ 个黑点，所能对答案产生的 贡献 有了这个思路，后面的东西就是标准的树上背包了 2 Code #include <cstdio> #include <cstring> inline int Min(int a, int b) { return a < b? a : b; } inline long long Max(long long a, long long b) { return a > b? a : b; } const int N = 2100; int n, m; int size[N]; // Edge Start struct edge { int to, val, next; } e[N << 1]; int ehead[N], ecnt; inline void add_edge(int now, int to, int val) { ecnt ++; e[ecnt].to = to; e[ecnt].val = val; e[ecnt].next = ehead[now]; ehead[now] = ecnt; } // Edge End // DP Start long long f[N][N]; void dp(int now, int la) { size[now] = 1; f[now][0] = f[now][1] = 0; for(int i = ehead[now]; i; i = e[i].next) { if( e[i].to == la ) continue; dp(e[i].to, n"
+    },
+    {
+      "title": "2019 年的小小总结",
+      "url": "https://blog.woshiluo.com/posts/2019/12/2019-%E5%B9%B4%E7%9A%84%E5%B0%8F%E5%B0%8F%E6%80%BB%E7%BB%93/",
+      "date": "2019-12-31",
+      "summary": "0 序 马上就要从 9102 年到 202 年了呢（不是） 今年是多彩的一年 一年内数不清的变化，造就现在的我 而我会带着这一年的变化，向着前方行走 「凡为过往，皆为序章。」 1 飞速的变化 一切事物都在以想象不到的速度变化着 政策的快速变化，事件的戏剧化反转，一次又一次的拷问我们 还有什么是可信的 还有什么是稳定的 或许我们看不到事情的真相，但是应当尽我们所能，确保所了解情况的真实 做一个不受自媒体和短视频带节奏的人 2 巧妙的缘分 或许是运气很好，有幸在学习的路上优秀的学长们和老师们 甚至还有在中山集训，雅礼集训各个比赛上见到的同学们 能够遇到大家确实是一个了不起的缘分，要加油啊 缘分还体现在自己对于动漫的热爱 无论实在 1 月的动漫星城，还是 8 月的 Aqours 5th Live 上映会与 Bilibili World 2019 广州站，乃至 12 月在北京 Animate 和搜秀城 虽然自己身处全世界离海最远的城市，但是还是有机会，有缘分能够到达这些地方，见到相同爱好的人 缘，妙不可言 3 向前的脚步 或许多多少少有一点算得上梦想的东西 今年有幸参加了几乎整个赛季一直到 NOI 的所有赛事 （ CCF NOI WC，APIO，CTS，NOI，CSP） 甚至有幸去 PKUWC 这种神仙比赛 不过比赛成绩倒是都不怎么样，还是要努力啊 4 看不清却值得期待的未来 自主招生政策的不定 进在眼前的中考 这一切都表明了，未来是看不清的 但是我依然相信缘分，相信自己的脚步 看不清的未来，才是值得期待的 5 尾声 https://blog.woshiluo.com/919.html# 从自己在动漫星城时放光的双眼，到搜秀城时的砍价 从 WC 时的铜牌，到 NOI 时的打铁 从混乱的 SYZOJ 魔改，到逐渐形成自己的规范的小脚本 从慌乱不定的 E 类，到波澜不惊的 NOIP 暂"
+    },
+    {
+      "title": "PKUWC 2020(2019) 游记",
+      "url": "https://blog.woshiluo.com/posts/2019/12/pkuwc-2019-%E6%B8%B8%E8%AE%B0/",
+      "date": "2019-12-30",
+      "summary": "0 序 晚上十一点半的机房，Woshiluo 正悠闲地考虑着第二天该做的题目 说着他一瞬想起来自己似乎报名过 PKUWC 「过去几年都没有人通过的，今年夏令营整个新疆都没过，果然还是白忙活吧」 话虽这么说，Woshiluo 还是打开了报名网站 「喵喵喵，过了？」 1 Day -2 出发 在经过严密的安检过后 我终于到达了乌鲁木齐站三层 比较有意思是，我的检票口貌似是 A1 然而 A1 前面的人都已经坐满了 我走到夹层，和绝大多数高铁站一样，这个地方是用来骗钱的 不过也就意味着，这里的人会少一点 稍作调整之后，车站广播也响起来了 随着缓慢的人群，我通过了检票口，到达了火车上 2 Day -1 火车上的短暂时光 乌鲁木齐铁路局所销售物品的昂贵已经是有很久历史的事情了 所以如果上车的时候犯懒没有买足吃的东西的话 可以到大站下去购买以尽可能的减少损失 这趟列车绝大部分地区都是没有信号的地方 所以基于手机的娱乐基本上是没有了 Kindel 和随身携带的纸制书可能是最有效的消磨时间方式 所以我在火车上过了一遍绿书，并读完了「樱花庄的宠物女孩」的本篇及番外 我的上铺和下铺都是年轻人，一个考研，一个去内地学习技术 总而言之，大家也都有自己的前途 3 Day 0 慌忙的首都一天 在早上十点，火车到达了北京西站 我从地铁口出来，联系上了 sbr，我从北京西站到国家图书馆再换乘到海淀黄庄 两个人见面稍微寒暄了一小阵，就到星巴克里谈人生 到了快要报道的时间，我们从海淀黄庄坐到北京大学东门 D 出口，从 D 口出来后约 5min 就可以到达报道的地方 我前面比没有几个人，进去之后签到的一栏旁边还有一个 是否使用 NOI Linux 看到这一栏时，就体会到了 PKU 的良心，更不要提后面还有 PKU 食堂 150 CNY 的饭卡 和 sbr 打车到国贸大厦，惊奇的发下自己把一些东西落在了报到处… 算了"
+    },
+    {
+      "title": "CSP 2019 游记",
+      "url": "https://blog.woshiluo.com/posts/2019/11/csp-2019-%E6%B8%B8%E8%AE%B0/",
+      "date": "2019-11-22",
+      "summary": "0 序 今年感觉相比较以往还是难了一些的 不过没有大家说的那么夸张倒是真的 不过自己貌似真的变菜了 0.1 吐槽 笔者考完 CSP 就会初中部回了一天 然后周二病到周五 一直在不发烧和低烧徘徊 但是一直咳嗽 咳得人 头疼 + 胸口疼 + 嗓子疼 新疆地邪啊 1 Day 0 今年七十中并不给试机子（注：也有可能是 CCF/科协 不让） 罢了，也没什么看头，每年 11 月都会在七十中冻一下 中午大家一起吃饭 虽然想学习，最后还是放弃了 晚上翻来覆去睡不着，迷迷糊糊最后还是睡了 2 Day 1 2.0 序 - 清晨 早上一开门，哇，下雪了 无论这个比赛怎么改名下雪还是避免不了的 在寒冷的凌晨，我们又拿起武器，向着熟悉的战场再次走去 2.1 CSP - S2 Day 1 T3 是个啥啊？ 一中学长们的校车因为各种各样的原因，8:25 才到 遇见了不少以前的熟人，SpinMry，dyf 大家好久不见了，一起加油吧！ 匆匆忙忙赶进考场，熟练的敲下 .vimrc ，慌的一批 到了时间，准点发题 一直很想问都 9102 年，新疆为什么还是不用压缩包加密这种可靠性高的多的方法 非要用电子教师软件传输，然后再匆匆忙忙断网 罢了，有人愿意举办就不错了 T1 属实不带脑子的题目，上来一看基本上就知道从上往下模拟即可 $O(64)$ 不过确实有一种更为简单的办法，参见 Oi-wiki - 格雷码 最后看数据范围注意到 unsigned long long ，出题人太毒瘤了吧 T2 随便一看就是瞎搞累计贡献，道理我都懂，这代码怎么写？ 考场上一顿胡写，树上瞎跳，然后写点优化 写完一开样例3， 114514 太臭了，一跑，爆栈了，手写递归去了 这么一套下来，感觉要出事 $\\text{flag}_1$ T3 一看，神仙题，10pts 告辞 等一下这个 10pts 为什么这么难调，时间到了，完蛋 2.2 午"
+    },
+    {
+      "title": "命令行下使用 VirtualBox 安装 NOI Linux",
+      "url": "https://blog.woshiluo.com/posts/2019/10/%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E4%BD%BF%E7%94%A8-virtualbox-%E5%AE%89%E8%A3%85-noi-linux/",
+      "date": "2019-10-30",
+      "summary": "0 缘起 这两天模拟赛越发频繁了… Windows 有时候很睿智，Lemon 时间波动特别大，Cena … 不说了大家都懂 总而言之，与其和微软斗智斗勇，不如早日更换评测环境 然而如果使用现今的发行版，有一个很有意思的问题… CCF 的评测环境有些久远，而且还是 32 位的 所以果然还是 NOI Linux 吧～ 然而机房并没有空闲的电脑能够完成这个任务，虚拟机大家又跑不起 我的眼光落到了正在运行着 NovaOJ 的工作站上 就决定是你了！ <!--more--> 1 VirtualBox 安装 系统环境： Linux hostname 4.19.0-6-amd64 #1 SMP Debian 4.19.67-2+deb10u1 (2019-09-20) x86_64 GNU/Linux 以下命令默认使用 root 权限 1.1 安装标准包 直接从官网… 并没有 Debian 10 的包 不过可以添加软件源 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add - echo 'deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian buster contrib' >> /etc/apt/sources.list apt-get update apt-get install virtualbox-6.0 1.2 安装扩展包 你可以从 官方站点 的 VirtualBox *** Oracle VM VirtualB"
+    },
+    {
+      "title": "Luogu P3871 [TJOI2010]中位数",
+      "url": "https://blog.woshiluo.com/posts/2019/10/luogu-p3871-tjoi2010%E4%B8%AD%E4%BD%8D%E6%95%B0/",
+      "date": "2019-10-29",
+      "summary": "题目链接: [ https://www.luogu.org/problem/P3871 ] 因为要帮同学们复习的时候选题，选到堆的时候问了问 StudyingFather 的意见，他给我推荐了这个题目 超级感谢推荐，这个题目真是太有意思了（ <!--more--> 1 思路 实际上这种方法我也并不是第一个，只是觉得网上绝大多数代码都没有咱写的清晰 实际上就是觉得别人代码不好看 既然写了就说说吧 考虑中位数本质是维护最中间的数 将序列一分为二，保持插入后两个数列大小的均衡即可 但是插入的时候也不能暴力插入啊（ 那就将左右两个序列分别建立一个堆 然后插入堆即可 2 Source #include <cstdio> #include <queue> std::priority_queue<int> _min, _max; int n, m, left, rig; void balance() { int k = ( ( left + rig ) & 1 ); while( left - rig > k ) { _min.push( - _max.top() ), _max.pop(); left --, rig ++; } while( left - rig < k ) { _max.push( - _min.top() ), _min.pop(); left ++, rig --; } } void add( int val ) { if( _max.empty() == false && val > _max.top() ) { _min.push( - val ); rig ++; } else { _max.push( val ); left ++; } balance(); } int main() { #ifdef woshiluo freopen( \"luogu.3"
+    },
+    {
+      "title": "Blog 1024 天随写",
+      "url": "https://blog.woshiluo.com/posts/2019/10/blog-1024-%E5%A4%A9%E9%9A%8F%E5%86%99/",
+      "date": "2019-10-28",
+      "summary": "大约统计一下，这个小小博客也勉勉强强活了 1024 天了 很高兴在我的学习生涯中能有此博客做以笔记，或者是另外一个略作日记的网站 这博客比我的 Oi 生涯还长了，希望它能记载着我的笔记，陪我一起向前吧 若能帮助到无意点开的您，便是我的荣幸了"
+    },
+    {
+      "title": "CSP - S/J 2019 第一轮 游记",
+      "url": "https://blog.woshiluo.com/posts/2019/10/csp-s-j-2019-%E7%AC%AC%E4%B8%80%E8%BD%AE-%E6%B8%B8%E8%AE%B0/",
+      "date": "2019-10-23",
+      "summary": "0 序 又开始了啊，新的一轮 大家或多或少的开始了新的旅程了呢 这两天和一位内地的 CSPer 聊了一些和 CSP 无关的东西，感觉想通了不少事情 今年到考场都跟咸鱼一样了 依稀记得去年监考老师不讲理过了 3min 还不发卷子 「老师，已经过去了三分钟了，怎么还不发卷子」 xqmmcqs 大佬突然站起来询问道 感觉自己就是从这个时候开始，老师这个概念已经从我心中的神坛跌了下去 我只会去尊重有理有据教育我们的老师的 或许是 Oi 学久了，某些思想竟以变得如此激进了 前文说的有点杂了，还是开始正题吧 注：为了笔者和大家的习惯，下文统称 CSPer 和 Oier 为 Oier 注：文中出现人物多使用其常见 id 称呼，没有或我不知道常见 id 的使用姓名拼音首字母简称，您可以在评论去提出更改或者匿名请求，请求处理完后会删除相应评论 <!--more--> 1 Day 0 考试前一天，不由得还是放弃早上文化课的学习 早早的赶到一中，出门的时候就已经飘起了小雨 等到达了郊区的一中，已经变成了大雨了 然而还是没有内地的一半大 一鼓气跑到机房，发现机房的人远远比平常多 果然大家都是想复习的吧... 然而人多就避免不了嘈杂的问题，不过还算好，带上耳机还是可以给自己一片清净的 不想学习，便在 Github 上写脚本，刚将 README 写完，一看窗外，下雪了 跑到楼下去，趁着这次的雪还在「半雪半水」的状态，拍几张照片 这里是图片desu 到了下午就更乱了，杨老师过来告诉我下午可以不去市中心，我就没去了，真的太远了 杨老师又给我们发了两套模拟题 我将一套放在了今天， 75 分，另一套打算在明早做 晚上和许久未见的 dwx 大佬与 czy 大佬一起去吃饭，大家聊了许多奇奇怪怪的东西 到了晚上，我们就需要贴考场号了，科协的人实在是太咕了，实在不明白这样得到组委会为什么还能得到 CCF 的青睐（话说"
+    },
+    {
+      "title": "平面向量学习笔记（大概？）",
+      "url": "https://blog.woshiluo.com/posts/2019/08/%E5%B9%B3%E9%9D%A2%E5%90%91%E9%87%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%A4%A7%E6%A6%82/",
+      "date": "2019-08-22",
+      "summary": "这篇文章咕了好久了，鬼知道为什么 本篇文章的目的只是为了更方便的学习 P2742 【模板】二维凸包 这道题目，如果有不详细或者错误之处，往各位大佬们多多指出 1 定义 向量 ：有 大小 ，有 方向 的量是向量，然而数学中研究的向量通常是 自由向量 ，即起点终点并不重要 向量的模 ：向量的长度被称为向量的模 零向量 ：模为 $0$ 的向量，零向量方向任意，记为 $\\vec 0$ 或 $\\mathbf 0$ 单位向量 ：模为 $1$ 的向量是其在该方向的单位向量 <!--more--> 2 平面向量基本定理 任何平面向量，都可以又两个不共线的向量 $\\vec a$ 和 $ \\vec b$ 表示出来 在同一平面类两个不共线的向量称为 基底 2.1 平面向量的坐标表示 如果使用分别于横纵坐标方向相同的两个单位向量 $\\vec i,\\vec j$ 作为一组基地，则所有向量与有序实数对一一对应 3 向量的加减 向量的加减主要有两种法则 向量加法的三角形法则 ：$ \\vec {AB} + \\vec{BC} = \\vec {AC} $ 向量加法的平行四边形法则 ：若两个向量共起点 $ \\vec {AB} $ $ \\vec {AC} $ ，则包含这两条边的平行四边形中的以 $A$ 开头的对角线就是这两个向量相加的结果 相减可以当作加上其相反数，也就是加上相反方向的 $\\vec B$ 3.1 坐标表示法 若有两个向量 $(x,y)$ $(a,b)$ 则 $ (x,y) + (a,b) = (x + a, y +b)$ 4 向量的各种乘 4.1 数乘 若有实数 $x$ ，则我们称 $x\\vec{a}$ 这种运算为数乘 若 $x > 0$ 则 $\\vec{a}$ 的长度乘于 $x$ ，$\\vec{a}$ 的方向不变 $ x < 0$ 则 $\\vec a$ 的长度乘于 $x$ ，$\\vec a$ 的"
+    },
+    {
+      "title": "中山纪念中学 Day 21 2019.08.21 解题报告 & 题解",
+      "url": "https://blog.woshiluo.com/posts/2019/08/%E4%B8%AD%E5%B1%B1%E7%BA%AA%E5%BF%B5%E4%B8%AD%E5%AD%A6-day-20-2019-08-20-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A-%E9%A2%98%E8%A7%A3/",
+      "date": "2019-08-22",
+      "summary": "T1 数字 Number 1 记录 考场上疯狂肝这道题目，结果少个特判 2 Solution 很明显，$n$ 只有三种情况 $n$ 就是结尾 中间有一段是一个数字，这个情况 $O(\\log^3(n))$ 枚举即可 中间切一刀，左边是一个不完整的数字，右边也是一个不完整的数字，枚举中间即可 所以直接暴力即可 所以这是一道毒瘤模拟题目 <!--more--> 3 Source #include <cstdio> #include <cmath> inline int _ws( long long now ) { if( now == 0 ) return 0; return ( (int)std::log10(now) ) + 1; } int t; long long n, ans; long long pow_10[20] = { 1, 1 }; long long check( int st, int ed, long long val ) { long long res = val; long long ed_val, tmp = val - 1; while( st && tmp >= 0 ) { if( st < _ws( tmp ) ) { tmp %= pow_10[st]; if( _ws( tmp ) < st ) return false; } res = ( tmp * pow_10[ _ws(res) ] ) + res; st -= _ws( tmp ); tmp --; } if( st ) return false; tmp = val + 1; while( ed && tmp >= 0 ) { if( ed < _ws( tmp ) ) { ed_val = tmp; tmp /= pow_10[ _ws( tmp ) - ed ]; } e"
+    },
+    {
+      "title": "BiliBili World 2019 广州游记",
+      "url": "https://blog.woshiluo.com/posts/2019/08/bilibili-world-2019-%E5%B9%BF%E5%B7%9E%E6%B8%B8%E8%AE%B0/",
+      "date": "2019-08-18",
+      "summary": "1 消费清单 总计 1926 元 我至今都不知道为什么这个数字这么…… 注: 未特别标注单位即为 CNY （人民币） 1.1 场外消费 总计 750 元 门票 VIP 450（没有普通票了掀桌） 黄牛智商税 200 来回高铁 50 x 2 = 100 1.2 场内消费 总计 1176 元 基本上是在预算之内了 Figma Fate/Go Saber 手办 490 BilibIli World 2019 广州 帆布袋 60 LoveLive 系列 总计 526 - LoveLive! 高坂穗乃果 卡套 50 - LoveLive! 南小鸟 挂件 29 - LoveLive! SunShine!! CYaRon! T-Shirt L 200 - LoveLive! Sunshine!! 善子 挂件 29 - LoveLive! SunShine!! 扇子 30 - LoveLive! Sunshine!! 文件夹 x 3 110 - LoveLive! 官方画册 38 - LoveLive! 官方典藏集 70 Vsinger 洛天依 乐正绫 贴画 10 x 2 = 20 扭蛋 50 元 - 5 枚抽奖币 10 x 5 = 50 - LoveLive! Sunshine!! 渡边曜 手办？ 40 - 1 枚纪念… 转生史莱姆 零钱袋 30 <!--more--> 2 准备工作 & Day 0 休息过后的一天，突然想起广州有 BW 2019，边起了邪心 一查，时间完全对上了 休息日子不去岂不血亏 然后 Woshiluo 就抢了票，稍微做了一下攻略，接过导致一天的的白天学习效率极低，好在晚上都补回来了 2.1 Day 0 上午考完试，下午改了改题目 然后大概了解一下中山纪念中学附近的情况 然后下午上完课直接出校 <figure> <figcaption> 专门拍的陈独秀 </figc"
+    },
+    {
+      "title": "中山纪念中学 Day 10 2019.08.10 解题报告 & 题解",
+      "url": "https://blog.woshiluo.com/posts/2019/08/%E4%B8%AD%E5%B1%B1%E7%BA%AA%E5%BF%B5%E4%B8%AD%E5%AD%A6-day-10-2019-08-010-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A-%E9%A2%98%E8%A7%A3/",
+      "date": "2019-08-10",
+      "summary": "T1 数学题 Math 1 记录 真就数学题目呗 考场企图推正解，结果最后只推出了 60 分的，哭了 正解参见 欧几里得算法的应用.pdf 这是真的类欧几里得算法 <!--more--> 2 Source #include <cstdio> inline long long pf( long long x ) { return x * x; } void calc( int a, int b, int c, int d, int &x, int &y ) { long long dot = a * c + b * d; if( dot < 0 ) { calc( a, b, -c, -d, x, y ); y = - y; return ; } long long ab = a * a + b * b, cd = c * c + d * d; if( ab > cd ) { calc( c, d, a, b, y, x ); return ; } if( ( dot * dot * 4 ) <= ab * cd ) { x = 1, y = 0; return ; } long long k = dot / ab; if( dot + dot <= ab * ( 2 * k + 1 ) ) { calc( a, b, c - k * a, d - k * b, x, y ); x -= k * y; return ; } else { calc( a, b, c - ( k + 1 ) * a, d - ( k + 1 ) * b, x, y ); x -= ( k + 1 ) * y; return ; } } int main() { freopen( \"math.in\", \"r\", stdin ); freopen( \"math.out\", \"w\", stdout )"
+    },
+    {
+      "title": "中山纪念中学 Day 7 2019.08.07 解题报告 & 题解",
+      "url": "https://blog.woshiluo.com/posts/2019/08/%E4%B8%AD%E5%B1%B1%E7%BA%AA%E5%BF%B5%E4%B8%AD%E5%AD%A6-day-7-2019-08-07-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A-%E9%A2%98%E8%A7%A3/",
+      "date": "2019-08-09",
+      "summary": "T1 小 L 的数列 1 记录 考场上推出来了 没判 $ n < q $ 难受 <!--more--> 2 Solution 显然，每个 $ f_i $ 都是等于下面的试子 $$ \\prod_{i=1}^k f_i^{b_i} $$ 也就说，我们可以求 $b_i$ 根据费马小定理 $$ a ^ {p -1 } \\equiv 1 \\pmod p $$ 则显然 $$ \\begin{align} a ^ {k \\pm (p - 1)} & \\equiv a ^ k \\pmod p \\ a ^ {k \\bmod (p - 1) } & \\equiv a ^ k \\pmod p \\end{align} $$ 即指数应当对 $ p - 1 $ 取模 显然 $$ f_{a',b'} = \\sum_{i = 1}^k f_{a' - i,b'} \\times a_i $$ 其中 $b'$ 表示求 $b_{b'}$ 矩阵优化即可 3 Source #pragma GCC optimize(3,\"Ofast\",\"inline\") #include <cstdio> #include <cstring> const int N = 210; const int mod = 998244353; inline int read() { register char c = 0; register int now = 0; while( c < '0' || c > '9' ) c = getchar(); while( c >= '0' && c <= '9' ) { now = ( now << 3 ) + ( now << 1 ) + ( c - 48 ); c = getchar(); } return now; } inline int add( int a, int b, const in"
+    },
+    {
+      "title": "扫描线",
+      "url": "https://blog.woshiluo.com/posts/2019/08/%E6%89%AB%E6%8F%8F%E7%BA%BF/",
+      "date": "2019-08-08",
+      "summary": "1 什么是扫描线 在 Oi 中，扫描线通常用于解决二维平面上的 矩形面积并问题 前置知识： 线段树 离散化（有的题目不需要） <!--more--> 1.1 矩形面积并 在一个平面直角坐标系中，有 多个矩形 ，现在询问这些矩形 总共覆盖 了多少面积 <figure> <figcaption> 矩形面积并 </figcaption> </figure> 1.2 扫描线 由于矩形之间可能存在互相覆盖的情况 直接朴素的算法复杂度非常的低 我们可以考虑做将图形以 $y$ 坐表分成多行 <figure> <figcaption> 分层后 </figcaption> </figure> 考虑 分别 计算每一行的面积 这显然是 $ O(n ^ 2) $ 但是每一行可以使用线段树维护 即将线段树视为一条线，从 $y = 0$ 向上 扫描 然后将每个矩形拆分成两条线段 —— 下面的边和上面的边 扫描到下面的边所在区间 +1, 否则 -1，累加在 每一行 时线段树查询所得结果即为答案 这就是扫描线 2 线段树的问题 扫描线有一个非常重要的问题 即我们线段树应当如何 维护 2.1 方案 1 每个节点维护两个值 len cnt len 表示当前区间所有 有值 的个数 cnt 表示当前区间被加了几次 每次 只 PushUp，不进行 PushDown int tree[N << 2], tree_cnt[N << 2]; inline void push_up( int now, int left, int rig ) { if( tree_cnt[now] ) tree[now] = ( rig - left + 1 ); else if( rig - left == 0 ) tree[now] = 0; else tree[now] = tree[ now << 1 ] + tree[ now <"
+    },
+    {
+      "title": "基于 PHP 的站点存活监测项目 一点笔记",
+      "url": "https://blog.woshiluo.com/posts/2019/08/%E5%9F%BA%E4%BA%8E-php-%E7%9A%84%E7%AB%99%E7%82%B9%E5%AD%98%E6%B4%BB%E7%9B%91%E6%B5%8B%E9%A1%B9%E7%9B%AE-%E4%B8%80%E7%82%B9%E7%AC%94%E8%AE%B0/",
+      "date": "2019-08-07",
+      "summary": "项目链接: https://github.com/woshiluo/server_uptime 1 为什么会有这个项目 NovaOJ 的服务器在乌市一中的内网，笔者身为 Oier，不可避免的有去内地培训的情况出现，无法保证及时得知内网的情况 然而市面上绝大多数服务监控通常都支持公网（至少我是只找到了公网的按钮） 轮子好像是有的，但是我 Python 功底薄弱，迫于要搞 Oi，没有时间学习新语言 那就造新轮子吧！ <!--more--> 2 如何探测 内网的探测结果要想发到公网只能主动探测 所以可以在内网搞一台监控机器，或者自己监控自己 然后定时运行，将数据发往服务器即可 但是这样子搞，如果监测服务器挂了怎么办？ 目前还没有比较优雅的方案，现行方式是超过预定时间的 3 倍没有发来探测结果，定义为 Unknow 3 使用效果及可以考虑的改进 目前该项目已经在 https://api.woshiluo.site/status 运行了长达一个月的时间 除了开始两天出了一点小问题以外，并未出现大的问题 服务存活率是一个一直在服务器中存的但是从未写出来的东西，有时间会加上 可以肯定的是，这种服务监测方式是有效且可行的 目前已知并可能改进的东西有 多个监测结果并到一起发送给 Server 端，之前有因为短时间内请求过多被防火墙视为 DDos 的情况出现 可以考虑将页面变为静态页面减少读写情况 应当探测 SSL 证书相关情况并及时报警 应当将报警发送至 邮箱 / 机器人 上，以便及时知道相关情况 该在市一中放一个备用探测机了……"
+    },
+    {
+      "title": "中山纪念中学 Day 4 2019.08.04 解题报告 & 题解",
+      "url": "https://blog.woshiluo.com/posts/2019/08/%E4%B8%AD%E5%B1%B1%E7%BA%AA%E5%BF%B5%E4%B8%AD%E5%AD%A6-day-4-2019-08-04-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A-%E9%A2%98%E8%A7%A3/",
+      "date": "2019-08-06",
+      "summary": "T1 锻造 Forging 1 记录 考场上的时候总觉得题目非常的奇妙 因为一直循环下去不就完了吗? 直到后来我的同桌给我指点，原来把 DP 式子当方程解可以了 还是太菜啊 <!--more--> 2 Solution 显然，我们设 $ f[i] $ 为到第 $i$ 级的期望的话，则有 设 $$ f[i] = f[i - 2] + f[i - 1] + (1 - p) * (f[i] - f[i - 2]) $$ 整理得 $$ f[i] = f[i - 2] + \\frac{f[i - 1]}{p} $$ 没了 对了，线性求逆元才能过 3 Source #include <cstdio> inline int Min( int a, int b ) { return a < b? a: b; } const int N = 1e7 + 1e2; const int mod = 998244353; inline int add( int a, int b ) { if( a + b > mod ) return a + b - mod; return a + b; } inline int mul( int a, int b ) { return ( 1LL* a * b ) % mod; } int n, a, bx, by, cx, cy, p; int b[N], c[N], f[N], inv[N]; int main() { freopen( \"forging.in\", \"r\", stdin ); freopen( \"forging.out\", \"w\", stdout ); inv[1] = 1; for( int i = 2; i <= (int)(1e7); i++ ) inv[i] = mul( mod - ( mod / i ), inv[ mod % i"
+    },
+    {
+      "title": "中山纪念中学 Day2 2019.08.02",
+      "url": "https://blog.woshiluo.com/posts/2019/08/%E4%B8%AD%E5%B1%B1%E7%BA%AA%E5%BF%B5%E4%B8%AD%E5%AD%A6-day2-2019-08-02/",
+      "date": "2019-08-03",
+      "summary": "T1 Attack 1 记录 考场上时懵的，这是个啥？为什么没有部分分？ 弃了 <!--more--> 2 Solution 结果下来一讨论， T1 时间限制 10s ，这是个啥？ 发现自己错过了 A 一道题的机会，难受 言归正传 正解是什么划分数之类的神仙玩意儿，这肯定时看不懂的 但是原题时间限制是 1s …… 我感受到组题人满满的恶意善意 所以直接 $ O(n^2) $ 乱搞时可以的 实际上最朴素的算法是 $O(nm\\log(n))$ 的，但是过不了… 随便乱搞把求第 $k$ 大降到 $O(n)$ 就行了 3 Source #include <cstdio> #include <algorithm> const int N = 61000; struct node { int x, y, k, id; } a[N]; int n, m; int b[N]; char op[20]; bool cmp( node a, node b ) { return a.k < b.k; } int main() { #ifdef woshiluo freopen( \"gmoj.2865.in\", \"r\", stdin ); freopen( \"gmoj.2865.out\", \"w\", stdout ); #endif scanf( \"%d%d\", &n, &m ); for( int i = 1; i <= n; i++ ) { scanf( \"%d%d%d\", &a[i].x, &a[i].y, &a[i].k ); a[i].id = i; } std::sort( a + 1, a + n + 1, cmp ); for( int i = 1; i <= n; i++ ) b[ a[i].id ] = i; while( m -- ) { scanf( \"%s\", op );"
+    },
+    {
+      "title": "Kruskal 重构树入门 - 「NOI 2018」 归程",
+      "url": "https://blog.woshiluo.com/posts/2019/06/kruskal-%E9%87%8D%E6%9E%84%E6%A0%91%E5%85%A5%E9%97%A8-noi-2018-%E5%BD%92%E7%A8%8B/",
+      "date": "2019-06-07",
+      "summary": "Kruskal 重构树 在 Kruskal 最小/大生成树 — Luogu P1967 货车运输 一文中，介绍了 Kruskal 算法是如何生成最小生成树的 如果将两个联通块联通的不是边而是点呢？ 这就是 Kruskal 重构树 具体来说就是，我们原来是通过一条边将两个联通块相连接的，现在我们新建立一个点，将这两个联通块的根节点连接到这个点上，原来的边权就是这个新建节点的点权，这样执行下来，我们会得到一棵新的树，这个树有以下两个特征 没有 边权 保证是一个堆 大根堆还是小根堆要看 原来 生成的是最小还是最大生成树 因为我们保证边权的单调性，故后期新建节点的点权也是单调的，故新树是一个堆 <!--more--> 代码实现 // Kru Tree Start struct k_edge { int now, to, hei; bool operator<(k_edge b) { return this->hei > b.hei; } } k_e[M]; struct _set { int fa[N << 1]; void init(int now) { now <<= 1; for (int i = 1; i <= now; i++) fa[i] = i; } int get_fa(int now) { if (fa[now] == now) return now; return fa[now] = get_fa(fa[now]); } int& operator[](int now) { return fa[now]; } } set; void kru_tree() { edge_init(); set.init(n); std::sort(k_e + 1, k_e + m + 1); for (int i = 1; i <= m; i++) { int tmp_now ="
+    },
+    {
+      "title": "Kruskal 最小/大生成树 -- Luogu P1967 货车运输",
+      "url": "https://blog.woshiluo.com/posts/2019/06/kruskal-%E6%9C%80%E5%B0%8F-%E5%A4%A7%E7%94%9F%E6%88%90%E6%A0%91-luogu-p1967-%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/",
+      "date": "2019-06-06",
+      "summary": "1 最小生成树 1.1 生成树 无向图 $G$ 的生成树，就是具有图 $G$ 的所有顶点，但是边数最小的联通子图 更加详细的定义: Wikipedia - 生成树 1.2 最小生成树 带权联通无向图的总权值最小的生成树 更加详细的定义: Wikipedia - 最小生成树 1.3 求解算法 Kruskal 算法 Prim 算法 <!--more--> 有一些别的有意思的，甚至接近线性的算法，但是因为其不方便在 Oi 中出现，故此不做其他讨论 Prim 算法在稠密图具有优势，然而 Oi 中如果是稠密图要么就 Kruskal 也可以过，要么 Prim 也没用…… 所以我们今天仅讨论 Kruskal 算法 2 Kruskal 算法 2.1 复杂度部分 时间 $O(E \\log(V))$ E 为边数， V 为点数 2.2 实现 对图 $G$ 中所有边排序 设图 $G'$ 只有图 $G$ 中所有的点，没有边 从小到大遍历 若当前这条边的两点不在同意联通块，则在图 $G'$ 连接两点 进入下一条边 图 $G'$ 即为图 $G$ 的最小生成树 2.3 证明 因为每次联通的边都是桥，所以图 $G'$ 一定是树 若 $u - v$ 之间有一条更短的边，则排序之后一定会更加靠前，优先被选择 2.4 代码 int k_ecnt; struct k_edge{ int now, to, val; bool operator< (const k_edge &b)const { return this -> val > b.val; } }k_e[M << 1]; struct _set{ int fa[N]; inline void init(int now){ for(int i = 1; i <= now; i++) fa[i] = i; } int get_fa(int now){ if( f"
+    },
+    {
+      "title": "可重组合与不相邻组合",
+      "url": "https://blog.woshiluo.com/posts/2019/06/%E5%8F%AF%E9%87%8D%E7%BB%84%E5%90%88%E4%B8%8E%E4%B8%8D%E7%9B%B8%E9%82%BB%E7%BB%84%E5%90%88/",
+      "date": "2019-06-02",
+      "summary": "可重组合 从 ${1, 2, 3 \\cdots, n - 1, n}$ 中选出 $m$ 个元素，可以重复，有多少个不同的组合？ 答案 $C_{n + m - 1}^{m}$ 证明 显然，问题可以转换为 $m$ 个球放入 $n$ 个盒子，可以放无数个或者不放 即插入 $n - 1$ 个隔板，然后求全排列 $(m + n - 1)!$ 但是隔板和球的顺序是无效的所以除去 $m! \\times (n-1)!$ 即 $$ \\frac{(m + n - 1)!}{m! \\times (n - 1)!} = C_{n + m -1}^m $$ <!--more--> 不相邻组合 从 $A = {1, 2, 3 \\cdots, n - 1, n}$ 中选取 $m$ 个不相邻的数，有多少个不同的组合 答案 $C_{n - m + 1}^{m}$ 证明 设 $B={b_1, b_2, b_3 \\cdots b_{m - 1}, b_m}$ 是一个不相邻组合，假设 $b_1 < b_2 < b_3 < \\cdots < b_{m - 1} < b_m$ 令 $c_1 = b_1, c_2 = b_2 + 1, c_3 = b_3 + 2 \\cdots c_m = b_m + m - 1$ 则 $c_m \\leq n + m - 1$ 即 $c$ 为 $1$ 到 $ n + m - 1 $ 的全排列 得证"
+    },
+    {
+      "title": "Prufer序列 入门 -- P2290 [HNOI2004]树的计数",
+      "url": "https://blog.woshiluo.com/posts/2019/06/prufer%E5%BA%8F%E5%88%97-%E5%85%A5%E9%97%A8-p2290-hnoi2004%E6%A0%91%E7%9A%84%E8%AE%A1%E6%95%B0/",
+      "date": "2019-06-02",
+      "summary": "0 前置知识点 排列组合 高精度 / 分解质因数 1 Prufer 序列 对于一个带编号的无根树，其 Prufer 序列按以下过程处理 选取所有节点中度数最小编号最小的一个节点 输出其相邻的编号 回到 1 ，直到只剩两个节点为止 每个 Prufer 序列，都对应唯一的一个带编号的无根树 <!--more--> 按照以下步骤即可从 Prufey 序列变成一棵树 选取在数列中没有出现过的数字且未标记最小的一个，将其标记 其为当前序列中第一个节点的儿子 将第一位移出 Prufey 序列，回到步骤 1 因为算法可以一直进行下去，所以任意 Prufey 编码对应一个带编码的无根树 所以无向图的生成树个数为 $n^{n - 2}$ ， 这就是 Cayley 公式啦！ 2 题目 题目链接: https://www.luogu.org/problemnew/show/P2290 根据 Prufer 序列的性质可得 度数为 $x$ 的点在 Prufer 序列中会出现 $x - 1$ 次 则给定度数的无根树总共会有 $$ \\frac{ (n - 2)! }{\\prod_{i = 1}^n (d_i - 1)!} $$ 众情况 其中 $d_i$ 为 $i$ 点的度数 可以这么理解 $ (n - 2) !$ 是全排列 $\\prod_{i = 1}^n (d_i - 1)!$ 是去除重复计算的情况 然后很明显，这个代码会爆 long long ,所以要么高精度，要么分解质因树 代码 #include <cstdio> #include <cstring> const int BASE = 10; struct Bigint { int num[11000], cnt; Bigint() { cnt = 0; memset(num, 0, sizeof(num)); } int& operator[]"
+    },
+    {
+      "title": "Luogu P2624 [HNOI2008]明明的烦恼",
+      "url": "https://blog.woshiluo.com/posts/2019/06/luogu-p2624-hnoi2008%E6%98%8E%E6%98%8E%E7%9A%84%E7%83%A6%E6%81%BC/",
+      "date": "2019-06-02",
+      "summary": "题目链接: https://www.luogu.org/problemnew/show/P2624 0 前置技能 Prufer 序列 1 推式子时间 这个题目很像 Luogu P2290 但是问题在于，这个里面具有不确定的度数 经过简单的思考，我们可以得出以下式子 $$ C_{n - 2}^{cnt} \\times \\frac{sum!}{\\prod_{i = 1}^{cnt} (d_i - 1)!} \\times (n - cnt) ^{n - sum - 2} $$ 其中 $sum$ 为已知总度数 $cnt$ 为已知点数 <!--more--> 我们分两段解释 $$ C_{n - 2}^{cnt} \\times \\frac{sum!}{\\prod_{i = 1}^{cnt} (d_i - 1)!} $$ 这一段是将已经有的放到 Prufer 序列中的方案数 $$ (n - cnt) ^{n - sum - 2} $$ 剩下 $n - cnt$ 个点，可以放在剩下的所有位置（共$n - sum - 2$）中 然后化简一下式子 $$ \\frac{(n-2)!}{(n-sum-2)\\times \\prod_{i=1}^{cnt}(d_i-1)!}\\times (n-cnt)^{n-sum-2} $$ 高精度警告 2 代码 #include <cstdio> #include <cstring> const int BASE = 10; struct Bigint { int num[11000], cnt; Bigint() { cnt = 0; memset(num, 0, sizeof(num)); } int& operator[] (int now) { return num[now]; } void operator*= (int now) { for(int i "
+    },
+    {
+      "title": "RSS 从入门到卸载客户端",
+      "url": "https://blog.woshiluo.com/posts/2019/05/rss-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%8D%B8%E8%BD%BD%E5%AE%A2%E6%88%B7%E7%AB%AF/",
+      "date": "2019-05-31",
+      "summary": "0 说在之前 RSS 一说起这个词语，绝大多数人想到的都是 10 年以前，一行行字母，没有任何样式的网页，跟现今比起来，几乎没有任何的优势 故此我们总是觉得，RSS 已经成为了时代的眼泪，但是 RSS 的核心便是流，信息流，这和当下的媒体传播方式并无二，故只要运用得当，RSS 并不过气 <!--more--> 1 从哪里找 RSS？ 许多网站都有自己的 RSS，通常会在页面的一个小角落里，有着一个 Feed / RSS 订阅，当然，有些时候，你也可以试着在 Url 后面加 /feed ，说不定就中奖了呢？ 但是有很多时候，网站并不会给你提供 RSS 订阅源，原因也很容易理解，如果你使用自家的 App / 网页段，一来增加用户粘性，二来方便推送广告，加上绝大多数用户不懂 / 懒得懂 其中的问题，只顾使用，并不会激起大多数用户反感 那我们的 RSS 作用只有看几个新闻媒体每天的新闻了？ 当然不是！ 这有一款神奇的玩意儿 2 RSSHub 项目链接: < https://github.com/DIYgod/RSSHub > 这个项目能够将很多我们所熟悉的东西，变成简洁的 RSS，如果你有不满，你甚至可以自己动手，丰衣足食 —— 自行扩展，因为这是一个开源软件 配置搭建之类的项目里面都写的挺清楚的，这里只稍微阐述一下如何将 RSSHub 做成服务 2.1 将 RSSHub 做成服务 编辑 /etc/systemd/rsshub.service [Unit] Description=RSSHub Service After=network.target remote-fs.target nss-lookup.target [Service] Type=Simple Group=www-data User=www-data WorkingDirectory=/opt/RSSHub Ex"
+    },
+    {
+      "title": "Atom 上手指北",
+      "url": "https://blog.woshiluo.com/posts/2019/05/atom-%E4%B8%8A%E6%89%8B%E6%8C%87%E5%8C%97/",
+      "date": "2019-05-26",
+      "summary": "0 缘起 在 Luogu 日报上看到一篇 Atom小清新上手指南 ，经过了一番适应与调教，感觉十分优秀 不过多数这种自定义性极高的软件，通常都需要很多插件与一些配置，特写此文，留作自用 若能帮助到有需要的人，那是最好的 <!--more--> 1 Atom Atom 是由 GitHub 开发的 自由及开放源代码 的 文字与代码编辑器 ,支持 Node.js 所写的插件，并内置由 Github 提供的 Git版本控制系统 。多数的延伸包皆为开放源代码授权，并由社群建置与维护。Atom 基于使用 Chromium 和 Node.js 的跨平台应用框架 Electron Wikipedia - Atom A hackable text editor for the 21st Century atom.io 1.1 一点比较 Atom 与 Visual Studio Code 基于相同的框架 Electron ，但是两者的编辑器核心并不一样，在我的电脑上，VS code 和 Atom 启动速度相同，但是 Atom 的体验更加符合我的心意 Atom 与 Vim / Emacs 我个人认为是没有可比性的，在我眼里，这两种工具并不是一个类型的，我个人的用法一直都是 小文件/源码 编辑 Vim，文件夹内的大规模修改或者是项目就使用 Atom / VS code 虽然因为架构问题，Atom 和 VS code 无论实在安装包大小还是运行效率方面都比不过 Sublime Text，可是光收费一句话就足以让我告辞了，毕竟上面的两个问题随着时代的发展已经逐渐不成问题 2 安装 请自行去官网下载安装包 目前来说，如果你自己连安装包都没有办法从官网下到，那么您应当考虑放弃这款编辑器，因为下面的步骤一般您都很难进行，VS code 或许更加适合您 3 个性化 Atom 有一个包管理器 apm ，你可以非"
+    },
+    {
+      "title": "CTS&APIO2019游记",
+      "url": "https://blog.woshiluo.com/posts/2019/05/ctsapio2019%E6%B8%B8%E8%AE%B0/",
+      "date": "2019-05-18",
+      "summary": "自闭了，自闭选手不配拥有游记"
+    },
+    {
+      "title": "Luogu P2607 [ZJOI2008]骑士",
+      "url": "https://blog.woshiluo.com/posts/2019/05/luogu-p2607-zjoi2008%E9%AA%91%E5%A3%AB/",
+      "date": "2019-05-09",
+      "summary": "题目链接: https://www.luogu.org/problemnew/show/P2607 题目意思非常简单，给你一张图，然后图中不能选最大相邻点，最后最大的选中的点的权值 很容易想到 没有上司的舞会 这种树形 DP 题目，但是显然，这，并不是一棵树 根据题目可得，每一个人只会有一条出边，即，这张图中，一张节点个数为 $n$ 的联通块，会有 $n$ 条边 环套树没得跑了 即每一个联通块中一定有一条边，删掉后就是树了 设这条边为 $u - v$ 的边，则 $\\max(f_{u,0}, f_{u,1})$ 就是这个联通块的答案 建双向边判环即可 至于代码中的 xor ，当反向边即可 <!--more--> 代码 #include <cstdio> inline long long Max(long long a, long long b) {return a > b? a: b;} const int N = 1100000; // edge start struct node{ int next, to; }e[N << 1]; int ehead[N], ecnt; inline void add_edge(int now, int to){ ecnt ++; e[ecnt].to = to; e[ecnt].next = ehead[now]; ehead[now] = ecnt; } // edge end int n, from, to, cir_edge; int fig[N]; long long f[N][2]; bool vis[N]; void tarjan(int now, int fa){ vis[now] = true; for(int i = ehead[now]; i > 1; i = e[i].next){ if( (i ^ 1) == "
+    },
+    {
+      "title": "「BJOI2019」光线",
+      "url": "https://blog.woshiluo.com/posts/2019/05/bjoi2019%E5%85%89%E7%BA%BF/",
+      "date": "2019-05-08",
+      "summary": "题目链接: https://oj.woshiluo.site/problem/2055 / https://www.luogu.org/problemnew/show/P5323 我看到题目的一瞬间 我是在学 oi 还是在学物理？ 然后我仔细思考了一下，这两个镜子来回反射，您这是要求极限？ 然后我仔细思考了一下 设 $f_i$ 为从 $1$ 到 $i$ 的透光率，$g_i$ 为从 $i$ 到 $1$ 的反光率 <!--more--> 则 $$ \\begin{aligned} f_i & = f_{i - 1} \\times a_i \\times \\sum_{j = 0} ^ {\\infty} (g_{i - 1} \\times b_i) ^ j\\ g_i & = b_i + g_{i - 1} \\times a_i^2 \\times \\sum_{j = 0} ^ {\\infty} (g_{i - 1} \\times b_i) ^ j \\end{aligned} $$ 所以，这个无限是个啥？ 好消息在于，对于无限等比数列 $ a_i = a_{i - 1} \\times p$ ，若是 $-1 < p < 1$ 竟然有一个公式 这群数学家每天都在研究啥啊 即$\\sum_{i = 1}^{\\infty} a_i = \\frac{a_1}{1 - p}$ 套进去就完事了 代码 #include <cstdio> const int N = 5e5 + 1e4; const int mod = 1e9 + 7; inline int mul(int a, int b){return (1LL * a * b) % mod;} inline int dec(int a, int b){a -= b; return a < 0? a + mod: a;} int ksm(int a, i"
+    },
+    {
+      "title": "SA 后缀数组入门 -- Luogu P3809 【模板】后缀排序",
+      "url": "https://blog.woshiluo.com/posts/2019/05/sa-%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84%E5%85%A5%E9%97%A8-luogu-p3809-%E6%A8%A1%E6%9D%BF%E5%90%8E%E7%BC%80%E6%8E%92%E5%BA%8F/",
+      "date": "2019-05-08",
+      "summary": "题目链接: https://www.luogu.org/problemnew/show/P3809 后缀数组 后缀数组用于解决各种玄学字符串问题，准确来说，它是一种思想 基于后缀数组有很多好玩毒瘤的东西 目前已知的求后缀数组的方法有 倍增法 (本博客所讲述) -- $O(n \\log(n))$ DC3 -- $O(n)$ DC3 虽然从复杂度分析的角度而言比倍增快，但配合各种常数问题，在信息学竞赛中反而容易被卡…… SA - IS 算法 -- $O(n)$ 可以参考这篇 Luogu 日报: https://www.luogu.org/blog/ShadowassIIXVIIIIV/on-hou-zhui-shuo-zu-sa-is-suan-fa 因为我太菜了，所以我就讲倍增求法 <!--more--> 倍增求后缀数组 与其说倍增求后缀数组，倒不如说是 倍增 + 基数排序 求后缀数组 我们先从归并排序讲起 基数排序 基数排序，用于给形如 $(a, b)$ 的二元组排序（$a$ 为第一关键字，$b$ 为第二关键字） 可以做到在近似 $O(n)$ 的复杂度完成 通过灵活的运用基数排序，可以比绝大多数的排序算法更加优秀 因此也被用来在快速排序模板中占领效率 rk1 倍增的用处 我们发现如果我们直接暴力求倍增数组，重复的前缀被计算了多次 如果我们一开设长度为 $1$ 字串为一个单位，排完序后设长度为二为一个单位，我们就会发现这个可以基数排序 之后设长度为 $4$ 为一个单位，依然可以基数排序，以此类推，便可以做到后缀排序 这个过程，也就是倍增 倍增 $O(\\log(n))$ 基数排序 $O(n)$ 套起来 $O(n \\log(n))$ 代码 #include <cstdio> #include <cstring> const int N = 1e6 + 1e5; int len, "
+    },
+    {
+      "title": "Luogu P3174 [HAOI2009]毛毛虫",
+      "url": "https://blog.woshiluo.com/posts/2019/05/p3174-haoi2009%E6%AF%9B%E6%AF%9B%E8%99%AB/",
+      "date": "2019-05-05",
+      "summary": "题目链接: https://www.luogu.org/problemnew/show/P3174 这应该是我第一次没看 sol 做紫题吧…… 虽然个人感觉比大多数紫题简单许多 题目本质是要求最长链的，但是要求是带每个点周围点的 我们设每个点的点权是这个点的连接点个数减 1 然后求最长链 得出来的链的长度 +2 即为答案 可以理解为因为大多数点都有一条边要连出去防止重复计算而减一 但是这样链头链尾会没算上，所以加二 <!--more--> 代码 #include <cstdio> inline int Max(int a, int b){return a > b? a: b;} const int N = 310000; int n, m, ans; int dis[N], val[N]; // edge start struct edge{ int to, next; }e[N << 1]; int ehead[N], ecnt; inline void add_edge(int now, int to){ ecnt ++; e[ecnt].to = to; e[ecnt].next = ehead[now]; ehead[now] = ecnt; } // edge end void get_val(){ for(int u = 1, cnt; u <= n; u++){ cnt = 0; for(int i = ehead[u]; i; i = e[i].next){ cnt ++; } val[u] = cnt - 1; } } void get_ans(int now = 1, int la = 0){ int max, sec_max; max = sec_max = 0; dis[now] = val[now]; for(int i = ehead[now];"
+    },
+    {
+      "title": "CCF WC 2019 游记",
+      "url": "https://blog.woshiluo.com/posts/2019/02/ccf-wc-2019-%E6%B8%B8%E8%AE%B0/",
+      "date": "2019-02-01",
+      "summary": "Day -1 上午起来收拾了一下就前往乌鲁木齐市机场了 在机场里面互相定位是一件困难的事情，我们最终通过奇迹淫巧和瞎挥手聚在了一起 然后是漫长的安检和候机.... 在经历各种各样奇怪的娱乐过后，飞机终于落地 <figure> <figcaption> 飞机上拍的云朵 </figcaption> </figure> 下去坐地铁，站了一个多小时后有疯狂转圈终于吃上了人生中第一顿麦当劳并到达了宾馆 发现电视有 HDML 口，接之 一顿瞎嗨，用电视看了看鬼畜和老番 <!--more--> Day 0 早上六点起来去萝岗吃早茶 买了一张地铁日卡，从 苏元 苟到坐到 萝岗 c0per 大爷在买日卡的时候刷人家的红包刷出来了 10 块钱... 内地人消费水平过于强大瑟瑟发抖... <figure> <figcaption> 精致却贵 </figcaption> </figure> 平均每人30+却连五分饱都吃不上... 然后坐回 苏元 在宾馆休息一下就再度出发，站了20站到 公园前 动漫星城 get <figure> <figcaption> 都想买喵 买不起喵 </figcaption> </figure> 咱是真的没想到有一整栋楼都是2.5次元类型的产品，这里是天堂吗 然后我们的钱包削减的速度也让咱心疼... 然后步行去 animate 我错了， animate 让我感到钱包爆炸.... 接着大家在麦当劳吃午饭（虽然我只吃了了冰激凌） 经过一阵时间的的休整，我们又站回了 苏元 站 经过漫长的爬坡，终于到达了广州市第二中学 <figure> <figcaption> 于宿舍拍摄 </figcaption> </figure> 晚上就是开幕式，没有 dzd 讲话差评 广州二中真的是舒服啊qwq Day 1 - 4 听课 <figure> <figcaption> 在第一课堂颓废（伦敦真是"
+    }
+  ]
+}
