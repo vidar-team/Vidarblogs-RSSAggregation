@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vidarblogs | 博客聚合</title>
+    <link>https://feed.vidar.team/</link>
+    <description>Vidar-Team 成员博客 RSS 聚合</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 13 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://feed.vidar.team/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>iOS 定位的矛与盾</title>
+      <link>https://www.intmian.com/archives/9IhsvO1T</link>
+      <guid isPermaLink="true">https://www.intmian.com/archives/9IhsvO1T</guid>
+      <pubDate>Tue, 13 Oct 2026 00:00:00 GMT</pubDate>
+      <description>做后台定位这段时间，我主要在跟两样东西较劲：先是 iOS 本身，后来是 iOS 给我的数据。 我在做一个足迹 App，暂时叫“代号：地图”（什么游戏开发者取名）：打开记录后，它全天在后台记下你走过的路，在地图上一点点揭开。要求就四条：不漏记，不乱记，不费电，状态栏上别一直挂着定位提示。听着不多，做起</description>
+      <source url="https://www.intmian.com/">mian</source>
+    </item>
+    <item>
+      <title>something about...JPEG</title>
+      <link>https://wuli-wa.github.io/2026/10/10/JPEG/</link>
+      <guid isPermaLink="true">https://wuli-wa.github.io/2026/10/10/JPEG/</guid>
+      <pubDate>Sat, 10 Oct 2026 00:00:00 GMT</pubDate>
+      <description>something about…JPEG 一些色彩空间（色彩模型）： RGB：红绿蓝，通过三原色不同的配比表示不同的颜色，通常用于显示屏 CMYK：用青色、品红、黄色、黑色四组颜色数值表示色彩，经过四种颜色不同配比显示不同色彩，常用于印刷 YUV(YCbCr)：JPEG编码使用的色彩模型，拥有三个分量，Y（亮度）、Cb（彩度蓝）、Cr（彩度红）， 人眼工作机制： 人眼内含有视锥细胞和视杆细胞，前者具有感知颜色的能力，后者具有感知亮度的能力，通常眼中视杆细胞数量相对较多，因此对亮度的敏感程度高于色彩的的敏感程度。JPEG利用该特性，在压缩图像时将亮度和颜色分开处理。 JPEG压缩过程 RGB -&gt; YUV(BT.601标准)：对每个像素点的RGB三个数值执行如下变换(该步骤结束后图像大小不变)： Y = 0.299*R + 0.587*G + 0.114*B Cb = -0.1687*R - 0.3313*G + 0.5*B + 128 Cr = 0.5*R - 0.4187*G - 0.0813*B + 128 色度抽样：对每个像素点的Y、Cb、Cr三个分量采取 Y:Cb:Cr=4:2:0 的分量，即Y分量全采样，对CbCr分量进行1/4取样(2:0并不是Cb分量取一半而Cr不取，而是二者间隔取样，奇数行取Cb分量，偶数取Cr)。原本像素数为N的图片大小(字节数)为3N，经过该步骤后为1.5N，此为第一次压缩，称为缩减采样。 离散余弦变换(DCT)+量化：在JPEG算法中图像被分成了8*8的像素组，每个像素组的Y、Cb、Cr分量的数据都要单独进行处理。先进行电平偏移(-128)，这样像素值的范围就从 0~255 变为 -128~127 ，再用离散余弦变换进行频域编码，得到DCT系数。将DCT变换后的临时结果，除以各自量化步长(量化表)并四舍五入后取整，得到量化系数。 注：J</description>
+      <source url="https://wuli-wa.github.io/">wuliwa</source>
+    </item>
+    <item>
+      <title>x86asm(intel syntax)</title>
+      <link>https://c0d4.ink/posts/x86asmintel-syntax/</link>
+      <guid isPermaLink="true">https://c0d4.ink/posts/x86asmintel-syntax/</guid>
+      <pubDate>Thu, 08 Oct 2026 00:00:00 GMT</pubDate>
+      <description>x86-64 ASM Assembly Tutorial x86-64 Architecture , 练习平台 基础指令语法 register rax, rbx, rcx, rdx - al, ah, ax, eax, rax rsp - stack pointer rbp - base pointer rsi, rdi r10, r9, r8 r11, r12, r13, r14, r15 rip - instruction pointer mov mov rax, 5 mov rbx, rax mov rcx, 0x1234 mov rdx, [0x401000] add, sub, inc, dec add rax, 5 sub rbx, 3 inc rcx dec rdx RAM lea ( load effective address ) .text _start: lea rsp, [mem] .data mem: .byte 0x00, 0x01, 0x02 .word 0x1234 .long 0xdeadbeaf .quad 0x0123456789abcdef syscall 系统调用号通过 rax 传递，参数依次通过 rdi, rsi, rdx, r10, r8, r9 传递。 print &quot;Hello World!&quot; .intel_syntax noprefix .global _start .text _start: mov rax, 1 mov rdi, 1 lea rsi, [str] lea rdx, [strlen] syscall mov rax, 60 xor rdi, rdi syscall .data str: .ascii &quot;Hello World!&quot; strlen = . - str linux-syscall-table jm</description>
+      <source url="https://c0d4.ink/">c0d4</source>
+    </item>
+    <item>
+      <title>LightCube 11 周年：AI 一天，人间一年</title>
+      <link>https://github.red/lightcube-11th/</link>
+      <guid isPermaLink="true">https://github.red/lightcube-11th/</guid>
+      <pubDate>Tue, 06 Oct 2026 00:00:00 GMT</pubDate>
+      <description>时间过得真快。 不只是过去的一年，也是这个 14 天的中秋 + 国庆假期。 本来今年国庆不打算回深圳的，但确实也没有更好的安排。原本想着国庆去意大利玩，或者是去东京走走，但女友忙于工作没办法陪我，最后只能买回深圳的机票了。 国庆那天一家人去看了企鹅岛，后面又去大亚湾住了一晚，剩下的时间我就是在家里躺着刷手机，或者 Vibe 新的项目。我留了两天时间提前回上海，好提前处理下工作之类的。（虽然大部分时间也还是躺在床上刷手机） AI 一天，人间一年 回看过去的一年，AI 的发展也很是迅猛。从今年年初的 OpenClaw 全民养虾，到后面的 Claude Mythos 给安全方面带来的变革；又陆续造出来了 Harness engineering、Loop engineering 这些新名词。模型已经迭代到 GPT 6.1、Claude Opus 5.5，可以说是 AI 一天，人间一年。 我在两年前使用 Hugo 替换 WordPress 时，是将原本 WordPress 主题的 CSS 样式，一点点抠出来，复制到新的 Hugo CSS 文件中，尽可能保留之前的主题样式。完整迁移后，我曾尝试用当时的模型，将 style.css 里的 CSS 样式，使用原子化的 TailwindCSS 重构。试了很多次都不能 1:1 保留原本的样式不变。 直到今年 GPT-6-Astra 做到了。正如你所看到的，虽然博客的主题样式没变，但 F12 打开开发者面板可以发现全都使用 TailwindCSS 重写了。说实话我也不清楚这么做有什么收益，只是显得这个站点更加“现代化”了。 与此同时，我还让 GPT 用 Computer Use 操控谷歌浏览器跑 Lighthouse 测试页面性能，并进行调优。它将评论 API 改为异步请求，从而避免接口偶尔加载卡顿导致页面短暂白屏的问题。 Sayrud 重生 说</description>
+      <source url="https://github.red/">E99p1ant</source>
+    </item>
+    <item>
+      <title>常见胶卷挑选指南</title>
+      <link>https://sccube.link/films/</link>
+      <guid isPermaLink="true">https://sccube.link/films/</guid>
+      <pubDate>Mon, 28 Sep 2026 00:00:00 GMT</pubDate>
+      <description>胶片基础介绍 胶片一般可以分成以下四类： 彩色负片：最常见的彩色胶片类型，通常使用 C-41 工艺冲洗。直接观看底片为颜色反相+色罩的效果，数字化需要做去色罩处理。 彩色反转片：又称为正片（“反转”是相对于普通负片而言的），通常使用 E-6 工艺冲洗，可以直接在观片台上或使用放映机观看底片。相较于彩色负片通常宽容度较低。 黑白：字面意思。通常为负片，使用 D-76 工艺冲洗，但有些工艺可以冲洗为正片效果。 电影卷：为电影制作优化、附带碳层的彩色负片，通常使用 ECN-2 工艺冲洗。官方一整盘卖，有些工作室会分装成一卷一卷单独卖，所以通常比彩色负片价格低一些，是性价比高的选择。也有一些彩色正片、黑白电影卷，或者更加特殊的拷贝卷等等，“电影卷”主要是指这种非官方零售的分装方式。 还有一种例外情况：有些工作室会将电影卷的碳层除去，制成除碳卷售卖，可以使用 C-41 或 ECN-2 两种工艺冲洗。例如著名的 CineStill 系列。 每款胶卷都有一个固定的度数，也就是感光度，相当于数码相机的 ISO。通常来说度数高的卷会不如度数低的细腻，但也看具体型号而异，所以需要根据不同的拍摄场景选择不同的胶片。 如果想详细了解一款胶片的详细参数和显色特性，可以去搜索各款胶卷的详细技术手册查看胶片特性曲线，作为可量化的色彩和成像风格的参考指标。 每款胶片在不同场景、保存环境、温度等外部因素下的表现都不同，喜好因人而异，这篇文章作为个人分享提供参考。所提到的胶卷仅为我了解的，可能不太全面。 本文中介绍的所有胶卷都是其在 135 格式下的表现，120 版本可能会有些区别。 彩色负片 Kodak ColorPlus 200 我个人挺喜欢这款胶卷。网上都说 CP200 颗粒粗，但我实际用下来觉得还算可控，颗粒均匀柔和，不太影响整体观感。它的颜色偏淡一些，对比度较低，但整体风格还原，甚至在正确曝光下颜色</description>
+      <source url="https://sccube.link/">ScaredCube</source>
+    </item>
+    <item>
+      <title>Agent</title>
+      <link>https://srf-27.github.io/posts/Agent/</link>
+      <guid isPermaLink="true">https://srf-27.github.io/posts/Agent/</guid>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 GMT</pubDate>
+      <description>Agent 是什么？ 最初含义：Agent = 会“主动”做事的主体 “Agent”这个词来自拉丁语 agere，意思是「去做、去行动」。 所以最初含义非常简单：Agent = 能感知世界、形成意图、并主动行动的主体。 核心出现：Loop 最早的智能体模型，它的思维路径是一个闭环： 感知（Perceive） → 推理（Reason） → 行动（Act） → 获得反馈（Observe） → 调整策略（Loop） 这一框架之核心，就在于能闭环行动（Loop），它可以根据获得的反馈去进行调整。 LLM 时代的 Agent 大模型时代，机器具备了理解自然语言、推理问题、规划行动的能力。那么很自然的，研究者就想到，如果LLM可以根据行动后获得的反馈去决定下一步要做什么，是不是就能实现自动化？ 于是，LLM 时代下的 Agent 架构诞生了： 单 Agent： ReA...</description>
+      <source url="https://srf-27.github.io/">srf27</source>
+    </item>
+    <item>
+      <title>CobaltStrike的容器化实现</title>
+      <link>https://lewis1766.github.io/posts/20260918/</link>
+      <guid isPermaLink="true">https://lewis1766.github.io/posts/20260918/</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
+      <description>Cobalt Strike 4.8 Client Docker 部署指南 为解决java环境不兼容问题，将 Cobalt Strike 4.8 汉化版客户端 （Java Swing GUI）完整容器化，通过浏览器远程桌面访问。 Github项目链接 📋 前置要求 Docker Desktop : 20.10+（含 Compose v2） 内存 : 至少 4GB 可用（容器限制 2GB） CPU : 建议 2 核以上 🏗️ 技术架构 ┌─────────────────────────────────────────────┐ │ Docker Container (Ubuntu 20.04) │ │ │ │ entrypoint.sh (PID 1 入口) │ │ ├─ [启动前] start_vnc.sh 清理残留 │ │ │ (锁文件/socket/孤儿进程/shm) │ │ └─ exec supervisord │ │ ├─ [vncserver] Xvnc :99 │ │ │ └─ 内联再清一次锁后启动 (:5900) │ │ ├─ [noVNC] websockify (:6080) │ │ │ └─ 浏览器 WebSocket→VNC │ │ └─ [csclient] start.sh → CS GUI │ │ (DISPLAY=:99) │ └─────────────────────────────────────────────┘ ↑ port 6080 / 5900 浏览器 http://localhost:6080 关键设计点 ：</description>
+      <source url="https://lewis1766.github.io/">lewis</source>
+    </item>
+    <item>
+      <title>半年过去了，AI Agent和Agent安全何去何从？</title>
+      <link>https://lorexxar.cn/2026/09/18/aiagent/</link>
+      <guid isPermaLink="true">https://lorexxar.cn/2026/09/18/aiagent/</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
+      <description>从2026年开年， 随着Claude的发布，AI智能体的井喷时代来临 ，在过去的半年里，大家从刚开始对于AI重新刷新认知，到开始了解深入体验，半年时间过去了，AI到底诞生了哪些新概念？我做了哪些尝试和研究呢？ AI模型的变化 在2026年的年初，市面上最主流的AI模型是claude opus4.6和GPT-5.3-Codex。 而那会儿国模的差距还是相当之大，国模的主流是GLM5、minimax2.7、Deepseek3.2。 在今年年初的时候，我曾经说过， AI智能体爆火有一个重要的变因就是模型本身有了更长更有效的上下文 ，这也是模型能力的第一个质变性的更新，他的标志性模型版本就是 Claude opus 4.6和GPT-5.3-Codex 从这个版本开始， claude code+claude opus 4.6和codex+GPT-5.3-Codex ，这种 模型+Agent 的构建方案，开始允许AI模型去应对更长更复杂的任务。 而真正我认为质变的模型是 GPT-5.6和Claude Opus 4.8 对应国模的Deepseek V4、 GLM-5.1 从这个版本开始，AI模型真正明确了一个核心要点，就是Ai不能停留在一个对话智能助手上，而是 需要更具体的复杂任务完成能力 ，从这里开始模型本身的能力开始变得没那么重要， 所有的厂家都把重心放到了Agent能力 上。 Claude开始卷Claude code，openai开始卷Codex，GLM卷ZCode，Deepseek推出了开源的Harness，前段时间xiaomi开始内测Mimo Code，腾讯押注Workbuddy，豆包开始推出豆包桌面版。 各家的AI模型都开始深入到自己的Agent层面做优化 ，不再局限于对话智能助手，也不再局限于代码开发能力，这是为什么呢？ 从wf到重skill到loop到Harness 这条</description>
+      <source url="https://lorexxar.cn/">LoRexxar</source>
+    </item>
+    <item>
+      <title>2026湾区杯wp</title>
+      <link>https://dodor.top/2026/09/10/2026%E6%B9%BE%E5%8C%BA%E6%9D%AFwp/</link>
+      <guid isPermaLink="true">https://dodor.top/2026/09/10/2026%E6%B9%BE%E5%8C%BA%E6%9D%AFwp/</guid>
+      <pubDate>Thu, 10 Sep 2026 00:00:00 GMT</pubDate>
+      <description>更新中（working Pwn logd 保护基本全开，仅有Partial RELRO。不出意外是格式化字符串改GOT表。看了一下题目架构，大概是程序会循环收ticket,格式为p16+ChaCha8（明文部分），nonce（密钥）硬编码在二进制里。 总的来说是一个crypto-pwn 解密过程 因为没有隐藏符号表，可以用nm读出符号，我就列几个关键的 CHACHA_KEY @ .rodata 0x2060 : &quot;ChaCha8T1ck3tK3y20260psChannelXX&quot; (32B)BF_KEY @ 0x2080 : &quot;L06d-S3cr3t-K3y!&quot; (16B Blowfish 密钥)PW_CT @ 0x2090 : 登录口令密文 用 BF_KEY ECB 解密 PW_CT 即得 L0gd-Ma1nT-2026!。 #!/usr/bin/env python3 &quot;&quot;&quot;Client-side crypto for logd: Blowfish (pi-digit tables, key schedule, decrypt)and ChaCha8 keystream, matching the service implementation.&quot;&quot;&quot; import struct # ---------------- Blowfish ---------------- def _arctan_inv ( x , scale ) : total = 0 k = 0 x2 = x * x term = scale // x while term : t = term // ( 2 * k + 1 ) total += t if k % 2 == 0 else - t term //= x2 k += 1 return total def _pi_words ( ) : n =</description>
+      <source url="https://dodor.top/">DODOR</source>
+    </item>
+    <item>
+      <title>Weekly Report 2026-03-16</title>
+      <link>https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-03-16/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-03-16/</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <description>工作任务 1.Linux内核中RV相关部分有哪些，存量代码有多少（行） 2.RV增量代码每周大概有多少行（关键问题），每周更新频率，维护人多少 3.已有RV相关Linux内核CVE特性分析，尤其是RV特有的漏洞 4.用什么工具去挖漏洞（不限制手段，以挖到为目标，后期考虑增量代码与方法架构） 5.现有工具调研 工作进展 Linux内核riscv存量代码分析 本周进展 使用python脚本将riscv代码存量代码基本全部找出，并且按照子系统进行分类，并且使用一个简单的前端进行成果展示 [image: 电脑萤幕画面 AI 生成的内容可能不正确。] [image: image3.png] [image: image4.png] [image: 图形用户界面, 文本, 应用程序, 聊天或短信 AI 生成的内容可能不正确。] 遇到的问题及解决方法 问题就是不知道怎么找riscv相关的代码，解决方法是三种方案找riscv的代码 Maintainer标注的dir下所有的files 使用find通过关键词寻找文件名匹配的files 使用grep通过关键词和过滤寻找文件内容匹配的files Linux内核riscv代码增量分析 本周进展 通过分析riscv代码上一部找出的所有文件的分文件git log，找他近2年（可配置）的commit log，对其代码行数和commit进行取一周平均值，并收集所有对这个文件commit的contributer [image: 电脑萤幕的截图 AI 生成的内容可能不正确。] [image: 图形用户界面 AI 生成的内容可能不正确。] Linux内核riscv CVE漏洞分类以及特性分析 本周进展 这个任务仅仅只是做了基本的按照子系统分类，但是前端有机制让我能进行自定义分类，这需要手工进行一个一个分析并分类（暂时没做） [image: 图形用户界面, 应用程序</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>Weekly Report 2026-03-23</title>
+      <link>https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-03-23/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-03-23/</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <description>工作任务 1、看最近riscv子系统活跃度有没有下降 2、分类分析一下近两年的cve，把通用一般的漏洞和rv专有的漏洞分开 3、针对rv相关的文件跑一个工具看看，尝试挖一些riscv cve 工作进展 看最近riscv子系统活跃度有没有下降 本周进展 从整体趋势看，RISC-V 活跃度并未下降；从最近短周期看，活跃度出现了阶段性回落。这一变化与近期 Linux 7.0 merge window 关闭后的节奏切换一致。 具体数据为 5周：Commits/Week = 2.80，Lines/Week = 8.80 10周：Commits/Week = 14.90，Lines/Week = 390.30 20周：Commits/Week = 13.70，Lines/Week = 310.60 50周：Commits/Week = 17.94，Lines/Week = 444.46 104周：Commits/Week = 17.88，Lines/Week = 363.56 分类分析最近两年的cve 本周进展 分类逻辑概述 本报告的漏洞分类框架主要由三大板块构成：RISC-V 特有漏洞、通用漏洞，以及一个汇总性质的漏洞原因 (Cause) 分类。 其中，针对“RISC-V 特有漏洞”和“通用漏洞”，报告又分别从两个不同的维度进行了交叉拆解： 按组件 (Component) 分类：侧重于漏洞发生的具置或受影响的模块。 按漏洞类型分类：侧重于漏洞本身的表现形式和技术特征。 1. riscv特有漏洞（按漏洞类型） API Misuse 涉及 CVE：CVE-2025-38407 Incomplete Implementation / Missing Functionality 说明：笔误或者cv的时候失误，导致的不完整实现 涉及 CVE：CVE-2025-37966, CVE-2025-3</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>Weekly Report 2026-03-29</title>
+      <link>https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-03-29/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-03-29/</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <description>工作任务 1.尝试跑论文KNighter: Transforming Static Analysis with LLM-Synthesized Checkers的工具KNighter 2.调研从riscv isa文档到具体代码实现的中间层pattern的形式 工作进展 ====周一到周四的工作====== 对于RISC-V CVE类型分类的重构 &lt;table&gt; &lt;colgroup&gt; &lt;col style=&quot;width: 21%&quot; /&gt; &lt;col style=&quot;width: 30%&quot; /&gt; &lt;col style=&quot;width: 48%&quot; /&gt; &lt;/colgroup&gt; &lt;thead&gt; &lt;tr&gt; &lt;th style=&quot;text-align: left;&quot;&gt;分类维度 (Taxonomy)&lt;/th&gt; &lt;th style=&quot;text-align: left;&quot;&gt;子类别 (Category)&lt;/th&gt; &lt;th style=&quot;text-align: left;&quot;&gt;包含的 CVE 列表&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td rowspan=&quot;2&quot; style=&quot;text-align: left;&quot;&gt;&lt;p&gt;&lt;strong&gt;RISC-V or&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;通用漏洞&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt; &lt;td style=&quot;text-align: left;&quot;&gt;RISC-V专有漏洞&lt;/td&gt; &lt;td style=&quot;text-align: left;&quot;&gt;CVE-2024-53687, CVE-2024-56673, CVE-2024-57945, CVE-2025-22069, CVE-2025-37822, CVE-2025-37966, CVE-2025-38261, CVE-2025-38407, CVE-2025-384</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>Weekly Report 2026-04-05</title>
+      <link>https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-05/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-05/</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <description>工作任务 （周四开会后） 1.统计各个工具扫到的漏洞中缺乏RV语义能力，统计占比 2.找语义强相关的RV漏洞例子，论证“传统工具缺乏语义背景知识，难以检测出RV漏洞” 3.拿语义强相关的漏洞跑一下Knighter 工作进展 ======周一-周四（开会前）===== 调研从riscv isa文档到具体代码实现的中间层pattern的形式 由于上周只是做了调研以及一些头脑风暴，这周主要将上周的调研结果和头脑风暴结果做了一些整合，把他们统一起来，放到了一个漏洞挖掘的思维模型里面 （源drawio格式模型图见附件） 此模型分为四层，layer0是最终的目标（dest），即漏洞，layer3是所有的起点（src），他是各种规范以及各种行为（用圆圈表示），然后希望能使用这个模型 1.囊括几乎所有漏洞挖掘方法。2.不说给解决问题提供框架，只能说至少让我能知道还存在什么问题。 下面是各层的描述 Layer0: 漏洞/bugs ，即最终的目标 Layer1: CodeBase ，即需要研究/挖掘的对象，简单来说就是arch/riscv目录（这是第一周做的事情） Layer2: 能直接产出漏洞的工具 ，即使用他们分析codebase能直接产生漏洞，他们包括“状态探索器Fuzzer”，“LLM直接代码分析”，“需要做什么的golden reference”，“禁止做什么的Checker”，本质就是需要将所有其他形式转换/加强成layer2的形式，才能产生真正的漏洞（工具调研是第一周/第二周做的事情） Layer3: 各种语义模型 ，即最开始的起点，包括ISA规范，codebase本身的行为，微架构特定的行为，编译器行为，SBI执行环境行为 但是他们和layer2的工具有很大的语义差异，需要一步一步将这些源语义转换成其他语义模型（需要证明转换等价或者保留部分原意），或者与其他语义模型横向碰撞/融</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>Weekly Report 2026-04-12</title>
+      <link>https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-12/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-12/</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <description>工作任务 工作进展 Knight的召回率测试实验 Knight对于一个patch会尝试生成10个checker，每一个checker如果出现编译失败会尝试5次，所以其速度极慢，所以对于速度和准确率的权衡，使用Qwen3.5-122B-A10B的软件所chatbox中转模型进行实验 将在 https://has2lab.github.io/RISCV_CVE_Dashboard/ 提取的CVE分为通用漏洞（9个）和RISC-V专有漏洞（10个），分别给Knight运行其gen阶段从而测试其召回率 CVE编号 Best Score 特殊/边缘情况遗漏（逻辑错误）|CVE-2024-42267 TP=0, TN=1 隐式ABI规定违反|Unaligned Memory|CVE-2024-43868 TP=0, TN=0 隐式API规定违反|CVE-2024-46792 TP=0, TN=1 分支路径遗漏（逻辑错误）|Resource Leak|CVE-2024-53075 TP=1, TN=1 隐式API规定违反|CVE-2024-57939 TP=1, TN=1 特殊/边缘情况遗漏（逻辑错误）|CVE-2025-37975 TP=0, TN=1 特殊/边缘情况遗漏（逻辑错误）|CVE-2025-38433 TP=0, TN=0 特性/机制冲突|CVE-2025-40358 TP=1, TN=1 隐式时间规定违反|CVE-2025-38681 待测 表 1 通用漏洞 CVE编号 Best Score RISC-V_MMU|隐式API规定违反|CVE-2024-53687 TP=0, TN=0 RISC-V_MMU|隐式API规定违反|CVE-2024-56673 TP=0, TN=1 RISC-V_MMU|隐式ABI规定违反|CVE-2024-57945 TP=-10, TN=-</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>Weekly Report 2026-04-19</title>
+      <link>https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-19/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-19/</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <description>工作任务 调研所有的内核漏洞扫描的sota工具 对其中的某些sota工具进行实验 工作进展 调研内核扫描sota工具 首先通过布尔表达式从四大顶会中搜索相关论文，找到了130篇论文，然后将这130篇论文进行筛选，最终筛选出50篇，并分类，在分类的过程中也了解到了整个漏洞扫描工具的整体研究方向，以下是分类 一、静态SOTA工具 1. LLM直接分析 • LLMxCPG: Context-Aware Vulnerability Detection through Code Property Graph-Guided Large Language Models (USENIX Security 2025) 2. 符号执行 • KRover: A Symbolic Execution Engine for Dynamic Kernel Analysis (ICSE 2023) • Symbolic Execution for Dynamic Kernel Analysis (ICSE 2024) 3. 静态Checker 通用： • KNighter: Transforming Static Analysis with LLM-Synthesized Checkers (arXiv 2025) • Type-Based Call Graph: Unleashing the Power of Type-Based Call Graph Construction by Using Regional Pointer Information (USENIX Security 2024) 特定： • APP-Miner: Detecting API Misuses via Automatically Mining API Path Patterns (ICSE 2024) • LR-Mine</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>Weekly Report 2026-04-26</title>
+      <link>https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-26/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-26/</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <description>工作任务 1.对sota工具进行实验 工作进展 对sota工具进行实验 0.knight（已实验，待做推理） &lt;u&gt;工具原理：&lt;/u&gt;通过llm分析某个cve的commit，然后编写出对应的checker，用这个checker扫描全内核 假说-演绎法： &lt;u&gt;提出假说：&lt;/u&gt;由于通用llm对强riscv语义理解不透彻，或者llvm的checker对riscv语义的api支持较差，所以生成的checker对强riscv语义的漏洞难以检测或者生成的checker质量差或者难以编译成功。 演绎推理：如果上述假设成立，那么对于强riscv语义commit生成的checker，checker会难以生成成功，召回率一定更差，误报率也一定更高，对于浅riscv语义或者通用语义的commit生成的checker则是反之。 &lt;u&gt;实验验证：&lt;/u&gt; 将在 https://has2lab.github.io/RISCV_CVE_Dashboard/ 提取的CVE分为通用漏洞（9个）和RISC-V专有漏洞（10个），分别给Knight运行其gen阶段从而测试其召回率 CVE编号 Best Score 特殊/边缘情况遗漏（逻辑错误）|CVE-2024-42267 TP=0, TN=1 隐式ABI规定违反|Unaligned Memory|CVE-2024-43868 TP=0, TN=0 隐式API规定违反|CVE-2024-46792 TP=0, TN=1 分支路径遗漏（逻辑错误）|Resource Leak|CVE-2024-53075 TP=1, TN=1 隐式API规定违反|CVE-2024-57939 TP=1, TN=1 特殊/边缘情况遗漏（逻辑错误）|CVE-2025-37975 TP=0, TN=1 特殊/边缘情况遗漏（逻辑错误）|CVE-2025-38433 TP=0, TN=</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>Weekly Report 2026-04-30</title>
+      <link>https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-30/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-04-30/</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <description>工作任务 工作进展 “通过手册增量，分析已有riscv代码”的idea Idea Quik View 1. 问题定义 **- 依赖先验数据的瓶颈：**现有 SOTA 漏洞挖掘过度依赖历史补丁，只能“横向寻找”已知变种，难以发现因误解硬件规范（Specification）导致的全新架构级漏洞。 **- 漏洞Pattern跨平台泛化差：**传统提取的漏洞 Pattern 往往是 Software-specific（如绑定 Linux 特有机制），无法直接迁移到 FreeBSD 等其他系统。 **- LLM 上下文瓶颈：**底层架构手册极其庞杂，现有工具无法让 LLM 宏观理解整本手册来定位“语义歧义”区域。 2. 输入输出 (Input &amp; Output) 输入 (Input)： RISC-V 官方开源手册 RISC-V 官方开源手册的 Pull Requests/Commits 目标系统的源代码。 输出 (Output)： 目标系统中因规范同步滞后/误解导致的潜在漏洞位置。 以硬件文档为桥梁提取出的、跨生态系统的普适性漏洞 Pattern。 3. 应用场景 (Application Scenarios) **操作系统内核安全审计：**自动化检测 Linux、FreeBSD 等内核中翻译 RISC-V 规范时的代码缺陷。 **底层固件漏洞挖掘：**应用于 OpenSBI 等强架构相关固件的安全检测。 **硬件/模拟器实现验证：**向下延伸至硬件 CPU RTL 实现的语义对齐检测。 **RISC-V 生态持续集成：**作为一个自动化的“规范守护者”，监控生态系统中软硬件对官方规范迭代的同步情况。 解决的问题： **突破“横向挖掘”局限：**无需已知漏洞数据，基于官方修正的“语义盲区”直接发掘全新的 0-day 漏洞。 **打破软件生态隔离：**将分析基准从“软件特性”提升到“硬</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>Weekly Report 2026-05-10</title>
+      <link>https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-05-10/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-05-10/</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <description>工作任务 工作进展 “通过手册增量，分析已有riscv代码”的idea Idea Quik View 1. 问题定义 **- 依赖先验数据的瓶颈：**现有 SOTA 漏洞挖掘过度依赖历史补丁，只能“横向寻找”已知变种，难以发现因误解硬件规范（Specification）导致的全新架构级漏洞。 **- 漏洞Pattern跨平台泛化差：**传统提取的漏洞 Pattern 往往是 Software-specific（如绑定 Linux 特有机制），无法直接迁移到 FreeBSD 等其他系统。 **- LLM 上下文瓶颈：**底层架构手册极其庞杂，现有工具无法让 LLM 宏观理解整本手册来定位“语义歧义”区域。 2. 输入输出 (Input &amp; Output) 输入 (Input)： RISC-V 官方开源手册 RISC-V 官方开源手册的 Pull Requests/Commits 目标系统的源代码。 输出 (Output)： 目标系统中因规范同步滞后/误解导致的潜在漏洞位置。 以硬件文档为桥梁提取出的、跨生态系统的普适性漏洞 Pattern。 3. 应用场景 (Application Scenarios) **操作系统内核安全审计：**自动化检测 Linux、FreeBSD 等内核中翻译 RISC-V 规范时的代码缺陷。 **底层固件漏洞挖掘：**应用于 OpenSBI 等强架构相关固件的安全检测。 **硬件/模拟器实现验证：**向下延伸至硬件 CPU RTL 实现的语义对齐检测。 **RISC-V 生态持续集成：**作为一个自动化的“规范守护者”，监控生态系统中软硬件对官方规范迭代的同步情况。 解决的问题： **突破“横向挖掘”局限：**无需已知漏洞数据，基于官方修正的“语义盲区”直接发掘全新的 0-day 漏洞。 **打破软件生态隔离：**将分析基准从“软件特性”提升到“硬</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>Weekly Report 2026-05-17</title>
+      <link>https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-05-17/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-05-17/</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <description>工作任务 论文/学报阅读 书籍阅读 实践环节 工作进展（由于与考研时间的平衡，下周以及之后的进度可能会减缓） 所有spechunter找到的漏洞的patch （绿色链接是已被comfirm） 总发现问题数量：12 已提交patch数量：11 已被确认数量：10 Qemu： https://patchew.org/QEMU/20260511102627.3120140-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260511080904.3049446-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260511072705.3015986-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260511051736.2916225-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260511040534.2862443-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260508174917.371667-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260511124828.3210477-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260512052240.330815-1-vulab@iscas.ac.cn/ https://patchew.org/QEMU/20260512062310.348208-1-vulab@iscas.ac.cn/ Xiangshan: https://github.com/OpenXiangShan/C</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>Weekly Report 2026-05-24</title>
+      <link>https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-05-24/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-05-24/</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <description>工作任务 论文/学报阅读 阅读：RFCAUDIT: AI Agent for Auditing Protocol Implementations Against RFC Specifications 工作进展 当前IDEA和现有工作的区别 – 1.精读：RFCAUDIT: AI Agent for Auditing Protocol Implementations Against RFC Specifications 核心insight 0. LLM为中心的，通过网络RFC手册找到功能bug的静态检测工具 1. 提前用LLM给整个项目建立index 2. 使用retrieval-guided detection，不断迭代获取需要漏洞检测的代码上下文 3. 上述insight都是通过学习人类是如何从手册找到代码中的inconsistent的workflow从而想出来的 Code semantic index 自下（function）而上（file,dir,repo）给每一个层级建立1-2行的描述 （疑惑：每一个function如果需要有关的的数据结构描述怎么办（后面发现这个工作在后面的retrieval部分）？如果这个funtion call了另一个，但是另一个的描述还没建立怎么办？（我认为可以通过迭代数据库解决）） retrieval-guided detection preprocess 将手册首先分成每个小subsection，给每一个小subsection提取一个或多个semantic properties （疑惑：subsection之间如果有依赖怎么办？这个preprocess是不是可以建立一个长期数据库，如果有新的commit改变了某个properties就意味着需要重新扫描？） retrieval-guided detection 对每一个semantic p</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>Weekly Report 2026-06-07</title>
+      <link>https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-06-07/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/security/riscv-linux-security/weekly-reports/2026-06-07/</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <description>工作任务 工作进展 审查漏洞报告 [image: image2.png] [image: image3.png]</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>RISC-V Linux Security Internship</title>
+      <link>https://www.yizishun.com/security/riscv-linux-security/internship/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/security/riscv-linux-security/internship/</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <description>1.1. Timeline以及回顾 1.1.1. Phase1 RISC-V在linux中的基本调查 3.16: - riscv存量代码行数分析 - riscv增量代码分析（行/周，commit/周） - riscv CVE简单按照子系统分类 - 主流内核静态动态漏洞挖掘工具的调研 3.23 - Riscv子系统增量趋势（commit 行数） - 对CVE进行分类 - 发现用AI进行漏洞挖掘效果很好(使用gemini)，提了3个patch 3.29 - 对CVE分类进行重构 这个阶段做的不好的部分： 完全没有考虑任何RISC-V的特性进行的存量/增量代码分析，比如我依然不知道Linux对于riscv的RVA23的支持是怎么样的，也不知道现在增量部分他们在给riscv加什么支持，代码行数我个人认为其实没有意义，总之这一阶段做了很多无用功， 唯一有用的就是我对于CVE的分类根据了RISC-V的子系统，但是也并没有完全分类完（只分类了19个） 这部分我认为能重新去做 1.1.2. Phase2 评测其他工具在RISC-V上的能力 3.29 - 复现Knighter工具 - 调研isa文档到代码的中间层形式(了解到了sail) 4.5 - （Brainstorm）一个漏洞挖掘Layer思维模型，现依旧存在在我的思维体系中 - 统计各个工具在riscv上的能力（smatch） 4.12 - 统计各个工具在riscv上的能力（Knight，syzkaller） 4.19 - 调研内核漏洞挖掘的SOTA工具 - 初次尝试用AI复现论文 4.26 - 对SOTA工具进行实验（Knight，bugstone，app-miner，kernelGPT） - （Brainstorm）思考如何开始研究一个科研问题（问题的层次） - 内核中riscv代码是怎么组织的（但是这部分完全了解清楚很困难） 这</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>欢迎来到 yzs 的 blog</title>
+      <link>https://www.yizishun.com/help/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/help/</guid>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
+      <description>这里既是个人博客，也是一个真实、临时的 FreeBSD jail。你可以像使用普通终端一样阅读、 浏览和留言；退出后，本次会话中创建的文件会被丢弃。 English version: blog help-en.md 快速开始 blog # 列出文章 blog help.md # 阅读中文帮助 blog help-en.md # Read the English guide less ~/help.md # 查看 Markdown 原文 play # 列出终端录像 play demo # 播放本站演示 cat /proc/stat # 查看根目录的访问、访客和评论统计快照 exit # 结束会话 阅读文章时按 j / k 向下/向上滚动，按 q 返回终端。播放录像时， 按 Space 暂停或继续，暂停时按 . 单步播放，按 q 或 Ctrl-C 停止。 留言与回复 每次打开并写入当前目录的 comment FIFO，会提交一条留言： echo &apos;alice: hello&apos; &gt; ~/comment echo &apos;bob: #1: thanks for sharing&apos; &gt; ~/comment 格式是 名字: 内容 ；省略名字时会显示为 guest 。 #1 是当前目录中已公开留言的局部 编号，上面的第二条命令会回复第 1 条留言。也可以先编辑一个多行文件，再提交一次： bob: #1: How can I comment/reply with multiple lines? 1. Write a file. 2. cat file &gt; comment. cat reply.txt &gt; ~/comment 一次 cat 的完整内容只会成为一条留言，文件中的换行会原样保留。每条留言最多 512 字节，提交后先进入审核队列；当前会话中的评论与统计都是启动时的快照，审核通过后请 重新连接</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>Welcome to yzs&apos;s blog</title>
+      <link>https://www.yizishun.com/help-en/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/help-en/</guid>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
+      <description>This is both a personal blog and a real, temporary FreeBSD jail. Read, explore, and leave a message as you would in a normal terminal. Files created during your session disappear when you exit. Chinese guide: blog help.md Quick start blog # List articles blog help.md # Read the Chinese guide blog help-en.md # Read this English guide less ~/help-en.md # View the Markdown source play # List terminal recordings play demo # Play the site demo cat /proc/stat # View the root scope&apos;s frozen statistics snapshot exit # End the session While reading, press j / k to scroll down/up and q to return to the shell. During playback, Space pauses or resumes, . advances one frame while paused, and q or Ctrl-C stops playback. Comments and replies Each time you open and write the current directory&apos;s comment FI</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>FreeBSD</title>
+      <link>https://www.yizishun.com/freebsd/empty/</link>
+      <guid isPermaLink="true">https://www.yizishun.com/freebsd/empty/</guid>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
+      <description>This section is temporarily empty.</description>
+      <source url="https://www.yizishun.com/">1s</source>
+    </item>
+    <item>
+      <title>仅用 8 块钱成本，无损点亮许嵩演唱会荧光棒</title>
+      <link>https://github.red/lightstick/</link>
+      <guid isPermaLink="true">https://github.red/lightstick/</guid>
+      <pubDate>Sun, 06 Sep 2026 00:00:00 GMT</pubDate>
+      <description>很长一段时间没有写博客了，难得工作上不忙了，周末也不用加班了，终于有时间来整点活写点东西了。 上周我去洛阳看了许嵩的演唱会，时隔 15 年终于在线下见到真人了，也算是圆梦了。这次掐点在大麦刷了十多分钟，成功抢到了内场 ￥1618 的 VIP 票。 演唱会现场我一开始还是比较拘谨地坐着的，直到演出开始灯一关，第一首新歌《皮下》直接爆了，我都没想到自己会这么激动，全程大声跟唱+挥荧光棒，不知道有没有影响到两边坐着的小姐姐，至少我觉得自己是完全赚回票价了。😄 现场演出的舞台和灯光都很棒，许嵩现场的唱功也很好。但由于花车巡游是在舞台两侧的，反而看台的座位更有性价比些。 跟前几年在上海看邓紫棋演唱会，荧光棒拴在椅子上不同的是，这次许嵩演唱会的荧光棒是可以带走的。后来还发现有人在闲鱼上批量卖现场的荧光棒，一根就卖 20 来块。 忒修斯之荧光棒 我在演唱会结束回到酒店时，手里的荧光棒就已经不亮了。在小红书上看到有很多教人重新点亮荧光棒的笔记，大致思路都是拆开后给里面焊上一个开关或者其他的板子。我寻思这不就是个“忒修斯之船”嘛，把荧光棒里面的东西都换了，就保留个灯泡和外面的演唱会贴纸，实际上已经不是原来的荧光棒了。 我并不喜欢这种拆解改造的办法（实际是因为我没有电烙铁这些工具），想着有没有更优雅的办法来解决，一顿搜索后找到了 「✨ 荧光棒复活计划」 https://github.com/HansZ8/EncoreLightSticks 这个项目，该项目通过控制射频发射模块，发射出与演唱会现场相同的信号，直接点亮荧光棒。 作者还十分贴心地 亲自 写了 介绍文档 ，提到演唱会荧光棒场控使用 433MHz 射频 (RF) 控制，编码方式为曼彻斯特编码 Manchester Encoding ，我上次看到这个编码还是在 HGAME 2018 的 Misc 题里。数据包的控制数据里带有 R、G、B </description>
+      <source url="https://github.red/">E99p1ant</source>
+    </item>
+    <item>
+      <title>Rust的虚表与胖指针及其安全应用</title>
+      <link>https://dodor.top/2026/08/23/rust-vtable-fat-pointer/</link>
+      <guid isPermaLink="true">https://dodor.top/2026/08/23/rust-vtable-fat-pointer/</guid>
+      <pubDate>Sun, 23 Aug 2026 00:00:00 GMT</pubDate>
+      <description>真是好久没更新了，上次的知识补全计划也咕咕咕了（ 还是用一个程序作为例子展开讲罢 trait Greet { fn greet ( &amp; self ) -&gt; String ; } struct Cat ; impl Greet for Cat { fn greet ( &amp; self ) -&gt; String { &quot;meow&quot; . into ( ) } } fn main ( ) { let c = Cat ; let d : &amp; dyn Greet = &amp; c ; println! ( &quot;{}&quot; , std :: mem :: size_of :: &lt; &amp; Cat &gt; ( ) ) ; // 8 println! ( &quot;{}&quot; , std :: mem :: size_of :: &lt; &amp; dyn Greet &gt; ( ) ) ; // 16 } 胖指针 上面的&amp;dyn Greet是16字节 &amp;[u8] 同样是 16 字节： println! ( &quot;{}&quot; , std :: mem :: size_of :: &lt; &amp; [ u8 ] &gt; ( ) ) ; // 16 let s : &amp; [ u8 ] = &amp; [ 1 , 2 , 3 ] ; // 内存布局: (数据指针, 长度) 因为切片要支持 s.len() ，光有一个起始地址不够，得把长度带上。于是 &amp;[T] 变成”数据指针 + usize 长度”两个 word。 &amp;str 同理，str 的元数据也是长度。 Rust 把这种指针 + 附加信息的结构叫胖指针（fat pointer）。元数据类型由 Pointee trait 的关联类型 Metadata 决定，目前只有两种： 切片 / str：长度（usize） trait object：虚表指针 瘦指针（thin pointer）就是一个裸地址，比如 &amp;Cat 、 *const u8</description>
+      <source url="https://dodor.top/">DODOR</source>
+    </item>
+    <item>
+      <title>3DS离线本体更新</title>
+      <link>https://c0d4.ink/posts/3ds%E7%A6%BB%E7%BA%BF%E6%9C%AC%E4%BD%93%E6%9B%B4%E6%96%B0/</link>
+      <guid isPermaLink="true">https://c0d4.ink/posts/3ds%E7%A6%BB%E7%BA%BF%E6%9C%AC%E4%BD%93%E6%9B%B4%E6%96%B0/</guid>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate>
+      <description>Old 3DS 日版系统更新 适用：】9 0，已安装 Luma3DS，但官方“本体更新”失败。目标版本： Sys 11.17.0-50J 。 1. 确认当前状态 系统设置右下角显示 Sys 11.8.0-41J 这类字样，说明当前是 SysNAND 日版系统。 按住 SELECT 开机进入 Luma 配置。建议打开 Show NAND or user string in System Settings ，然后选 Save and exit 。 2. 先试官方更新 先试：系统设置 -&gt; 其他设置 -&gt; 本体更新。 如果失败，再试恢复模式：关机后按住 L + R + ↑ + A 开机更新。 如果恢复模式也失败，继续下面步骤。 3. CTRTransfer 修系统底座 按 3DS Hacks Guide 的 CTRTransfer 流程做。老小三日版只选这个包： Old 3DS or 2DS - 11.15.0 - JPN - CTRTransfer 不要选 New 3DS ，不要选 USA / EUR / KOR / CHN 。 完成后检查系统版本，应到 Sys 11.15.0-47J 。 4. 用 sysUpdater 离线更新到 11.17 在 SD 根目录建 updates 文件夹，把 Old 3DS / JPN / 11.17.0-50J 更新包里的所有 .cia 放进去。 进入 Homebrew Launcher，运行 sysUpdater ，选择 Update 。过程中不要关机、不要合盖、不要拔 SD 卡。 5. 检查结果 系统设置右下角显示 Sys 11.17.0-50J 就完成了。 资源链接 3DS Hacks Guide: Restoring / Updating CFW 3DS Hacks Guide: CTRTransfer Luma3DS Release</description>
+      <source url="https://c0d4.ink/">c0d4</source>
+    </item>
+    <item>
+      <title>为了在两台电脑上打《僵尸毁灭工程》，我搓了一个文件同步工具</title>
+      <link>https://www.intmian.com/archives/GBh1uw1K</link>
+      <guid isPermaLink="true">https://www.intmian.com/archives/GBh1uw1K</guid>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 GMT</pubDate>
+      <description>起因很简单：我在两台电脑上都玩《僵尸毁灭工程》。游戏能重下，角色能重练，几十个小时攒下的存档，没了就是真没了。所以我要做的事其实很小——把一个文件夹，安全地从 A 电脑搬到 B 电脑。下一次再安全的搬回来。 现成的方案不少，就是都不顺手 一开始我根本没想自己写。为了复制一个文件夹造轮子，说出去很怪。</description>
+      <source url="https://www.intmian.com/">mian</source>
+    </item>
+    <item>
+      <title>Loading immediate values</title>
+      <link>https://csmantle.top/2026/08/05/loading-immediate-values.html</link>
+      <guid isPermaLink="true">https://csmantle.top/2026/08/05/loading-immediate-values.html</guid>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 GMT</pubDate>
+      <description>Maybe not so &quot;immediate&quot;.</description>
+      <source url="https://csmantle.top/">Mantle</source>
+    </item>
+    <item>
+      <title>D^3CTF 2026 运维小记</title>
+      <link>https://summ2.link/categories/%E6%97%A5%E5%B8%B8/d3ctf-op/</link>
+      <guid isPermaLink="true">https://summ2.link/categories/%E6%97%A5%E5%B8%B8/d3ctf-op/</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+      <description>一年一度的 D^3CTF 也是已经接近尾声了，而似乎我负责 Vidar 的运维工作起也过去快 1 年了的样子 （虽然感觉自己没做什么事情） 。 于是很自然地，D^3 似乎没有足够的人手（指抓不到其他小登），我就来帮忙做今年 D^3CTF 的运维了，本篇以我的视角记录一下今年运维的基本情况。 基本架构 今年 @shiori 师傅为我们争取到了咕咕噜的赞助，有一张 500$ 的 coupon，对于一个 24 小时的比赛来说，是非常充足的了。事前我还在尽量控制成本，后面发现根本用不完。 我们全部服务都打算部署在 GCP 上，平台单独运行在一台 VM 上，然后使用 KubernetesEngine 自动分配好一个 k8s 集群。不过，前期资源划分、平台部署的工作都是 rx 师傅做的（伟大！），毕竟办赛经验充足许多，我刚开始的时候被 gcp 一大堆菜单整头晕了（比起网页，其实 gcloudcli 可能会更好用）。 与往年一样，平台使用的是「高性能ですから！(∠・ω&lt;)⌒☆」的 ret2shell ，平台机器在准备阶段使用 2c4g，赛时 8c8g 就足够满足需求了。 一台 Golang、Rune、TLS 上的 灵车 由于 ret2shell 已经是一个开源项目了，所以我想我们可以详细的说说今年整的一些活。 众所周知，传统的远程环境一般都是平台去运行一个容器，然后将服务暴露到公网 ip 的某个端口上。很明显，我们在一个 ip 上很可能有多个暴露的服务，这就会导致选手有意或无意地访问其他选手的服务，甚至获取不属于自己的 flag。 由于 ret2shell 具备强大的反作弊机制，这种行为很容易被办赛方认为相关选手产生了一些不明的 py 交易。（事实上，扫描平台本身也应当是不被允许的） 为了防止这种情况出现，我们想到的一个方案是尝试把端口编码 / 加密在域名中，直接扫描别人的服务几乎就不会</description>
+      <source url="https://summ2.link/">summ2</source>
+    </item>
+    <item>
+      <title>盛夏日本急行（二）</title>
+      <link>https://blog.woshiluo.com/posts/2026/07/rush-in-japan/</link>
+      <guid isPermaLink="true">https://blog.woshiluo.com/posts/2026/07/rush-in-japan/</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+      <description>#import &quot;/typ/templates/blog.typ&quot;: * #show: main.with( title: &quot;盛夏日本急行（二）&quot;, desc: [趁着端午节前后又一次前往日本。], date: &quot;2026-07-26&quot;, categories: ( &quot;notes&quot;, ), show-outline: false, ) == 序 #strike[不是这东西为什么会有二] 其实一直在计划再去一趟日本，想再攒钱去个大的。但是有时形势和人也不知道哪个跑得快，开始实习后想要有大片的时间就比较困难。 这个时候突然有个学长说，想去日本刷个旅行经历，好搞美签，问我要不要端午节走一遭。 那我走是肯定想走的。虽然之前总是想找个计划待够短期滞留的 15 天，想去这里哪里，但是自去年某位首相上台后，就能更加意识到要去抓住每一束光芒。既然如此，牙一咬，直接再请两天假。虽然搞不了 15 天，但是 5 天也是万策尽的结果。 周三凌晨出发，在周一和周二晚上做了一点初步规划，接下来就出发吧！ 本篇游记比较有价值的部分可能是 Day3 和 Day4 的圣地巡礼部分，有打算巡礼白色相簿 2，CLANNAD，NEW GAME，路人女主的养成方法的读者可以适当参考相关内容。 == 0 Day 0 06/16 下班后发现自己的箱子并不能带上飞机，但是如果托运的话会对行程造成很大的负面影响。心一横，直接把几天的换洗衣物放进电脑包，竟然放下了。 自从来了上海实习，其实去雾雨咖啡店的频率反而大大下降了。下班后去雾雨咖啡店坐了一会儿，顺带和老板聊聊天。老板人很好，提醒了我一些注意事项和指点。 #figure( image(&quot;./assets/20260725-012148-b253.webp&quot;), caption: [ BarKirasame ]) 时间差不多就乘坐 2 号线向浦东开摇，真的是摇到天昏地暗。</description>
+      <source url="https://blog.woshiluo.com/">woshiluo</source>
+    </item>
+    <item>
+      <title>Wordpress wp2shell 未授权RCE（CVE-2026-63030 / CVE-2026-60137）</title>
+      <link>https://lorexxar.cn/2026/07/24/wp2shell/</link>
+      <guid isPermaLink="true">https://lorexxar.cn/2026/07/24/wp2shell/</guid>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
+      <description>2026年了，在AI时代下总感觉什么都有可能，但是看到Wordpress居然能有原生未授权RCE还是感觉不可思议。Wordpress算是我曾经深度研究过的php源码之一，虽然wp架构复杂但是开发习惯很好，封装也比较严格，尤其是对权限的分割都做得很好，在5.0之后我一直认为wp不太可能出未授权的大漏洞了。 但很快，这个漏洞的挖掘者通过两个漏洞的组合就实现了这不可思议的一幕。 据说作者用AI完成了这个漏洞挖掘，并获得了50w刀的赏金（我没有求证，听说）。 https://bugbunny.ai/blog/wordpress-7-0-2-rce-deep-dive#three-fixes-for-three-broken-assumptions 影响版本：WordPress 6.9.0-6.9.4、7.0.0-7.0.1 接下来我们就古法分析一下这个漏洞具体是怎么回事。 漏洞组合拳？ 这次的漏洞严格意义上并不是以RCE为目的的漏洞，一共有三个组成，其中两个分配了CVE CVE-2026-63030 ：REST API 批量请求路由混淆漏洞 CVE-2026-60137 ： WP_Query 的 author__not_in SQL 注入漏洞 REST重入漏洞，导致管理员权限绕过，这个漏洞没有被分配CVE，但是修复了 而这三个漏洞能够最终构成RCE，有一个很大的原因就是，wp对超级管理员的权限给的很高，在超级管理员的后台你可以轻松的实现RCE利用。 所以与其说我们要在wp中寻找RCE，不如说我们的目标是找到如何进入后台的方法。 CVE-2026-63030 REST API 批量请求路由混淆漏洞 WordPress 的 WP_REST_Server::serve_batch_request_v1() 处理 /wp-json/batch/v1 批量请求时，内部维护了两个数组： $va</description>
+      <source url="https://lorexxar.cn/">LoRexxar</source>
+    </item>
+    <item>
+      <title>zip伪加密</title>
+      <link>https://wuli-wa.github.io/2026/07/23/zip%E4%BC%AA%E5%8A%A0%E5%AF%86/</link>
+      <guid isPermaLink="true">https://wuli-wa.github.io/2026/07/23/zip%E4%BC%AA%E5%8A%A0%E5%AF%86/</guid>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 GMT</pubDate>
+      <description>oka~今天要看的是什么奇怪小知识呢~~a，是zip！ zip相关内容 zip文件主要由三部分构成：压缩源文件数据区+核心目录+目录结束标识 压缩源文件数据区 0~3（四个字节） 50 4B 03 04 ：这是头文件标记 0x04034b50 4~5（两个字节） 14 00 ：解压文件所需 pkware 版本 6~7 00 00 ：全局方式位标记（有无加密） 8~9 08 00 ：压缩方式 10~11：最后修改文件时间 12~13：最后修改文件日期 14~17：CRC-32校验 18~21：压缩后尺寸 22~25：未压缩尺寸 26~27：文件名长度 28~29：扩展数据长度 30~30+n（n个字节）：文件名 30+n~30+n+m（m个字节）：扩展数据 核心目录 0~3 50 4B 01 02 ：目录中文件文件头标记 0x02014b50 4~5 3F 00 ：压缩使用的 pkware 版本 6~7 14 00 ：解压文件所需 pkware 版本 8~9 00 00 ：全局方式位标记（有无加密，有无进行伪加密） 10~11 08 00 ：压缩方式 12~13：最后修改文件时间 14~15：最后修改文件日期 16~19：CRC-32校验 20~23：压缩后尺寸 24~27：未压缩尺寸 28~29：文件名长度 30~31：扩展字段长度 32~33：文件注释长度 34~35：磁盘开始号（一般为0） 36~37：内部文件属性（一般为0） 38~41：外部文件属性 42~45：局部头部偏移量 目录结束标识 0~3 50 4B 05 06 ：目录结束标识标记 0x06054b50 4~5：当前磁盘编号 6~7：目录区开始磁盘编号 8~9：本磁盘上纪录总数 10~11：目录区中纪录总数/即zip压缩包中的文件总数 12~15：目录区尺寸大小 16~19：目录区对第一张磁盘的偏移量 20</description>
+      <source url="https://wuli-wa.github.io/">wuliwa</source>
+    </item>
+    <item>
+      <title>《冰之城墙》短评</title>
+      <link>https://sccube.link/The_Ramparts_of_Ice/</link>
+      <guid isPermaLink="true">https://sccube.link/The_Ramparts_of_Ice/</guid>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
+      <description>继一月《正相反》之后，阿贺泽红茶老师又一部作品被动画化。很难想象红茶老师的学生时期究竟经历了些什么，才能写出这两部如此真实细腻的恋爱作品。 《冰之城墙》整体对节奏的把控处理的非常好。无论是文戏的细腻抒情，还是人物之间的微小互动都能生动表现出来。每一集的内容量都非常充实，但也不会觉得过于紧凑。每集的断章前都会引出一点点新的误会或矛盾，每集都要等一周确实会非常难受。ED的插入非常神，每次那像悬疑剧的前奏响起的时候都让我感觉“结束了？不要啊……” 我很喜欢它对错位的情感关系的刻画。看似多角恋，但其实是感情于朋友之上，却各自有小心思，所以产生了以难以表明、难以确认的扭曲关系。两对人因为信息差和误会互相搅乱在一起，作为观众肯定是瓜吃爽了，不得不佩服作者对角色心思细腻刻画的能力。 朋友和恋人之间的关系确实是很多恋爱作品中较少讨论到的部分。相比于发现“互相喜欢”，它更着重于了“喜欢上了怎么办”。有些人可能觉得朋友是相处起来最舒服的距离，但其中又不可避免的产生了其他情愫，却又不知道应该如何表达，所以犹豫、回避和难以抉择。在这样复杂的情况下，甚至还是四个人！其中的相互误会、互嗑cp、吃醋、吃瘪等等实在是太精彩了。更别说后面还有学妹的插入，真是悬疑智斗片来的。 人物的塑造可谓是最出彩的部分。剧中每个人的形象都非常立体，后期的形象与初印象完全不一样。随着剧情不断展现出每个人之前的经历，才理解到角色性格的转变，成为了初外人“看似”的初印象。但其实内在的性格特质是不会变的，比如小雪的关心别人、阳太的温暖、凑的心思细腻等等。 即使过程曲折，但这个故事最终的内核终究是成长和治愈。大家都由于一些过往的伤痛产生了封闭、防御性的内在人格，在相处的过程中互相弥补，互相治愈，互相成长。在内心的空缺被朋友、恋人的“爱”弥补上之后，在相互了解、相互倾诉之后，再回头看过往的伤痛仿佛也不会那么麻木那么沉重了。这样的关系想</description>
+      <source url="https://sccube.link/">ScaredCube</source>
+    </item>
+    <item>
+      <title>2026年了，核弹还是fastjson，fastjson1.2.83 RCE是怎么回事？</title>
+      <link>https://lorexxar.cn/2026/07/21/fs1-2-83rce/</link>
+      <guid isPermaLink="true">https://lorexxar.cn/2026/07/21/fs1-2-83rce/</guid>
+      <pubDate>Tue, 21 Jul 2026 00:00:00 GMT</pubDate>
+      <description>7月19日，推上的一名安全研究员声称，他发现了一个在fastjson 1.2.83版本中无需gadget的RCE漏洞。一时间激起千帆浪。 Fastjson虽然已经停止维护1版本，但是1版本的Fj依旧是互联网上应用最多的Java JSON库之一，虽然1.2.83没有在维护，但是在长期和fastjson对抗的时间里，83版本仅可以基于expectClass和第三方库构成的gadget做的极其有限的攻击利用，几乎无法RCE，所以很多厂家没有选择更新到FJ2增加不确定性。 在过去的1天多时间内，基于作者的部分信息，大家正在逐渐探索出了漏洞的真相 。 在7月22日，原作者公开了他们的研究文档 https://fearsoff.org/cn/research/fastjson-1-2-83-rce 关于漏洞起始 在这篇推文激起了外网的讨论之后，原作者逐渐公布了一些关于漏洞的信息 该漏洞影响fastjson 1.2.68 -&gt; 1.2.83 与autoType无关，只有启用SafeMode或者迁移到Fastjosn 2.x来解决 不需要指定expectClass，不需要控制第二个参数，也不是走我们以往基于白名单类的绕过途径 这个漏洞至少影响互联网上最常见的3个版本，8，17，21 在这样的基础上，很多安全研究者开启了AI时代最有效的推进分析，真相被一点点剥开水面 抽丝剥茧 事情破局的第一步很快到来，github上有人直接分享了该漏洞的poc（这个poc已经404了），由于我已经没有截图了，甚至这个poc的推送作者是Codex，非常搞笑 https://github.com/wouijvziqy/Fastjson-JsonType-RCE-PoC 在这片文章里提到了一个很有趣的漏洞点 Fastjson可以通过 Spring Boot FatJar 的 LaunchedURLClassLoa</description>
+      <source url="https://lorexxar.cn/">LoRexxar</source>
+    </item>
+    <item>
+      <title>User-Agent drama of coding agents</title>
+      <link>https://csmantle.top/2026/07/20/user-agent-drama-of-coding-agents.html</link>
+      <guid isPermaLink="true">https://csmantle.top/2026/07/20/user-agent-drama-of-coding-agents.html</guid>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
+      <description>History repeats itself once more.</description>
+      <source url="https://csmantle.top/">Mantle</source>
+    </item>
+    <item>
+      <title>Ai辅助的低多边形3D游戏建模方法（不用学美术）</title>
+      <link>https://www.intmian.com/archives/4UAIWxRP</link>
+      <guid isPermaLink="true">https://www.intmian.com/archives/4UAIWxRP</guid>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 GMT</pubDate>
+      <description>前言 这篇博客回答一个问题：完全不懂美术的人，怎么用 AI 生成+少量人力这个级别的游戏资产。 最近突然想重启做游戏，但遇到一个老问题，万事开头难啊。 上次和朋友组建的CNB工作室从服务器引擎的网络库开始做，最后网络库写了很久，黄了 (但是modern c++|ue学的很爽…… 我是游戏后端出身，程</description>
+      <source url="https://www.intmian.com/">mian</source>
+    </item>
+    <item>
+      <title>如何在老项目里用 AI 写代码的一些感悟：从搭系统到落地的一整套方法</title>
+      <link>https://www.intmian.com/archives/WemYXvHg</link>
+      <guid isPermaLink="true">https://www.intmian.com/archives/WemYXvHg</guid>
+      <pubDate>Sat, 11 Jul 2026 00:00:00 GMT</pubDate>
+      <description>AI 编程有个很容易上头的错觉：模型越强，开发就越轻松。新项目确实是这样。但老项目跑了好几年之后，真正难的从来不是写代码，而是搞清楚&quot;这段代码为什么存在&quot;&quot;改了会不会炸&quot;&quot;AI 给的方案是业务需要还是它在猜&quot;。 我花了一年时间在 Platform 项目（React + Vite 前端，Go + Gi</description>
+      <source url="https://www.intmian.com/">mian</source>
+    </item>
+    <item>
+      <title>三行代码让 Go 连接 Cloudflare D1快 2 到 18 倍（雾）</title>
+      <link>https://www.intmian.com/archives/3UYo5P77</link>
+      <guid isPermaLink="true">https://www.intmian.com/archives/3UYo5P77</guid>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
+      <description>介绍一下我的项目，地址：github.com/intmian/gorm-d1-adapter 起因 D1 是 Cloudflare 的 serverless 关系数据库。对于我这种低频率使用的个人项目来说，几乎是免费的——免费额度每月 5 百万次读、10 万次写，个人项目根本用不完。最开始 plat</description>
+      <source url="https://www.intmian.com/">mian</source>
+    </item>
+    <item>
+      <title>做了个专用于学习的AI工具</title>
+      <link>https://sccube.link/MukyuAI/</link>
+      <guid isPermaLink="true">https://sccube.link/MukyuAI/</guid>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
+      <description>起因 我在使用官方的网页AI工具进行系统性学习的时候，总是觉得有些别扭： 比如在学习的过程中，我经常想查一个单独概念的定义。如果在大的时间线里直接问的话，会打断整个学习对话，也容易把主线带歪。如果另开一个对话询问又有点麻烦，会让会话列表变得很杂乱。其实我只是想要一个侧栏 /btw 功能，其实很多 Agent 已经实现了。 我通常是让AI先帮我规划整个学习路径，再分别学习每个部分。学习完一个章节之后，想看下一部分有什么内容，要往回翻好久才能回到原本的路径规划部分，上下文长了AI也容易失去注意力跑偏。其实这有点像 Agent 中 Plan 的逻辑。 那么，用 Agent 工具来学习就好了吗？也并不是。大多数 Agent 都是为 coding 或自动化操作设计的，但我只需要最简单的对话功能，那些 function calling 和 mcp、skills 之类的设计就完全变成了浪费 token 的累赘。而且 Agent 工具的界面设计并不适合长对话，还是免不了一长串消息列表来回翻的情况。 所以，那就自己造一遍轮子吧。毕竟现在 Vibe Coding 已经非常方便了 分块上下文 Mukyu AI 重新设计了一套上下文，大概是这样的： 先和AI讨论出一个学习路径规划，然后根据规划自动分成章节，每个章节成为一个单独的会话。每个对话前会带上主线的上下文和当前章节的内容规划，所以在章节学习中AI也能知道主线中的总目标规划。 讨论学习路径 讨论完成后生成计划，自动划分章节 分章节学习 每个章节学习完成后会自动总结生成一个章节总览，加入后续章节的上下文中，让她知道学习进度和之前学过的内容。 章节对话中也有自动compose机制，到达设置的 Max Context 的 70% 自动压缩前文内容，不用担心对话太长超出上下文长度。当然，模型的 Context 长度和压缩触发阈值都可以在设置中自定义。</description>
+      <source url="https://sccube.link/">ScaredCube</source>
+    </item>
+    <item>
+      <title>STEGA-LSB</title>
+      <link>https://wuli-wa.github.io/2026/07/11/STEGA-LSB/</link>
+      <guid isPermaLink="true">https://wuli-wa.github.io/2026/07/11/STEGA-LSB/</guid>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
+      <description>LSB隐写 什么是LSB 甚么是LSB隐写（最低有效位隐写）捏~ 众所周知，图片像素的颜色都由红绿蓝三原色组成，每个像素使用24位，其中每一种原色占8位（即 0x00 到 0xFF ，有256种强度不同的颜色），所以三原色共能生成256的三次方种颜色，怎么想都很多吧！而人眼不足以分辨所有的256的三次方（16777216）种颜色，因此改动其二进制的最低位时，颜色的变化微乎其微，人眼难以察觉。也就是说…每个像素都可以携带3比特的信息，而不被人眼发现异常，借用这一现象，我们就能在图片中进行内容的隐藏，比如一段话，一些文件，或者另一张图片—— 音频中的LSB 当然，LSB不止在图片中存在，音频中也存在LSB隐写。如WAV文件中不包括构成数字图像的像素，而是线性脉冲编码调制（LPCM）比特流，以均匀间隔编码模拟音频波形的采样。该比特流通常是未压缩的，但支持无损压缩。与图片的像素类似，对每个采样的最低限度（LSB）调整是无声的，即人耳很难察觉，可以用来逐位嵌入隐藏消息。 工具？ 面对经过LSB隐写处理的图片/音频，如何提取其中信息呢？ 其一可以使用诸如stegsolve等工具查看目标文件（推荐~） 其二可以根据上述原理撰写脚本 例如： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 </description>
+      <source url="https://wuli-wa.github.io/">wuliwa</source>
+    </item>
+    <item>
+      <title>STEGA-直接附加</title>
+      <link>https://wuli-wa.github.io/2026/07/10/STEGA-%E7%9B%B4%E6%8E%A5%E9%99%84%E5%8A%A0/</link>
+      <guid isPermaLink="true">https://wuli-wa.github.io/2026/07/10/STEGA-%E7%9B%B4%E6%8E%A5%E9%99%84%E5%8A%A0/</guid>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
+      <description>STEGA-直接附加 简单介绍一下 众所周知，文件后缀往往反应着文件类型，but！实际上不一定准确，文件后缀可以进行修改，但文件类型不一定因为文件后缀被修改而变化。而程序们有自己的方式去判断文件类型，并按照正确的方式去读取文件，这就是文件头的作用了~ 大部分文件类型的文件结构是：文件头+文件内容(+文件尾) （文件尾并非所有文件类型都有） 含有文件尾的文件读取时，读到文件尾就结束了，而文件尾后的内容会被忽略， 不会对文件的查看造成影响 ，故而能在文件后写入隐藏的信息/文件，这就是直接附加了sa~ 举个例子 大部分文件都有其固定的文件结构，常见的图片格式如PNG、JPG等都是由一系列特定的数据块组成的。 下面以PNG文件为例介绍一下~ PNG文件由4部分标准数据块和一些辅助数据块组成，以下是四个标准数据块： IHDR文件头数据块 （并非文件头！！！） PLTE调色板数据块 IDAT图像数据块 IEND图像结束数据块 而每一个数据块都由四部分组成： length长度 chunk type code数据块类型码 chunk data数据块数据 CRC循环冗余校验码 而其中IEND数据块的长度总是 00 00 00 00 ，数据标识总是 49 45 4E 44 CRC固定为 AE 42 60 82 。 所以一般PNG文件以固定 00 00 00 00 49 45 4E 44 AE 42 60 82 作为结束。此时在82之后（即IEND数据块之后）添加其他内容/文件，在查看图片时则会被图片查看器忽略。 一些常见的文件类型~ 下面来看看一些常见的文件类型和他们的相关内容吧~ 文件类型 扩展名 文件头 文件尾 ASCII / 说明 JPEG .jpg .jpeg FF D8 FF FF D9 文件头为 ÿØ ，文件尾是 ÿÙ PNG .png 89 50 4E 47 0D 0A 1A 0</description>
+      <source url="https://wuli-wa.github.io/">wuliwa</source>
+    </item>
+    <item>
+      <title>欢迎使用 Typecho</title>
+      <link>https://blog.hiirachan.moe/archives/1.html</link>
+      <guid isPermaLink="true">https://blog.hiirachan.moe/archives/1.html</guid>
+      <pubDate>Wed, 08 Jul 2026 00:00:00 GMT</pubDate>
+      <description>如果您看到这篇文章,表示您的 blog 已经安装成功.</description>
+      <source url="https://blog.hiirachan.moe/">Doddy</source>
+    </item>
+    <item>
+      <title>Mirage Tank</title>
+      <link>https://wuli-wa.github.io/2026/07/08/Mirage-Tank/</link>
+      <guid isPermaLink="true">https://wuli-wa.github.io/2026/07/08/Mirage-Tank/</guid>
+      <pubDate>Wed, 08 Jul 2026 00:00:00 GMT</pubDate>
+      <description>幻影坦克 什么是幻影坦克呢 在一款叫红警的游戏中，有一种坦克名为幻影坦克~虽然它并不能隐形，但是却可以折射周围的光线，比如将自己伪装成一棵树而不被敌军发现。 而幻影坦克图片也有类似特性，在缩略图状态下/浅色背景浏览时，与点开图片后/深色背景查看时所展现的画面会不同，故而称作幻影坦克sa ~ 嗯…准确来说，幻影坦克是利用了PNG图片的Alpha通道（透明度）特性，通过精心设计RGB颜色值和透明度，使同一张图片在不同背景色下呈现不同的视觉效果。 下面是制作幻影坦克的其中一种方法 打开两张素材，拖到一起 (最好是长宽一样sa~) 选中一个图层后， ctrl+shift+u 去色（两个图层都要去色） （说明：第二步是制作黑白幻影所需要的操作，如果制作彩色幻影则可以无视第二步。直接进入第三步即可） 选择一个图层后，点击-图像-调整-色阶。调整下面的输出色阶，让图片“变亮或者变暗”。 （说明：调亮的图片是用来做幻影表面的/调暗的图片是用来做点开图片后显示的内容的） 还有要注意的是，这里的调色阶要把控一个度，让图片能尽量还原即可，只要调整到两张图有亮暗区分就行 （成品图片最终呈现效果与这里的色阶参数有关，具体参数需要自己凭需求调整！！！） 关闭调整完的图层的小眼睛，选择另一张图进行同样的操作。不同的是这张图调相反的方向，即如果上一张图调亮这张图就调暗。参数自己控制好。 下面把每个图层编号一下更方便说明：A-代表是刚才调亮的图层 B-代表调暗的图层 1-表示第一次盖印得到的图层（ ctrl+shift+alt+E 为图层盖印） 2-表示第二次盖印得到的图层 选择A图层，打开图层小眼睛， ctrl+i 反相 调整图层顺序，A在B上面，再将A的混合模式改为“线性减淡（添加）” 按 ctrl+shift+alt+E 盖印——得到第一个盖印图层“1” 调整图层顺序，1在B上面;把A的小眼睛关掉。将</description>
+      <source url="https://wuli-wa.github.io/">wuliwa</source>
+    </item>
+    <item>
+      <title>芝士甚么?WIFI密码!</title>
+      <link>https://wuli-wa.github.io/2026/07/07/%E8%8A%9D%E5%A3%AB%E7%94%9A%E4%B9%88-WIFI%E5%AF%86%E7%A0%81/</link>
+      <guid isPermaLink="true">https://wuli-wa.github.io/2026/07/07/%E8%8A%9D%E5%A3%AB%E7%94%9A%E4%B9%88-WIFI%E5%AF%86%E7%A0%81/</guid>
+      <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
+      <description>芝士甚么？让俺看看你的密码！ 扎上你的网卡 airmon-ng start wlan0 开启监听模式 airodump-ng wlan0mon 扫描附近网络，找到目标 锁定目标mac地址，开始抓取握手包 airodump-ng -c 6 --bssid mac地址 -w 抓包存储的路径（如home） wlan0mon (-c后面的数字是信道，即“CH”) 再打开一个终端 aireplay-ng --deauth 1000 -a mac地址 wlan0mon 或者 aireplay-ng -0 0 -c 连接到wifi的手机mac地址 -a mac地址 wlan0mon （把设备踹下线） 抓取握手包的终端出现 WPA handshake 时，表示抓包成功 两边终端都 ctrl+c 停止，结束攻击 then： 把握手包导入跑包软件（比如wifipr） aircrack-ng -w 字典路径 握手包路径 回车后开始跑字典 然后耐心等待结果sa~ a，对了，复杂密码可能耗时巨大或者跑不出来sa.</description>
+      <source url="https://wuli-wa.github.io/">wuliwa</source>
+    </item>
+    <item>
+      <title>面向普通键盘输入的国际化中立的音系与组合法设计</title>
+      <link>https://www.intmian.com/archives/P5F5fcCv</link>
+      <guid isPermaLink="true">https://www.intmian.com/archives/P5F5fcCv</guid>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 GMT</pubDate>
+      <description>本文试图解决现行语言中的正字问题。初学者水平，仅做抛砖引玉。 我的中文和英语都是使用归纳式学习方法进行学习的。而大学后学习的其他语言都是在对语言学的启蒙后学习的，因此我发现现行诸多语言设计具有一些不合理之处。 中文采用了过多的宽音位和复杂的音调设计。后者对外来学习者造成了绝对的门槛姑且不提，前者也对</description>
+      <source url="https://www.intmian.com/">mian</source>
+    </item>
+    <item>
+      <title>Jujutsu templates and jj-revert(1) are Turing complete</title>
+      <link>https://csmantle.top/2026/06/27/jj-template-jj-revert-are-turing-complete.html</link>
+      <guid isPermaLink="true">https://csmantle.top/2026/06/27/jj-template-jj-revert-are-turing-complete.html</guid>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 GMT</pubDate>
+      <description>Jujutsu is an ergonomic DVCS interoperable with Git. I first became aware of it when working on the Firefox codebase, where I needed to juggle with multiple stacks of patches simultaneously. Mozilla has an excellent Introduction to Jujutsu available on their docs site. Jujutsu has a templating language primarily for customization and theming of almost all human-oriented TUI parts, including jj-log(1), jj-show(1), etc. I daily-drive the default, built-in theme. The templating language supports a plethora of operations, which made me think whether it’s possible to build something more than themes out of it. In Jira is Turing-Complete by Nicolas Seriot, he showed that Jira Automation Rules can be built to simulate a Minsky machine by recursion. As Minsky machines with two or more registers ca</description>
+      <source url="https://csmantle.top/">Mantle</source>
+    </item>
+    <item>
+      <title>⧉ Wire foobar2000 to AVFoundation</title>
+      <link>https://pnck.github.io/2026/06/26/portal-foo-out-avfoundation/</link>
+      <guid isPermaLink="true">https://pnck.github.io/2026/06/26/portal-foo-out-avfoundation/</guid>
+      <pubDate>Fri, 26 Jun 2026 00:00:00 GMT</pubDate>
+      <description>（正文已省略，请访问站点阅读全文）</description>
+      <source url="https://pnck.github.io/">GeruzoniAnsasu</source>
+    </item>
+    <item>
+      <title>Making a Loongnix 25 container with systemd-nspawn on Arch Linux for Loong64</title>
+      <link>https://csmantle.top/2026/06/20/making-a-loongnix-25-container-with-systemd-nspawn-on-arch-for-loong.html</link>
+      <guid isPermaLink="true">https://csmantle.top/2026/06/20/making-a-loongnix-25-container-with-systemd-nspawn-on-arch-for-loong.html</guid>
+      <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
+      <description>Loongnix is LoongArch’s reference Linux distribution. Since it’s derived from Debian, it should not be hard to make a rootfs using debootstrap(8). However, it turns out to be less straightforward than expected. There is a paragraph in Loongnix’s official documentation about how to make a rootfs. However, it’s outdated and contains bad practices. Since we’re using systemd-nspawn(1) in this post, we create the rootfs at /var/lib/machines/loongnix, thus naming the container “loongnix”. $ sudo pacman -S debootstrap $ sudo ln -s sid /usr/share/debootstrap/scripts/loongnix-stable $ sudo cd /var/lib/machines $ sudo debootstrap --no-check-gpg --variant=minbase --components=main,non-free,contrib --include=dbus,libpam-systemd --arch=loong64 --foreign --verbose loongnix-stable ./loongnix https://pkg.</description>
+      <source url="https://csmantle.top/">Mantle</source>
+    </item>
+    <item>
+      <title>聊聊即将出现的 AGI 图景</title>
+      <link>https://pnck.github.io/2026/06/05/AGI-and-LLM/</link>
+      <guid isPermaLink="true">https://pnck.github.io/2026/06/05/AGI-and-LLM/</guid>
+      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
+      <description>该文章已加密，请访问站点原文</description>
+      <source url="https://pnck.github.io/">GeruzoniAnsasu</source>
+    </item>
+    <item>
+      <title>一次对学校内网的渗透</title>
+      <link>https://lewis1766.github.io/posts/20260601/</link>
+      <guid isPermaLink="true">https://lewis1766.github.io/posts/20260601/</guid>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <description>前言 最近对渗透测试特别感兴趣，越来越想找一个真实的环境练手，最后瞄准了校园网。我想如果被发现入侵，好歹是自己学校，应该不会过于为难我。 搞笑的是，我真的被导员联系了，说是上网有关问题，当时我心中一悸，心想是不是渗透的太过火了，结果竟然是因为fq问题，并且我被告知不能再fq，我写了检讨书。。。我现在连github都不敢打开，那么这几天的学习就暂时停一阵吧。 我把校园网攻击了反而没人问。。。 Spring Boot 信息泄露 我最近在学校的专利成果转化中心勤工俭学，不得不说学校的岗位就是清闲不少。我没事干的时候就扫了一下 这里的wifi密码他们告诉了我。连接后发现网段是192.168.5.x/24，是我们校园网里的一个配网。扫描发现 192.168.5.15 开放 Spring Boot Actuator 端点： | /heapdump | 严重 - 可下载堆转储文件 | | /env | 严重 - 泄露环境变量配置 | 直接访问断点，得到heapdump文件和env配置，使用jdumpspider分析一下，这个工具用来springboot内存取证简单好用，本质就是一个提取关键字的脚本。比较初步的分析就不必惊动EclipseMemoryAnalyzer了。我整理了一下所有泄露的信息。 华为AX3PRO路由器 (192.168.5.1) 发现弱密码：和wifi密码相同，为门牌号输三次 成功登入管理界面 看配置 这里的手动设置显示的是路由器的身份，说明了他们是如何接入校园网的 10.4.175.87试了一下，403，这个网关底下应该有好几个重要资产 dns服务器防线也很深 还有一个有意思的点，之前的那个专利申请系统不止192.168.5.15，还有很多ip，但是有时候我扫描不到。我想了好久。因为一个专利申请服务器怎么会时断时续的开着，并且在办公室里并没有发现物理服务器。 今天在路</description>
+      <source url="https://lewis1766.github.io/">lewis</source>
+    </item>
+    <item>
+      <title>浅析《上伊那牡丹》OP</title>
+      <link>https://sccube.link/Kamiina_Botan_OP/</link>
+      <guid isPermaLink="true">https://sccube.link/Kamiina_Botan_OP/</guid>
+      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
+      <description>画面风格 在第五集的 ED 中，可以看到一些（疑似）拍摄 OP 时的情景。从她们手上拿着的拍摄设备是带有手枪式握把的摄影机，应该是 Super 8 胶片摄影机。 看起来有点像 Nikon R8 / R10 SUPER ZOOM OP 手持抖动、自动曝光不稳定带来的闪烁模拟出了手持摄影机拍摄的效果，模拟出她们自己拍摄的富有生活感的氛围。 高饱和、色彩浓郁的色彩倾向，还是挺像 VISION3 200T 胶卷的色彩风格的，尤其是蓝色和绿色。不过胶卷的反差通常没那么大，较高的对比反而比较像 CCD 传感器的成像风格。 “山田味”的演出 这个 OP 的分镜设计是ちな，他在推上表示过自己是山田尚子的粉丝。在这个 OP 中我们也能找到一些很有“山田味”的镜头。 这是一卡镜头我很喜欢。牡丹捧着一束百合，从后面探头出来。使用花遮挡面部算是比较常见的画面元素，其中比较经典的就是 K-ON 剧场版的 ED。 而 K-ON ED 的演出、分镜、原画正是山田尚子。 《轻音少女》剧场版 ED 面部是人类情绪和认知的重要表达，使用花遮挡传递出距离、美丽、微妙的情感交换的意味。 这个手帕在风中飘动、飘向天空的元素也不禁让人联想。干净、轻盈的纯色布料在湛蓝透亮的天空下，在不同语境下体现出创作者不同的情感传达。 《轻音少女》剧场版 ED 《莉兹与青鸟》 分镜设计 在聊分镜时，一个绕不过的问题是：镜头代表了何种身份？与角色会发生哪些互动？ 《上伊那牡丹》的一个特色便是有许多不同的分镜、演出、作画监督参与其中，每集都有各自一些独特的风格。譬如，第一、第二话的风格便有很大差异。镜头代表了最直接的观众视角，并有意让剧中角色和镜头产生明显的互动。最直观的便是角色眼神看向镜头的次数颇多，即使相互对话也是正面向镜头。第二话的镜头则更像是一个旁观者，几乎没有参与到角色的互动之中，用了很多奇特角度的镜头，带来一种“窥视感”，减</description>
+      <source url="https://sccube.link/">ScaredCube</source>
+    </item>
+    <item>
+      <title>GitHub Copilot CLI 体验</title>
+      <link>https://lewis1766.github.io/posts/20260519/</link>
+      <guid isPermaLink="true">https://lewis1766.github.io/posts/20260519/</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
+      <description>前言 最近在 GitHub 学生包里发现了一个好东西—— GitHub Copilot CLI &amp;hellip; Copilot CLI 听说这个产品是 Claude Code 的竞品，刚看新闻说微软让员工从Claude Code转用它 正好对比体验一下 大一 C 语言实践作业 翻到之前大一的 C 语言作业—— 学生管理系统 &amp;hellip; 当时懵懂无知，完全不懂什么是 agent&amp;hellip; 用 DeepSeek 改了又改，虽然（but still）仍然不会古法编程&amp;hellip; 现在用 Copilot CLI，几分钟就能写好，完全不用手。 搭一个网页版吧 核心代码 from flask import Flask, g, render_template, request, redirect, url_for import sqlite3 import os BASE_DIR = os . path . dirname(__file__) DB_PATH = os . path . join(BASE_DIR, &apos;student.db&apos; ) app = Flask(__name__, instance_path = BASE_DIR) def get_db (): db = getattr(g, &apos;_database&apos; , None ) if db is None : db = g . _database = sqlite3 . connect(DB_PATH) db . row_factory = sqlite3 . Row return db def init_db (): db = get_db() cur = db . cursor() cur . execute( &apos;&apos;&apos; CREATE TABLE IF NOT EXISTS students ( id T</description>
+      <source url="https://lewis1766.github.io/">lewis</source>
+    </item>
+    <item>
+      <title>OpenWrt 编译踩坑记录</title>
+      <link>https://pnck.github.io/2026/05/07/compile-openwrt/</link>
+      <guid isPermaLink="true">https://pnck.github.io/2026/05/07/compile-openwrt/</guid>
+      <pubDate>Thu, 07 May 2026 00:00:00 GMT</pubDate>
+      <description>本文包含以下章节： 入门必知 挑选硬件 基础概念 Docker Build 实用经验 UBOOT FINAL FailSafe ROM Source Tree initramfs VS squashfs package-y VS package-m mtwifi （正文已省略，请访问站点阅读全文）</description>
+      <source url="https://pnck.github.io/">GeruzoniAnsasu</source>
+    </item>
+    <item>
+      <title>挖到第一个漏洞：杭州鼎文国际学校API未授权访问</title>
+      <link>https://lewis1766.github.io/posts/20260504/20260504/</link>
+      <guid isPermaLink="true">https://lewis1766.github.io/posts/20260504/20260504/</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
+      <description>前言 入行漏洞挖掘以来，终于成功提交并通过审核第一个正式漏洞，记录下这次完整挖洞全过程，也算是给自己网络安全学习之路留下一份纪念。 漏洞基础信息 关联厂商：杭州鼎文国际学校 漏洞编号：QTVA-2026-10612190 漏洞类型：信息泄露 官方评级：中危 漏洞发现过程 日常使用FOFA进行资产测绘搜集站点资产，成功捕获到该校一体化校园管理平台地址： https://pr.dingwenacademy.com/login?redirect=%2Fdashboard 进入登录页面后常规查看前端源码与静态JS文件，在页面加载的JS资源中： https://pr.dingwenacademy.com/static/js/app.ac0b7b5b.js 这种网页一般都是前后端分离的架构，提升了用户体验不假，但是容易出现api未授权访问 搜索关键字“api”，发现暴露了后端大量业务API接口地址，逐一筛选测试接口可用性。 漏洞核心问题 发现/api/student/selectAllBy, /api/student/selectDocBy, /api/source/getSelect, /api/source/getSelectByUser 暴露大量人员信息，包含姓名，邮箱，用户名 /api/student/selectAllBy这个接口暴露微信wxpass、人员唯一ID 等核心隐私数据。 多组未授权接口组合利用，可批量抓取学校师资、生源、部门配置、业务资源等内部数据，极易造成校内人员信息批量外泄，存在隐私泄露与后续社工攻击风险。 漏洞详情总结 平台后端整站API接口设计存在严重权限管控缺失，前端JS明文批量泄露接口路径，后台未统一做登录态校验。 公开查询类数据接口全部放任外网无权限人员任意调用，大范围触发信息泄露风险。 安全修复方案 统一对站点所有 /api/* 路由接口增设全局请</description>
+      <source url="https://lewis1766.github.io/">lewis</source>
+    </item>
+    <item>
+      <title>Headtail配置</title>
+      <link>https://srf-27.github.io/posts/headtail%E9%85%8D%E7%BD%AE/</link>
+      <guid isPermaLink="true">https://srf-27.github.io/posts/headtail%E9%85%8D%E7%BD%AE/</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
+      <description>简单用docker配了一下headtail来连云服务器，这里随便塞一些指令吧 服务端注册节点 使用 PreAuth Key # 创建用户 docker exec headscale headscale users create &lt;USER_NAME&gt; # 查看用户ID docker exec headscale headscale users list # 生成预认证密钥 docker exec headscale headscale preauthkeys create --user &lt;USER_ID&gt; 客户端加入指令 tailscale up --login-server=http://&lt;HEADSCALE_PUB_IP&gt;:&lt;PORT&gt; --accept-routes=true --accept-dns=false --au...</description>
+      <source url="https://srf-27.github.io/">srf27</source>
+    </item>
+    <item>
+      <title>NTE Movie Replacement</title>
+      <link>https://c0d4.ink/posts/tutorial-for-nte-movie-replacement/</link>
+      <guid isPermaLink="true">https://c0d4.ink/posts/tutorial-for-nte-movie-replacement/</guid>
+      <pubDate>Sat, 02 May 2026 00:00:00 GMT</pubDate>
+      <description>声明： 方法是基于3dmigoto和dx11渲染的图层替换，所以并非直接替换视频文件，是具有相同效果的伪视频。 别问为什么不直接替换，问就是即使解包了也还有一层视频加密搞不定。 由于同样的原因，方法无法实现音频替换，视频里的是后期配音。 这些问题留给大佬们解决。orz 云盘链接 下载工具包到本地，密码 2333 。 解压后打开文件夹，进入 3dmigoto ，用记事本编辑 d3dx.ini 。 按 Ctrl+F 输入 make any changes ，找到这一行下面的 target = D:\NTE\Neverness To Everness\Client\WindowsNoEditor\HT\Binaries\Win64\HTGame.exe 打开异环游戏目录，依次进入 Neverness To Everness → Client → WindowsNoEditor → HT → Binaries → Win64 找到 HTGame.exe ，选中后右键选择复制文件地址。 用复制的地址替换掉刚才 d3dx.ini 里找到的路径， 删去引号 ， 保留等号左右的空格 。 确保格式为 target = 你复制的地址 保存 d3dx.ini 并退出。 退回到 replace_movie 目录，将你想替换的视频（MP4格式）复制进该目录，重命名为 input.mp4 。（请展开文件扩展名，否则会变成 input.mp4.mp4 ） 双击 launcher.bat ，命令行会自动检测环境。 如果提示缺少python环境，请自行前往python官网下载并配置环境。 命令行提示“生成完成！”后，退出命令行，将新生成的 Cinema 文件夹放到 3dmigoto\Mods 。 退回到 3dmigoto ， 双击运行该目录下的 3DMigoto Loader.exe ，授权管理员权限。 运</description>
+      <source url="https://c0d4.ink/">c0d4</source>
+    </item>
+    <item>
+      <title>《终将成为你》：近乎完美的「恋爱番」</title>
+      <link>https://sccube.link/Bloom_Into_You/</link>
+      <guid isPermaLink="true">https://sccube.link/Bloom_Into_You/</guid>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
+      <description>对于《终将成为你》，我一直想像往常一样写些东西，但每次都会在开头卡住。 不是没有话想说，恰恰相反，是想说的太多了。然而她的故事又那么完整、那么清晰，也有许多人为这座“百合中无法跨越的大山”写过解析。他们的观点比我自己深刻、犀利太多，让我又不知有啥可聊了。 但是我还是希望写些什么。 相比于“百合番”，我更觉得这是一部“恋爱番”。 #1 如此复杂 的「喜欢」 在第一集，灯子就和小侑说，她无法喜欢上任何人。小侑正觉得自己找到与自己一样的同伴时，却发现灯子已经毫不掩饰地喜欢上了自己。 灯子喜欢上了小侑的温柔，喜欢她的坚定，小侑成为了对于灯子来说特别的存在，灯子会在小侑面前展露出自己不完美的一面，会在小侑面前撒娇，依赖着小侑。 但是这样的依赖却是单向的。小侑还无法接受到这份感情，她十分迷茫，只是任凭着学姐依赖着自己。灯子也要求小侑不能喜欢上她，而小侑也不想破坏这样易碎的关系，便也接受了下来。 这是这个片子中最不易让人读懂的部分。为什么学姐要做出这么看似强硬又不合理的要求，为什么即使是在早已熟识的沙弥香面前她也不会完全展露出自己？ 这要由灯子的经历说起。她在姐姐的光环下长大，在姐姐去世后接过了姐姐身上的期待和压力，所以她一直以“成为姐姐”作为目标，恢复学生会话剧的愿望也是想做到姐姐曾经没做到的事情。她认识中的姐姐是完美的，她也以这份完美来约束自己。她的人生开始逐渐失去了“七海灯子”自己，取而代之的是她想像中的完美姐姐形象。她对自我的认知是错位的，她认为自己努力扮演的完美模样只是姐姐的形象，而负面的疲惫、紧张才是真实的自己。她害怕在人前袒露自己真实的形象。 所以，在她甚至喜欢不上自己时，自然不会喜欢上任何人。她只是在不断地向心目中的姐姐靠近，失去自我，当然也失去的“喜欢”的感觉。她对自己的认知是扭曲变形的，对“喜欢”的意识也是同样的扭曲变形。她认为的“喜欢”是一种束缚，她对小侑的喜欢与其</description>
+      <source url="https://sccube.link/">ScaredCube</source>
+    </item>
+    <item>
+      <title>Ghost Bits，Java WAF之殇？</title>
+      <link>https://lorexxar.cn/2026/04/29/java-ghost-bits/</link>
+      <guid isPermaLink="true">https://lorexxar.cn/2026/04/29/java-ghost-bits/</guid>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 GMT</pubDate>
+      <description>在前两天的BlacksetHat Asia 2026上，@浅蓝和@1ue分享一个非常有趣的议题，Java中的GhostBits漏洞 https://i.blackhat.com/Asia-26/Presentations/Asia-26-Bai-Cast-Attack-Ghost-Bits-4.23.pdf 探究深度非常深，影响范围非常之广，内容非常有意思 什么是Ghost Bits？ Ghost Bits这个概念的来源太久很难深究，甚至在软件领域之前就已经有类似的概念。 Ghost Bits主要是指那些在莫名其妙的位置影响到软件运行的位，所以形容像幽灵一样。 在这个议题中， Ghost Bits主要指的是在某些类型转换过程中被不小心丢掉的高位，导致原字符串内容变化。 最经典的场景就是 char类型和byte类型的转换 ，也是Java的经典场景。 char类型是16位（2字节），byte类型是8位（1字节） ，如果发生char强制转换为byte就会丢弃高8位， 只保留低8位 。其中的8位就像幽灵一样消失了。 在Java中， 有4种非常常见的写法 都会有该问题 (byte) ch ：显式的byte强制类型转化 ch &amp; 0xFF ：位掩码，保留低8位 OutputStream.write(int) ：写入流时被截断 DataOutputStream.writeBytes() ：官方JDK方法，在文档中明确写明会丢弃高8位 而在unicode中，会有大量的高位内容，经过处理和转换之后就会被截断变成对应的字符 要注意的是，这个问题本质上 在源代码层面表现一致，不能单独算作是一个漏洞 ，所以在80%的场景下，该问题主要影响的是 和源代码不在同一层的软件，其中最经典的就是waf ！ 具体怎么回事？ 基础的原理刚才都理解了，其实就是利用高位无效的机制问题，使得 输入的内容在waf和实际</description>
+      <source url="https://lorexxar.cn/">LoRexxar</source>
+    </item>
+    <item>
+      <title>关于我</title>
+      <link>https://lewis1766.github.io/about/</link>
+      <guid isPermaLink="true">https://lewis1766.github.io/about/</guid>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 GMT</pubDate>
+      <description>很高兴你能来到这里。 本人目前处在CTF（Capture the Flag，夺旗赛）知识的学习中，研究主要是web方向，萌新一枚，请多指教。 本人对AI也非常感兴趣，欢迎志同道合的人和我畅所欲言。在这里我将主要分享我的学习过程和实战心得，也可能夹带一些个人生活（说实话我还没想好发什么）。 我的爱好：音乐/电影/美剧/旅游 我的微信：Q2FsaWYwcm5pYWRyZWFtaW4=（请解码） 最后是乔布斯的一句话，我认为终身受用 &amp;ldquo;Stay Hungry, Stay Foolish.&amp;rdquo;</description>
+      <source url="https://lewis1766.github.io/">lewis</source>
+    </item>
+    <item>
+      <title>第一篇文章</title>
+      <link>https://lewis1766.github.io/posts/my-first-post/</link>
+      <guid isPermaLink="true">https://lewis1766.github.io/posts/my-first-post/</guid>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 GMT</pubDate>
+      <description>欢迎来到我的网站！</description>
+      <source url="https://lewis1766.github.io/">lewis</source>
+    </item>
+    <item>
+      <title>虚拟数字人-多模态数据采集（ASR模型）</title>
+      <link>http://preview.seven.com/article/ASR</link>
+      <guid isPermaLink="true">http://preview.seven.com/article/ASR</guid>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
+      <description>背景 在情感陪伴虚拟数字人系统项目中，数字人需要理解用户 输入内容 与 情绪状态 。因此多模态数据采集与建模主要聚焦两个方向： 语音识别（ASR） ：调用麦克风，识别用户语音内容 人脸/表情识别 ：调用摄像头，捕捉面部表情并进行情绪判断 本文档整理了当前实现与训练流程，便于复现与后续扩展。 语音识别 语音识别采用 Whisper 模型进行训练与微调。 数据处理 采用开源中文数据集 AISHELL 进行训练。由于数据集的 音频文件 与 标注文件 分开存放，需要先转换为便于训练读取的 jsonl 格式。 整体逻辑： 读取标注文件，生成 id -&gt; 文本 的字典 递归扫描 .wav 文件，按 id 匹配文本 生成 [{audio: 路径, sentence: 文本}, ...] 列表并 dump 为 jsonl 标注文件处理要点：去噪、分割字段、去除多余空格。 有多条wav文件，就进行递归读取 匹配字典中的key和wav的id，匹配后在列表中逐个添加 最终dump到json文件中 模型训练 训练的大致逻辑为： 加载模型训练的模型以及工具→处理成可以微调的格式→读入处理好的json→样本处理拼接成batch→训练→保存模型和processor 训练预处理 单条样本变成训练特征 先将音频读进来，然后重采样到标准16kHz。 由于whisper模型是吃提取后的声学特征而不是原始的waveform，所以要在样本中添加声学特征 input_features 。 最后将文本转换成token id，输入输出格式如图下所示： 将多条样本拼接成一个batch 由于我们每条样本的长度都不是对齐的，所以需要processor中进行对数据的对齐处理 tokenizer分词+转id，这样样本句子就变成了id padding，设置统一长度以后再补空位，使所有的样本一样长形成一个矩阵 设置mask，有用数据置</description>
+      <source url="http://preview.seven.com/">s3v3n</source>
+    </item>
+    <item>
+      <title>Hgame Final 2026</title>
+      <link>https://c0d4.ink/posts/hgame2026final/</link>
+      <guid isPermaLink="true">https://c0d4.ink/posts/hgame2026final/</guid>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
+      <description>https://hgame.vidar.club/games/10 juncrypt 汇编，好看爱看 main有一段诡异的逻辑 v4 = sub_12B0(s_1, _r_n); if ( v4 &lt; 0 ) { puts(&quot;runtime error&quot;); return 1; } Wrong = &quot;Wrong&quot;; if ( v4 ) Wrong = &quot;Correct&quot;; puts(Wrong); 在sub_12B0函数的最后有 munmap(addr_1, 0x2DAu); } return 0xFFFFFFFFLL; } v4 &lt; 0 恒成立， Wrong = &apos;Correct&apos; 不可能执行 所以真正的校验没有在pseudocode里体现 sub_12B0调用sub_1260完成了对shellcode的加载，存入mmap申请的内存 只要获得shellcode，就能恢复校验逻辑 因为地址的动态性，只能下断点在转移控制流的位置dump shellcode 看一下 mprotect 附近的汇编 .text:0000000000001394 push rax .text:0000000000001395 mov rax, rbx .text:0000000000001398 jmp short loc_13A2 .text:00000000000013A2 push rax ; 把 Shellcode 的动态地址压入栈顶 .text:00000000000013A3 retn 断在loc_13A2即可 set disable-randomization on starti b *0x5555555553a2 commands dump binary memory shellcode.bin $rax $rax+0x2da quit end continue dump下 shell</description>
+      <source url="https://c0d4.ink/">c0d4</source>
+    </item>
+    <item>
+      <title>Notes on Cryptohack</title>
+      <link>https://c0d4.ink/posts/cryptohack/</link>
+      <guid isPermaLink="true">https://c0d4.ink/posts/cryptohack/</guid>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Introduction to Cryptohack _byte = chr(_integer) _integer = ord(_byte) # byte &lt;=&gt; acsii _bytes = bytes.fromhex(_str) _str = _bytes.hex() # bytes &lt;=&gt; hex _bytes = _str.encode(&quot;utf-8&quot;) # str to bytes import base64 _bytes = base64.b64encode(_bytes) _bytes = base64.b64decode(_bytes) # base64 custom_table = &quot;&quot; std_table = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot; _bytes = base64.b64decode(_bytes.translate(str.maketrans(custom_table, std_table))) # hacked_base64 from Crypto.Util.number import * _integer = bytes_to_long(_bytes) _bytes = long_to_bytes(_integer) # integer &lt;=&gt; bytes _bytes = bytes(_integers) # integers to btyes from pwn import xor _bytes = xor(A, B, [length]) # xor # 自动匹配长度(扩展至length) # 多类型支持(bytes/str/integer) https://cryptohack.org/courses/intro/xorkey1/ 根</description>
+      <source url="https://c0d4.ink/">c0d4</source>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>https://wuli-wa.github.io/2026/04/10/hello-world/</link>
+      <guid isPermaLink="true">https://wuli-wa.github.io/2026/04/10/hello-world/</guid>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Welcome to Hexo ! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub . Quick Start Create a new post 1 $ hexo new &quot;My New Post&quot; More info: Writing Run server 1 $ hexo server More info: Server Generate static files 1 $ hexo generate More info: Generating Deploy to remote sites 1 $ hexo deploy More info: Deployment</description>
+      <source url="https://wuli-wa.github.io/">wuliwa</source>
+    </item>
+    <item>
+      <title>用龙架构 QEMU 启动自编译 Linux 内核与 Alpine rootfs</title>
+      <link>https://csmantle.top/2026/04/09/qemu-kernel-boot-with-alpine-rootfs-on-loongarch.html</link>
+      <guid isPermaLink="true">https://csmantle.top/2026/04/09/qemu-kernel-boot-with-alpine-rootfs-on-loongarch.html</guid>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
+      <description>0. 动机 上个月，学校的操作系统实验课要求在自行编译的 Linux kernel 上添加系统调用并进行验证。教案与教材上推荐的方法是购买一台 Linux 云服务器或创建虚拟机，在修改启动配置后用于实验。这种方法存在诸多缺点。替换实机启动内核需要对 bootloader 配置进行修改。此外，若选择云服务器，则需向提供商支付费用，且在遇到无法启动的情况时较为棘手；若选择自己创建虚拟机，则必须安装虚拟机管理软件、完整执行 Linux 发行版的安装流程，而后才能开始实验。虽然在 2026 年，每个步骤都正在向新手友好的方向改进，但这对于达成实验目标而言是额外的、不必要的复杂性。 为了解决这个问题，需要先了解一个可启动 Linux 操作系统在功能上的组成。不精确地讲，在机器上电后由固件和 bootloader 进行基本的初始化，然后将 kernel 加载至内存中。Kernel 探测硬件信息，初始化运行环境、文件系统与必需设备后，启动 PID 为 1 的用户进程（又称 init），由它搭建最终的用户环境1。固件、bootloader、kernel、init（以及其所在的文件系统，又称 rootfs）四个组件相对独立，这是实验中能够替换 kernel、保持其他组件不变的原因。 QEMU 是一系列模拟器，可以在应用或系统层面进行同架构或跨架构模拟。它支持 Direct Linux Boot，意味着只要提供了合适的 kernel 文件、rootfs 镜像、适用于目标架构的固件，就可以使用一行命令启动一个精简但完整的虚拟机，无需复杂的配置流程。 1. 搭建 rootfs 镜像 由于内核与其上 rootfs 相对独立，我们可以自由选择喜欢的 rootfs，这也将在很大程度上决定启动后的发行版。这里选择 Alpine Linux，它是一个精简发行版，需要的存储空间与运行占用资源都较少。 首先创建</description>
+      <source url="https://csmantle.top/">Mantle</source>
+    </item>
+    <item>
+      <title>AI.Re.(3) - AI到底变了什么？为什么突然井喷？</title>
+      <link>https://lorexxar.cn/2026/04/07/reai3/</link>
+      <guid isPermaLink="true">https://lorexxar.cn/2026/04/07/reai3/</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
+      <description>继续接着之前的内容来写，从通用大模型诞生到后续的几年里，除了大模型本身的能力一直在提升，使用大模型的方法论也在不停的变化。 这篇文章讲到的这些概念不是第一天诞生，我相信很多朋友也实打实的在使用这些方法论，那这篇文章让我们重新回顾一下这些概念，也伴随的感受一些， 为什么这些方法论使得AI突然变得强力可靠？为什么在2025年年底I应用大量井喷？ 什么是Skill？ 在前两篇文章当中，我曾经提到过，AI有两个非常重要的时间节点，第一个是 chatgpt的初诞生 ，它意味着AI与人类交流沟通的屏障解开了，我们可以通过对话和大模型沟通并让他理解我们的需求。 chatgpt打通了人和AI的壁垒 在这个时间节点，大部分场景我们 只能依赖prompt ，提示词工程来一定程度的定向提高大模型的能力，虽然我觉得并没有什么卵用。 第二个关键的时间节点， gpt4在2023年初推出了Plugins功能 ，并且在2023年6月推出了 Function Calling函数调用功能 。 这意味着给给大脑接上了手和脚，大模型不再受限于自己提前训练的数据集，他可以 主动调用其他工具收集信息 ，尤其是联网功能，大幅度提高了大模型的实用价值。 ChatGPT Plugins的诞生 其实plugins和Function Calling功能，就是Skill的雏形。 Skill的本质其实就是，把某些特定的场景和解决方案收束成一个skill（技能），给予他一个触发条件，只有触发该条件才会读取这个Skill的内容并按照要求执行下去 。 Skill的概念可以说是大模型应用非常核心的一部分，首先它拥有完全符合AI应用理念的特征，还能契合当前AI应用的实际场景。 Skill本身独立于大模型外，不需要训练基础LLM ，即插即用，还可以长期积累，符合AI学习成长的理念 只有触发才加载对应的skill，既 节省不必要的上下文浪费 ，</description>
+      <source url="https://lorexxar.cn/">LoRexxar</source>
+    </item>
+    <item>
+      <title>纯靠 Vibe，搞定 macOS 上的 HITMAN 外挂</title>
+      <link>https://github.red/hitman6-beater/</link>
+      <guid isPermaLink="true">https://github.red/hitman6-beater/</guid>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
+      <description>《HITMAN》杀手三部曲，一直是我很喜欢的游戏。 特别是新杀手第一部（HITMAN 6），是少数支持 macOS 端的游戏。当年捧着 MacBook Pro 刚上大学的我，除了日常写代码外，电脑上能玩的游戏也就 HITMAN 和 Minecraft。后来又蹭室友的 Windows 台式机玩了 HITMAN 2，2021 年那会在宿舍熬夜玩新出的 HITMAN 3（现在应该叫做 HITMAN WoA）。疫情期间在家更是高强度追每个月的 ET（行踪不定的目标），对着 B 站上的攻略视频一步步打。我记得最走火入魔的时候，我在宿舍看到室友，都有种想绕后拿纤维绳按下 Q 的冲动。🤣 三部作品加起来，我的总游戏时长应该已经超过了 200 小时。但 HITMAN 的地图就那么几张，完成主线目标的暗杀后，就会开始想探索地图里的机遇与成就，甚至想去卡 Bug 突破空气墙，看看图外面的景色。之前在室友的 Windows 电脑上，我从网上随便找个 HITMAN 修改器，就能实现无限子弹、无限生命的功能，然后开始无双屠城。 回到游戏生态贫瘠的 Mac 上，我发现全网居然没人做 HITMAN macOS 版外挂！我在自己的 Mac 上只能老老实实地打任务，时间久了挺没意思的。 然而自己又是逆向苦手，IDA 启动后只会按 F5，一旦遇到反编译失败或者没符号表，我就不知所措了。 好在时代变了，现在我们有 AI 了！不需要再古法看汇编了！本文我将介绍自己是怎样用 Claude Code + Claude Opus 4.6 硬生生将 macOS 上的 HITMAN 外挂给 Vibe 出来的。也算是全网首发了吧，嘻嘻。 顺风开局（？ 先从最简单的功能开始，我想先实现“无限子弹”的功能。在正式开始 Vibe 之前，我脑补了下大概有两种做法：Patch 游戏源文件或者进程注入。 macOS 上安装的 App 都</description>
+      <source url="https://github.red/">E99p1ant</source>
+    </item>
+    <item>
+      <title>HGAME FINAL 2026 题解</title>
+      <link>https://summ2.link/categories/Study/hgame-letyoudive/</link>
+      <guid isPermaLink="true">https://summ2.link/categories/Study/hgame-letyoudive/</guid>
+      <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
+      <description>letyoudive : 一道探索中设计的入门内核题 Background syscall 系统调用（systemcall）是由操作系统内核向上层应用程式提供的应用接口，操作系统负责调度一切的资源，当用户进程想要请求更高权限的服务时，便需要通过由系统提供的应用接口，使用系统调用以陷入内核态，再由操作系统完成请求。 entry: 怎么从用户态陷入 在执行 syscall 后，CPU 将跳转到 entry_SYSCALL_64 ，保存用户态的上下文，并进入内核态。 //arch/x86/entry/entry_64.S SYM_CODE_START ( entry_SYSCALL_64 ) UNWIND_HINT_ENTRY ENDBR swapgs /* tss.sp2 is scratch space. */ movq % rsp , PER_CPU_VAR ( cpu_tss_rw + TSS_sp2 ) SWITCH_TO_KERNEL_CR3 scratch_reg = % rsp movq PER_CPU_VAR ( cpu_current_top_of_stack ) , % rsp SYM_INNER_LABEL ( entry_SYSCALL_64_safe_stack , SYM_L_GLOBAL ) ANNOTATE_NOENDBR /* Construct struct pt_regs on stack */ pushq$__USER_DS /* pt_regs-&gt;ss */ pushq PER_CPU_VAR ( cpu_tss_rw + TSS_sp2 ) /* pt_regs-&gt;sp */ pushq % r11 /* pt_regs-&gt;flags */ pushq$__USER_CS /* pt_regs-&gt;cs */ pushq % rcx /</description>
+      <source url="https://summ2.link/">summ2</source>
+    </item>
+    <item>
+      <title>软件系统安全赛</title>
+      <link>https://sh10rl.top/posts/dart/</link>
+      <guid isPermaLink="true">https://sh10rl.top/posts/dart/</guid>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 GMT</pubDate>
+      <description>1.re3 pyinstxtractor解包得到client.pyc： 看流量发现readme.txt, config.txt, flag.txt 和密文： Pylingual 反编译client.pyc: # Decompiled with PyLingual (https://pylingual.io) # Internal filename: &apos;client.py&apos; # Bytecode version: 3.10.b1 (3439) # Source timestamp: 1970-01-01 00:00:00 UTC (0) import base64 import sys import os import json import socket import hashlib import crypt_core import builtins def _oe(_d, _k1, _k2, _rn): # ***&lt;module&gt;._oe: Failure: Compilation Error try: _b = base64.b85decode(_d.encode()) _r = [] for _i, _x in enumerate(_b): return ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k</description>
+      <source url="https://sh10rl.top/">Shiori</source>
+    </item>
+    <item>
+      <title>AI.Re.(2) - OpenClaw到底为什么爆火？</title>
+      <link>https://lorexxar.cn/2026/03/11/reai2/</link>
+      <guid isPermaLink="true">https://lorexxar.cn/2026/03/11/reai2/</guid>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
+      <description>上篇博客中，我分享了最近关于AI的见闻和感受。本来按照流程，我应该用几篇博客的时间介绍一下最近接触和学习到的东西。 但最主要的是，感觉如果不先聊聊OpenClaw，这东西很可能就要过气了。 Peter Steinberger作为独立开发者，由于非常喜欢Claude，在几个月之前发布了开源的自托管助手Clawdbot，短短几个月火爆全网，引发了非常大的热情狂潮， 很多人把OpenClaw称为Web4.0时代的开端。 Clawdbot，后来改名Moltbot，现在又改名叫Openclaw ，最近最有名的称呼应该叫做龙虾。 无论你是否认可后面我的理解和感受，但我必须强烈的告诉你。 绝对不要把OpenClaw部署在生产环境/或者自己的实际使用主机上，一定要放在一个独立的环境中运行。 其实 Openclaw并不是第一个依托于LLM的主动代理助手 ，这个类似的概念我1年前就听过，之前Meta收购的Manus AI，Manus可能也不是最早的，而且很多人说Manus根本没有成品。但这个概念很早就有了。 如果对Claude Code比较熟悉的朋友应该知道， 其实Claude Cli和OpenClaw本质上没有什么区别 ，换言之，从设计理念的角度， OpenClaw就是没有任何安全限定的Claude Code。 从这个角度来说，OpenClaw的技术突破似乎没什么价值，客观来说，OpenClaw是个人维护+ai编程+接受了大量pr，代码质量堪忧，我相信如果用过一段时间的OpenClaw都会知道到底有多难用！ OpenClaw的爆火真的是偶然吗？ OpenClaw应该是第一个， 完全免费开源，并且已经进入可用阶段的托管式AI助手 ，这也是OpenClaw爆火的起因，在2025年年底，AI使用的方法论已经基本成型， 无论是工作流、agent，还是mcp、skill ，又或者是自己实现的记忆、上下</description>
+      <source url="https://lorexxar.cn/">LoRexxar</source>
+    </item>
+    <item>
+      <title>AI.Re.(1) - AI变革的时代来了吗？</title>
+      <link>https://lorexxar.cn/2026/03/10/reai1/</link>
+      <guid isPermaLink="true">https://lorexxar.cn/2026/03/10/reai1/</guid>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+      <description>许久没有起笔写博客和公众号了，忽然一下起笔，似乎一下子找不到下笔的方式和由头，其实我想恢复写博客的习惯很久了，最近几年博客写的很少，原因有很多，一个这几年工作内容涉及到的公司内容比较多，不好去密，另一个是人真的是很懒惰的，放下笔很容易但是提起笔需要很多理由。 今天这篇博客，没有技术，只想和大家分享分享最近的想法。 认识我的朋友可能知道，这些年我另营业的副业做的还马马虎虎可以，无论是B站还是抖音，做视频做直播花费了很多精力，也有一些粉丝和收入。 反而是安全方向，做了很多东西但是实际的产出很少，在去年有一段时间甚至算是有点儿陷入迷茫阶段，有点儿不太清楚自己在干什么，每天公式化完成工作，最后整体算下来感觉自己也没什么成长。 我在奇安信的主要工作就是围绕破壳平台，后面我会更多分享和这个有关的内容 https://poc.qianxin.com/ 对我来说近期有一件事情影响非常之大， AI之于用户甚至之于这个时代都已经是老生常谈 ，哪怕是什么都不懂的人，多多少少也能打开个手机里的豆包，没事问问豆包问题，调戏调戏豆包。 从去年的年底开始，实话讲我并不知道具体是什么时候，有些人说是25年的10月，也有人说是更早，突然感觉AI的浪潮向我拍过来了，最开始我虽然会刷到这些新闻，但是 很多时候只是大体看看怎么回事 ，大概知道，原来又多了一点儿新东西，但是好像也没啥新意。 我工作中使用AI更多的场景，依旧是 平时拿AI当搜索软件搜索写代码遇到的问题 ，再就是 用trae维护另一个我自己维护的平台功能 ，我很少会深度的使用AI。 在当时心中对于AI的认知还停留在， 上下文不够长，幻觉严重的问题无法解决 ，这两个致命问题上，所以很多东西大概知道怎么回事，但是觉得没有花时间了解的必要。 直到12月底的两件事情，算是彻底改变了我的观念，也让我真真切切的意识到， 或许真的AI时代的洪流，要到来了。 第一件事</description>
+      <source url="https://lorexxar.cn/">LoRexxar</source>
+    </item>
+    <item>
+      <title>在龙架构上“养龙虾”</title>
+      <link>https://csmantle.top/2026/03/10/zeroclaw-on-arch-for-loong64.html</link>
+      <guid isPermaLink="true">https://csmantle.top/2026/03/10/zeroclaw-on-arch-for-loong64.html</guid>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+      <description>近期以 *Claw 为代表的智能体非常流行，其中不乏 Rust 语言的实现。因此，我试着在运行 Arch Linux for Loong64 的龙芯 3B6000 上“养”了一只龙虾，达到了不错的效果。 0. 前置条件 这是一篇笔记式博客，包含了多种仅适用于我本人系统环境的操作与考虑，其中有些已在文内标出，有些则不然。我的系统配置如下： 主板： Loongson-3B6000x1-7A2000x1-EVB 内核： Linux 6.19.6-arch1-1-csmantle-aosc-main-16k 如果你想跟随本篇博客进行操作，需要准备以下材料： 使用 Linux 系统与常见开发工具的经验； 能理解每步操作的目的、效果及对系统安全的影响 能不借助 LLM，利用手册、文档、Wiki 或搜索引擎进行故障检修 一个正常的网络环境； 30 分钟以上、一两个小时为宜的空余时间； 我在安装时花了一个下午，但主要是在多个 *Claw 实现与部署方案之间不断试错 Rust 编译器套件和 Cargo。 龙架构的 Rust 平台支持已较为完善，一般可以无痛原生编译。 1. 编译二进制 在 /opt 下创建目录并设置权限。我在这里选择将所有者设置为 csmantle:wheel、目录权限设为 drwxr-sr-x，是为了对齐 /opt 下软件全局所有的设计用途，实践中可以自行考量： 3.13. /opt : Add-on application software packages 3.13.1. Purpose /opt is reserved for the installation of add-on application software packages. – https://refspecs.linuxfoundation.org/FHS_3.0/fhs-3.0.html#optA</description>
+      <source url="https://csmantle.top/">Mantle</source>
+    </item>
+    <item>
+      <title>通过某一题目学习安卓app逆向全流程</title>
+      <link>http://preview.seven.com/article/Android-reverse</link>
+      <guid isPermaLink="true">http://preview.seven.com/article/Android-reverse</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
+      <description>😀 本文是在学习安卓逆向基础时跟着文章做的复现，同时配上自己的思考和理解做了更详细的解释，整理了一般app逆向的全流程。 了解逆向一个apk需要注意的点：加固，加解密 app无壳 基本app逆向流程： 找程序入口点 com.example.flag.MainActivity 是 Android主活动的完整类名，由 “包名 + 子包名 + 类名” 组成 从onCreat（）去找app加载的关键逻辑 💡 核心生命周期回调 包括： onCreate()：Activity首次创建时调用，适合进行界面初始化、数据绑定、ViewModel关联等操作。 onStart()：Activity变为可见时调用，可在此准备进入前台的资源。 onResume()：Activity进入前台并可与用户交互时调用，适合启动动画、相机预览等前台任务。 onPause()：Activity失去焦点但可能仍可见时调用，用于暂停不必要的操作或释放部分资源。 onStop()：Activity完全不可见时调用，适合释放大量资源或保存数据。 onDestroy()：Activity销毁前调用，用于最终清理资源。 onRestart()：Activity从停止状态重新启动时调用，可重新初始化在onStop中释放的资源。 app有壳 基本逆向流程： 加壳判断 有完整类名但没有相应MainActivity代码实现 通过观察APK文件是否在AndroidManifest.xml配置Applicaiton信息来判定,该app实现了一个自定义操作，多加了name字段，将 Application 类进行了自定义修改成了 com.SecShell.SecShell.ApplicationWrapper 来实现自己的加壳逻辑 App通过自定义的 ApplicationWrapper 类来启动壳程序 💡 梆梆加固原理 : 根据APK文</description>
+      <source url="http://preview.seven.com/">s3v3n</source>
+    </item>
+    <item>
+      <title>Hgame 2026</title>
+      <link>https://c0d4.ink/posts/hgame2026/</link>
+      <guid isPermaLink="true">https://c0d4.ink/posts/hgame2026/</guid>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+      <description>https://hgame.vidar.club/training/9 week1 PVZ DIE 发现是一个封装在C++壳下的jar包 7zip打开gpvz.exe，解压 jadx分析一下gpvz文件夹，发现一个很扎眼的what_is_this.png 发现是“神秘仪式”的具体内容 运行游戏，用一点作弊技巧在结束前摆出神秘阵型，获得flag 看不懂的华容道 IDA分析 无符号表，一坨sub_xxxxx函数，没有头绪 先看看字符串 点进HuarongDao2026_Salt看看 跟踪到sub_1400266B0，发现是一个VM的depatcher VM控制华容道运作 game.bin就是操作码表 opcode： 0x15 ：读用户输入（交互输入“编号+方向”） 0x16 ：调用 sub_140011212 -&gt; sub_14001EC40 ，重建棋盘状态编码 0x18 ：对状态做哈希，写入寄存器 0x17 ：打印两个 64-bit 组成的节点值 0xE0/E1/E2/E3 ：跳转与条件判断 0xFF ：结束 棋盘编码 分析game.bin恢复初始棋盘为 [ P1 ][ P0 ][ P0 ][ P2 ] [ P1 ][ P0 ][ P0 ][ P2 ] [ P5 ][ P5 ][ P4 ][ P3 ] [ P6 ][ P8 ][ P4 ][ P3 ] [ P7 ][ --- ][ --- ][ P9 ] 加密算法为md5，不过不重要，可以通过编写bfs脚本直接跑出符合题目要求的路径，直接运行exe输入，获得最终棋盘hash 特别要注意题目追加的条件：操作路径顺序按照棋子编号从小到大 操作顺序wasd from collections import deque START = (1, 0, 3, 11, 10, 8, 12, 16, 13, 19) DIRS = [(&apos;w&apos;, </description>
+      <source url="https://c0d4.ink/">c0d4</source>
+    </item>
+    <item>
+      <title>一个python web应用的内存马代理</title>
+      <link>https://blog.naclwww.com/blog/pytmemshell/</link>
+      <guid isPermaLink="true">https://blog.naclwww.com/blog/pytmemshell/</guid>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+      <description>🐎🐎🐎🐎🐎🐎</description>
+      <source url="https://blog.naclwww.com/">NaCl</source>
+    </item>
+    <item>
+      <title>DODOR的hgame复现与知识点总结</title>
+      <link>https://dodor.top/2026/02/27/DODOR%E7%9A%84hgame%E5%A4%8D%E7%8E%B0%E4%B8%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</link>
+      <guid isPermaLink="true">https://dodor.top/2026/02/27/DODOR%E7%9A%84hgame%E5%A4%8D%E7%8E%B0%E4%B8%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</guid>
+      <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
+      <description>看过wp后的复现wwwww,留档做个记录。 打好基础 之前一直不知道Base100就是将每个字节（8位，值域0-255）映射到一个特定的表情符号。编码表通常包含256个不同的表情符号，每个符号对应一个唯一的字节值。编码过程直接将字节流转换为表情符号序列，解码则是反向操作。 例如，原始文本“Hello”（十六进制：48 65 6C 6C 6F）可能被编码为一串表情符号，如：🐟 🐠 🐡 🐡 🐢（具体符号因编码表而异）‌ 扔给ai识别说有85个表情自然就陷入了Base85(虽然后面还是会用到)非常明确肯定是base大家族。但是无论是从已知的形式hgame{}来看还是首字母来看都无法解密。（其实应该看到打好基础就知道是base的嵌套，当时没有想到。。。 经过base100,92，91，85，64，62，58，45，32后即可得到flag。 shiori不想找女朋友 这题完全是因为我自己的问题，直接用windows打开解压后发现只有一张图片，通过exiftool发现其中有一段json： { &quot;block&quot; : 1 , &quot;start_x&quot; : 10 , &quot;start_y&quot; : 10 , &quot;step_x&quot; : 7 , &quot;step_y&quot; : 7 , &quot;column_num&quot; : 450 } 一种隐写，起始位置和步长全标出来了写脚本复原： from PIL import ImageCHALLENGE_FILE = &quot;shiori.png&quot; OUTPUT_FILE = &quot;key.png&quot; def solve ( ) : img = Image . open ( CHALLENGE_FILE ) b = 1 sx = 10 sy = 10 dx = 7 dy = 7 w_blocks = 450 canvas_w = w_blocks * b canvas_h = 600 restored_im</description>
+      <source url="https://dodor.top/">DODOR</source>
+    </item>
+    <item>
+      <title>月の温度【辉夜姬×夜水母/MAD】</title>
+      <link>https://sccube.link/Kaguya-MAD/</link>
+      <guid isPermaLink="true">https://sccube.link/Kaguya-MAD/</guid>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
+      <description>&lt;iframe src=&quot;//player.bilibili.com/player.html?isOutside=true&amp;aid=116092412428667&amp;bvid=BV1EYZRBaEsS&amp;cid=36145727087&amp;p=1&quot; scrolling=&quot;no&quot; bord</description>
+      <source url="https://sccube.link/">ScaredCube</source>
+    </item>
+    <item>
+      <title>HGAME 2026 运维秘话</title>
+      <link>https://blog.woshiluo.com/posts/2026/02/hgame-magic/</link>
+      <guid isPermaLink="true">https://blog.woshiluo.com/posts/2026/02/hgame-magic/</guid>
+      <pubDate>Tue, 24 Feb 2026 00:00:00 GMT</pubDate>
+      <description>#import &quot;/typ/templates/blog.typ&quot;: * #show: main.with( title: &quot;HGAME 2026 运维秘话&quot;, desc: [又一年的 HGAME 2026 结束了！今年我负责运维背锅，特写此文记录遇到的各种情况。], date: &quot;2026-02-24&quot;, categories: ( &quot;notes&quot;, ), show-outline: false, ) == 前情提要 又一年的 HGAME 结束了！HGAME 是一个历史悠久的比赛了，有幸作为 HGAME 的运维还是很高兴的。 今年我们继续使用了 rx 佬的 ret2shell 平台。在我负责 Vidar Team 相关赛事的运营后，我一直希望平台能够维持稳定的长期的运营。HGAME 系列赛事几乎贯穿全年，从 MINI 的 8 月一路到 Final 的 4 月，每次都用新的平台也不利于数据的继承。 在非赛时，我们的平台会运行在协会的 PVE 上的一个 VM 中，并通过种种奇技淫巧反代到我们的公共外网服务器上。 == 意外和选型 === 美好的原计划 今年的比赛赛制继承了去年，由于已经没有提早开放平台或者关闭平台的概念，主要的问题就是如何维持赛时两周的负载。 同样继承自去年的还有来自杭电网络与计算协会（ICU）的支持，不过 ICU 的支持是要走流程联络的。今年是我和 NaCl 负责，这方面的进程在当时的我看来出乎意料的慢，现在来看应该是催的不够紧，还是不够理解学校的办事方法。 基于去年的成熟经验和杭电网络的现实情况，一开始的想法是这样的。从协会 PVE 迁移上云，前期完全上云，择机从云上迁移到协会 PVE 和 ICU 机器构成的多节点集群。 这里的困难其实是如何无痛迁移，数据库和队列尚且好说，ret2shell 会需要一个本地目录存取题目信息等数据。正常来说，一个 local</description>
+      <source url="https://blog.woshiluo.com/">woshiluo</source>
+    </item>
+    <item>
+      <title>如何从 WordPress 逃离到 Astro</title>
+      <link>https://blog.woshiluo.com/posts/2026/02/wordpress-to-astro/</link>
+      <guid isPermaLink="true">https://blog.woshiluo.com/posts/2026/02/wordpress-to-astro/</guid>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 GMT</pubDate>
+      <description>#import &quot;/typ/templates/blog.typ&quot;: * #show: main.with( title: &quot;如何从 WordPress 逃离到 Astro&quot;, desc: [我迁移到 Astro 的简要经历。任何一个选择都有代价，离开一个成熟平台应当是在作死。], date: &quot;2026-02-23&quot;, categories: ( &quot;notes&quot;, ), show-outline: false, ) == 0 想法与选型 由于我苦 WordPress 久矣，因此迁移博客系统是一个隔两天就会被放到脑子里过一遍的想法。 但是你真要说苦什么，其实用起来也挺正常的。无非是攻击面大一点，技术栈陈旧一点，服务器资源消耗大一点什么的，都是一些不痛不痒的事情。 但是人总是要折腾一下自己的，既然要换，就得先选型。 其实我是很倾向于动态博客的，毕竟写个博客非要个 Git 环境什么的有点不爽。但是大部分动态博客框架和 WordPress 大同小异，要么做得不够好，要么做得不够全。 那就考虑静态博客了。Hexo 也不是没有用过，但是感觉上一方面也有历史包袱，另一方面之前用下来也确实不好用。剩下的框架基本上也是一个德性。 Astro 其实和上面这些也差不多，当然有更多好用的语法糖和更自然的定义形式，毕竟不是为博客特化的，这会带来额外的灵活性。但是真正引起我注意的是，有人给 Astro 做了 Typst 支持，这个之前没有想过，但是一想就很诱人。Latex 的数学语法在大多数情况还是不如 Typst，而且完整的 Typst 支持意味着比 MathJax / Katex 多了很多灵活度，比如说 Typst 模版可以广泛运用到每一个文件中。 理想是美好的，那么现实呢？ == 1 Typst 与 HTML Typst 的 html export 其实依旧在绝赞#link(&quot;https://</description>
+      <source url="https://blog.woshiluo.com/">woshiluo</source>
+    </item>
+    <item>
+      <title>DODOR#000a01-WEEK2-WP</title>
+      <link>https://dodor.top/2026/02/21/DODOR-000a01-WEEK2-WP/</link>
+      <guid isPermaLink="true">https://dodor.top/2026/02/21/DODOR-000a01-WEEK2-WP/</guid>
+      <pubDate>Sat, 21 Feb 2026 00:00:00 GMT</pubDate>
+      <description>Misc: Invest on Matrix 解锁hint1就知道是一个version2的二维码，剩下的就是不断解锁补全直到可以通过纠错识别出来，这是基础结构，我们优先补全右下角再逐渐保持中心完整，最后脚本如下： from PIL import Image import os def make_matrix ( ) : m = [ [ 0 ] * 25 for _ in range ( 25 ) ] def place_finder ( r , c ) : for i in range ( 7 ) : for j in range ( 7 ) : v = 1 if ( i in ( 0 , 6 ) or j in ( 0 , 6 ) or ( 2 &lt;= i &lt;= 4 and 2 &lt;= j &lt;= 4 ) ) else 0 m [ r + i ] [ c + j ] = v place_finder ( 0 , 0 ) place_finder ( 0 , 18 ) place_finder ( 18 , 0 ) for j in range ( 25 ) : m [ 6 ] [ j ] = 1 if j % 2 == 0 else 0 for i in range ( 25 ) : m [ i ] [ 6 ] = 1 if i % 2 == 0 else 0 for i in range ( 5 ) : for j in range ( 5 ) : r = 16 + i c = 16 + j v = 1 if ( i in ( 0 , 4 ) or j in ( 0 , 4 ) or ( i == 2 and j == 2 ) ) else 0 m [ r ] [ c ] = v return m def apply_block ( m , k , vals ) : r = </description>
+      <source url="https://dodor.top/">DODOR</source>
+    </item>
+    <item>
+      <title>编译原理课程设计报告</title>
+      <link>https://blog.woshiluo.com/posts/2026/02/compiler-labs/</link>
+      <guid isPermaLink="true">https://blog.woshiluo.com/posts/2026/02/compiler-labs/</guid>
+      <pubDate>Sat, 21 Feb 2026 00:00:00 GMT</pubDate>
+      <description>#import &quot;/typ/blog.typ&quot;: * // #import &quot;/typ/templates/blog.typ&quot;: * #show: main.with( title: &quot;编译原理课程设计报告&quot;, desc: [笔者在杭电编译原理课程设计所提交的实验报告中，自认为比较有趣的部分。], date: &quot;2026-02-21&quot;, categories: ( &quot;notes&quot;, ), show-outline: false, ) == Lab 2 === 实验任务 2.1 正规表达式转 NFA 算法及实现 尽管推荐使用中缀表达式转后缀表达式以完成次任务，但是事实上 Thompson 构造法直接递归实现也很自然。 具体来说，我们可以认为我们在处理的一定是一个由单个节点开始，单个节点终止的 NFA。 对于普通字符只需要在当前节点后新增一条对应节点对应边即可。 那么对字符串流的操作（ * + 等，以及 () ）都可以看作创建一个新的 NFA，并将该新 NFA 连接到当前状态上。区别在于重复类的只需要创造一个 NFA 并做好相关链接后返回，而括号需要进入新的 NFA 递归新增节点。 特殊的是 | ，实践上可以认为移动当前指针到开始节点即可。需要注意的是在收尾的时候需要从每一个分支连接到结束节点。 自此即可自然递归实现，可见于源代码中 src/nfa.rs 的 Nfa::new 函数及其相关函数。 === 实验任务 2.2 NFA 转 DFA 算法及实现 子集构造算法和 $epsilon$-闭包的求解过程本身已经相当程序化，在实现过程中并无值得注意的细节。 具体来说，$epsilon$-闭包的实现为了抽象性以存于 src/utils.rs 的 Nodes::empty_closure 中。 而子集构造算法则位于 src/dfa.rs 中 From&lt;&amp;Nfa&gt; trait 对 Df</description>
+      <source url="https://blog.woshiluo.com/">woshiluo</source>
+    </item>
+    <item>
+      <title>网络路由拓扑图的图形优化</title>
+      <link>https://baimeow.cn/posts/dn11/networkgraphimprovement/</link>
+      <guid isPermaLink="true">https://baimeow.cn/posts/dn11/networkgraphimprovement/</guid>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
+      <description>最近在改善 DN11 的网络拓扑前端展示效果，在图结构上做了不小的调整，记录一下。 边中心度 上面展示的是我的 OSPF 网络拓扑，可以在 https://status.dn11.top/#/ospf/4220084444 看到实时的图像。 除了你见过的所有的 OSPF 拓扑图都会展示的 cost 和 routerId 一类的基本结构，你会很容易地注意到：这里的每一个边都有宽度。这就是边中心度在图中的展示方式。 边中心度这个概念简单来说就是通过某条边的最短路径的数量再做一点归一化，归一化前的边 $e$ 的中心度可以用这个公式表示: $$ c(e) = \sum_{s, t \in V} \frac{\sigma(s, t | e)}{\sigma(s, t)} $$ 摘自 networkX 需要注意的是不同于 networkX 的表述，本文的“边”均为有向边 $V$ 所有节点的集合，$\sigma(s, t)$ 是 $(s 到 t)$ 间最短路径的数量，$\sigma(s, t | e)$ 是其中经过有向边 $e$ 的最短路径的数量。 具体的公式相比前面的描述而言将 ECMP 路由纳入了考虑，将权重分给了 ECMP 路由。 归一化 为了在节点数量变化的情况下持续评估边中心度，我给边中心度做了一次归一化，简单来说就是除以当前节点数量 $n$ 下可以达到的边中心度的最大值。 $$ c_{max}(n) = \begin{cases} 0&amp; n&lt;2 \ (n-1)(n-2)+1 &amp;n&gt;=2 \end{cases} $$</description>
+      <source url="https://baimeow.cn/">BaiMeow</source>
+    </item>
+    <item>
+      <title>如何在 VS Code 优雅地通过 F5 调试 Go+React 全栈项目</title>
+      <link>https://www.intmian.com/archives/aFl7ORUi</link>
+      <guid isPermaLink="true">https://www.intmian.com/archives/aFl7ORUi</guid>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 GMT</pubDate>
+      <description>如何在 VS Code 优雅地通过 F5 调试 Go+React 全栈项目 也就是今天下午的事。 我手头有一个全栈项目，结构很经典：根目录下分了 backend（Go后端）和 frontend（React前端）。每次开发都要开两个终端：一个跑 go run，一个跑 npm run dev，调试的时候</description>
+      <source url="https://www.intmian.com/">mian</source>
+    </item>
+    <item>
+      <title>DODOR#000a01-WEEK1-WP</title>
+      <link>https://dodor.top/2026/02/09/DODOR-000a01-WEEK1-WP/</link>
+      <guid isPermaLink="true">https://dodor.top/2026/02/09/DODOR-000a01-WEEK1-WP/</guid>
+      <pubDate>Mon, 09 Feb 2026 00:00:00 GMT</pubDate>
+      <description>misc: [REDACTED] 题目为（涂黑，修改）过后的一个pdf，我们可以在第一个涂黑位置找到第一段敏感字符串，直接通过文字编辑功能将颜色改为白色再复制出来得到第一个字符串 1:PAR4D0X 。( 然后在第二个涂黑的位置在文字编辑的模式下可以看到以下内容 因为字体原因无法直接复制，选着直接图像识别。三段经典JWT，第一段是加密方式，第二段为内容，第三段为签名，经过base64解码得出第二个字符串 2:AllCl3arToPr0ceed 随后在图片位置有处涂黑，拉对比度和亮度识别出第三个字符串 3:Sh4m1R 最后在检查pdf的文件结构时发现其尾部有2个%EOF为结尾，可知为pdf的增量更新，第四个字符藏在旧版本被删掉的那一页里。 我们现在要做的就是将那删掉的一页恢复，也就是定位到第一个%EOF的位置对pdf进行切片，通过grep找到%EOF的位置。 计算%EOF的代码如下 with open ( &quot;manual.pdf&quot; , &quot;rb&quot; ) as f_in : file = f_in . read ( ) with open ( &quot;manual_old.pdf&quot; , &quot;wb&quot; ) as f_out : f_out . write ( file [ : 234721 ] ) 打开manual_old.pdf 找到第四段字符串 4:D0cR3qu3st3r_Tutu ,最后连接得到flag。 web 魔理沙的魔法目录 用F12及网络保存日志可知，每过一定时长，服务器会发送一个record和一个check的请求，record请求荷载为{“time”:10}，而题目对身份没有做限制，可以直接对/record用post的application/json传参{“time”:7200}(大于1小时) 最终访问/check得到flag为： 博丽神社的绘马挂 题目说明紫在归档完毕的绘</description>
+      <source url="https://dodor.top/">DODOR</source>
+    </item>
+    <item>
+      <title>论文阅读笔记：Apple Silicon 上的地址预测和侧信道</title>
+      <link>https://summ2.link/categories/Study/apple-slap/</link>
+      <guid isPermaLink="true">https://summ2.link/categories/Study/apple-slap/</guid>
+      <pubDate>Mon, 09 Feb 2026 00:00:00 GMT</pubDate>
+      <description>Paperreading: SLAP: Data Speculation Attacks via Load Address Predictionon Apple Silicon https://ieeexplore.ieee.org/document/11023377 Abstract 这篇论文研究了 Apple Silicon 上的 Load Address 预测机制 (LAP).通过对 LAP 的分析、利用实现了通过侧信道的信息泄漏，绕过 ASLR, 影响控制流，并且在 Safari 中构造了一个越界读原语. Speculation and Spectre 现代 CPU 为了提升性能，往往会引入预测执行技术 (Speculative Execution).例如分支预测 (branch prediction),其中动态分支预测会基于运行时的动态执行信息，自适应地对分支预测情况做动态调整: State diagram of 2-bit saturatingcounter Spectre 是一个利用预测执行来获取敏感数据的漏洞，它通过侧信道，获取 CPU 预测执行错误产生的敏感数据. 为了进一步提高 CPU 的性能，架构师还提出了对数据流的预测来缓解数据冒险 (Data Hazards).本篇论文主要聚焦于这种现代 CPU 上的数据预测机制以及其安全性的研究. Background Cache Organizationon Apple Silicon Apple CPUs 使用大小核的架构将核心分为 Performance (P)cores 和 Efficiency (E) cores. 每个核心都有私有的 L1caches 和同种核心共享的 L2 caches. 这些缓存划分为缓存组，对于任何一个内存地址，只能存放到由这个地址部分确定的缓存组中. Side-Channel </description>
+      <source url="https://summ2.link/">summ2</source>
+    </item>
+    <item>
+      <title>勇闯纳斯达克：复盘我的美股第一年</title>
+      <link>https://github.red/us-stock-1-year/</link>
+      <guid isPermaLink="true">https://github.red/us-stock-1-year/</guid>
+      <pubDate>Mon, 02 Feb 2026 00:00:00 GMT</pubDate>
+      <description>一年多以前，我还对普通人炒股这种事嗤之以鼻。我觉得那就是庄家做局坑人割韭菜的玩意，钱进了股市注定会血本无归。 每当我看到身边有去炒股的人，我都会有种莫名的优越感，觉得自己才是保持清醒看透本质的聪明人。就像《创世纪》里霍景良的经典台词：“每天九点钟坐车上班，每个月也就挣那一万几千，省吃俭用玩股票，妄想一朝发财，他们根本就不知道真正的大赢家是什么人。” 同时我还极度厌恶风险，大部分的资产都集中在低风险的理财产品中（如微众银行的活期+ Plus，工资到手又上交公司了属于是）。这类产品基本不会有回撤，最多就是因为市场动荡某天收益为 0 而已。但这偶尔的收益为 0 也会让我感觉自己亏了钱，然后开始内耗。🤣 事情的转机发生在 2024 年末，受 KM 上同事的推荐，我去读了《金钱心理学》这本书。这本书主要想传达的是储蓄和复利的力量。书中虽然强调要控制风险并坚持足够长的时间，让复利发挥奇效，但并没有否定充满风险的股市，反倒是用巴菲特的例子来说明了价值投资的重要性。 这本书极大地改变了我对股市的看法，我觉得可以拿出储蓄里的一点小钱，去长期投资一些优质标的，来博取更高的收益。 2025 年的春节，我提前几天回了深圳，赶在过年放假前的工作日，去香港办了卡。具体可以看我小红书的 这篇笔记 。当时开了汇丰银行和众安银行两家的卡。众安是全程线上办理，上传了出入境记录后，很快就开通了。汇丰则是因为名字重名的问题，无法当场下卡，只能回去等实体卡和密码函的信件寄到家里。 最后果然不出意外的出意外了，后续我一直没能收到汇丰的信件。但因为众安银行的账户已经可以用来入金了，也就一直没管这事。去年 6 月想起来了，打电话让汇丰补发信件，又是过了好久，卡和密码总算寄到了。然而使用 App 激活时又提示出错了，最后还是去年 10 月国庆假期时，抽了一天时间去香港线下激活。但汇丰的卡也不是一点用处没有，我之前 Hack</description>
+      <source url="https://github.red/">E99p1ant</source>
+    </item>
+    <item>
+      <title>AI 与复调</title>
+      <link>https://pnck.github.io/2026/01/27/ai-polyphony/</link>
+      <guid isPermaLink="true">https://pnck.github.io/2026/01/27/ai-polyphony/</guid>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 GMT</pubDate>
+      <description>本文包含以下章节： Piece of Reimagined Blob Opera A Tiny Fugue （正文已省略，请访问站点阅读全文）</description>
+      <source url="https://pnck.github.io/">GeruzoniAnsasu</source>
+    </item>
+    <item>
+      <title>可能是最优雅的在线b站视频下载器</title>
+      <link>https://sccube.link/new_bili_downloader/</link>
+      <guid isPermaLink="true">https://sccube.link/new_bili_downloader/</guid>
+      <pubDate>Tue, 20 Jan 2026 00:00:00 GMT</pubDate>
+      <description>前言 标题党致歉：你要反驳我我就再多加几个定语（ 该工具旨在不安装第三方工具客户端直接下载到b站上的高清视频、提取封面，IOS适用。 早在两年前，我就写过一个b站视频解析器，可以获取到mp4视频直链 但在不久之后，由于b站风控机制的更新，用于解析视频链接的服务器IP被加入黑名单了。见 哔哩哔哩Api接口-412风控问题 多次尝试绕过风控都无果后，我放弃了维护这个项目。而且这个mp4直链视频流接口也不知道是给啥东西用的，有些视频没有这条流，所以体验也不太好。 前些天突发兴致把整个项目重构了一下 （太强大了Gemini3 使用 新版本还是之前那个域名，直接访问 bili.sccube.link 即可 新加入功能：自定义下载的音视频流 注：该视频为B站官方的4K HDR免费演示片，实际正常视频无法获取到大会员清晰度。 （除非给我打点钱我去给解析账号买个会员 实现 Referer防盗链 这个机制原本就有。之前的做法是用自己服务器做了个代理中转，结果就是IP被ban了。 新版本使用NextJS，自带服务端可以中转api请求，服务端可在Vercel边缘运行。 DASH视频流 前文提到，原本那个获取mp4的接口非常不稳定，还可能获取不到高清晰度。（参考： bilibili-API-collect#606 ） 现在较稳定的是DASH格式的视频流，优点是可以一次性获取到所有分辨率的流，缺点是音视频流分开了，要进行合并。 WBI 签名鉴权 Web端新的风控手段，部分接口不签名可能会被拦截。 签名方式： WBI 签名 | BAC Document 视频合并 使用 WebAssembly 加载 ffmpeg 进行网页内视频合并，省去了本地安装 ffmpeg 的麻烦 麻烦的 IOS Safari 由于浏览器安全设定，无法直接下载跨域资源，所以会在新标签页中打开视频播放。 电脑或安卓倒无所谓，右下角三</description>
+      <source url="https://sccube.link/">ScaredCube</source>
+    </item>
+    <item>
+      <title>破碎的学P和美铃交换了罪孽【学园偶像大师/怪文书】</title>
+      <link>https://sccube.link/gakumas_fanfiction_Misuzu/</link>
+      <guid isPermaLink="true">https://sccube.link/gakumas_fanfiction_Misuzu/</guid>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 GMT</pubDate>
+      <description>该文章内容非原创，为翻译/转载 原帖： 【閲覧注意】壊れかけのPと秦谷美鈴 文章包含较糟糕的成分，请谨慎阅读 这是一个关于濒临崩溃的学园制作人与美铃独占欲相互交换的故事。以美铃视角展开的短篇，包含对话，请注意文中涉及人身事故的描写。 篇幅较长，请欣赏。 明明是个异常炎热的夏天，唯独今天一直很凉爽。微风宜人，让我比平时更提不起劲去练习。 我和制作人两个人单独出门。有蓝天，有舒适感，有我深爱的人，一切都在——唯一缺少的，大概就是暮蝉的鸣叫声了。 一只脚已踏入都市的郊外城镇。我们离开了位于车站正对面、在这之中也格外冷气充足的、毫无生气的办公室，他难得地“呼”地舒了一口气。 「这次的外出就到这里吧——辛苦了，秦谷同学。」 「嗯。您也辛苦了，制作人先生。」 我转向他，将话语递还给他，尽可能在其中倾注了我独有的体贴。 「……不过还真是少见呢。秦谷同学你居然会主动提出，想亲自去看看这次的舞台。」 「哎呀。作为偶像，这不是理所当然的吗？而且，天气这么好，又这么凉爽。如果能两个人一起出门的话，我觉得会非常美妙。」 我轻轻地将并排的肩膀靠近。他的视线随之移动。 平时的话，他会因为立场之类的原因而退开一步，但这次却没有提及，是因为疲惫吗？还是说，他正在一点点地接纳我呢？ ——真希望是后者。 「如果你能理解的话，我倒是希望你一直这样……不过，今天也顺便进行了简单的商谈和问候，累了吧。正好列车要来了，请在车上好好休息。」 「嗯，那就恭敬不如从命了。」 我接受了他那与往常一样、不自觉流露出的温柔。 并非因为他是制作人——他那与生俱来的温柔，此刻正只为我一人倾注，这个事实让我爱怜得无以复加。 穿过检票口时，我感觉到一种粘稠、暗红、几乎要沸腾的情感在翻涌，这情感称之为恋爱感情都显得过于黏腻。为了不让他察觉，我尽量编织出礼貌的措辞。 「……制作人先生您看起来才相当疲惫呢。怎么样？要不要一起在摇晃的列车上打个</description>
+      <source url="https://sccube.link/">ScaredCube</source>
+    </item>
+    <item>
+      <title>GOLANG子模块移动与GITHUB ACTION工作流重构</title>
+      <link>https://www.intmian.com/archives/nqLKQGgE</link>
+      <guid isPermaLink="true">https://www.intmian.com/archives/nqLKQGgE</guid>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 GMT</pubDate>
+      <description>背景 我在 《从GITHUB ACTION起搭建简易CI/CD系统》 一文中提到了一个简单的 GITHUB CI 工作流，它大大节约了我在个人运维上花费的时间。 但是因为我给我的线上环境降了配置（典中典 1c2g），暴露出了很多问题：打包需要消耗大量资源（特别是内存资源不足的情况下，需要通过 --m</description>
+      <source url="https://www.intmian.com/">mian</source>
+    </item>
+    <item>
+      <title>不容错过的2025年度漏洞：React2Shell（CVE-2025-55182）分析</title>
+      <link>https://lorexxar.cn/2025/12/31/react2shell/</link>
+      <guid isPermaLink="true">https://lorexxar.cn/2025/12/31/react2shell/</guid>
+      <pubDate>Wed, 31 Dec 2025 00:00:00 GMT</pubDate>
+      <description>2025年12月3日，时隔4年，安全圈又一个通杀环境的核弹漏洞被公开，CVSS评分10.0，影响范围React 19+全版本，Next.js 15/16，无条件默认环境RCE漏洞，史称React2shell。 该漏洞由安全研究员 Lachlan Davidson 于 2025 年 11 月 29 日发现，在3号被公开 https://www.tenable.com/blog/react2shell-cve-2025-55182-react-server-components-rce 最早的版本大家讨论的结论是，只有使用rsc作为后端的环境才会受到漏洞的利用，主要原因还是受到了最早版本poc的影响，也就是ejpir专门构造的漏洞环境和poc。 但是很快maple3142在12月5日发布了真正的poc https://gist.github.com/maple3142/48bc9393f45e068cf8c90ab865c0f5f3 在更快的时间内，next.js默认环境全版本通杀直接影响了以dify为代表的许多平台，一下子引爆了漏洞的影响范围，漏洞正式进入2阶段，大范围利用以及企业内部自查阶段。 漏洞影响范围 影响范围包括 react-server：19.0.0，19.1.0，19.1.1，19.2.0 Next.js：14.3.0-canary、15.x 、16.x 修复补丁版本包括 React：19.0.1、19.1.2 、19.2.1 Next.js：14.3.0-canary.88、15.0.5、15.1.9、15.2.6、15.3.6、15.4.8、15.5.7、16.0.7 简单的漏洞演示 最简单的漏洞演示非常简单，直接起一个默认环境的next.js即可 poc直接用maple的即可（这里要注意这个poc不能用来打线上环境，会打挂的） 1 2 3 4 5 6 7 </description>
+      <source url="https://lorexxar.cn/">LoRexxar</source>
+    </item>
+    <item>
+      <title>MWY 2025</title>
+      <link>https://blog.naclwww.com/blog/mwy25/</link>
+      <guid isPermaLink="true">https://blog.naclwww.com/blog/mwy25/</guid>
+      <pubDate>Wed, 31 Dec 2025 00:00:00 GMT</pubDate>
+      <description>Dream~~</description>
+      <source url="https://blog.naclwww.com/">NaCl</source>
+    </item>
+    <item>
+      <title>0CTF 2025 Writeup</title>
+      <link>https://summ2.link/categories/CTF/0ctf2025/</link>
+      <guid isPermaLink="true">https://summ2.link/categories/CTF/0ctf2025/</guid>
+      <pubDate>Sun, 21 Dec 2025 00:00:00 GMT</pubDate>
+      <description>赛时做了一题，总觉得自己越来越没有心力和时间投入 CTF 了... easypwn checksec 为了提高可读性，在 IDA 中修改了一些变量和函数名. 根据程序逻辑，或者观察输入输出可以发现这是一个大数计算器，支持 + - * / ( ) 和十进制数字的输入. 程序有一个操作是将栈指针放入堆中 且有对其的自增、自减操作: 很遗憾这里限制在了 DWORD , 所以并没有实际的栈溢出问题，不过存在整数的上溢和下溢. 一开始我并没有找到可利用的漏洞点，不过由于本题的输入非常结构化，我们可以考虑对其 fuzzing. 大约 20 分钟后，确实找到了一些可引起 crash 的输入: 使用 casr-cli , 得到了一些有趣的分析结果: 着重对 ReturnAv 的 case 进行分析.先将这几组输入在 gdb 中复现一遍，发现程序出现了返回地址非法引起的段错误 Vulnerabilities 调试发现，这是由于在 main 中程序尝试将计算结果写回到栈中时，对指针的自增操作缺乏边界检查，导致了栈溢出: Exploit 接下来的工作就是如何找到哪个输入影响到了返回地址，已知如下的输入可以产生溢出 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111/*/1/*//1111111111 观察到这里只有 * 和 / ,我们猜测程序进行了乘除相关的运算。为了方便验证，可以把上面的大数换成相近的以 2 为底的指数. 1119872371088902105278721140284222139060822748617324767449994550481895935590080472690438746635803557888/*/1/*//</description>
+      <source url="https://summ2.link/">summ2</source>
+    </item>
+    <item>
+      <title>DODOR-blog</title>
+      <link>https://dodor.top/2025/12/20/DODOR-blog/</link>
+      <guid isPermaLink="true">https://dodor.top/2025/12/20/DODOR-blog/</guid>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 GMT</pubDate>
+      <description>hello,this is my first blog.In my blog ,I’ll share sth interesting and public my wp.Thanks for reading.</description>
+      <source url="https://dodor.top/">DODOR</source>
+    </item>
+    <item>
+      <title>理解 Git 中的“分离 HEAD”状态及其应对方案</title>
+      <link>https://www.intmian.com/archives/TVIFp8rw</link>
+      <guid isPermaLink="true">https://www.intmian.com/archives/TVIFp8rw</guid>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 GMT</pubDate>
+      <description>现象 在分离 HEAD 提交导致无法推送，检出头节点却丢失改动 在使用 Git 过程中，我遇到这样一个问题：修改了代码并提交，但 GitHub Desktop 显示“无法在分离的 HEAD 上同步到远程仓库”。切换回 master 分支时，所有改动好像“丢失”了，没有任何提交记录。 拉去git项目后</description>
+      <source url="https://www.intmian.com/">mian</source>
+    </item>
+    <item>
+      <title>A POSIX-compliant rewrite of reresolve-dns.sh</title>
+      <link>https://csmantle.top/2025/12/14/a-posix-compliant-rewrite-of-reresolve-dns-sh.html</link>
+      <guid isPermaLink="true">https://csmantle.top/2025/12/14/a-posix-compliant-rewrite-of-reresolve-dns-sh.html</guid>
+      <pubDate>Sun, 14 Dec 2025 00:00:00 GMT</pubDate>
+      <description>The script Please be careful with line endings if you’re copy-pasting the script from below. If you’re interested in the story behind it, please scroll down to #background-story. #!/bin/sh # SPDX-License-Identifier: GPL-2.0 # # POSIX sh-compliant rewrite of reresolve-dns.sh. # # Notes for BusyBox-based coreutils: # * A POSIX-compliant tr(1) is expected for [:upper:] and [:lower:]. # # Copyright (C) 2015-2020 Jason A. Donenfeld &lt;Jason@zx2c4.com&gt;. All Rights Reserved. # Copyright (C) 2025 Rong Bao &lt;webmaster@csmantle.top&gt;. # # Link: https://github.com/WireGuard/wireguard-tools/blob/master/contrib/reresolve-dns/reresolve-dns.sh # Link: https://gist.github.com/CSharperMantle/ffff2a5e781fe2e4adff22a293315a65#file-reresolve-dns-posix-sh set -e export LC_ALL=C trim() { echo &quot;$1&quot; | sed &apos;s/^[[:spac</description>
+      <source url="https://csmantle.top/">Mantle</source>
+    </item>
+    <item>
+      <title>DASCTF 2025</title>
+      <link>https://sh10rl.top/posts/dasctf2025/</link>
+      <guid isPermaLink="true">https://sh10rl.top/posts/dasctf2025/</guid>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 GMT</pubDate>
+      <description>ezmac 参考： https://blog.imipy.com/post/macos-shellcode-cheat-sheet.html https://github.com/radareorg/radare2/blob/master/libr/include/sflib/darwin-arm-64/ios-syscalls.txt https://github.com/radareorg/radare2/blob/master/libr/include/sflib/darwin-arm-64/ios-syscalls.txt 去掉一个花指令： __text:00000001000003A8 00 00 80 D2 MOV X0, #0 __text:00000001000003AC 00 00 00 CB SUB X0, X0, X0 [ ... ] __text:00000001000003C4 E4 03 00 AA MOV X4, X0 __text:00000001000003C8 9F 00 00 F1 CMP X4, #0 [ ... begin] __text:00000001000003CC 40 01 00 54 B.EQ loc_1000003F4 __text:00000001000003D0 25 00 00 90 A5 EC ADRL X5, input __text:00000001000003D0 00 91 __text:00000001000003D8 86 04 00 D1 SUB X6, X4, #1 __text:00000001000003DC A5 00 06 8B ADD X5, X5, X6 ; byte_10000403A __text:00000001000003E0 A7 00 40 39 LDRB W7, [X5</description>
+      <source url="https://sh10rl.top/">Shiori</source>
+    </item>
+    <item>
+      <title>eezzjs</title>
+      <link>https://blog.naclwww.com/blog/eezzjs/</link>
+      <guid isPermaLink="true">https://blog.naclwww.com/blog/eezzjs/</guid>
+      <pubDate>Mon, 01 Dec 2025 00:00:00 GMT</pubDate>
+      <source url="https://blog.naclwww.com/">NaCl</source>
+    </item>
+  </channel>
+</rss>
