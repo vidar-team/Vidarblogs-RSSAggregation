@@ -5,13 +5,13 @@
     <link>https://feed.vidar.team/</link>
     <description>Vidar-Team 成员博客 RSS 聚合</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 31 Dec 2232 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 01 Jan 2233 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://feed.vidar.team/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>「arkerny 和 cHAR0N 的 HDU 食用指北」目录</title>
       <link>https://blog.akn.moe/2233/01/01/hdu-food-list/</link>
       <guid isPermaLink="true">https://blog.akn.moe/2233/01/01/hdu-food-list/</guid>
-      <pubDate>Mon, 31 Dec 2232 00:00:00 GMT</pubDate>
+      <pubDate>Tue, 01 Jan 2233 00:00:00 GMT</pubDate>
       <description>本文档已不做目录整理。 可以通过筛选标签 #食用指北 来查阅目录</description>
       <source url="https://blog.akn.moe/">arkerny</source>
     </item>
