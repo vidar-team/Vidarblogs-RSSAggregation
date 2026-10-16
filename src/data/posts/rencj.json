@@ -1,0 +1,117 @@
+{
+  "author": {
+    "id": "Rencj",
+    "name": "Rencj",
+    "url": "https://blog.rencj.top/"
+  },
+  "posts": [
+    {
+      "title": "2026 网络赛和 AFO",
+      "url": "https://blog.rencj.top/posts/algo/2026online-contest/index/",
+      "date": "2026-10-15",
+      "summary": "2026 网络赛和 AFO · 算法竞赛"
+    },
+    {
+      "title": "ACM竞赛板子",
+      "url": "https://blog.rencj.top/posts/algo/template/index/",
+      "date": "2026-08-31",
+      "summary": "ACM竞赛板子 · 算法竞赛"
+    },
+    {
+      "title": "第二十六届杭电校赛",
+      "url": "https://blog.rencj.top/posts/algo/hdu26race/index/",
+      "date": "2026-06-15",
+      "summary": "第二十六届杭电校赛 · 算法竞赛"
+    },
+    {
+      "title": "XCTF Keyword",
+      "url": "https://blog.rencj.top/posts/ctf/problem/misc/xctf-keyword/index/",
+      "date": "2026-04-26",
+      "summary": "XCTF Keyword · CTF"
+    },
+    {
+      "title": "GPLT2026天梯赛",
+      "url": "https://blog.rencj.top/posts/algo/gplt2026/index/",
+      "date": "2026-04-20",
+      "summary": "GPLT2026天梯赛 · 算法竞赛"
+    },
+    {
+      "title": "Hello",
+      "url": "https://blog.rencj.top/posts/posts/hello/index/",
+      "date": "2026-04-19",
+      "summary": "Hello · 日常"
+    },
+    {
+      "title": "Hgame2026 WP",
+      "url": "https://blog.rencj.top/posts/ctf/hgame2026/index/",
+      "date": "2026-02-15",
+      "summary": "Hgame2026 WP · CTF"
+    },
+    {
+      "title": "退役前要做的100件事",
+      "url": "https://blog.rencj.top/posts/algo/afo100/index/",
+      "date": "2022-11-23",
+      "summary": "退役前要做的100件事 · 算法竞赛"
+    },
+    {
+      "title": "关于部分学过的算法统计",
+      "url": "https://blog.rencj.top/posts/algo/learn_algo/index/",
+      "date": "2022-11-21",
+      "summary": "关于部分学过的算法统计 · 算法竞赛"
+    },
+    {
+      "title": "CF1009E题解",
+      "url": "https://blog.rencj.top/posts/algo/CF1009E/index/",
+      "date": "2022-11-12",
+      "summary": "CF1009E题解 · 算法竞赛"
+    },
+    {
+      "title": "CSP-S2022游记",
+      "url": "https://blog.rencj.top/posts/algo/csp2022/index/",
+      "date": "2022-10-31",
+      "summary": "CSP-S2022游记 · 算法竞赛"
+    },
+    {
+      "title": "Atcoder ABC220E",
+      "url": "https://blog.rencj.top/posts/algo/ABC220E/index/",
+      "date": "2022-10-10",
+      "summary": "Atcoder ABC220E · 算法竞赛"
+    },
+    {
+      "title": "CF随机做题",
+      "url": "https://blog.rencj.top/posts/algo/CF%E9%9A%8F%E6%9C%BA%E5%81%9A%E9%A2%98/index/",
+      "date": "2022-09-29",
+      "summary": "CF随机做题 · 算法竞赛"
+    },
+    {
+      "title": "Trick",
+      "url": "https://blog.rencj.top/posts/algo/trick/index/",
+      "date": "2022-09-29",
+      "summary": "Trick · 算法竞赛"
+    },
+    {
+      "title": "不会的题",
+      "url": "https://blog.rencj.top/posts/algo/%E4%B8%8D%E4%BC%9A%E7%9A%84%E9%A2%98/index/",
+      "date": "2022-09-14",
+      "summary": "不会的题 · 算法竞赛"
+    },
+    {
+      "title": "UVA12412 A Typical Homework (a.k.a 师兄帮帮忙)题解",
+      "url": "https://blog.rencj.top/posts/algo/UVA12412/index/",
+      "date": "2022-03-10",
+      "summary": "UVA12412 A Typical Homework (a.k.a 师兄帮帮忙)题解 · 算法竞赛"
+    },
+    {
+      "title": "CF507E Breaking Good题解",
+      "url": "https://blog.rencj.top/posts/algo/CF507E/index/",
+      "date": "2022-02-18",
+      "summary": "CF507E Breaking Good题解 · 算法竞赛"
+    },
+    {
+      "title": "洛谷P2308 添加括号",
+      "url": "https://blog.rencj.top/posts/algo/P2308/index/",
+      "date": "2022-02-18",
+      "summary": "洛谷P2308 添加括号 · 算法竞赛"
+    }
+  ]
+}

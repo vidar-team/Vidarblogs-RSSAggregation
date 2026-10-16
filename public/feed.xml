@@ -16,6 +16,14 @@
       <source url="https://blog.akn.moe/">arkerny</source>
     </item>
     <item>
+      <title>2026 网络赛和 AFO</title>
+      <link>https://blog.rencj.top/posts/algo/2026online-contest/index/</link>
+      <guid isPermaLink="true">https://blog.rencj.top/posts/algo/2026online-contest/index/</guid>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+      <description>2026 网络赛和 AFO · 算法竞赛</description>
+      <source url="https://blog.rencj.top/">Rencj</source>
+    </item>
+    <item>
       <title>iOS 定位的矛与盾</title>
       <link>https://www.intmian.com/archives/9IhsvO1T</link>
       <guid isPermaLink="true">https://www.intmian.com/archives/9IhsvO1T</guid>
@@ -246,6 +254,14 @@
       <pubDate>Sun, 06 Sep 2026 00:00:00 GMT</pubDate>
       <description>很长一段时间没有写博客了，难得工作上不忙了，周末也不用加班了，终于有时间来整点活写点东西了。 上周我去洛阳看了许嵩的演唱会，时隔 15 年终于在线下见到真人了，也算是圆梦了。这次掐点在大麦刷了十多分钟，成功抢到了内场 ￥1618 的 VIP 票。 演唱会现场我一开始还是比较拘谨地坐着的，直到演出开始灯一关，第一首新歌《皮下》直接爆了，我都没想到自己会这么激动，全程大声跟唱+挥荧光棒，不知道有没有影响到两边坐着的小姐姐，至少我觉得自己是完全赚回票价了。😄 现场演出的舞台和灯光都很棒，许嵩现场的唱功也很好。但由于花车巡游是在舞台两侧的，反而看台的座位更有性价比些。 跟前几年在上海看邓紫棋演唱会，荧光棒拴在椅子上不同的是，这次许嵩演唱会的荧光棒是可以带走的。后来还发现有人在闲鱼上批量卖现场的荧光棒，一根就卖 20 来块。 忒修斯之荧光棒 我在演唱会结束回到酒店时，手里的荧光棒就已经不亮了。在小红书上看到有很多教人重新点亮荧光棒的笔记，大致思路都是拆开后给里面焊上一个开关或者其他的板子。我寻思这不就是个“忒修斯之船”嘛，把荧光棒里面的东西都换了，就保留个灯泡和外面的演唱会贴纸，实际上已经不是原来的荧光棒了。 我并不喜欢这种拆解改造的办法（实际是因为我没有电烙铁这些工具），想着有没有更优雅的办法来解决，一顿搜索后找到了 「✨ 荧光棒复活计划」 https://github.com/HansZ8/EncoreLightSticks 这个项目，该项目通过控制射频发射模块，发射出与演唱会现场相同的信号，直接点亮荧光棒。 作者还十分贴心地 亲自 写了 介绍文档 ，提到演唱会荧光棒场控使用 433MHz 射频 (RF) 控制，编码方式为曼彻斯特编码 Manchester Encoding ，我上次看到这个编码还是在 HGAME 2018 的 Misc 题里。数据包的控制数据里带有 R、G、B </description>
       <source url="https://github.red/">E99p1ant</source>
+    </item>
+    <item>
+      <title>ACM竞赛板子</title>
+      <link>https://blog.rencj.top/posts/algo/template/index/</link>
+      <guid isPermaLink="true">https://blog.rencj.top/posts/algo/template/index/</guid>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 GMT</pubDate>
+      <description>ACM竞赛板子 · 算法竞赛</description>
+      <source url="https://blog.rencj.top/">Rencj</source>
     </item>
     <item>
       <title>Rust的虚表与胖指针及其安全应用</title>
@@ -488,6 +504,14 @@
       <source url="https://csmantle.top/">Mantle</source>
     </item>
     <item>
+      <title>第二十六届杭电校赛</title>
+      <link>https://blog.rencj.top/posts/algo/hdu26race/index/</link>
+      <guid isPermaLink="true">https://blog.rencj.top/posts/algo/hdu26race/index/</guid>
+      <pubDate>Mon, 15 Jun 2026 00:00:00 GMT</pubDate>
+      <description>第二十六届杭电校赛 · 算法竞赛</description>
+      <source url="https://blog.rencj.top/">Rencj</source>
+    </item>
+    <item>
       <title>聊聊即将出现的 AGI 图景</title>
       <link>https://pnck.github.io/2026/06/05/AGI-and-LLM/</link>
       <guid isPermaLink="true">https://pnck.github.io/2026/06/05/AGI-and-LLM/</guid>
@@ -600,6 +624,14 @@
       <source url="https://lorexxar.cn/">LoRexxar</source>
     </item>
     <item>
+      <title>XCTF Keyword</title>
+      <link>https://blog.rencj.top/posts/ctf/problem/misc/xctf-keyword/index/</link>
+      <guid isPermaLink="true">https://blog.rencj.top/posts/ctf/problem/misc/xctf-keyword/index/</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <description>XCTF Keyword · CTF</description>
+      <source url="https://blog.rencj.top/">Rencj</source>
+    </item>
+    <item>
       <title>基于 Backblaze B2 对象存储的图床与国内外的 CDN 分流</title>
       <link>https://blog.akn.moe/2026/04/25/image-cdn-split/</link>
       <guid isPermaLink="true">https://blog.akn.moe/2026/04/25/image-cdn-split/</guid>
@@ -638,6 +670,22 @@
       <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
       <description>已闭店 Apr 20, 2026 晚 一刷 菜单与价格 美团团购价格，当天的，供参考： 群友说外卖更加便宜，但是我不喜欢吃外卖： 店内的菜单，显然不划算： 菜品 arkerny 的评价： 量挺多的，和 cHAR0N 两人要吃撑了。 饭和米线都偏咸，感觉调味料放的有点多，吸满汤汁的炸蛋很咸了已经。 饮品方面冻柠茶还算说得过去，茶味没被淹没，不知道是香精还是真茶😂。 炸鲜奶非常一般（不过说不上难吃吧） 炸酱米线酸酸的，不吃酸的 akn 表示十分一般，番茄油泼小酥肉里面大量金针菇（cHAR0N 悲）。 小酥肉面粉占多数。 炸酱米线、番茄米线等名字里不带肉的就基本都不带肉类。但是性价比在校外比起来还算 ok。喜欢吃肉的可以绕过了（（（ 总体来说平平过吧。 cHAR0N 的评价： 忘记是什么汤的米线了（炸酱米线） 汤很好喝！！比番茄锅的汤好喝，也许单喝会比较咸，但是依然可以让人大炫一碗。 番茄油泼小酥肉（？是叫这个名字吗 据说线下更贵，但是多了一个炸蛋，上菜以后发现炸蛋有海碗的碗口那么大，蛋浸入汤汁后会稍微变软，在碗底支撑着上面的菜品。 那关于菜品，只能说我们在大量金针菇和豆芽菜中找到了少量小酥肉（没那么少）但是和菜比起来是少太多了，不如叫改名叫油泼金针菇。。。 番茄锅底单吃会比较咸，拌饭的话刚刚好。 其他菜品 冻柠茶：当你被正菜烫到舌头的时候来上一口，真的会感觉很爽…仿佛在盛夏从室外走进空调屋一般（前提是你没有牙齿敏感）（阿克尼杯具） 提拉米苏：是大众点评收藏+好评的赠送，很小一块，味道一般（赠品就不要再多想了啊喂） 上图。</description>
       <source url="https://blog.akn.moe/">arkerny</source>
+    </item>
+    <item>
+      <title>GPLT2026天梯赛</title>
+      <link>https://blog.rencj.top/posts/algo/gplt2026/index/</link>
+      <guid isPermaLink="true">https://blog.rencj.top/posts/algo/gplt2026/index/</guid>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
+      <description>GPLT2026天梯赛 · 算法竞赛</description>
+      <source url="https://blog.rencj.top/">Rencj</source>
+    </item>
+    <item>
+      <title>Hello</title>
+      <link>https://blog.rencj.top/posts/posts/hello/index/</link>
+      <guid isPermaLink="true">https://blog.rencj.top/posts/posts/hello/index/</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Hello · 日常</description>
+      <source url="https://blog.rencj.top/">Rencj</source>
     </item>
     <item>
       <title>关于我</title>
@@ -758,54 +806,6 @@
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
       <description>近期以 *Claw 为代表的智能体非常流行，其中不乏 Rust 语言的实现。因此，我试着在运行 Arch Linux for Loong64 的龙芯 3B6000 上“养”了一只龙虾，达到了不错的效果。 0. 前置条件 这是一篇笔记式博客，包含了多种仅适用于我本人系统环境的操作与考虑，其中有些已在文内标出，有些则不然。我的系统配置如下： 主板： Loongson-3B6000x1-7A2000x1-EVB 内核： Linux 6.19.6-arch1-1-csmantle-aosc-main-16k 如果你想跟随本篇博客进行操作，需要准备以下材料： 使用 Linux 系统与常见开发工具的经验； 能理解每步操作的目的、效果及对系统安全的影响 能不借助 LLM，利用手册、文档、Wiki 或搜索引擎进行故障检修 一个正常的网络环境； 30 分钟以上、一两个小时为宜的空余时间； 我在安装时花了一个下午，但主要是在多个 *Claw 实现与部署方案之间不断试错 Rust 编译器套件和 Cargo。 龙架构的 Rust 平台支持已较为完善，一般可以无痛原生编译。 1. 编译二进制 在 /opt 下创建目录并设置权限。我在这里选择将所有者设置为 csmantle:wheel、目录权限设为 drwxr-sr-x，是为了对齐 /opt 下软件全局所有的设计用途，实践中可以自行考量： 3.13. /opt : Add-on application software packages 3.13.1. Purpose /opt is reserved for the installation of add-on application software packages. – https://refspecs.linuxfoundation.org/FHS_3.0/fhs-3.0.html#optA</description>
       <source url="https://csmantle.top/">Mantle</source>
-    </item>
-    <item>
-      <title>通过某一题目学习安卓app逆向全流程</title>
-      <link>http://preview.seven.com/article/Android-reverse</link>
-      <guid isPermaLink="true">http://preview.seven.com/article/Android-reverse</guid>
-      <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
-      <description>😀 本文是在学习安卓逆向基础时跟着文章做的复现，同时配上自己的思考和理解做了更详细的解释，整理了一般app逆向的全流程。 了解逆向一个apk需要注意的点：加固，加解密 app无壳 基本app逆向流程： 找程序入口点 com.example.flag.MainActivity 是 Android主活动的完整类名，由 “包名 + 子包名 + 类名” 组成 从onCreat（）去找app加载的关键逻辑 💡 核心生命周期回调 包括： onCreate()：Activity首次创建时调用，适合进行界面初始化、数据绑定、ViewModel关联等操作。 onStart()：Activity变为可见时调用，可在此准备进入前台的资源。 onResume()：Activity进入前台并可与用户交互时调用，适合启动动画、相机预览等前台任务。 onPause()：Activity失去焦点但可能仍可见时调用，用于暂停不必要的操作或释放部分资源。 onStop()：Activity完全不可见时调用，适合释放大量资源或保存数据。 onDestroy()：Activity销毁前调用，用于最终清理资源。 onRestart()：Activity从停止状态重新启动时调用，可重新初始化在onStop中释放的资源。 app有壳 基本逆向流程： 加壳判断 有完整类名但没有相应MainActivity代码实现 通过观察APK文件是否在AndroidManifest.xml配置Applicaiton信息来判定,该app实现了一个自定义操作，多加了name字段，将 Application 类进行了自定义修改成了 com.SecShell.SecShell.ApplicationWrapper 来实现自己的加壳逻辑 App通过自定义的 ApplicationWrapper 类来启动壳程序 💡 梆梆加固原理 : 根据APK文</description>
-      <source url="http://preview.seven.com/">s3v3n</source>
-    </item>
-    <item>
-      <title>Hgame 2026</title>
-      <link>https://c0d4.ink/posts/hgame2026/</link>
-      <guid isPermaLink="true">https://c0d4.ink/posts/hgame2026/</guid>
-      <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
-      <description>https://hgame.vidar.club/training/9 week1 PVZ DIE 发现是一个封装在C++壳下的jar包 7zip打开gpvz.exe，解压 jadx分析一下gpvz文件夹，发现一个很扎眼的what_is_this.png 发现是“神秘仪式”的具体内容 运行游戏，用一点作弊技巧在结束前摆出神秘阵型，获得flag 看不懂的华容道 IDA分析 无符号表，一坨sub_xxxxx函数，没有头绪 先看看字符串 点进HuarongDao2026_Salt看看 跟踪到sub_1400266B0，发现是一个VM的depatcher VM控制华容道运作 game.bin就是操作码表 opcode： 0x15 ：读用户输入（交互输入“编号+方向”） 0x16 ：调用 sub_140011212 -&gt; sub_14001EC40 ，重建棋盘状态编码 0x18 ：对状态做哈希，写入寄存器 0x17 ：打印两个 64-bit 组成的节点值 0xE0/E1/E2/E3 ：跳转与条件判断 0xFF ：结束 棋盘编码 分析game.bin恢复初始棋盘为 [ P1 ][ P0 ][ P0 ][ P2 ] [ P1 ][ P0 ][ P0 ][ P2 ] [ P5 ][ P5 ][ P4 ][ P3 ] [ P6 ][ P8 ][ P4 ][ P3 ] [ P7 ][ --- ][ --- ][ P9 ] 加密算法为md5，不过不重要，可以通过编写bfs脚本直接跑出符合题目要求的路径，直接运行exe输入，获得最终棋盘hash 特别要注意题目追加的条件：操作路径顺序按照棋子编号从小到大 操作顺序wasd from collections import deque START = (1, 0, 3, 11, 10, 8, 12, 16, 13, 19) DIRS = [(&apos;w&apos;, </description>
-      <source url="https://c0d4.ink/">c0d4</source>
-    </item>
-    <item>
-      <title>一个python web应用的内存马代理</title>
-      <link>https://blog.naclwww.com/blog/pytmemshell/</link>
-      <guid isPermaLink="true">https://blog.naclwww.com/blog/pytmemshell/</guid>
-      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
-      <description>🐎🐎🐎🐎🐎🐎</description>
-      <source url="https://blog.naclwww.com/">NaCl</source>
-    </item>
-    <item>
-      <title>DODOR的hgame复现与知识点总结</title>
-      <link>https://dodor.top/2026/02/27/DODOR%E7%9A%84hgame%E5%A4%8D%E7%8E%B0%E4%B8%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</link>
-      <guid isPermaLink="true">https://dodor.top/2026/02/27/DODOR%E7%9A%84hgame%E5%A4%8D%E7%8E%B0%E4%B8%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</guid>
-      <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
-      <description>看过wp后的复现wwwww,留档做个记录。 打好基础 之前一直不知道Base100就是将每个字节（8位，值域0-255）映射到一个特定的表情符号。编码表通常包含256个不同的表情符号，每个符号对应一个唯一的字节值。编码过程直接将字节流转换为表情符号序列，解码则是反向操作。 例如，原始文本“Hello”（十六进制：48 65 6C 6C 6F）可能被编码为一串表情符号，如：🐟 🐠 🐡 🐡 🐢（具体符号因编码表而异）‌ 扔给ai识别说有85个表情自然就陷入了Base85(虽然后面还是会用到)非常明确肯定是base大家族。但是无论是从已知的形式hgame{}来看还是首字母来看都无法解密。（其实应该看到打好基础就知道是base的嵌套，当时没有想到。。。 经过base100,92，91，85，64，62，58，45，32后即可得到flag。 shiori不想找女朋友 这题完全是因为我自己的问题，直接用windows打开解压后发现只有一张图片，通过exiftool发现其中有一段json： { &quot;block&quot; : 1 , &quot;start_x&quot; : 10 , &quot;start_y&quot; : 10 , &quot;step_x&quot; : 7 , &quot;step_y&quot; : 7 , &quot;column_num&quot; : 450 } 一种隐写，起始位置和步长全标出来了写脚本复原： from PIL import ImageCHALLENGE_FILE = &quot;shiori.png&quot; OUTPUT_FILE = &quot;key.png&quot; def solve ( ) : img = Image . open ( CHALLENGE_FILE ) b = 1 sx = 10 sy = 10 dx = 7 dy = 7 w_blocks = 450 canvas_w = w_blocks * b canvas_h = 600 restored_im</description>
-      <source url="https://dodor.top/">DODOR</source>
-    </item>
-    <item>
-      <title>月の温度【辉夜姬×夜水母/MAD】</title>
-      <link>https://sccube.link/Kaguya-MAD/</link>
-      <guid isPermaLink="true">https://sccube.link/Kaguya-MAD/</guid>
-      <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
-      <description>&lt;iframe src=&quot;//player.bilibili.com/player.html?isOutside=true&amp;aid=116092412428667&amp;bvid=BV1EYZRBaEsS&amp;cid=36145727087&amp;p=1&quot; scrolling=&quot;no&quot; bord</description>
-      <source url="https://sccube.link/">ScaredCube</source>
-    </item>
-    <item>
-      <title>HGAME 2026 运维秘话</title>
-      <link>https://blog.woshiluo.com/posts/2026/02/hgame-magic/</link>
-      <guid isPermaLink="true">https://blog.woshiluo.com/posts/2026/02/hgame-magic/</guid>
-      <pubDate>Tue, 24 Feb 2026 00:00:00 GMT</pubDate>
-      <description>#import &quot;/typ/templates/blog.typ&quot;: * #show: main.with( title: &quot;HGAME 2026 运维秘话&quot;, desc: [又一年的 HGAME 2026 结束了！今年我负责运维背锅，特写此文记录遇到的各种情况。], date: &quot;2026-02-24&quot;, categories: ( &quot;notes&quot;, ), show-outline: false, ) == 前情提要 又一年的 HGAME 结束了！HGAME 是一个历史悠久的比赛了，有幸作为 HGAME 的运维还是很高兴的。 今年我们继续使用了 rx 佬的 ret2shell 平台。在我负责 Vidar Team 相关赛事的运营后，我一直希望平台能够维持稳定的长期的运营。HGAME 系列赛事几乎贯穿全年，从 MINI 的 8 月一路到 Final 的 4 月，每次都用新的平台也不利于数据的继承。 在非赛时，我们的平台会运行在协会的 PVE 上的一个 VM 中，并通过种种奇技淫巧反代到我们的公共外网服务器上。 == 意外和选型 === 美好的原计划 今年的比赛赛制继承了去年，由于已经没有提早开放平台或者关闭平台的概念，主要的问题就是如何维持赛时两周的负载。 同样继承自去年的还有来自杭电网络与计算协会（ICU）的支持，不过 ICU 的支持是要走流程联络的。今年是我和 NaCl 负责，这方面的进程在当时的我看来出乎意料的慢，现在来看应该是催的不够紧，还是不够理解学校的办事方法。 基于去年的成熟经验和杭电网络的现实情况，一开始的想法是这样的。从协会 PVE 迁移上云，前期完全上云，择机从云上迁移到协会 PVE 和 ICU 机器构成的多节点集群。 这里的困难其实是如何无痛迁移，数据库和队列尚且好说，ret2shell 会需要一个本地目录存取题目信息等数据。正常来说，一个 local</description>
-      <source url="https://blog.woshiluo.com/">woshiluo</source>
     </item>
   </channel>
 </rss>
