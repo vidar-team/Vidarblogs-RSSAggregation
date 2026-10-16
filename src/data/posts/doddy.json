@@ -10,6 +10,66 @@
       "url": "https://blog.hiirachan.moe/archives/1.html",
       "date": "2026-07-08",
       "summary": "如果您看到这篇文章,表示您的 blog 已经安装成功."
+    },
+    {
+      "title": "[2024.03.28] Aliyunctf Alibus 复现",
+      "url": "https://blog.hiirachan.moe/archives/473.html",
+      "date": "2024-03-28",
+      "summary": "解题思路 nc pwn5.aliyunctf.com 1337 查看 Hint 服务的配置文件位于容器 /etc/dbus-1/system.d/alibus.conf <!DOCTYPE busconfig PUBLIC \"-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN\" \"http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd\"> <busconfig> <auth>ANONYMOUS</auth> <allow_anonymous/> <policy context=\"default\"> <allow own=\"*\"/> <allow own_prefix=\"org.zbus\"/> <allow send_destination=\"*\"/> <allow send_type=\"method_call\"/> </policy> </busconfig> D-Bus 是一个为进程间通信提供简单方法的消息总线系统。 阅读 Freedesktop 提供的文档 ： Rules with the own or own_prefix attribute are checked when a connection attempts to own a well-known bus names. As a special case, own=\"*\" matches any well-known bus name. The well-known session bus normally allows any connection to own any name, while the well-known system bus normally does not allow"
+    },
+    {
+      "title": "[2023.06.27] D2550 小主机启动 64位 Linux 黑屏，修改内核启动参数屏蔽显卡驱动",
+      "url": "https://blog.hiirachan.moe/archives/462.html",
+      "date": "2023-06-27",
+      "summary": "最近在小黄鱼上购入了一块 D2550 工控主板，卖家发来时预装的 Windows 7 启动一切正常。可是当启动 Arch Linux 或是 OpenWRT 时刚开始滚屏就黑屏了。外接键盘按下大小写键指示灯有反应，说明系统内核并没有挂。而 Arch Linux 安装盘和 OpenWRT 并没有图形界面，不可能是图形界面出了问题。猜测问题出在显卡驱动上，D2550 附带的集显 GMA 500 属于比较古老的型号了。 于是编辑 Grub 启动项，在内核启动参数后添加 nomodeset 以屏蔽内核中的显卡驱动。启动后没有显卡驱动的支持，但操作终端问题不大。成功将系统安装到硬盘并配置好远程访问后，就可以断开显示器了。 另外，在网上搜索关键词 D2550 Linux 黑屏 搜到的结果大部分是主板附带的 BIOS 不支持启动 64 位操作系统。解决方法大多是刷 BIOS 或是更换 32 位的系统进行安装。我还是第一次听说 BIOS 不支持启动 64 位的操作系统，刷个 BIOS 就好了 这种说法，我对此持怀疑态度。我认为是 “64 位 BIOS” 修正了 GMA 500 的 BUG 使得 64 位内核可以正常驱动显卡。"
+    },
+    {
+      "title": "[2022.02.12]解决 Windows 10 视频暂停再播放后的随机卡顿问题",
+      "url": "https://blog.hiirachan.moe/archives/1644637514.html",
+      "date": "2022-02-12",
+      "summary": "封面配图PID 99456795 前言 众所周知，Win 10 和硬件厂商的驱动有数不清的小 Bug。 这些 Bug 虽不至于让系统一瞬崩掉，但总会在不经意间戳你一下。 已经忘了是多久以前开始的了，大概是 2020 年？总之在很久以前的某次 Win 10 大版本更新后，播放在线视频总会遇到莫名其妙的卡顿。这种卡顿总是发生在暂停一段时间后继续播放之时，看进度条很明显已经缓冲好了，缓冲速度也是 0.00 KB/s。我曾猜想它是个前端的 feature，为了保护版权、防止已被删除的视频继续播放，播放器被设计为需要请求服务器，获得响应后才可继续播放而引起的。直到昨晚追番的时候，卡顿期间我尝试调整系统音量，松开鼠标后整个任务栏都卡死了。看来这不是前端，又或者浏览器该背的锅。 调查 我的板载声卡是小螃蟹，上 Google 搜索 Realtek Audio Cut Out 等关键词可以得到许多相关的结果。其中 惠普论坛的一篇帖子 中提到了解决方案：关闭声卡休眠。 在耳机插入的状态下，Windows 在音频空闲时会命令声卡进入休眠状态，当有需要时重新唤醒。大概是为了优化声卡的底噪，顺带省个电吧。当有需求唤醒声卡时又发生了奇妙的阻塞，造成播放卡顿。不知道 Windows 在使用扬声器时是不是也会休眠声卡，也会触法这个 Bug？这个 Bug 最早提出的时间是 2019 年，微软和小螃蟹到现在还没修好，是不是屎山堆太高了不知从何处下手。 那么解决方法 暂时的解决方法上文已经提到了，关闭驱动的声卡休眠。 打开注册表，定位到 HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{4d36e96c-e325-11ce-bfc1-08002be10318}\\xxxx ，其中 xxxx 目录中 DriverDesc 的值与 Realtek 有"
+    },
+    {
+      "title": "[2021.04.13]给联发科(MediaTek)平台设备写入串号(IMEI)、MAC地址等设备标识信息",
+      "url": "https://blog.hiirachan.moe/archives/1618329330.html",
+      "date": "2021-04-13",
+      "summary": "封面配图PID 88970100 前言 ​ 刷MTK的东西你也不知道会在哪一步翻车，还好咱土制了一份救砖包并成功重现了桌面。 Format ALL + Download 一顿操作后，系统保住了，可每台机子被分配的唯一串号没了。使用SN Write Tool刷入串号时需要先准备好AP和MD（BP）这两个数据库。网上流传的大多只适合MT65系列的古董，而咱土制的线刷包又没有这两个文件，故需要从现有的系统（镜像）中提取出来。其他教程大多没有提到如何提取这两个东西，所以就有了本文以及读者您（ 需要备好的工具和软件 一台基于联发科Soc的移动设备 在此使用基于MT6739的某大牌翻译机 一根适用于上述设备与计算机互联的数据连接线 相信你已经有了 一台运行着 Windows 10 操作系统的计算机 正不正版无所谓 SP Maui Meta Tool 用于读取设备原序列号（Barcode）的格式，具体为什么要读这个下文会有说明 SN Write Tool 写号工具 本体 ，Maui META 做不到读写MAC地址，恢复MAC地址需要使用这个 待写入设备的完整固件线刷包 可选，里边有可能需要的Auth（部分大厂产品需要授权才可输入）以及刷写基带需要的 APDB 和 MDDB（俗称 AP 和 MD ），Android 9及以下版本的OS也可以从已有设备的system分区和vendor分区中找到，Android 10及以上好像需要ROOT权限才可读取这两个地方了，所以才需要从固件线刷包中获取。 完整固件线刷包通常使用联发科特制的 SP Flash Tool进行刷入，俗称救砖包，非 FastBoot 线刷包。 以上④和⑤以及需要的驱动可从 这个网站 下载，尽可能使用最新版本的，下载后请先查毒再进行安装。 安装软件及驱动 略 已经装好了懒得再重新安装截图 获取原序列号格式 ​ 最简单的方法是进入目"
+    },
+    {
+      "title": "[2020.08.19] OpenWRT 在某大学校园网环境下通过NAT方式配置IPv6互联网访问",
+      "url": "https://blog.hiirachan.moe/archives/1598021438.html",
+      "date": "2020-08-19",
+      "summary": "封面配图PID 19136833 今天试着玩了一下宿舍里的IPv6接入，在这里记录一下自己的踩坑过程 网络环境 博主所在的学校宿舍区采用DHCPv6的方式下发IPv6地址，无需拨号。接入墙上网口的终端只能获取到一个128前缀的IPv6地址。 查找了网上其他关于在OpenWRT路由器中对IPv6的配置过程，总的来说分为三类接入类型： 路由器作为中继 所有接入的客户端以及路由器本身的IPv6流量转发到OpenWRT路由器本身的IPv6地址，然后OpenWRT路由器再将流量转发到其IPv6网关。路由器作为接入客户端的下一跳。此接入类型要求上级网关可以分配一个IPv6地址 段 给路由器。博主尝试了在路由器上要求上级分配长度不同的地址段，但都没有成功。这大概率是因为上级（学校网络中心机房）没有配置 允许下级设备（学生们插在宿舍里的路由器）获取地址段。所以，路由器作为中续在博主所在的学校不适用。 其他选项都试过了，只有设置为disable可以顺利拿到地址 IPv6 穿透 路由器将WAN口和LAN口（包括无线网络接口，如果有的话）桥接在一起，路由器相当于一个交换机，转发接入的客户端的DHCPv6请求给上级，这样接入的客户端都可以从上级获取到一个IPv6地址了。而路由器对于接入设备发送的IPv4流量，则采用传统NAT的方法路由出WAN口。博主咱个人认为，配置穿透较为复杂（涉及到链路层和网络层的切换），加上需要手动配置IPv6防火墙，不小心手滑按错可就麻烦了。再加上 原生Android不支援也不计划支援DHCPv6 ，以及不能控制设备获取到的DNSv6地址（采用IPv6地址的DNS服务器地址），这个接入方法也被博主抛弃了。 传统 NAT 传统NAT就是传统NAT，路由器获取一个IPv6地址，同时向接入设备下发路由器自己给接入设备分配的内网地址（段）。路由器作为网关，所有流量流入路由器并经过路"
+    },
+    {
+      "title": "[2020.05.10] OpenWRT 系统隔离无线与有线网络 并实现特定无线设备访问有线网络（MAC 防火墙）",
+      "url": "https://blog.hiirachan.moe/archives/355.html",
+      "date": "2020-05-09",
+      "summary": "无线网络的本质决定了 — — 在无线信号覆盖范围内的任何人都可以对收集到的无线信号进行分析。如果网络协议本身不严密（有漏洞），那么攻击者就能加以利用。从这个角度（OSI的“物理层”）而言，“无线网络”的【攻击面】要显著高于“有线网络”。 ——编程随想 写在前面 为什么要给家里做网络隔离呢？其实还是为了满足我个人心里那丁点儿被害妄想。一般的家庭网络，如果没什么重要的设备，是不需要做网络隔离的，而且做了网络隔离还可能会影响手机与手机、手机与电脑之间的文件传输（QQ、ES 快传等功能）。当然，如果和我一样喜欢折腾，又担心内网中重要的资源被其他陌生设备，比如说父母用的蛤为手机偷窥（实际上蛤为有没有这么做我不知道）、被邻居借助某钥匙侵入，可以试一下像我这样在无线网与有线网中间插一道墙。隔离后的无线网设备，在未经授权的情况下只允许访问互联网。 我采用的方案是在 OpenWRT 中为无线设备重新分配一个新的内网网段，并根据无线设备的MAC地址允许个别设备与已有的有线网段通信。当然，这也不是绝对安全的，因为无线设备的MAC地址可以被伪造。但我家也不是开军火铺的，此方案我觉得已能防住 99% 的非法访问。 那么开始吧 ① 登陆 Openwrt 的 LUCI 管理界面，备份当前配置后切换到【网络】→【接口】选项卡，添加新接口。该接口配置如下： 项目 值 新接口名称 WLAN 协议 静态地址 桥接接口 勾上 接口 未指定（暂时选这个，后面设置无线网时再绑定） 建立新接口后，编辑这个新建的接口： 选项卡 项目 值 备注 常规选项 IPv4 地址 10.0.0.1/24 也可以输入其他的地址段，不要与已分配的有线网冲突即可 常规选项 IPv4 广播 10.0.0.255 保持默认即可 常规选项 IPv6 分配长度 已禁用 我这里屏蔽了无线设备的IPv6，避免给网络管理带来不必要的麻烦 高级设置 强制"
+    },
+    {
+      "title": "[2020.05.10]解决 Windows Defender 界面卡死的问题",
+      "url": "https://blog.hiirachan.moe/archives/329.html",
+      "date": "2020-05-09",
+      "summary": "最近从某不知名下载站撸了一份远古时期的免杀工具大合集，是一个压缩包。在 Chrome 发出下载完毕的通知后不久，整个压缩包就被 BugOS 10 自带的 Windows Defender 一瞬干掉了..进入 Windows Defender ，将 实时防护 关闭即可重新下载。反正也是放在虚拟机里解压玩的，影响不到真是系统。在使用一段时间后，以为这事情就这样解决了。但是从这时开始 Windows Defender 的图标就一直带着小红叉，戳进去给出提示，病毒和威胁防护需要执行操作。 然而交给 Defender 执行操作时，整个界面都卡死了。估计是需要处理的文件过多（整个压缩包内一次检出了约300个威胁），微软又没有将 Windows Defender 的界面优化好，最后导致了内存溢出什么的。在微软社区上也找到了相关的 报告 。然而如果这份报告和我这次遇到问题出自同一个原因，那么这个问题在 1709 版本的 BugOS 10 已经存在了，不知道为什么微软直到现在都没有修复..难道是触发的条件过于苛刻，以至于没有引起太多的关注？ 总之爬了一圈谷歌，找到了 Windows Defender 的扫描历史记录，存储在 C:\\ProgramData\\Microsoft\\Windows Defender\\Scans\\History\\Service 这个文件夹中。做好必要的备份后，用管理员权限删除文件夹中的所有文件， 重启系统 即可解决 Windows Defender 界面卡死的问题，同时 Windows Defender 内留下的所有杀毒记录都会被清除。"
+    },
+    {
+      "title": "[2020.03.15] WR1200JS 路由器在OpenWRT系统下双WAN同时接入并实现自定义路由运营商",
+      "url": "https://blog.hiirachan.moe/archives/1584273110.html",
+      "date": "2020-03-15",
+      "summary": "中国奠信，世界加钱可及 作为一名VPS老年玩家，各种奇葩的机器配置和路由咱都差不多艹了个遍。但是，当玩腻了之后，想从中挑选一只满意的机器又何其困难。其中最大的坎就卡在网络连接的问题上了。就拿谷歌云举个例子，谷歌云的线路与境外各大运营商之间的互联已经算得上是几乎完美的了。然而从大陆电信访问就是花式丢包加上各种魔法绕路。加上最近受不明原因的影响，CN2 也跪了。 单方走访调查 后，最终选择了加一条备胎的方案。大陆流量喂给电信，境外的就塞给联通好了。 提前跟联通派上门的小哥沟通好了，从他那儿接过了PPPOE账号密码。剩下的需要我做的有这么几件事儿： 在WR1200JS上配置两条运营商同时接入 写路由，让路由器根据目标IP地址自动选择对应的WAN口走出去 告别辣鸡电信出口， 享受美好生活 （一 双WAN接入，同时拨号 WR1200JS只有一个蓝色的WAN口，但对这于OpenWRT这样强大的系统来说都不是事。登录路由器管理界面，备份好当前配置后切换到 Network → Switch（中文名叫交换机）。在预置 VLAN ID 为 1 的那一行中，将 LAN 1 接口由untagged(未标记）设置为off。这样LAN 1接口就会被释放出来，用于备胎接入的WAN口。然后点击左下角的【ADD VLAN】，在新加的VLAN中设置CPU接口为tagged（已标记），LAN为untagged（未标记），其余接口不做修改。看上去像这样： 继续配置拨号。Network → Interfaces新加一个接口，姑且命名为【 UNION 】好了。协议选【PPPOE】，Interface是刚才划出来的VLAN, 名为【 eth0.3 】。建好后编辑它，输入联通小哥给的用户名和密码，Firewall Settings 选择【 WAN 】，保存并生效后顺利拿到IP。至此双线接入&拨号已经解决。 （上方电信，下"
+    },
+    {
+      "title": "[2020.02.14]从零开始的低功耗网络存储搭建（NAS）",
+      "url": "https://blog.hiirachan.moe/archives/259.html",
+      "date": "2020-02-14",
+      "summary": "零 序言 疫情在外，肥宅困家。想起有几部从高中时一直欠下来的番剧，无奈某粉站对其百般删减，遂寻新径。同时，家中设备数与日俱增，几日前又得友赠惠普垃圾板一张，欲入PT大坑与赵国奠信一战高下。 一 硬件选择 硬件类型 参数 价格 备注 主板 * 惠普Godstow R1-C - 同学那儿PY来的 内存条 三星 DDR3 4G 1333MHz - 单条，随主板一起捡来的 处理器 牙膏厂N3050 - 功耗约4-6W，主板集成 电源 祖传全汉230W 估值20大洋 无SATA电源接口，需备转接线 硬盘 3TB容量日立监控盘 180元/块 某黄色二手市，X2 阵列卡 LSI 9207-8i 推友价 $0 已刷IT模式 系统盘 32GB SSD 40包邮 国产杂牌 此板大小17X17，具有千兆网卡、PCI 16x插槽、俩SATA接口，可玩性较高。 硬盘下单后第二天下午就到了，在此感谢疫情中维护城市正常运行的顺丰小哥。纸箱内有减震气垫，两块硬盘装在独立的防静电袋中，硬盘上表面有少许划痕，标签与网图一致，整体感觉较新。上电后坏道扫描全绿飘过，检查通电时间约有4.5年（灵车警告） 硬盘正面有几道不明显划痕 主板部分安装完毕后的样子↓ 日后再找个可爱点的箱子装起来。 二 系统环境安装 系统选用 Ubuntu Server 18.04 LTS ，安装前将软件源修改为 阿里开源镜像站 。安装后为ROOT用户添加SSH登录公钥。 PHP 选用当前最新的7.4版本可提高执行效率，减少CPU一定量的工作负担。分别添加 nginx php transmission 软件源，并安装它们。 add-apt-repository ppa:ondrej/php add-apt-repository ppa:nginx/stable add-apt-repository ppa:transmissionbt/ppa"
+    },
+    {
+      "title": "[2020.01.22]在阿里 ECS 上使用 GRUB + Memdisk 加载 Ubuntu 网络安装镜像并安装全新的 Ubuntu 18.04",
+      "url": "https://blog.hiirachan.moe/archives/212231312312312.html",
+      "date": "2020-01-22",
+      "summary": "封面配图PID 79406400 这篇文章就来记录一下在套路云上折腾新系统的过程吧 因为众所周知的原因，在套路云上重装一份干净的系统还是挺有必要的 我选择的原阿里云自带的系统是 Ubuntu 18.04 ，不同系统使用的命令可能不同，本篇文章仅供各位看官参考（鞠躬） 第一步 ：下载需要安装的 Ubuntu 系统镜像，因为内存小的缘故就选择 网络启动 的镜像吧，将 73M 的镜像载入内存后还有差不多 400M 的内存可以喂给安装环境，足够了✔ 况且通过网络即时安装的系统是最新版本的，省去了安装完成后 apt update&upgrade 的步骤 下载镜像使用命令：（全篇命令在服务器上以 root 权限运行） wget http://archive.ubuntu.com/ubuntu/dists/bionic-updates/main/installer-amd64/current/images/netboot/mini.iso cp ./mini.iso /boot/installer.iso 第二步 ：准备 Memdisk Memdisk 这个小工具可以帮咱在 Grub 引导系统前将镜像拷入内存并启动 Memdisk 存在于 syslinux 这个软件包中 安装后将其拷贝至 boot 目录即可 使用命令： apt update apt install syslinux -y cp -f /usr/lib/syslinux/memdisk /boot/memdisk 第三步 ：添加启动项 编辑 /etc/grub.d/41_custom ，将其改为以下内容 #!/bin/sh cat <<EOF menuentry 'Your Installer' { insmod part_msdos insmod part_gpt insmod ext2 set root=(hd0,ms"
     }
   ]
 }
