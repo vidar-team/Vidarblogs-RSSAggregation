@@ -126,5 +126,9 @@
   {
     "id": "arkerny",
     "url": "https://blog.akn.moe/rss2.xml"
+  },
+  {
+    "id": "chuj",
+    "url": "https://chujdk.github.io/index.xml"
   }
 ]
