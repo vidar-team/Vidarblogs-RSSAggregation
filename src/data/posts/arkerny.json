@@ -12,6 +12,12 @@
       "summary": "本文档已不做目录整理。 可以通过筛选标签 #食用指北 来查阅目录"
     },
     {
+      "title": "arkerny Network NG Part.1 与自建 TailScale Derper 中继服务器",
+      "url": "https://blog.akn.moe/2026/10/17/tailscale-derper/",
+      "date": "2026-10-17",
+      "summary": "大内网？ 为了嫖取学校电费 ，自己手头上的各种 24h 服务放在了 702。同时直接新拉了个路由器接 iHDU。 同时因为各种原因，觉得利用 DN11 不是十分可行， 让 cHAR0N 学习加入如何 DN11 疑似有点用力过猛了 ，于是没有选用大火都在用的看起来还不错的 DN11。 同时又有 和 Shiori 分享百合漫画 通过 DN11 访问部分服务的需求，以及 HDU 的神秘网络架构使我甚至无法在 Vidar Network 访问我的路由器（同层不通），显然还需要支持一部分的 DN11 访问。（这部分会在后面新开一篇 blog 写写） 以及由于神秘的 HDU 网络架构，即使在 HDU 内网中使用 Tailscale，也会出现打不通洞的情况。这时候自建的本地 Derper 服务器就显得尤为重要了。 之前的 arkerny Network 嘛，显然因为没钱交 ASN 和相关服务器的费用停了。也有了现在的 MoneyLess 的方案…… 之前用的是 ZeroTier，但是近期感觉 Tailscale 更加好用（拉着 cHAR0N 一起建了个 Tailscale 网络）。Derper 也显然需要提上日程了。 目前要实现的就是和 cHAR0N 可以在各地（包括但不限于寝室、家中）使用较好的速度与延迟访问到各自的服务、以及（挂在 Vidar Network 上的）主机。 组网 于是首先是组网。 不赘述了，就是把身上所有东西上面装个 TailScale（x 部署 Derper 🐔？ 选用了阿里云杭州的轻量应用服务器 2C 2G 200Mbps，价格中规中矩，可玩性不错。 200Mbps 的峰值带宽显然足够使用，最后实测速度有至少 50Mbps。 加入 TailScale 在服务器上运行 TailScale。 可以将服务器配置为 Exit Node，但是似乎没有什么卵用。 不如把学校的"
+    },
+    {
       "title": "「HDU 食用指北」福雷德广场·塞牙缝薯条",
       "url": "https://blog.akn.moe/2026/09/23/hdu-food-list-20260923/",
       "date": "2026-09-23",

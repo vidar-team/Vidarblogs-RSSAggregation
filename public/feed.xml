@@ -16,6 +16,14 @@
       <source url="https://blog.akn.moe/">arkerny</source>
     </item>
     <item>
+      <title>arkerny Network NG Part.1 与自建 TailScale Derper 中继服务器</title>
+      <link>https://blog.akn.moe/2026/10/17/tailscale-derper/</link>
+      <guid isPermaLink="true">https://blog.akn.moe/2026/10/17/tailscale-derper/</guid>
+      <pubDate>Sat, 17 Oct 2026 00:00:00 GMT</pubDate>
+      <description>大内网？ 为了嫖取学校电费 ，自己手头上的各种 24h 服务放在了 702。同时直接新拉了个路由器接 iHDU。 同时因为各种原因，觉得利用 DN11 不是十分可行， 让 cHAR0N 学习加入如何 DN11 疑似有点用力过猛了 ，于是没有选用大火都在用的看起来还不错的 DN11。 同时又有 和 Shiori 分享百合漫画 通过 DN11 访问部分服务的需求，以及 HDU 的神秘网络架构使我甚至无法在 Vidar Network 访问我的路由器（同层不通），显然还需要支持一部分的 DN11 访问。（这部分会在后面新开一篇 blog 写写） 以及由于神秘的 HDU 网络架构，即使在 HDU 内网中使用 Tailscale，也会出现打不通洞的情况。这时候自建的本地 Derper 服务器就显得尤为重要了。 之前的 arkerny Network 嘛，显然因为没钱交 ASN 和相关服务器的费用停了。也有了现在的 MoneyLess 的方案…… 之前用的是 ZeroTier，但是近期感觉 Tailscale 更加好用（拉着 cHAR0N 一起建了个 Tailscale 网络）。Derper 也显然需要提上日程了。 目前要实现的就是和 cHAR0N 可以在各地（包括但不限于寝室、家中）使用较好的速度与延迟访问到各自的服务、以及（挂在 Vidar Network 上的）主机。 组网 于是首先是组网。 不赘述了，就是把身上所有东西上面装个 TailScale（x 部署 Derper 🐔？ 选用了阿里云杭州的轻量应用服务器 2C 2G 200Mbps，价格中规中矩，可玩性不错。 200Mbps 的峰值带宽显然足够使用，最后实测速度有至少 50Mbps。 加入 TailScale 在服务器上运行 TailScale。 可以将服务器配置为 Exit Node，但是似乎没有什么卵用。 不如把学校的</description>
+      <source url="https://blog.akn.moe/">arkerny</source>
+    </item>
+    <item>
       <title>2026 网络赛和 AFO</title>
       <link>https://blog.rencj.top/posts/algo/2026online-contest/index/</link>
       <guid isPermaLink="true">https://blog.rencj.top/posts/algo/2026online-contest/index/</guid>
@@ -798,14 +806,6 @@
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
       <description>许久没有起笔写博客和公众号了，忽然一下起笔，似乎一下子找不到下笔的方式和由头，其实我想恢复写博客的习惯很久了，最近几年博客写的很少，原因有很多，一个这几年工作内容涉及到的公司内容比较多，不好去密，另一个是人真的是很懒惰的，放下笔很容易但是提起笔需要很多理由。 今天这篇博客，没有技术，只想和大家分享分享最近的想法。 认识我的朋友可能知道，这些年我另营业的副业做的还马马虎虎可以，无论是B站还是抖音，做视频做直播花费了很多精力，也有一些粉丝和收入。 反而是安全方向，做了很多东西但是实际的产出很少，在去年有一段时间甚至算是有点儿陷入迷茫阶段，有点儿不太清楚自己在干什么，每天公式化完成工作，最后整体算下来感觉自己也没什么成长。 我在奇安信的主要工作就是围绕破壳平台，后面我会更多分享和这个有关的内容 https://poc.qianxin.com/ 对我来说近期有一件事情影响非常之大， AI之于用户甚至之于这个时代都已经是老生常谈 ，哪怕是什么都不懂的人，多多少少也能打开个手机里的豆包，没事问问豆包问题，调戏调戏豆包。 从去年的年底开始，实话讲我并不知道具体是什么时候，有些人说是25年的10月，也有人说是更早，突然感觉AI的浪潮向我拍过来了，最开始我虽然会刷到这些新闻，但是 很多时候只是大体看看怎么回事 ，大概知道，原来又多了一点儿新东西，但是好像也没啥新意。 我工作中使用AI更多的场景，依旧是 平时拿AI当搜索软件搜索写代码遇到的问题 ，再就是 用trae维护另一个我自己维护的平台功能 ，我很少会深度的使用AI。 在当时心中对于AI的认知还停留在， 上下文不够长，幻觉严重的问题无法解决 ，这两个致命问题上，所以很多东西大概知道怎么回事，但是觉得没有花时间了解的必要。 直到12月底的两件事情，算是彻底改变了我的观念，也让我真真切切的意识到， 或许真的AI时代的洪流，要到来了。 第一件事</description>
       <source url="https://lorexxar.cn/">LoRexxar</source>
-    </item>
-    <item>
-      <title>在龙架构上“养龙虾”</title>
-      <link>https://csmantle.top/2026/03/10/zeroclaw-on-arch-for-loong64.html</link>
-      <guid isPermaLink="true">https://csmantle.top/2026/03/10/zeroclaw-on-arch-for-loong64.html</guid>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <description>近期以 *Claw 为代表的智能体非常流行，其中不乏 Rust 语言的实现。因此，我试着在运行 Arch Linux for Loong64 的龙芯 3B6000 上“养”了一只龙虾，达到了不错的效果。 0. 前置条件 这是一篇笔记式博客，包含了多种仅适用于我本人系统环境的操作与考虑，其中有些已在文内标出，有些则不然。我的系统配置如下： 主板： Loongson-3B6000x1-7A2000x1-EVB 内核： Linux 6.19.6-arch1-1-csmantle-aosc-main-16k 如果你想跟随本篇博客进行操作，需要准备以下材料： 使用 Linux 系统与常见开发工具的经验； 能理解每步操作的目的、效果及对系统安全的影响 能不借助 LLM，利用手册、文档、Wiki 或搜索引擎进行故障检修 一个正常的网络环境； 30 分钟以上、一两个小时为宜的空余时间； 我在安装时花了一个下午，但主要是在多个 *Claw 实现与部署方案之间不断试错 Rust 编译器套件和 Cargo。 龙架构的 Rust 平台支持已较为完善，一般可以无痛原生编译。 1. 编译二进制 在 /opt 下创建目录并设置权限。我在这里选择将所有者设置为 csmantle:wheel、目录权限设为 drwxr-sr-x，是为了对齐 /opt 下软件全局所有的设计用途，实践中可以自行考量： 3.13. /opt : Add-on application software packages 3.13.1. Purpose /opt is reserved for the installation of add-on application software packages. – https://refspecs.linuxfoundation.org/FHS_3.0/fhs-3.0.html#optA</description>
-      <source url="https://csmantle.top/">Mantle</source>
     </item>
   </channel>
 </rss>
