@@ -48,6 +48,14 @@
       <source url="https://wuli-wa.github.io/">wuliwa</source>
     </item>
     <item>
+      <title>CVE-2023-54391 复现：Proxmox VE 认证绕过</title>
+      <link>https://lewis1766.github.io/posts/20261009/</link>
+      <guid isPermaLink="true">https://lewis1766.github.io/posts/20261009/</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
+      <description>前言 最近在整理漏洞复现笔记，挑了一个比较有代表性的认证绕过漏洞：CVE-2023-54391。这个漏洞的特别之处在于， 修复补丁早在 2023 年 7 月就已经发布，但直到 2026 年 9 月才被正式分配 CVE 编号 。也就是说，漏洞在暗处躺了三年，大量 EOL 的 Proxmox VE 7.x 系统至今仍然暴露在风险中。 本文记录一次完整的本地环境复现过程。 漏洞概述 CVE-2023-54391 是 Proxmox VE 中的一个 认证绕过漏洞 ，CVSS v3.1 评分 9.8（Critical） ，CVSS v4.0 评分 9.3。 项目 信息 漏洞类型 CWE-304：认证关键步骤缺失 影响组件 libpve-access-control 影响版本 7.0-7 ~ 8.0.4 之前 利用条件 目标账户未配置双因素认证（2FA） 利用方式 单次 POST 请求，无需任何凭据 攻击复杂度 低 修复版本 libpve-access-control 8.0.4 受影响的 Proxmox VE 版本 ： Proxmox VE 7.0 至 7.4（全部 7.x 分支，已 EOL） Proxmox VE 8.0 初始版本（ libpve-access-control &lt; 8.0.4） 不受影响的配置 ：目标账户已启用 2FA 的，不受此漏洞影响。</description>
+      <source url="https://lewis1766.github.io/">lewis</source>
+    </item>
+    <item>
       <title>x86asm(intel syntax)</title>
       <link>https://c0d4.ink/posts/x86asmintel-syntax/</link>
       <guid isPermaLink="true">https://c0d4.ink/posts/x86asmintel-syntax/</guid>
@@ -797,14 +805,6 @@
       <guid isPermaLink="true">https://lorexxar.cn/2026/03/11/reai2/</guid>
       <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
       <description>上篇博客中，我分享了最近关于AI的见闻和感受。本来按照流程，我应该用几篇博客的时间介绍一下最近接触和学习到的东西。 但最主要的是，感觉如果不先聊聊OpenClaw，这东西很可能就要过气了。 Peter Steinberger作为独立开发者，由于非常喜欢Claude，在几个月之前发布了开源的自托管助手Clawdbot，短短几个月火爆全网，引发了非常大的热情狂潮， 很多人把OpenClaw称为Web4.0时代的开端。 Clawdbot，后来改名Moltbot，现在又改名叫Openclaw ，最近最有名的称呼应该叫做龙虾。 无论你是否认可后面我的理解和感受，但我必须强烈的告诉你。 绝对不要把OpenClaw部署在生产环境/或者自己的实际使用主机上，一定要放在一个独立的环境中运行。 其实 Openclaw并不是第一个依托于LLM的主动代理助手 ，这个类似的概念我1年前就听过，之前Meta收购的Manus AI，Manus可能也不是最早的，而且很多人说Manus根本没有成品。但这个概念很早就有了。 如果对Claude Code比较熟悉的朋友应该知道， 其实Claude Cli和OpenClaw本质上没有什么区别 ，换言之，从设计理念的角度， OpenClaw就是没有任何安全限定的Claude Code。 从这个角度来说，OpenClaw的技术突破似乎没什么价值，客观来说，OpenClaw是个人维护+ai编程+接受了大量pr，代码质量堪忧，我相信如果用过一段时间的OpenClaw都会知道到底有多难用！ OpenClaw的爆火真的是偶然吗？ OpenClaw应该是第一个， 完全免费开源，并且已经进入可用阶段的托管式AI助手 ，这也是OpenClaw爆火的起因，在2025年年底，AI使用的方法论已经基本成型， 无论是工作流、agent，还是mcp、skill ，又或者是自己实现的记忆、上下</description>
-      <source url="https://lorexxar.cn/">LoRexxar</source>
-    </item>
-    <item>
-      <title>AI.Re.(1) - AI变革的时代来了吗？</title>
-      <link>https://lorexxar.cn/2026/03/10/reai1/</link>
-      <guid isPermaLink="true">https://lorexxar.cn/2026/03/10/reai1/</guid>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <description>许久没有起笔写博客和公众号了，忽然一下起笔，似乎一下子找不到下笔的方式和由头，其实我想恢复写博客的习惯很久了，最近几年博客写的很少，原因有很多，一个这几年工作内容涉及到的公司内容比较多，不好去密，另一个是人真的是很懒惰的，放下笔很容易但是提起笔需要很多理由。 今天这篇博客，没有技术，只想和大家分享分享最近的想法。 认识我的朋友可能知道，这些年我另营业的副业做的还马马虎虎可以，无论是B站还是抖音，做视频做直播花费了很多精力，也有一些粉丝和收入。 反而是安全方向，做了很多东西但是实际的产出很少，在去年有一段时间甚至算是有点儿陷入迷茫阶段，有点儿不太清楚自己在干什么，每天公式化完成工作，最后整体算下来感觉自己也没什么成长。 我在奇安信的主要工作就是围绕破壳平台，后面我会更多分享和这个有关的内容 https://poc.qianxin.com/ 对我来说近期有一件事情影响非常之大， AI之于用户甚至之于这个时代都已经是老生常谈 ，哪怕是什么都不懂的人，多多少少也能打开个手机里的豆包，没事问问豆包问题，调戏调戏豆包。 从去年的年底开始，实话讲我并不知道具体是什么时候，有些人说是25年的10月，也有人说是更早，突然感觉AI的浪潮向我拍过来了，最开始我虽然会刷到这些新闻，但是 很多时候只是大体看看怎么回事 ，大概知道，原来又多了一点儿新东西，但是好像也没啥新意。 我工作中使用AI更多的场景，依旧是 平时拿AI当搜索软件搜索写代码遇到的问题 ，再就是 用trae维护另一个我自己维护的平台功能 ，我很少会深度的使用AI。 在当时心中对于AI的认知还停留在， 上下文不够长，幻觉严重的问题无法解决 ，这两个致命问题上，所以很多东西大概知道怎么回事，但是觉得没有花时间了解的必要。 直到12月底的两件事情，算是彻底改变了我的观念，也让我真真切切的意识到， 或许真的AI时代的洪流，要到来了。 第一件事</description>
       <source url="https://lorexxar.cn/">LoRexxar</source>
     </item>
   </channel>

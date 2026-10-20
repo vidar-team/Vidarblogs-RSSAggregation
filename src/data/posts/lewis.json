@@ -6,6 +6,12 @@
   },
   "posts": [
     {
+      "title": "CVE-2023-54391 复现：Proxmox VE 认证绕过",
+      "url": "https://lewis1766.github.io/posts/20261009/",
+      "date": "2026-10-09",
+      "summary": "前言 最近在整理漏洞复现笔记，挑了一个比较有代表性的认证绕过漏洞：CVE-2023-54391。这个漏洞的特别之处在于， 修复补丁早在 2023 年 7 月就已经发布，但直到 2026 年 9 月才被正式分配 CVE 编号 。也就是说，漏洞在暗处躺了三年，大量 EOL 的 Proxmox VE 7.x 系统至今仍然暴露在风险中。 本文记录一次完整的本地环境复现过程。 漏洞概述 CVE-2023-54391 是 Proxmox VE 中的一个 认证绕过漏洞 ，CVSS v3.1 评分 9.8（Critical） ，CVSS v4.0 评分 9.3。 项目 信息 漏洞类型 CWE-304：认证关键步骤缺失 影响组件 libpve-access-control 影响版本 7.0-7 ~ 8.0.4 之前 利用条件 目标账户未配置双因素认证（2FA） 利用方式 单次 POST 请求，无需任何凭据 攻击复杂度 低 修复版本 libpve-access-control 8.0.4 受影响的 Proxmox VE 版本 ： Proxmox VE 7.0 至 7.4（全部 7.x 分支，已 EOL） Proxmox VE 8.0 初始版本（ libpve-access-control < 8.0.4） 不受影响的配置 ：目标账户已启用 2FA 的，不受此漏洞影响。"
+    },
+    {
       "title": "CobaltStrike的容器化实现",
       "url": "https://lewis1766.github.io/posts/20260918/",
       "date": "2026-09-18",
