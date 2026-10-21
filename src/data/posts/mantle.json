@@ -6,6 +6,18 @@
   },
   "posts": [
     {
+      "title": "Setting up V8 development environment on Arch Linux for Loong64",
+      "url": "https://csmantle.top/2026/10/20/setting-up-v8-dev-env-on-arch-for-loong64.html",
+      "date": "2026-10-20",
+      "summary": "This took ~4.5 hours including cloning, downloading, and pruning failed exploration branches."
+    },
+    {
+      "title": "Setting up SpiderMonkey development environment on Arch Linux for Loong64",
+      "url": "https://csmantle.top/2026/10/20/setting-up-spidermonkey-dev-env-on-arch-for-loong64.html",
+      "date": "2026-10-20",
+      "summary": "This took ~30 minutes including cloning and downloading."
+    },
+    {
       "title": "Loading immediate values",
       "url": "https://csmantle.top/2026/08/05/loading-immediate-values.html",
       "date": "2026-08-05",

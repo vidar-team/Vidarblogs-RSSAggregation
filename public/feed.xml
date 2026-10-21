@@ -16,6 +16,22 @@
       <source url="https://blog.akn.moe/">arkerny</source>
     </item>
     <item>
+      <title>Setting up V8 development environment on Arch Linux for Loong64</title>
+      <link>https://csmantle.top/2026/10/20/setting-up-v8-dev-env-on-arch-for-loong64.html</link>
+      <guid isPermaLink="true">https://csmantle.top/2026/10/20/setting-up-v8-dev-env-on-arch-for-loong64.html</guid>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
+      <description>This took ~4.5 hours including cloning, downloading, and pruning failed exploration branches.</description>
+      <source url="https://csmantle.top/">Mantle</source>
+    </item>
+    <item>
+      <title>Setting up SpiderMonkey development environment on Arch Linux for Loong64</title>
+      <link>https://csmantle.top/2026/10/20/setting-up-spidermonkey-dev-env-on-arch-for-loong64.html</link>
+      <guid isPermaLink="true">https://csmantle.top/2026/10/20/setting-up-spidermonkey-dev-env-on-arch-for-loong64.html</guid>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
+      <description>This took ~30 minutes including cloning and downloading.</description>
+      <source url="https://csmantle.top/">Mantle</source>
+    </item>
+    <item>
       <title>arkerny Network NG Part.1 与自建 TailScale Derper 中继服务器</title>
       <link>https://blog.akn.moe/2026/10/17/tailscale-derper/</link>
       <guid isPermaLink="true">https://blog.akn.moe/2026/10/17/tailscale-derper/</guid>
@@ -790,22 +806,6 @@
       <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
       <description>letyoudive : 一道探索中设计的入门内核题 Background syscall 系统调用（systemcall）是由操作系统内核向上层应用程式提供的应用接口，操作系统负责调度一切的资源，当用户进程想要请求更高权限的服务时，便需要通过由系统提供的应用接口，使用系统调用以陷入内核态，再由操作系统完成请求。 entry: 怎么从用户态陷入 在执行 syscall 后，CPU 将跳转到 entry_SYSCALL_64 ，保存用户态的上下文，并进入内核态。 //arch/x86/entry/entry_64.S SYM_CODE_START ( entry_SYSCALL_64 ) UNWIND_HINT_ENTRY ENDBR swapgs /* tss.sp2 is scratch space. */ movq % rsp , PER_CPU_VAR ( cpu_tss_rw + TSS_sp2 ) SWITCH_TO_KERNEL_CR3 scratch_reg = % rsp movq PER_CPU_VAR ( cpu_current_top_of_stack ) , % rsp SYM_INNER_LABEL ( entry_SYSCALL_64_safe_stack , SYM_L_GLOBAL ) ANNOTATE_NOENDBR /* Construct struct pt_regs on stack */ pushq$__USER_DS /* pt_regs-&gt;ss */ pushq PER_CPU_VAR ( cpu_tss_rw + TSS_sp2 ) /* pt_regs-&gt;sp */ pushq % r11 /* pt_regs-&gt;flags */ pushq$__USER_CS /* pt_regs-&gt;cs */ pushq % rcx /</description>
       <source url="https://summ2.link/">summ2</source>
-    </item>
-    <item>
-      <title>软件系统安全赛</title>
-      <link>https://sh10rl.top/posts/dart/</link>
-      <guid isPermaLink="true">https://sh10rl.top/posts/dart/</guid>
-      <pubDate>Sun, 15 Mar 2026 00:00:00 GMT</pubDate>
-      <description>1.re3 pyinstxtractor解包得到client.pyc： 看流量发现readme.txt, config.txt, flag.txt 和密文： Pylingual 反编译client.pyc: # Decompiled with PyLingual (https://pylingual.io) # Internal filename: &apos;client.py&apos; # Bytecode version: 3.10.b1 (3439) # Source timestamp: 1970-01-01 00:00:00 UTC (0) import base64 import sys import os import json import socket import hashlib import crypt_core import builtins def _oe(_d, _k1, _k2, _rn): # ***&lt;module&gt;._oe: Failure: Compilation Error try: _b = base64.b85decode(_d.encode()) _r = [] for _i, _x in enumerate(_b): return ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k2, _rn), _i, 3) or ((_k1, _k</description>
-      <source url="https://sh10rl.top/">Shiori</source>
-    </item>
-    <item>
-      <title>AI.Re.(2) - OpenClaw到底为什么爆火？</title>
-      <link>https://lorexxar.cn/2026/03/11/reai2/</link>
-      <guid isPermaLink="true">https://lorexxar.cn/2026/03/11/reai2/</guid>
-      <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
-      <description>上篇博客中，我分享了最近关于AI的见闻和感受。本来按照流程，我应该用几篇博客的时间介绍一下最近接触和学习到的东西。 但最主要的是，感觉如果不先聊聊OpenClaw，这东西很可能就要过气了。 Peter Steinberger作为独立开发者，由于非常喜欢Claude，在几个月之前发布了开源的自托管助手Clawdbot，短短几个月火爆全网，引发了非常大的热情狂潮， 很多人把OpenClaw称为Web4.0时代的开端。 Clawdbot，后来改名Moltbot，现在又改名叫Openclaw ，最近最有名的称呼应该叫做龙虾。 无论你是否认可后面我的理解和感受，但我必须强烈的告诉你。 绝对不要把OpenClaw部署在生产环境/或者自己的实际使用主机上，一定要放在一个独立的环境中运行。 其实 Openclaw并不是第一个依托于LLM的主动代理助手 ，这个类似的概念我1年前就听过，之前Meta收购的Manus AI，Manus可能也不是最早的，而且很多人说Manus根本没有成品。但这个概念很早就有了。 如果对Claude Code比较熟悉的朋友应该知道， 其实Claude Cli和OpenClaw本质上没有什么区别 ，换言之，从设计理念的角度， OpenClaw就是没有任何安全限定的Claude Code。 从这个角度来说，OpenClaw的技术突破似乎没什么价值，客观来说，OpenClaw是个人维护+ai编程+接受了大量pr，代码质量堪忧，我相信如果用过一段时间的OpenClaw都会知道到底有多难用！ OpenClaw的爆火真的是偶然吗？ OpenClaw应该是第一个， 完全免费开源，并且已经进入可用阶段的托管式AI助手 ，这也是OpenClaw爆火的起因，在2025年年底，AI使用的方法论已经基本成型， 无论是工作流、agent，还是mcp、skill ，又或者是自己实现的记忆、上下</description>
-      <source url="https://lorexxar.cn/">LoRexxar</source>
     </item>
   </channel>
 </rss>
