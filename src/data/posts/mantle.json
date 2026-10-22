@@ -6,6 +6,12 @@
   },
   "posts": [
     {
+      "title": "漫步钱塘，其一：金沙湖公园",
+      "url": "https://csmantle.top/2026/10/21/roaming-hangzhou-1-jinsha-lake-park.html",
+      "date": "2026-10-21",
+      "summary": "最后一年，去学校外面走走。"
+    },
+    {
       "title": "Setting up V8 development environment on Arch Linux for Loong64",
       "url": "https://csmantle.top/2026/10/20/setting-up-v8-dev-env-on-arch-for-loong64.html",
       "date": "2026-10-20",

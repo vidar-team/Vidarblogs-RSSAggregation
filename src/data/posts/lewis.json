@@ -6,6 +6,12 @@
   },
   "posts": [
     {
+      "title": "教育src记录——从弱密码使用vpn网关到内网成功建立frp",
+      "url": "https://lewis1766.github.io/posts/20261021/",
+      "date": "2026-10-21",
+      "summary": "####主要想说说如何用frp进行内网穿透 统一认证弱密码 进行社会工程学攻击，比如搜奖学金公示名单拿到学号姓名再查社工库这样的&hellip; 方法很多不赘述 成功登进VPN 内网扫描 使用fscan扫描10.x.x.x发现很多是蜜罐 我就想到先指定端口，不进行太多端口的扫描，全是蜜罐根本扫不出来 先试了一些80端口 fscan -h 10.1.252.1/16 -p 80 发现了很多资产，不一一赘述了，这里挑http://10.1.252.220/来说 Kuboard Spray 是一款图形化的 Kubernetes 集群离线安装、维护与升级工具。 默认用户名 ： admin 默认密码 ： Kuboard123 成功登录 拓扑图 frp内网穿透 这里ssh连接10.1.252.218 下载frp： [ root@node2-db-1 ~ ] # wget https://mirrors.nju.edu.cn/github-release/fatedier/frp/LatestRelease/frp_0.71.1_linux_amd64.tar.gz --2026-10-21 16:07:08-- https://mirrors.nju.edu.cn/github-release/fatedier/frp/LatestRelease/frp_0.71.1_linux_amd64.tar.gz Resolving mirrors.nju.edu.cn ( mirrors.nju.edu.cn ) ... 210.28.130.3, 2001:da8:1007:4011::3 Connecting to mirrors.nju.edu.cn ( mirrors.nju.edu.cn ) |210.28.130.3|:443... connected. HTTP request"
+    },
+    {
       "title": "CVE-2023-54391 复现：Proxmox VE 认证绕过",
       "url": "https://lewis1766.github.io/posts/20261009/",
       "date": "2026-10-09",

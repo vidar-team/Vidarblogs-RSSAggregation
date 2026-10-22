@@ -16,6 +16,22 @@
       <source url="https://blog.akn.moe/">arkerny</source>
     </item>
     <item>
+      <title>教育src记录——从弱密码使用vpn网关到内网成功建立frp</title>
+      <link>https://lewis1766.github.io/posts/20261021/</link>
+      <guid isPermaLink="true">https://lewis1766.github.io/posts/20261021/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 GMT</pubDate>
+      <description>####主要想说说如何用frp进行内网穿透 统一认证弱密码 进行社会工程学攻击，比如搜奖学金公示名单拿到学号姓名再查社工库这样的&amp;hellip; 方法很多不赘述 成功登进VPN 内网扫描 使用fscan扫描10.x.x.x发现很多是蜜罐 我就想到先指定端口，不进行太多端口的扫描，全是蜜罐根本扫不出来 先试了一些80端口 fscan -h 10.1.252.1/16 -p 80 发现了很多资产，不一一赘述了，这里挑http://10.1.252.220/来说 Kuboard Spray 是一款图形化的 Kubernetes 集群离线安装、维护与升级工具。 默认用户名 ： admin 默认密码 ： Kuboard123 成功登录 拓扑图 frp内网穿透 这里ssh连接10.1.252.218 下载frp： [ root@node2-db-1 ~ ] # wget https://mirrors.nju.edu.cn/github-release/fatedier/frp/LatestRelease/frp_0.71.1_linux_amd64.tar.gz --2026-10-21 16:07:08-- https://mirrors.nju.edu.cn/github-release/fatedier/frp/LatestRelease/frp_0.71.1_linux_amd64.tar.gz Resolving mirrors.nju.edu.cn ( mirrors.nju.edu.cn ) ... 210.28.130.3, 2001:da8:1007:4011::3 Connecting to mirrors.nju.edu.cn ( mirrors.nju.edu.cn ) |210.28.130.3|:443... connected. HTTP request</description>
+      <source url="https://lewis1766.github.io/">lewis</source>
+    </item>
+    <item>
+      <title>漫步钱塘，其一：金沙湖公园</title>
+      <link>https://csmantle.top/2026/10/21/roaming-hangzhou-1-jinsha-lake-park.html</link>
+      <guid isPermaLink="true">https://csmantle.top/2026/10/21/roaming-hangzhou-1-jinsha-lake-park.html</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 GMT</pubDate>
+      <description>最后一年，去学校外面走走。</description>
+      <source url="https://csmantle.top/">Mantle</source>
+    </item>
+    <item>
       <title>Setting up V8 development environment on Arch Linux for Loong64</title>
       <link>https://csmantle.top/2026/10/20/setting-up-v8-dev-env-on-arch-for-loong64.html</link>
       <guid isPermaLink="true">https://csmantle.top/2026/10/20/setting-up-v8-dev-env-on-arch-for-loong64.html</guid>
@@ -790,22 +806,6 @@
       <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
       <description>继续接着之前的内容来写，从通用大模型诞生到后续的几年里，除了大模型本身的能力一直在提升，使用大模型的方法论也在不停的变化。 这篇文章讲到的这些概念不是第一天诞生，我相信很多朋友也实打实的在使用这些方法论，那这篇文章让我们重新回顾一下这些概念，也伴随的感受一些， 为什么这些方法论使得AI突然变得强力可靠？为什么在2025年年底I应用大量井喷？ 什么是Skill？ 在前两篇文章当中，我曾经提到过，AI有两个非常重要的时间节点，第一个是 chatgpt的初诞生 ，它意味着AI与人类交流沟通的屏障解开了，我们可以通过对话和大模型沟通并让他理解我们的需求。 chatgpt打通了人和AI的壁垒 在这个时间节点，大部分场景我们 只能依赖prompt ，提示词工程来一定程度的定向提高大模型的能力，虽然我觉得并没有什么卵用。 第二个关键的时间节点， gpt4在2023年初推出了Plugins功能 ，并且在2023年6月推出了 Function Calling函数调用功能 。 这意味着给给大脑接上了手和脚，大模型不再受限于自己提前训练的数据集，他可以 主动调用其他工具收集信息 ，尤其是联网功能，大幅度提高了大模型的实用价值。 ChatGPT Plugins的诞生 其实plugins和Function Calling功能，就是Skill的雏形。 Skill的本质其实就是，把某些特定的场景和解决方案收束成一个skill（技能），给予他一个触发条件，只有触发该条件才会读取这个Skill的内容并按照要求执行下去 。 Skill的概念可以说是大模型应用非常核心的一部分，首先它拥有完全符合AI应用理念的特征，还能契合当前AI应用的实际场景。 Skill本身独立于大模型外，不需要训练基础LLM ，即插即用，还可以长期积累，符合AI学习成长的理念 只有触发才加载对应的skill，既 节省不必要的上下文浪费 ，</description>
       <source url="https://lorexxar.cn/">LoRexxar</source>
-    </item>
-    <item>
-      <title>纯靠 Vibe，搞定 macOS 上的 HITMAN 外挂</title>
-      <link>https://github.red/hitman6-beater/</link>
-      <guid isPermaLink="true">https://github.red/hitman6-beater/</guid>
-      <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
-      <description>《HITMAN》杀手三部曲，一直是我很喜欢的游戏。 特别是新杀手第一部（HITMAN 6），是少数支持 macOS 端的游戏。当年捧着 MacBook Pro 刚上大学的我，除了日常写代码外，电脑上能玩的游戏也就 HITMAN 和 Minecraft。后来又蹭室友的 Windows 台式机玩了 HITMAN 2，2021 年那会在宿舍熬夜玩新出的 HITMAN 3（现在应该叫做 HITMAN WoA）。疫情期间在家更是高强度追每个月的 ET（行踪不定的目标），对着 B 站上的攻略视频一步步打。我记得最走火入魔的时候，我在宿舍看到室友，都有种想绕后拿纤维绳按下 Q 的冲动。🤣 三部作品加起来，我的总游戏时长应该已经超过了 200 小时。但 HITMAN 的地图就那么几张，完成主线目标的暗杀后，就会开始想探索地图里的机遇与成就，甚至想去卡 Bug 突破空气墙，看看图外面的景色。之前在室友的 Windows 电脑上，我从网上随便找个 HITMAN 修改器，就能实现无限子弹、无限生命的功能，然后开始无双屠城。 回到游戏生态贫瘠的 Mac 上，我发现全网居然没人做 HITMAN macOS 版外挂！我在自己的 Mac 上只能老老实实地打任务，时间久了挺没意思的。 然而自己又是逆向苦手，IDA 启动后只会按 F5，一旦遇到反编译失败或者没符号表，我就不知所措了。 好在时代变了，现在我们有 AI 了！不需要再古法看汇编了！本文我将介绍自己是怎样用 Claude Code + Claude Opus 4.6 硬生生将 macOS 上的 HITMAN 外挂给 Vibe 出来的。也算是全网首发了吧，嘻嘻。 顺风开局（？ 先从最简单的功能开始，我想先实现“无限子弹”的功能。在正式开始 Vibe 之前，我脑补了下大概有两种做法：Patch 游戏源文件或者进程注入。 macOS 上安装的 App 都</description>
-      <source url="https://github.red/">E99p1ant</source>
-    </item>
-    <item>
-      <title>HGAME FINAL 2026 题解</title>
-      <link>https://summ2.link/categories/Study/hgame-letyoudive/</link>
-      <guid isPermaLink="true">https://summ2.link/categories/Study/hgame-letyoudive/</guid>
-      <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
-      <description>letyoudive : 一道探索中设计的入门内核题 Background syscall 系统调用（systemcall）是由操作系统内核向上层应用程式提供的应用接口，操作系统负责调度一切的资源，当用户进程想要请求更高权限的服务时，便需要通过由系统提供的应用接口，使用系统调用以陷入内核态，再由操作系统完成请求。 entry: 怎么从用户态陷入 在执行 syscall 后，CPU 将跳转到 entry_SYSCALL_64 ，保存用户态的上下文，并进入内核态。 //arch/x86/entry/entry_64.S SYM_CODE_START ( entry_SYSCALL_64 ) UNWIND_HINT_ENTRY ENDBR swapgs /* tss.sp2 is scratch space. */ movq % rsp , PER_CPU_VAR ( cpu_tss_rw + TSS_sp2 ) SWITCH_TO_KERNEL_CR3 scratch_reg = % rsp movq PER_CPU_VAR ( cpu_current_top_of_stack ) , % rsp SYM_INNER_LABEL ( entry_SYSCALL_64_safe_stack , SYM_L_GLOBAL ) ANNOTATE_NOENDBR /* Construct struct pt_regs on stack */ pushq$__USER_DS /* pt_regs-&gt;ss */ pushq PER_CPU_VAR ( cpu_tss_rw + TSS_sp2 ) /* pt_regs-&gt;sp */ pushq % r11 /* pt_regs-&gt;flags */ pushq$__USER_CS /* pt_regs-&gt;cs */ pushq % rcx /</description>
-      <source url="https://summ2.link/">summ2</source>
     </item>
   </channel>
 </rss>
