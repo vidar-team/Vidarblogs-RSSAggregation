@@ -16,6 +16,14 @@
       <source url="https://blog.akn.moe/">arkerny</source>
     </item>
     <item>
+      <title>从零开始用OSM建立足迹App引擎</title>
+      <link>https://www.intmian.com/archives/vWtm67Uv</link>
+      <guid isPermaLink="true">https://www.intmian.com/archives/vWtm67Uv</guid>
+      <pubDate>Sat, 24 Oct 2026 00:00:00 GMT</pubDate>
+      <description>我在做一个足迹 App，以区县为单位点亮走过的地方：在一个区里到过足够多的地标、走过足够大的面积，这个区就点亮，往后还有“熟悉”和“走遍”两档。 这句话听着简单，真做起来，每个词背后都是一个要定死的口径： 在哪个区？ 区县以什么为准，功能区、新设的县算不算。 什么算地标？ 哪些地方叫得上名字、值得去</description>
+      <source url="https://www.intmian.com/">mian</source>
+    </item>
+    <item>
       <title>cansecwest &apos;26 &amp; 当秋回想</title>
       <link>https://summ2.link/categories/%E6%97%A5%E5%B8%B8/thoughts2026/</link>
       <guid isPermaLink="true">https://summ2.link/categories/%E6%97%A5%E5%B8%B8/thoughts2026/</guid>
@@ -76,7 +84,7 @@
       <link>https://www.intmian.com/archives/9IhsvO1T</link>
       <guid isPermaLink="true">https://www.intmian.com/archives/9IhsvO1T</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 GMT</pubDate>
-      <description>做后台定位这段时间，我主要在跟两样东西较劲：先是 iOS 本身，后来是 iOS 给我的数据。 我在做一个足迹 App，暂时叫“代号：地图”（什么游戏开发者取名）：打开记录后，它全天在后台记下你走过的路，在地图上一点点揭开。要求就四条：不漏记，不乱记，不费电，状态栏上别一直挂着定位提示。听着不多，做起</description>
+      <description>我在做一个足迹 App：打开记录以后，它全天在后台记下你走过的路，在地图上一点点揭开。对记录的要求就四条： 不漏记：开车、散步、坐地铁，走过的路都要在。 不乱记：手机躺在桌上，地图上不能多出一团乱线。 不费电：全天开着，不能让人想关掉。 不挂提示：状态栏、灵动岛上不能一直挂着“有 App 在使用你的</description>
       <source url="https://www.intmian.com/">mian</source>
     </item>
     <item>
@@ -798,14 +806,6 @@
       <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
       <description>Welcome to Hexo ! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub . Quick Start Create a new post 1 $ hexo new &quot;My New Post&quot; More info: Writing Run server 1 $ hexo server More info: Server Generate static files 1 $ hexo generate More info: Generating Deploy to remote sites 1 $ hexo deploy More info: Deployment</description>
       <source url="https://wuli-wa.github.io/">wuliwa</source>
-    </item>
-    <item>
-      <title>用龙架构 QEMU 启动自编译 Linux 内核与 Alpine rootfs</title>
-      <link>https://csmantle.top/2026/04/09/qemu-kernel-boot-with-alpine-rootfs-on-loongarch.html</link>
-      <guid isPermaLink="true">https://csmantle.top/2026/04/09/qemu-kernel-boot-with-alpine-rootfs-on-loongarch.html</guid>
-      <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
-      <description>0. 动机 上个月，学校的操作系统实验课要求在自行编译的 Linux kernel 上添加系统调用并进行验证。教案与教材上推荐的方法是购买一台 Linux 云服务器或创建虚拟机，在修改启动配置后用于实验。这种方法存在诸多缺点。替换实机启动内核需要对 bootloader 配置进行修改。此外，若选择云服务器，则需向提供商支付费用，且在遇到无法启动的情况时较为棘手；若选择自己创建虚拟机，则必须安装虚拟机管理软件、完整执行 Linux 发行版的安装流程，而后才能开始实验。虽然在 2026 年，每个步骤都正在向新手友好的方向改进，但这对于达成实验目标而言是额外的、不必要的复杂性。 为了解决这个问题，需要先了解一个可启动 Linux 操作系统在功能上的组成。不精确地讲，在机器上电后由固件和 bootloader 进行基本的初始化，然后将 kernel 加载至内存中。Kernel 探测硬件信息，初始化运行环境、文件系统与必需设备后，启动 PID 为 1 的用户进程（又称 init），由它搭建最终的用户环境1。固件、bootloader、kernel、init（以及其所在的文件系统，又称 rootfs）四个组件相对独立，这是实验中能够替换 kernel、保持其他组件不变的原因。 QEMU 是一系列模拟器，可以在应用或系统层面进行同架构或跨架构模拟。它支持 Direct Linux Boot，意味着只要提供了合适的 kernel 文件、rootfs 镜像、适用于目标架构的固件，就可以使用一行命令启动一个精简但完整的虚拟机，无需复杂的配置流程。 1. 搭建 rootfs 镜像 由于内核与其上 rootfs 相对独立，我们可以自由选择喜欢的 rootfs，这也将在很大程度上决定启动后的发行版。这里选择 Alpine Linux，它是一个精简发行版，需要的存储空间与运行占用资源都较少。 首先创建</description>
-      <source url="https://csmantle.top/">Mantle</source>
     </item>
   </channel>
 </rss>
