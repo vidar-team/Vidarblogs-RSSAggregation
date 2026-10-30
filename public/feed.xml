@@ -16,6 +16,14 @@
       <source url="https://blog.akn.moe/">arkerny</source>
     </item>
     <item>
+      <title>a WASM CPU sim</title>
+      <link>https://dodor.top/2026/10/28/cpu-sim-wasm-interrupt-demo/</link>
+      <guid isPermaLink="true">https://dodor.top/2026/10/28/cpu-sim-wasm-interrupt-demo/</guid>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <description>之前写过一个小的 CPU 模拟器（ cpu_sim.c ），有4 个寄存器、256 字节内存，把 POSIX 信号（SIGINT / SIGUSR1）作为了中断线——信号 handler 只置一个 pending 标志（async-signal-safe），派发只在指令边界：保存 PC + 寄存器到上下文栈，跳到 ISR，RETI 恢复。 最近把它编译成了 WebAssembly，现在可以直接在博客里玩： → demo/cpu-sim/</description>
+      <source url="https://dodor.top/">DODOR</source>
+    </item>
+    <item>
       <title>从零开始用OSM建立足迹App引擎</title>
       <link>https://www.intmian.com/archives/vWtm67Uv</link>
       <guid isPermaLink="true">https://www.intmian.com/archives/vWtm67Uv</guid>
@@ -798,14 +806,6 @@
       <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
       <description>Introduction to Cryptohack _byte = chr(_integer) _integer = ord(_byte) # byte &lt;=&gt; acsii _bytes = bytes.fromhex(_str) _str = _bytes.hex() # bytes &lt;=&gt; hex _bytes = _str.encode(&quot;utf-8&quot;) # str to bytes import base64 _bytes = base64.b64encode(_bytes) _bytes = base64.b64decode(_bytes) # base64 custom_table = &quot;&quot; std_table = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot; _bytes = base64.b64decode(_bytes.translate(str.maketrans(custom_table, std_table))) # hacked_base64 from Crypto.Util.number import * _integer = bytes_to_long(_bytes) _bytes = long_to_bytes(_integer) # integer &lt;=&gt; bytes _bytes = bytes(_integers) # integers to btyes from pwn import xor _bytes = xor(A, B, [length]) # xor # 自动匹配长度(扩展至length) # 多类型支持(bytes/str/integer) https://cryptohack.org/courses/intro/xorkey1/ 根</description>
       <source url="https://c0d4.ink/">c0d4</source>
-    </item>
-    <item>
-      <title>Hello World</title>
-      <link>https://wuli-wa.github.io/2026/04/10/hello-world/</link>
-      <guid isPermaLink="true">https://wuli-wa.github.io/2026/04/10/hello-world/</guid>
-      <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
-      <description>Welcome to Hexo ! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub . Quick Start Create a new post 1 $ hexo new &quot;My New Post&quot; More info: Writing Run server 1 $ hexo server More info: Server Generate static files 1 $ hexo generate More info: Generating Deploy to remote sites 1 $ hexo deploy More info: Deployment</description>
-      <source url="https://wuli-wa.github.io/">wuliwa</source>
     </item>
   </channel>
 </rss>

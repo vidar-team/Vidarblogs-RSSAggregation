@@ -6,6 +6,12 @@
   },
   "posts": [
     {
+      "title": "a WASM CPU sim",
+      "url": "https://dodor.top/2026/10/28/cpu-sim-wasm-interrupt-demo/",
+      "date": "2026-10-28",
+      "summary": "之前写过一个小的 CPU 模拟器（ cpu_sim.c ），有4 个寄存器、256 字节内存，把 POSIX 信号（SIGINT / SIGUSR1）作为了中断线——信号 handler 只置一个 pending 标志（async-signal-safe），派发只在指令边界：保存 PC + 寄存器到上下文栈，跳到 ISR，RETI 恢复。 最近把它编译成了 WebAssembly，现在可以直接在博客里玩： → demo/cpu-sim/"
+    },
+    {
       "title": "2026湾区杯wp",
       "url": "https://dodor.top/2026/09/10/2026%E6%B9%BE%E5%8C%BA%E6%9D%AFwp/",
       "date": "2026-09-10",
