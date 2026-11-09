@@ -16,6 +16,14 @@
       <source url="https://blog.akn.moe/">arkerny</source>
     </item>
     <item>
+      <title>手机端语音识别&quot;成功了却报失败&quot;：一次 WebSocket 关闭握手的排查</title>
+      <link>https://www.intmian.com/archives/IvTbQYWs</link>
+      <guid isPermaLink="true">https://www.intmian.com/archives/IvTbQYWs</guid>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 GMT</pubDate>
+      <description>我的笔记应用里有个语音转文字功能：浏览器通过 WebSocket 把音频发给 Go 服务端，服务端再转给通义千问的实时识别接口，识别结果沿原路推回网页。 最近发现一个怪问题。电脑上用一切正常；手机上说完点&quot;结束&quot;，文字明明已经完整显示出来了，紧接着却弹出&quot;识别失败&quot;。去翻后台日志，千问和服务端都显示</description>
+      <source url="https://www.intmian.com/">mian</source>
+    </item>
+    <item>
       <title>a WASM CPU sim</title>
       <link>https://dodor.top/2026/10/28/cpu-sim-wasm-interrupt-demo/</link>
       <guid isPermaLink="true">https://dodor.top/2026/10/28/cpu-sim-wasm-interrupt-demo/</guid>
@@ -797,14 +805,6 @@
       <guid isPermaLink="true">https://c0d4.ink/posts/hgame2026final/</guid>
       <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
       <description>https://hgame.vidar.club/games/10 juncrypt 汇编，好看爱看 main有一段诡异的逻辑 v4 = sub_12B0(s_1, _r_n); if ( v4 &lt; 0 ) { puts(&quot;runtime error&quot;); return 1; } Wrong = &quot;Wrong&quot;; if ( v4 ) Wrong = &quot;Correct&quot;; puts(Wrong); 在sub_12B0函数的最后有 munmap(addr_1, 0x2DAu); } return 0xFFFFFFFFLL; } v4 &lt; 0 恒成立， Wrong = &apos;Correct&apos; 不可能执行 所以真正的校验没有在pseudocode里体现 sub_12B0调用sub_1260完成了对shellcode的加载，存入mmap申请的内存 只要获得shellcode，就能恢复校验逻辑 因为地址的动态性，只能下断点在转移控制流的位置dump shellcode 看一下 mprotect 附近的汇编 .text:0000000000001394 push rax .text:0000000000001395 mov rax, rbx .text:0000000000001398 jmp short loc_13A2 .text:00000000000013A2 push rax ; 把 Shellcode 的动态地址压入栈顶 .text:00000000000013A3 retn 断在loc_13A2即可 set disable-randomization on starti b *0x5555555553a2 commands dump binary memory shellcode.bin $rax $rax+0x2da quit end continue dump下 shell</description>
-      <source url="https://c0d4.ink/">c0d4</source>
-    </item>
-    <item>
-      <title>Notes on Cryptohack</title>
-      <link>https://c0d4.ink/posts/cryptohack/</link>
-      <guid isPermaLink="true">https://c0d4.ink/posts/cryptohack/</guid>
-      <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
-      <description>Introduction to Cryptohack _byte = chr(_integer) _integer = ord(_byte) # byte &lt;=&gt; acsii _bytes = bytes.fromhex(_str) _str = _bytes.hex() # bytes &lt;=&gt; hex _bytes = _str.encode(&quot;utf-8&quot;) # str to bytes import base64 _bytes = base64.b64encode(_bytes) _bytes = base64.b64decode(_bytes) # base64 custom_table = &quot;&quot; std_table = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot; _bytes = base64.b64decode(_bytes.translate(str.maketrans(custom_table, std_table))) # hacked_base64 from Crypto.Util.number import * _integer = bytes_to_long(_bytes) _bytes = long_to_bytes(_integer) # integer &lt;=&gt; bytes _bytes = bytes(_integers) # integers to btyes from pwn import xor _bytes = xor(A, B, [length]) # xor # 自动匹配长度(扩展至length) # 多类型支持(bytes/str/integer) https://cryptohack.org/courses/intro/xorkey1/ 根</description>
       <source url="https://c0d4.ink/">c0d4</source>
     </item>
   </channel>

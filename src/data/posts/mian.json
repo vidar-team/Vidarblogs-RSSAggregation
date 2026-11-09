@@ -6,6 +6,12 @@
   },
   "posts": [
     {
+      "title": "手机端语音识别\"成功了却报失败\"：一次 WebSocket 关闭握手的排查",
+      "url": "https://www.intmian.com/archives/IvTbQYWs",
+      "date": "2026-11-08",
+      "summary": "我的笔记应用里有个语音转文字功能：浏览器通过 WebSocket 把音频发给 Go 服务端，服务端再转给通义千问的实时识别接口，识别结果沿原路推回网页。 最近发现一个怪问题。电脑上用一切正常；手机上说完点\"结束\"，文字明明已经完整显示出来了，紧接着却弹出\"识别失败\"。去翻后台日志，千问和服务端都显示"
+    },
+    {
       "title": "从零开始用OSM建立足迹App引擎",
       "url": "https://www.intmian.com/archives/vWtm67Uv",
       "date": "2026-10-24",
