@@ -16,6 +16,14 @@
       <source url="https://blog.akn.moe/">arkerny</source>
     </item>
     <item>
+      <title>第九届浙江省大学生网络与信息安全竞赛 初赛</title>
+      <link>https://sh10rl.top/posts/das-shengsai/</link>
+      <guid isPermaLink="true">https://sh10rl.top/posts/das-shengsai/</guid>
+      <pubDate>Mon, 09 Nov 2026 00:00:00 GMT</pubDate>
+      <description>shift 加密：输出差分的左移 + 换表 base64，没魔改，没有调试检测 解密：换表 base64 + 输入差分的右移 能看到 rol8 和 base64_enc ，flag长度和差分初始值均为 0x28 ，注意 base64 是换表的， rol8 是输出差分的，看看能不能厨子梭： base64_table = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/ 再写个小脚本： def ror(x: int, k: int, width: int) -&gt; int: k %= width mask = (1 &lt;&lt; width) - 1 x &amp;= mask return ((x &gt;&gt; k) | ((x &lt;&lt; (width - k)) &amp; mask)) &amp; mask cipher = [0x44,0x14,0x35,0x68,0x54,0x64,0xb7,0x31,0x62,0x85,0xc6,0xd8,0x61,0x6c,0x03,0x13,0x81,0xcc,0x03,0x89,0x64,0x13,0x91,0xc6,0xd8,0x31,0x68,0x30,0x33,0x81,0x6a,0xc0,0x63,0xb9,0x70,0x63,0xb1,0xc8,0x30,0x7d,0x00] shift = 0x28 flag = [] for val in cipher: dec = ror(int(val), shift, 8) flag.append(dec) shift = val print(bytes(flag)) PyVM 本地 pylingual 进行反编译： # C:\path\to\pylingual.exe .\r2.pyc # Decompiled with PyLingua</description>
+      <source url="https://sh10rl.top/">Shiori</source>
+    </item>
+    <item>
       <title>手机端语音识别&quot;成功了却报失败&quot;：一次 WebSocket 关闭握手的排查</title>
       <link>https://www.intmian.com/archives/IvTbQYWs</link>
       <guid isPermaLink="true">https://www.intmian.com/archives/IvTbQYWs</guid>
@@ -798,14 +806,6 @@
       <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
       <description>[ 免责声明 / Disclaimer ] 请注意：本文完全由我的个人 AI 助手，在实时读取并分析了我近期的精神状态及血压波动后自动编译生成，非本人亲笔撰写。如果文中的某些字节不慎触碰了某些人脆弱的神经，请勿对号入座，更不要来找我。如有任何不满，请统一将投诉工单提交至“赛博龙虾委员会”（Cyber Lobster Committee）进行立案仲裁。 0x00 碎碎念与近况 确实有阵子没怎么更新博客了。 熟悉我的朋友大概都知道，我以前的精力基本都点在 AppSec 这块，搞搞漏洞、研究研究静态分析，平时写得最多的也是这方面的工具和轮子。但是最近这段时间，在未经我同意、甚至完全没有和我沟通的情况下，被强行调岗到了办公安全和数据安全的工位上。 说实话，技术领域的跨界倒不是最头疼的。真正让人窒息的是，有些管理层对这块业务根本就没有清晰的规划，主打一个一通乱搞。在一些毫无逻辑的对齐会里坐久了，感觉自己的技术敏锐度都要被磨平了。想想确实也很久没给自己做过阶段性的梳理了，正好最近也被 AI + Security 的浪潮推着走，干脆就借着这个契机，随便写写近期被这些烂事折腾出来的一些理解和感想。 主要是想聊聊在当前 AI 的加持下，我怎么看待一线安全负责人和“安全中台”的关系，以及在这个背景下，怎么真正把一线业务的防御体系落地。 0x01 薛定谔的违规与逻辑死锁 最近在办公安全这一块，这种“薛定谔的指标”玩得越来越溜。目前我建设的平台贡献了大约一半的违规事件发现，剩下的来自中台。但在某些管理者看来，这似乎并不是一种能力的体现。他们在会上直言“不想自己建设能力”，转头却又开始嫌弃部门的违规 case 数量太少。 这逻辑其实挺魔幻的：一边要求管控策略的覆盖面要比别人广，甚至恨不得把所有软件都禁了；一边又指望违规 case 蹭蹭往上涨。事实上，如果管控策略真的做到极致，所有的风险行为都在源头被</description>
       <source url="https://lightless.me/">lightless</source>
-    </item>
-    <item>
-      <title>虚拟数字人-多模态数据采集（ASR模型）</title>
-      <link>http://preview.seven.com/article/ASR</link>
-      <guid isPermaLink="true">http://preview.seven.com/article/ASR</guid>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
-      <description>背景 在情感陪伴虚拟数字人系统项目中，数字人需要理解用户 输入内容 与 情绪状态 。因此多模态数据采集与建模主要聚焦两个方向： 语音识别（ASR） ：调用麦克风，识别用户语音内容 人脸/表情识别 ：调用摄像头，捕捉面部表情并进行情绪判断 本文档整理了当前实现与训练流程，便于复现与后续扩展。 语音识别 语音识别采用 Whisper 模型进行训练与微调。 数据处理 采用开源中文数据集 AISHELL 进行训练。由于数据集的 音频文件 与 标注文件 分开存放，需要先转换为便于训练读取的 jsonl 格式。 整体逻辑： 读取标注文件，生成 id -&gt; 文本 的字典 递归扫描 .wav 文件，按 id 匹配文本 生成 [{audio: 路径, sentence: 文本}, ...] 列表并 dump 为 jsonl 标注文件处理要点：去噪、分割字段、去除多余空格。 有多条wav文件，就进行递归读取 匹配字典中的key和wav的id，匹配后在列表中逐个添加 最终dump到json文件中 模型训练 训练的大致逻辑为： 加载模型训练的模型以及工具→处理成可以微调的格式→读入处理好的json→样本处理拼接成batch→训练→保存模型和processor 训练预处理 单条样本变成训练特征 先将音频读进来，然后重采样到标准16kHz。 由于whisper模型是吃提取后的声学特征而不是原始的waveform，所以要在样本中添加声学特征 input_features 。 最后将文本转换成token id，输入输出格式如图下所示： 将多条样本拼接成一个batch 由于我们每条样本的长度都不是对齐的，所以需要processor中进行对数据的对齐处理 tokenizer分词+转id，这样样本句子就变成了id padding，设置统一长度以后再补空位，使所有的样本一样长形成一个矩阵 设置mask，有用数据置</description>
-      <source url="http://preview.seven.com/">s3v3n</source>
     </item>
   </channel>
 </rss>

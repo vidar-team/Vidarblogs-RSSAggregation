@@ -6,6 +6,12 @@
   },
   "posts": [
     {
+      "title": "第九届浙江省大学生网络与信息安全竞赛 初赛",
+      "url": "https://sh10rl.top/posts/das-shengsai/",
+      "date": "2026-11-09",
+      "summary": "shift 加密：输出差分的左移 + 换表 base64，没魔改，没有调试检测 解密：换表 base64 + 输入差分的右移 能看到 rol8 和 base64_enc ，flag长度和差分初始值均为 0x28 ，注意 base64 是换表的， rol8 是输出差分的，看看能不能厨子梭： base64_table = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/ 再写个小脚本： def ror(x: int, k: int, width: int) -> int: k %= width mask = (1 << width) - 1 x &= mask return ((x >> k) | ((x << (width - k)) & mask)) & mask cipher = [0x44,0x14,0x35,0x68,0x54,0x64,0xb7,0x31,0x62,0x85,0xc6,0xd8,0x61,0x6c,0x03,0x13,0x81,0xcc,0x03,0x89,0x64,0x13,0x91,0xc6,0xd8,0x31,0x68,0x30,0x33,0x81,0x6a,0xc0,0x63,0xb9,0x70,0x63,0xb1,0xc8,0x30,0x7d,0x00] shift = 0x28 flag = [] for val in cipher: dec = ror(int(val), shift, 8) flag.append(dec) shift = val print(bytes(flag)) PyVM 本地 pylingual 进行反编译： # C:\\path\\to\\pylingual.exe .\\r2.pyc # Decompiled with PyLingua"
+    },
+    {
       "title": "软件系统安全赛",
       "url": "https://sh10rl.top/posts/dart/",
       "date": "2026-03-15",
@@ -24,7 +30,7 @@
       "summary": "ez_py 给了两个玩意: pyinstaller 打包的 key.exe , 要求输入正确9个数字 pyarmor 打包的 src.py , 需要用 Pyarmor Static Unpack One-Shot Tool 解包 每个pyarmor-obfuscated app文件夹内一般都会有一个 pyarmor_runtime.pyd 文件, 运行 shot.py 的时候需要 -r 指定 pyarmor_runtime.pyd ; 同时需要补一下文件头才能被工具扫, 后六位和给的pyarmor_runtime_000000文件夹名字后六位相同: python shot.py ./ -r C:\\path\\to\\src\\pyarmor_runtime_000000\\pyarmor_runtime.pyd 看解出来的 src.py.1shot.cdc.py 有KSA和PRGA; print一下 make.__doc__ : 差key, 用decompyle3, pycdc都不行, 只有一部分, 用 pylingual : jinhsi 内部调用逻辑不全, 接下来两步: 根据pylingual + das信息丢给LLM还原程序源代码, 还原的程序缺 Carlotta 写个AST截胡脚本把 Carlotta 截下来 还原的源码, 逻辑和源程序完全一致: # -*- coding: utf-8 -*- # Reconstructed from your disassembly import ast import types # 按原文件导入，但未直接使用 import sys def Carlotta(o0oC, o0oD, o0oE, o0oF): o0oH = 305419896 o0oI = o0oE & 65535 o0oJ = o0oE >> 16 & 65535 o0o"
     },
     {
-      "title": "关于Bash和Linux",
+      "title": "关于 Bash 和 Linux",
       "url": "https://sh10rl.top/posts/bash-linux-basics/",
       "date": "2025-10-10",
       "summary": "Bourne Again SHell 来自 GNU Project , 是 Bourne shell (sh) 加强版, 属于 Shell 大类, 本质上是个程序 , 运行在 GNU操作系统 上, 作为用户与操作系统用户空间程序交互的接口. 说这些可能会让你一头雾水. 所以, 先用再说. 如果你是Windows系统, 需要使用 WSL 1 安装使用Bash的GNU/Linux发行版 (推荐 Ubuntu 或 Debian 等). 过程不难, 可以参照 官方文档 操作 2 ; 如果你是GNU/Linux系统, 想必你应该熟悉一些Bash的基本命令了. 首先在 这里 看看bash都有哪些指令. 另外, 在mini赛题中会出现ELF格式的文件, 需要在GNU/Linux环境 (原生, WSL, 容器或虚拟机) 上进行运行和调试. 了解Bash 如果想要系统学习Bash以及相关基础, 推荐: The Missing Semester of Your CS Education 或者说直接下手开干, 大语言模型 是不错的老师 当然Bash只是Shell家族中最广泛使用的一员, 还有一些和它平起平坐的Shell: Zsh , nushell , KornShell , Tcsh , Fish 等等. 一些问题 Terminal / Shell / CLI / Bash 都是一个东西吗? Linux, GNU/Linux, GNU Project, GNU Operating System 都是一个东西吗? 编译C的编译器 gcc , g++ , 全称是什么? 属于什么? Unix和Unix-like的关系是什么? Terminal / Shell / CLI / Bash 都是一个东西吗？ 当然———不是, 他们相关, 但不属于一个层级, Terminal ( 终端程序 , 是个程序 3"
@@ -60,7 +66,7 @@
       "summary": "This article’s aim is to generally explain what sections and segments are in an ELF file on x86-64 GNU/Linux and how they are mapped to memory. It’s a good practice to understand ELF file structure and virtual memory mapping; this article also serves as my personal note. Program headers and PT_LOAD segments Program headers , preceded by ELF header , are essentially an array of structures that can be parsed to show the mapping between sections (within ELF file) and segments (loaded into memory). ELF file structure diagram. The diagram above shows a panoramic view of an ELF file structure. Now, I want to know exactly where program headers reside and what each header contains 1 . It’s always a good way to start by compiling a simple program and examining it with tools like readelf , gdb , IDA"
     },
     {
-      "title": "DN11接入笔记",
+      "title": "DN11 接入笔记",
       "url": "https://sh10rl.top/posts/dn11/",
       "date": "2025-07-07",
       "summary": "有一台公网服务器接入DN11还是挺方便的, 主要用到的工具有两个: Wireguard (创建安全隧道) Bird2 (负责不同AS之间的路由) 前置知识 因特网 (Internet) 由很多独立的网络组成, 即 自治域 (AS) ; 每个自治域由 ISP 管理, 我们说的 “上网” 就是接入了ISP, 让ISP给你分配一个公网IP地址, 你的数据包从你的路由器 (这里指家庭路由器) 出发, 经过ISP的边界网关, 到达其他ISP的边界网关, 再到达目标ISP的边界网关, 最后传递到目标主机. BGP解决的是如何选择在不同AS之间跳跃的最优路径; 每个边界网关都存储了一个路由表, 边界网关会根据数据包的目的地址和路由表决定这个数据包的下一跳去哪个AS. DN11可以看成因特网的缩小版, 每个接入DN11的成员都需要有独立的ASN和网段, 二者是对应关系, 在 成员注册表 统一管理. 比如我申请的网段和ASN分别为 172.16.47.0/24 , 4220085757 ; 我在Wireguard创建的虚拟内网 1 中就扮演了因特网里面的ISP, 拥有独立网段和ASN. 可以看看DN11的 实时拓扑图 . 配置Wireguard 用来建立对等会话 (peer), 柏师傅的 wg-quick-op 丰富了原版 wg-quick-go 的功能, 先运行 wg-quick-op install , 然后到配置文件 ( /etc/wireguard.your_wg_interface_name.conf )进行虚拟网口和peer的配置, 如果配置没问题的话, 在运行 wg-quick-op up <interface name> 后, 脚本会自动帮你做以下几个事情: 在你的系统内创建一个虚拟网口 Wireguard开始监听 0.0.0.0:port 执行 PostUp 指令, 分配我"
