@@ -6,6 +6,12 @@
   },
   "posts": [
     {
+      "title": "给 AI 协作配置做减法",
+      "url": "https://www.intmian.com/archives/mLIt0E3Z",
+      "date": "2026-11-11",
+      "summary": "上周我把 platform 项目里的 AI 协作配置推倒重来了一遍。git 统计删了 3513 行，加了 412 行。 四个月前我写过一篇《如何在老项目里用 AI 写代码的一些感悟：从搭系统到落地的一整套方法》，介绍当时搭的那套东西：根目录一个 AGENTS.md 负责规则和路由，ai-doc 目录"
+    },
+    {
       "title": "手机端语音识别\"成功了却报失败\"：一次 WebSocket 关闭握手的排查",
       "url": "https://www.intmian.com/archives/IvTbQYWs",
       "date": "2026-11-08",
