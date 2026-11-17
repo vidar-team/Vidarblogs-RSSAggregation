@@ -16,6 +16,14 @@
       <source url="https://blog.akn.moe/">arkerny</source>
     </item>
     <item>
+      <title>第九届浙江省大学生网络与信息安全竞赛 决赛</title>
+      <link>https://sh10rl.top/posts/shengsai-final/</link>
+      <guid isPermaLink="true">https://sh10rl.top/posts/shengsai-final/</guid>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 GMT</pubDate>
+      <description>ez_go 可以看出是 AES + Base58： 动调提 key： 0xf8, 0x14, 0x4d, 0x60, 0x28, 0x49, 0xcd, 0x1c, 0x66, 0x62, 0x42, 0x15, 0x7c, 0xce, 0x43, 0x71 compare 函数在 goroutine 里， newproc 起 goroutine ，入口为 gowrap1 ： 和 compareBase58WithCiphertext 一个东西： 拿到密文： 8CRFoGsg8eBPnbE53XMNNmCvBbQEaKZuFkVhoTweoVQLozxhHaXKm2oSvcsGxxPCuR ，试试 aes-ecb ，出了： LastDeparture 改标志脱壳 ELF UPX，改标志就能脱： 手动脱壳 也可以试试用 pwndbg 手动 dump 一下： file last_departure catch syscall munmap # 断在 munmap 进入和推出处 r # munmap enter c # munmap ret c # munmap enter c # munmap ret upx 分为壳 + 压缩后的程序；壳里有 loader ，壳能加载 loader ； loader 能解压程序；由于 loader 是临时的，其完成解压后会被 munmap ，所以 第 1 个 munmap 释放壳 第 2 个 munmap 释放 loader ，此时已经解压完成 0x8049000 初始化栈后调 0x80492b5 ，后面还有 SYS_exit ， 0x80492b5 是 main ，dump 整页下来： 脚本 Patch IDA 打开，可以看到加密函数是被加密的： 交叉引用下找解密逻辑，写脚本 patch 一下： import ida_bytes from p</description>
+      <source url="https://sh10rl.top/">Shiori</source>
+    </item>
+    <item>
       <title>给 AI 协作配置做减法</title>
       <link>https://www.intmian.com/archives/mLIt0E3Z</link>
       <guid isPermaLink="true">https://www.intmian.com/archives/mLIt0E3Z</guid>
@@ -797,14 +805,6 @@
       <guid isPermaLink="true">https://lewis1766.github.io/about/</guid>
       <pubDate>Fri, 17 Apr 2026 00:00:00 GMT</pubDate>
       <description>很高兴你能来到这里。 本人目前处在CTF（Capture the Flag，夺旗赛）知识的学习中，研究主要是web方向，萌新一枚，请多指教。 本人对AI也非常感兴趣，欢迎志同道合的人和我畅所欲言。在这里我将主要分享我的学习过程和实战心得，也可能夹带一些个人生活（说实话我还没想好发什么）。 我的爱好：音乐/电影/美剧/旅游 我的微信：Q2FsaWYwcm5pYWRyZWFtaW4=（请解码） 最后是乔布斯的一句话，我认为终身受用 &amp;ldquo;Stay Hungry, Stay Foolish.&amp;rdquo;</description>
-      <source url="https://lewis1766.github.io/">lewis</source>
-    </item>
-    <item>
-      <title>第一篇文章</title>
-      <link>https://lewis1766.github.io/posts/my-first-post/</link>
-      <guid isPermaLink="true">https://lewis1766.github.io/posts/my-first-post/</guid>
-      <pubDate>Fri, 17 Apr 2026 00:00:00 GMT</pubDate>
-      <description>欢迎来到我的网站！</description>
       <source url="https://lewis1766.github.io/">lewis</source>
     </item>
   </channel>
