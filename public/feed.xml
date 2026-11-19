@@ -48,6 +48,14 @@
       <source url="https://www.intmian.com/">mian</source>
     </item>
     <item>
+      <title>漫步钱塘，其三：下沙江滨</title>
+      <link>https://csmantle.top/2026/11/05/roaming-hangzhou-3-xiasha-riverside.html</link>
+      <guid isPermaLink="true">https://csmantle.top/2026/11/05/roaming-hangzhou-3-xiasha-riverside.html</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <description>说远不远，说近不近。</description>
+      <source url="https://csmantle.top/">Mantle</source>
+    </item>
+    <item>
       <title>a WASM CPU sim</title>
       <link>https://dodor.top/2026/10/28/cpu-sim-wasm-interrupt-demo/</link>
       <guid isPermaLink="true">https://dodor.top/2026/10/28/cpu-sim-wasm-interrupt-demo/</guid>
@@ -798,14 +806,6 @@
       <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
       <description>Hello · 日常</description>
       <source url="https://blog.rencj.top/">Rencj</source>
-    </item>
-    <item>
-      <title>关于我</title>
-      <link>https://lewis1766.github.io/about/</link>
-      <guid isPermaLink="true">https://lewis1766.github.io/about/</guid>
-      <pubDate>Fri, 17 Apr 2026 00:00:00 GMT</pubDate>
-      <description>很高兴你能来到这里。 本人目前处在CTF（Capture the Flag，夺旗赛）知识的学习中，研究主要是web方向，萌新一枚，请多指教。 本人对AI也非常感兴趣，欢迎志同道合的人和我畅所欲言。在这里我将主要分享我的学习过程和实战心得，也可能夹带一些个人生活（说实话我还没想好发什么）。 我的爱好：音乐/电影/美剧/旅游 我的微信：Q2FsaWYwcm5pYWRyZWFtaW4=（请解码） 最后是乔布斯的一句话，我认为终身受用 &amp;ldquo;Stay Hungry, Stay Foolish.&amp;rdquo;</description>
-      <source url="https://lewis1766.github.io/">lewis</source>
     </item>
   </channel>
 </rss>
