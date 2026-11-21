@@ -164,11 +164,12 @@ export function Feed({
       "",
       nextSearch ? `?${nextSearch}` : window.location.pathname,
     );
-    window.scrollTo({ top: 0 });
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
   };
 
   const buttonClass =
-    "inline-flex h-8 min-w-8 items-center justify-center rounded-md px-2 transition";
+    "inline-flex h-8 min-w-8 items-center justify-center rounded-md px-2 transition-all duration-200 active:scale-95";
 
   const hasLoadError = needsAllPosts && allPosts === null && loadError;
   const showPagination = pageCount > 1 && !isLoading && !hasLoadError;
@@ -179,8 +180,8 @@ export function Feed({
         <SearchParamsSync onSync={handleUrlSync} />
       </Suspense>
 
-      <div className="relative w-full">
-        <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+      <div className="group relative w-full">
+        <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground transition-colors duration-200 group-focus-within:text-foreground" />
         <input
           type="search"
           value={query}
@@ -198,17 +199,17 @@ export function Feed({
             );
           }}
           placeholder="搜索文章或作者…"
-          className="h-11 w-full rounded-lg border border-border bg-background pl-9 pr-4 text-base outline-none transition placeholder:text-muted-foreground focus-visible:border-foreground/30"
+          className="h-11 w-full rounded-lg border border-border bg-background pl-9 pr-4 text-base outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-muted-foreground focus-visible:border-foreground/30 focus-visible:ring-4 focus-visible:ring-foreground/[0.04]"
         />
       </div>
 
       <div className="mt-6 flex w-full flex-col">
         {isLoading ? (
-          <p className="py-20 text-center text-muted-foreground">
+          <p className="motion-fade animate-pulse py-20 text-center text-muted-foreground">
             正在加载文章索引…
           </p>
         ) : hasLoadError ? (
-          <div className="flex flex-col items-center justify-center gap-3 py-20 text-center">
+          <div className="motion-fade flex flex-col items-center justify-center gap-3 py-20 text-center">
             <p className="text-muted-foreground">文章索引加载失败。</p>
             <button
               type="button"
@@ -216,18 +217,20 @@ export function Feed({
                 setLoadError(false);
                 setRetryToken((n) => n + 1);
               }}
-              className="rounded-lg border border-border px-4 py-1.5 text-sm text-foreground transition hover:border-foreground/20 hover:bg-muted"
+              className="rounded-lg border border-border px-4 py-1.5 text-sm text-foreground transition-all duration-200 hover:border-foreground/20 hover:bg-muted active:scale-95"
             >
               重试
             </button>
           </div>
         ) : (
           <>
-            {visible.map((post) => (
-              <PostRow key={post.id} post={post} />
-            ))}
+            <div key={`page-${current}`} className="flex w-full flex-col">
+              {visible.map((post, index) => (
+                <PostRow key={post.id} post={post} index={index} />
+              ))}
+            </div>
             {filtered.length === 0 && (
-              <p className="py-20 text-center text-muted-foreground">
+              <p className="motion-fade py-20 text-center text-muted-foreground">
                 没有匹配的文章。
               </p>
             )}
@@ -246,7 +249,7 @@ export function Feed({
             disabled={current <= 1}
             className={cn(
               buttonClass,
-              "text-muted-foreground hover:text-foreground disabled:pointer-events-none disabled:opacity-40",
+              "text-muted-foreground hover:bg-muted/70 hover:text-foreground disabled:pointer-events-none disabled:opacity-40",
             )}
           >
             上一页
@@ -266,8 +269,8 @@ export function Feed({
                 className={cn(
                   buttonClass,
                   item === current
-                    ? "border border-border text-foreground"
-                    : "text-muted-foreground hover:text-foreground",
+                    ? "border border-border bg-muted/50 text-foreground"
+                    : "text-muted-foreground hover:bg-muted/70 hover:text-foreground",
                 )}
               >
                 {item}
@@ -281,7 +284,7 @@ export function Feed({
             disabled={current >= pageCount}
             className={cn(
               buttonClass,
-              "text-muted-foreground hover:text-foreground disabled:pointer-events-none disabled:opacity-40",
+              "text-muted-foreground hover:bg-muted/70 hover:text-foreground disabled:pointer-events-none disabled:opacity-40",
             )}
           >
             下一页

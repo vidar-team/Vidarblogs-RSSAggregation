@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Rss } from "lucide-react";
@@ -17,7 +18,10 @@ export default function About() {
       <SiteHeader />
       <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col items-start justify-start overflow-x-hidden px-6 pb-10">
         <article className="w-full">
-          <header className="border-b border-border pb-10">
+          <header
+            style={{ "--stagger-index": 0 } as CSSProperties}
+            className="motion-enter motion-stagger border-b border-border pb-10"
+          >
             <h2 className="text-xl font-bold text-foreground sm:text-2xl">
               关于
             </h2>
@@ -26,28 +30,31 @@ export default function About() {
             </p>
           </header>
 
-          <section className="border-b border-border py-10">
+          <section
+            style={{ "--stagger-index": 1 } as CSSProperties}
+            className="motion-enter motion-stagger border-b border-border py-10"
+          >
             <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
               收录成员
             </h2>
             <p className="mt-4 text-base font-normal leading-normal text-muted-foreground">
               目前共收录 {members.length} 位成员的博客。若您的博客未被收录，十分抱歉。您可以编辑
-              <a href="https://github.com/vidar-team/Vidarblogs-RSSAggregation/blob/main/script/feeds.json" target="_blank" rel="noopener noreferrer" className="hover:underline mx-1">
+              <a href="https://github.com/vidar-team/Vidarblogs-RSSAggregation/blob/main/script/feeds.json" target="_blank" rel="noopener noreferrer" className="mx-1 hover:underline">
                 该文件
               </a>
               并提交 PR 以添加自己的博客。
             </p>
-            <ul className="px-2 mt-6 grid gap-x-10 gap-y-1 sm:grid-cols-2 lg:grid-cols-2">
+            <ul className="mt-6 grid gap-x-10 gap-y-1 px-2 sm:grid-cols-2 lg:grid-cols-2">
               {members.map((member) => (
                 <li
                   key={member.id}
-                  className="flex items-center justify-between gap-4 border-b border-border py-3"
+                  className="-mx-2 flex items-center justify-between gap-4 rounded-md border-b border-border px-2 py-3 transition-colors duration-200 hover:bg-muted/50"
                 >
                   <a
                     href={member.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="truncate text-base font-normal text-foreground transition hover:text-muted-foreground"
+                    className="truncate text-base font-normal text-foreground transition-colors duration-200 hover:text-muted-foreground"
                   >
                     {member.name}
                   </a>
@@ -62,7 +69,10 @@ export default function About() {
             </ul>
           </section>
 
-          <section className="border-b border-border py-10">
+          <section
+            style={{ "--stagger-index": 2 } as CSSProperties}
+            className="motion-enter motion-stagger border-b border-border py-10"
+          >
             <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
               订阅
             </h2>
@@ -72,22 +82,25 @@ export default function About() {
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <a
                 href="/feed.xml"
-                className="flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm text-muted-foreground transition hover:border-foreground/20 hover:text-foreground"
+                className="group flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm text-muted-foreground transition-all duration-200 ease-editorial hover:-translate-y-0.5 hover:border-foreground/25 hover:bg-muted/60 hover:text-foreground active:translate-y-0 active:scale-[0.98]"
               >
-                <Rss className="size-4" />
+                <Rss className="size-4 transition-transform duration-300 ease-editorial group-hover:scale-110" />
                 Subscribe via RSS
               </a>
               <Link
                 href="/"
-                className="group flex items-center gap-1.5 text-sm text-muted-foreground transition hover:text-foreground"
+                className="group flex items-center gap-1.5 text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
               >
                 浏览全部文章
-                <ArrowRight className="size-4 -translate-y-0.5 transition group-hover:translate-x-0.5" />
+                <ArrowRight className="size-4 -translate-y-0.5 transition-transform duration-300 ease-editorial group-hover:translate-x-1" />
               </Link>
             </div>
           </section>
 
-          <section className="py-10">
+          <section
+            style={{ "--stagger-index": 3 } as CSSProperties}
+            className="motion-enter motion-stagger py-10"
+          >
             <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
               加入
             </h2>

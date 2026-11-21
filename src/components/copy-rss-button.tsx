@@ -26,11 +26,15 @@ export function CopyRssButton({ url }: { url: string }) {
       aria-label={copied ? "Copied." : "Copy RSS URL"}
       title={copied ? "Copied." : "Copy RSS URL"}
       className={cn(
-        "inline-flex size-8 items-center justify-center rounded-md border border-border text-muted-foreground transition hover:border-foreground/20 hover:text-foreground",
+        "inline-flex size-8 items-center justify-center rounded-md border border-border text-muted-foreground transition-all duration-200 hover:border-foreground/20 hover:bg-muted/60 hover:text-foreground active:scale-90",
         copied && "border-foreground/20 text-foreground",
       )}
     >
-      {copied ? <Check className="size-4" /> : <Rss className="size-4" />}
+      {copied ? (
+        <Check className="size-4 motion-icon-pop" />
+      ) : (
+        <Rss className="size-4" />
+      )}
     </button>
   );
 }

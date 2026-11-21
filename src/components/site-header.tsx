@@ -56,10 +56,12 @@ export function SiteHeader() {
     <>
       <nav className="mx-auto grid w-full max-w-7xl grid-cols-2 items-center justify-between gap-4 px-6 py-6 text-xl font-bold sm:py-10 sm:text-2xl lg:grid-cols-4">
         <div className="lg:col-span-1">
-          <Link href="/" className="inline-block">
+          <Link href="/" className="group inline-block">
             <h1 className="font-medium sm:font-bold">
               <span>Vidar</span>
-              <span className="text-muted-foreground">blogs</span>
+              <span className="text-muted-foreground transition-colors duration-300 group-hover:text-foreground">
+                blogs
+              </span>
             </h1>
           </Link>
         </div>
@@ -74,9 +76,8 @@ export function SiteHeader() {
                     href={link.href}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "inline-block transition hover:text-foreground",
-                      active &&
-                        "text-foreground underline decoration-foreground/30 underline-offset-8",
+                      "nav-link-underline inline-block transition-colors duration-200 hover:text-foreground",
+                      active && "text-foreground",
                     )}
                   >
                     {link.label}
@@ -90,17 +91,17 @@ export function SiteHeader() {
         <div className="flex items-center justify-end gap-2 lg:col-span-1">
           <a
             href="/feed.xml"
-            className="group hidden items-center justify-center gap-1.5 text-base font-medium tracking-tight sm:text-lg lg:flex"
+            className="group hidden items-center justify-center gap-1.5 text-base font-medium tracking-tight text-foreground transition-colors duration-200 hover:text-muted-foreground sm:text-lg lg:flex"
           >
             Subscribe
-            <ArrowRight className="size-4 -translate-y-0.5 transition group-hover:translate-x-0.5" />
+            <ArrowRight className="size-4 -translate-y-0.5 transition-transform duration-300 ease-editorial group-hover:translate-x-1" />
           </a>
           <button
             type="button"
             onClick={() => setOpen(true)}
             aria-label="打开菜单"
             aria-expanded={open}
-            className="inline-flex size-9 items-center justify-center rounded-md text-foreground transition hover:bg-muted lg:hidden"
+            className="inline-flex size-9 items-center justify-center rounded-md text-foreground transition-all duration-200 hover:bg-muted active:scale-95 lg:hidden"
           >
             <Menu className="size-6" />
           </button>
@@ -117,7 +118,7 @@ export function SiteHeader() {
         <div
           onClick={() => setOpen(false)}
           className={cn(
-            "absolute inset-0 bg-background/70 backdrop-blur-sm transition-opacity duration-300",
+            "absolute inset-0 bg-background/70 backdrop-blur-sm transition-opacity duration-300 motion-reduce:transition-none",
             open ? "opacity-100" : "opacity-0",
           )}
         />
@@ -127,7 +128,7 @@ export function SiteHeader() {
           aria-modal="true"
           aria-label="导航菜单"
           className={cn(
-            "absolute inset-y-0 right-0 flex w-72 max-w-[80%] flex-col border-l border-border bg-background px-6 py-6 shadow-xl transition-transform duration-300 ease-out",
+            "absolute inset-y-0 right-0 flex w-72 max-w-[80%] flex-col border-l border-border bg-background px-6 py-6 shadow-xl transition-transform duration-300 ease-editorial motion-reduce:transition-none",
             open ? "translate-x-0" : "translate-x-full",
           )}
         >
@@ -136,7 +137,7 @@ export function SiteHeader() {
               type="button"
               onClick={() => setOpen(false)}
               aria-label="关闭菜单"
-              className="inline-flex size-9 items-center justify-center rounded-md text-foreground transition hover:bg-muted"
+              className="inline-flex size-9 items-center justify-center rounded-md text-foreground transition-all duration-200 hover:bg-muted active:scale-95"
             >
               <X className="size-6" />
             </button>
@@ -144,16 +145,27 @@ export function SiteHeader() {
 
           <nav className="mt-6">
             <ul className="flex flex-col">
-              {NAV_LINKS.map((link) => {
+              {NAV_LINKS.map((link, index) => {
                 const active = isActive(link.href);
                 return (
-                  <li key={link.href}>
+                  <li
+                    key={link.href}
+                    style={{
+                      transitionDelay: open ? `${(index + 1) * 45}ms` : "0ms",
+                    }}
+                    className={cn(
+                      "transition-[opacity,transform] duration-300 ease-editorial motion-reduce:transition-none",
+                      open
+                        ? "translate-x-0 opacity-100"
+                        : "translate-x-3 opacity-0",
+                    )}
+                  >
                     <Link
                       href={link.href}
                       onClick={() => setOpen(false)}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "block py-3 text-lg font-medium transition hover:text-foreground",
+                        "block py-3 text-lg font-medium transition-colors duration-200 hover:text-foreground",
                         active
                           ? "font-semibold text-foreground"
                           : "text-muted-foreground",
@@ -172,10 +184,16 @@ export function SiteHeader() {
           <a
             href="/feed.xml"
             onClick={() => setOpen(false)}
-            className="group flex items-center justify-between text-lg font-medium tracking-tight"
+            style={{
+              transitionDelay: open ? `${(NAV_LINKS.length + 1) * 45}ms` : "0ms",
+            }}
+            className={cn(
+              "group flex items-center justify-between text-lg font-medium tracking-tight transition-[opacity,transform,color] duration-300 ease-editorial motion-reduce:transition-none",
+              open ? "translate-x-0 opacity-100" : "translate-x-3 opacity-0",
+            )}
           >
             Subscribe
-            <ArrowRight className="size-4 -translate-y-0.5 transition group-hover:translate-x-0.5" />
+            <ArrowRight className="size-4 -translate-y-0.5 transition-transform duration-300 ease-editorial group-hover:translate-x-1" />
           </a>
         </aside>
       </div>

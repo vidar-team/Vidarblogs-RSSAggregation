@@ -9,6 +9,7 @@
   --font-serif: var(--font-lora), var(--font-chiron), serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
   --font-heading: var(--font-sans);
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -102,10 +103,100 @@ body::-webkit-scrollbar {
   pointer-events: auto;
   touch-action: none;
   user-select: none;
+  transition: background-color 0.2s ease;
   will-change: transform, height;
 }
 
 .immersive-scrollbar:hover .immersive-scrollbar__thumb {
   background-color: color-mix(in oklab, var(--muted-foreground) 70%, transparent);
+}
+
+@keyframes editorial-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes editorial-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes icon-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.75) rotate(-8deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.motion-enter {
+  animation: editorial-enter 0.42s var(--ease-editorial) both;
+}
+
+.motion-stagger {
+  animation-delay: calc(var(--stagger-index, 0) * 35ms);
+}
+
+.motion-fade {
+  animation: editorial-fade 0.25s ease-out both;
+}
+
+.motion-icon-pop {
+  animation: icon-pop 0.24s var(--ease-editorial) both;
+}
+
+.nav-link-underline {
+  position: relative;
+}
+
+.nav-link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background-color: color-mix(in oklab, var(--foreground) 35%, transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition:
+    transform 0.3s var(--ease-editorial),
+    background-color 0.2s ease;
+}
+
+.nav-link-underline:hover::after,
+.nav-link-underline[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.nav-link-underline[aria-current="page"]::after {
+  background-color: color-mix(in oklab, var(--foreground) 55%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-enter,
+  .motion-fade,
+  .motion-icon-pop {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .nav-link-underline::after {
+    transition-duration: 0.01ms;
+  }
 }
 
