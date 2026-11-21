@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -11,7 +12,13 @@ const NAV_LINKS = [
 ] as const;
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  const isActive = (href: string) =>
+    href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
     if (!open) return;
@@ -59,13 +66,24 @@ export function SiteHeader() {
 
         <div className="hidden lg:col-span-2 lg:block">
           <ul className="flex flex-row justify-center space-x-6 text-base font-medium tracking-tight text-muted-foreground">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className="inline-block transition hover:text-foreground">
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={cn(
+                      "inline-block transition hover:text-foreground",
+                      active &&
+                        "text-foreground underline decoration-foreground/30 underline-offset-8",
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
@@ -126,17 +144,26 @@ export function SiteHeader() {
 
           <nav className="mt-6">
             <ul className="flex flex-col">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="block py-3 text-lg font-medium text-foreground transition hover:text-muted-foreground"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const active = isActive(link.href);
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      aria-current={active ? "page" : undefined}
+                      className={cn(
+                        "block py-3 text-lg font-medium transition hover:text-foreground",
+                        active
+                          ? "font-semibold text-foreground"
+                          : "text-muted-foreground",
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 

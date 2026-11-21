@@ -18,7 +18,8 @@
 //   node script/fetch-feeds.mjs --full     # ignore cache, refetch everything
 //   node script/fetch-feeds.mjs --only c0d4,DODOR
 //   node script/fetch-feeds.mjs --limit 5
-//   node script/fetch-feeds.mjs --dry      # parse + report, write nothing
+//   node script/fetch-feeds.mjs --dry           # parse + report, write nothing
+//   node script/fetch-feeds.mjs --summary-only  # rebuild public/feed.xml from local posts
 
 import {
   existsSync,
@@ -30,6 +31,7 @@ import {
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
+import { decodeHTMLStrict } from "entities";
 import { XMLParser } from "fast-xml-parser";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -51,11 +53,12 @@ const SUMMARY_MAX = 800;
 const CONCURRENCY = 6;
 const TIMEOUT_MS = 20000;
 const UA =
-  "Mozilla/5.0 (compatible; VidarRssBot/1.0; +https://github.com/Vidar-RSS)";
+  "Mozilla/5.0 (compatible; VidarRssBot/1.0; +https://github.com/vidar-team/Vidarblogs-RSSAggregation)";
 
 const args = process.argv.slice(2);
 const full = args.includes("--full");
 const dryRun = args.includes("--dry");
+const summaryOnly = args.includes("--summary-only");
 const onlyArg = args.indexOf("--only");
 const only =
   onlyArg >= 0 && args[onlyArg + 1]
@@ -85,23 +88,14 @@ const asText = (value) => {
 
 const arr = (value) => (Array.isArray(value) ? value : value == null ? [] : [value]);
 
-function decodeEntities(input) {
-  const named = {
-    amp: "&",
-    lt: "<",
-    gt: ">",
-    quot: '"',
-    apos: "'",
-    nbsp: " ",
-  };
-  return input.replace(/&(#x?[0-9a-fA-F]+|[a-zA-Z]+);/g, (match, code) => {
-    if (code[0] === "#") {
-      const hex = code[1] === "x" || code[1] === "X";
-      const value = parseInt(code.slice(hex ? 2 : 1), hex ? 16 : 10);
-      return Number.isFinite(value) ? String.fromCodePoint(value) : match;
-    }
-    return named[code.toLowerCase()] ?? match;
-  });
+const decodeEntities = (input) => decodeHTMLStrict(String(input ?? ""));
+
+function maxAllowedDate() {
+  return new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+}
+
+function isFutureDate(dateStr, cutoff = maxAllowedDate()) {
+  return !dateStr || String(dateStr) > cutoff;
 }
 
 function htmlToText(input) {
@@ -211,7 +205,7 @@ function normalizeItem(item) {
   const title = stripLoneSurrogates(decodeEntities(asText(item.title)))
     .replace(/\s+/g, " ")
     .trim();
-  if (!url || !date || !title) return null;
+  if (!url || isFutureDate(date) || !title) return null;
   return { title, url, date, summary: pickSummary(item) };
 }
 
@@ -256,12 +250,13 @@ function loadExisting(slug) {
 }
 
 function mergePosts(existing, incoming) {
+  const cutoff = maxAllowedDate();
   const byUrl = new Map();
   for (const post of existing) {
-    if (post?.url) byUrl.set(post.url, post);
+    if (post?.url && !isFutureDate(post?.date, cutoff)) byUrl.set(post.url, post);
   }
   for (const post of incoming) {
-    if (post?.url) byUrl.set(post.url, post);
+    if (post?.url && !isFutureDate(post?.date, cutoff)) byUrl.set(post.url, post);
   }
   return [...byUrl.values()].sort((a, b) =>
     String(b.date).localeCompare(String(a.date)),
@@ -272,6 +267,7 @@ function mergePosts(existing, incoming) {
 // SUMMARY_FEED_MAX items. Reads from disk so it also reflects members that were
 // left untouched by an incremental/--only run.
 function generateSummaryFeed() {
+  const cutoff = maxAllowedDate();
   const byUrl = new Map();
   for (const file of readdirSync(OUT_DIR)) {
     if (!file.endsWith(".json")) continue;
@@ -283,7 +279,14 @@ function generateSummaryFeed() {
     }
     if (!data || !Array.isArray(data.posts)) continue;
     for (const post of data.posts) {
-      if (!post?.url || !post?.title || byUrl.has(post.url)) continue;
+      if (
+        !post?.url ||
+        !post?.title ||
+        isFutureDate(post?.date, cutoff) ||
+        byUrl.has(post.url)
+      ) {
+        continue;
+      }
       byUrl.set(post.url, { ...post, author: data.author });
     }
   }
@@ -378,6 +381,14 @@ async function fetchFeed(feed, cacheEntry, hasLocalFile) {
   }
 }
 
+mkdirSync(OUT_DIR, { recursive: true });
+
+if (summaryOnly) {
+  const summaryCount = generateSummaryFeed();
+  console.log(`  ~ public/feed.xml  ${summaryCount} item(s)`);
+  process.exit(0);
+}
+
 let cache = { feeds: {} };
 if (existsSync(CACHE_FILE)) {
   try {
@@ -402,8 +413,6 @@ for (const feed of feeds) {
   usedSlugs.add(slug);
   slugById.set(feed.id, slug);
 }
-
-mkdirSync(OUT_DIR, { recursive: true });
 
 async function processFeed(feed) {
   const slug = slugById.get(feed.id);

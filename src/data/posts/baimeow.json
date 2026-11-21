@@ -39,13 +39,13 @@
       "title": "fscan 幻境梦游记",
       "url": "https://baimeow.cn/posts/security/wtf-fscan/",
       "date": "2025-01-08",
-      "summary": "fscan 可能是国内最早最知名的内网端口扫描器之一了，最早知道这个扫描器是因为他的速度，比起 nmap 来说是真的快了不少。 听说 fscan2 快要出了，想到自己还没学习过鼎鼎有名的 fscan 的源码，略感惭愧。于是心血来潮决定来对比学习一下第一代 fscan 和即将发布的 fscan2 之间。 略有困意 我们先看看经典的老版本 fscan 吧，看看多年实战历练的代码是什么样子的。 这个项目结构很简洁啊，一眼望去可以看到 Plugins WebScan common main.go 没了，就这 4 个，大小写略有混乱无伤大雅，一眼望过去 common 就是我们的核心了，Plugins 明显是各种协议，设计成 Plugins 单独提出来，非常阳间，WebScan 是针对于 http 的一些专用探测和 poc，太简洁了，牛逼。 对的对的，那我们这就打开 common 看看吧，整体主逻辑肯定就在里面了跑不掉，非常符合我们的幻想啊，太棒了。 Parse.go ParseIP.goo ParsePort.go config.go flag.go log.go proxy.go 这对吗，我的 Scanner 呢？ （沉默片刻） 或许我应该看看 main.go &hellip; func main () { start := time . Now () var Info common . HostInfo common . Flag ( & Info ) common . Parse ( & Info ) Plugins . Scan ( Info ) fmt . Printf ( \"[*] 扫描结束,耗时: %s\\n\" , time . Since ( start )) } 原来 Scanner 的主逻辑也是一个 Plugins，super 插件化，狠狠插拔，一切皆为插件，我的我"
+      "summary": "fscan 可能是国内最早最知名的内网端口扫描器之一了，最早知道这个扫描器是因为他的速度，比起 nmap 来说是真的快了不少。 听说 fscan2 快要出了，想到自己还没学习过鼎鼎有名的 fscan 的源码，略感惭愧。于是心血来潮决定来对比学习一下第一代 fscan 和即将发布的 fscan2 之间。 略有困意 我们先看看经典的老版本 fscan 吧，看看多年实战历练的代码是什么样子的。 这个项目结构很简洁啊，一眼望去可以看到 Plugins WebScan common main.go 没了，就这 4 个，大小写略有混乱无伤大雅，一眼望过去 common 就是我们的核心了，Plugins 明显是各种协议，设计成 Plugins 单独提出来，非常阳间，WebScan 是针对于 http 的一些专用探测和 poc，太简洁了，牛逼。 对的对的，那我们这就打开 common 看看吧，整体主逻辑肯定就在里面了跑不掉，非常符合我们的幻想啊，太棒了。 Parse.go ParseIP.goo ParsePort.go config.go flag.go log.go proxy.go 这对吗，我的 Scanner 呢？ （沉默片刻） 或许我应该看看 main.go … func main () { start := time . Now () var Info common . HostInfo common . Flag ( & Info ) common . Parse ( & Info ) Plugins . Scan ( Info ) fmt . Printf ( \"[*] 扫描结束,耗时: %s\\n\" , time . Since ( start )) } 原来 Scanner 的主逻辑也是一个 Plugins，super 插件化，狠狠插拔，一切皆为插件，我的我"
     },
     {
       "title": "ORM 框架 SQL 注入点分析 （以Golang为例）",
       "url": "https://baimeow.cn/posts/security/ormsql2024/",
       "date": "2024-08-08",
-      "summary": "最近研究了一些现代 ORM 框架的 SQL 注入情况，做一些笔记吧。 GORM 注入点 gorm 注入点简单可以分为三种情况 检测转义 直接转义 schema 校验 如果 gorm 认为这个参数他不会是一个表达式也不会是 `aaa`.`bbb` 的形式，从功能上也只可能是一个单纯的列名，这个时候 gorm 会直接给你套上 ` 同时对内部的内容全部进行转义，这种一般是不存在注入点的，例如 Association 函数。 另外部分多表关联（Associations）查询的字段会存在 schema 校验，如果对不上列名会在 sql 构建阶段报错，例如 Preload 函数，这些也是无法注入的。 那剩下的部分都执行一个检测转义的策略: 先检测 ` 的存在, 如果不存在就套上，并假装存在，直到扫描另一个 ` 这个转义设计上是为了兼容性，并不出于安全性考虑，所以是比较好注的 根据注入点出现的位置分类,可以分为下面这几个 参数位置 函数 1 Group,Order,Exec,Having,InnerJoins,Joins,Not,Or,Pluck,Raw,Select,Table,Where 1&hellip; Distinct 2 Find,First,FirstOrCreate,FirstOrInit,Last,Take 参数位置 为 2 的一类基本是 gorm 新增的一些语法糖 API，不过从上表也可以看出 Gorm 设计的真的不错，API 风格真的非常统一。 案例 DB . Order ( \"id = case when version() rlike '8.*' then ? else 0 end #\" ). First ( & a ) DB . First ( & a , \"?=0 union select 1,1,version() #\" ) SELECT * FROM `"
+      "summary": "最近研究了一些现代 ORM 框架的 SQL 注入情况，做一些笔记吧。 GORM 注入点 gorm 注入点简单可以分为三种情况 检测转义 直接转义 schema 校验 如果 gorm 认为这个参数他不会是一个表达式也不会是 `aaa`.`bbb` 的形式，从功能上也只可能是一个单纯的列名，这个时候 gorm 会直接给你套上 ` 同时对内部的内容全部进行转义，这种一般是不存在注入点的，例如 Association 函数。 另外部分多表关联（Associations）查询的字段会存在 schema 校验，如果对不上列名会在 sql 构建阶段报错，例如 Preload 函数，这些也是无法注入的。 那剩下的部分都执行一个检测转义的策略: 先检测 ` 的存在, 如果不存在就套上，并假装存在，直到扫描另一个 ` 这个转义设计上是为了兼容性，并不出于安全性考虑，所以是比较好注的 根据注入点出现的位置分类,可以分为下面这几个 参数位置 函数 1 Group,Order,Exec,Having,InnerJoins,Joins,Not,Or,Pluck,Raw,Select,Table,Where 1… Distinct 2 Find,First,FirstOrCreate,FirstOrInit,Last,Take 参数位置 为 2 的一类基本是 gorm 新增的一些语法糖 API，不过从上表也可以看出 Gorm 设计的真的不错，API 风格真的非常统一。 案例 DB . Order ( \"id = case when version() rlike '8.*' then ? else 0 end #\" ). First ( & a ) DB . First ( & a , \"?=0 union select 1,1,version() #\" ) SELECT * FROM `"
     },
     {
       "title": "CTF是怎么出题的？关于今年 D^3CTF 的 OSPF Enhanced",
@@ -87,13 +87,13 @@
       "title": "校园网打洞纪实，绕个普普通通的防火墙",
       "url": "https://baimeow.cn/posts/dn11/travelihdu/",
       "date": "2023-09-16",
-      "summary": "WireGuard 在 i-HDU 之死 突然集体下线了 前几天接到悲报，说是 Vidar-Team 300b 节点从 DN11 下线了 校园网需要走web认证登陆，所以起初我以为是校园网的登陆脚本炸了，找个人把自己账号登上去救一下急就好了 后来派煎包去看看，他回来告诉我，Vidar 的 WiFi 有网，网很好校园网也登着 这就很让人迷惑了，按理说有网的情况下，万万不该这么多隧道一起炸了 由于是暑假，Vidar 没有网管在学校里，连不进去无能为力，这件事就这么搁置了好几天 SSTP 你怎么活着？ 自爆炸后，一转眼就过了好几天，因为前两天刚刚冲了一手新版本 RouterOS，搞得我以为这个是 RouterOS 的 bug 直到&hellip; Liki 发现他的 sstp 依旧稳如老狗，我赶紧找了台 frp 穿透出来的机器测了一下校园网的 WireGuard 情况 这个案子破了，WireGuard 被校园网拦截了。 缝缝补补 原来只是封杀了一个协议而已，不算什么大事情，得赶紧去修网了 于是在校园网里扫了一下 ip，把路由器的 WAN IP 先扫出来，然后借着上面提到的这台 frp 穿透出来的校园网机器作为跳板，起了新的 frp 内网穿透 现在总算能连上路由器了，果然 WireGuard 全部掉线了，SSTP 还健在。 赶紧找了 potat0 把他最爱的 WireGuard in VLess 先部署了上去，临时恢复了网络。 转生成为 WireGuard-mix WireGuard 是寄了，但是我确实很喜欢 WireGuard，不然我也不会 ALL IN 救一下 WireGuard 吧，还是很简单的啦 gogogo WireGuard 有一个用户态版本，叫做 WireGuard-go，是 go 实现的"
+      "summary": "WireGuard 在 i-HDU 之死 突然集体下线了 前几天接到悲报，说是 Vidar-Team 300b 节点从 DN11 下线了 校园网需要走web认证登陆，所以起初我以为是校园网的登陆脚本炸了，找个人把自己账号登上去救一下急就好了 后来派煎包去看看，他回来告诉我，Vidar 的 WiFi 有网，网很好校园网也登着 这就很让人迷惑了，按理说有网的情况下，万万不该这么多隧道一起炸了 由于是暑假，Vidar 没有网管在学校里，连不进去无能为力，这件事就这么搁置了好几天 SSTP 你怎么活着？ 自爆炸后，一转眼就过了好几天，因为前两天刚刚冲了一手新版本 RouterOS，搞得我以为这个是 RouterOS 的 bug 直到… Liki 发现他的 sstp 依旧稳如老狗，我赶紧找了台 frp 穿透出来的机器测了一下校园网的 WireGuard 情况 这个案子破了，WireGuard 被校园网拦截了。 缝缝补补 原来只是封杀了一个协议而已，不算什么大事情，得赶紧去修网了 于是在校园网里扫了一下 ip，把路由器的 WAN IP 先扫出来，然后借着上面提到的这台 frp 穿透出来的校园网机器作为跳板，起了新的 frp 内网穿透 现在总算能连上路由器了，果然 WireGuard 全部掉线了，SSTP 还健在。 赶紧找了 potat0 把他最爱的 WireGuard in VLess 先部署了上去，临时恢复了网络。 转生成为 WireGuard-mix WireGuard 是寄了，但是我确实很喜欢 WireGuard，不然我也不会 ALL IN 救一下 WireGuard 吧，还是很简单的啦 gogogo WireGuard 有一个用户态版本，叫做 WireGuard-go，是 go 实现的"
     },
     {
       "title": "BGP 组网，DN11 与 VidarNetwork 的并网试验",
       "url": "https://baimeow.cn/posts/dn11/configurebgp/",
       "date": "2023-06-01",
-      "summary": "DN11 是受 DN42 启发而搭建的一个实验性网络，目前用于杭电范围内，对网络感兴趣的同学学习使用，DN11和DN42非常相似，他们之间的经验都有广泛借鉴意义。 DN11配网第二期，接上文 &ldquo;使用 Bird2 配置 WireGuard + OSPF 实现网络的高可用&rdquo;，这是一篇用于 DN11 的 BGP 配置教程 随着 DN11 的扩大，使用 OSPF 进行集中管理已经变得麻烦起来了，此外还能看到一堆隧道IP污染路由表 也有不少人手上有多个内网，不得不打破 DN11 原先一个人使用一个/24网段的约定 近期又在考虑和 VidarNetwork 并网的事情，最终合并完的网络会变得相当庞大，或许是时候转移到BGP上去了 准备 选择一个AS Number BGP 是用于连接不同 AS 的路由协议，现在定义每一个人选取自己的AS号管理自己的AS。对于已经有AS号的，可以使用已有的AS号，没有AS号的建议选择 421111xxxx 并登记进文档。 选择自己的网段 首先，不要一次性宣告大于/24的网段，/24已经很够你折腾，如果你有多个路由设备并且确实有多个真实子网，那么你可以宣告两个或者三个/24的网段。 也不要为了省网段资源而采用/25这种做法，没有必要，只会给你带来更多的麻烦。 如果你是新加入DN11的成员，虽然DN11改为BGP的同时我们放开了网段的限制，但是真别用常见网段 172.16.x.0/24 (这是DN11之前使用的网段，.17 .18这些段docker会用，不要宣告) 10.x.x.0/24 (注意避开移动的内网段，不要使用太高或者太低的地址) 11.x.x.0/24 (美国国防部的公网段其中之一，他们一般当内网段用) 100.64.x.0/24 (比较少见的保留段) 192.168.x.0 (真的很容易冲突，不要用) 此外你还需要避开HD"
+      "summary": "DN11 是受 DN42 启发而搭建的一个实验性网络，目前用于杭电范围内，对网络感兴趣的同学学习使用，DN11和DN42非常相似，他们之间的经验都有广泛借鉴意义。 DN11配网第二期，接上文 “使用 Bird2 配置 WireGuard + OSPF 实现网络的高可用”，这是一篇用于 DN11 的 BGP 配置教程 随着 DN11 的扩大，使用 OSPF 进行集中管理已经变得麻烦起来了，此外还能看到一堆隧道IP污染路由表 也有不少人手上有多个内网，不得不打破 DN11 原先一个人使用一个/24网段的约定 近期又在考虑和 VidarNetwork 并网的事情，最终合并完的网络会变得相当庞大，或许是时候转移到BGP上去了 准备 选择一个AS Number BGP 是用于连接不同 AS 的路由协议，现在定义每一个人选取自己的AS号管理自己的AS。对于已经有AS号的，可以使用已有的AS号，没有AS号的建议选择 421111xxxx 并登记进文档。 选择自己的网段 首先，不要一次性宣告大于/24的网段，/24已经很够你折腾，如果你有多个路由设备并且确实有多个真实子网，那么你可以宣告两个或者三个/24的网段。 也不要为了省网段资源而采用/25这种做法，没有必要，只会给你带来更多的麻烦。 如果你是新加入DN11的成员，虽然DN11改为BGP的同时我们放开了网段的限制，但是真别用常见网段 172.16.x.0/24 (这是DN11之前使用的网段，.17 .18这些段docker会用，不要宣告) 10.x.x.0/24 (注意避开移动的内网段，不要使用太高或者太低的地址) 11.x.x.0/24 (美国国防部的公网段其中之一，他们一般当内网段用) 100.64.x.0/24 (比较少见的保留段) 192.168.x.0 (真的很容易冲突，不要用) 此外你还需要避开HD"
     },
     {
       "title": "d3go write up",
@@ -141,7 +141,7 @@
       "title": "sql注入点",
       "url": "https://baimeow.cn/posts/ctf/sql2/",
       "date": "2022-09-30",
-      "summary": "UNION 先想办法结束上个语句，再用UNION拼接下一个语句 堆叠注入 同上，但用;拼接 WHERE 使其SELECT所有数据 注入： admin&rsquo; &ndash; admin&rsquo; # admin&rsquo;/* &rsquo; or 1=1&ndash; &rsquo; or 1=1# &rsquo; or 1=1/* &lsquo;) or &lsquo;1&rsquo;=&lsquo;1&ndash; &lsquo;) or (&lsquo;1&rsquo;=&lsquo;1&ndash; 以不同的用户登陆 &rsquo; UNION SELECT 1, &lsquo;anotheruser&rsquo;, &lsquo;doesnt matter&rsquo;, 1&ndash; 报错注入"
+      "summary": "UNION 先想办法结束上个语句，再用UNION拼接下一个语句 堆叠注入 同上，但用;拼接 WHERE 使其SELECT所有数据 注入： admin’ – admin’ # admin’/* ’ or 1=1– ’ or 1=1# ’ or 1=1/* ‘) or ‘1’=‘1– ‘) or (‘1’=‘1– 以不同的用户登陆 ’ UNION SELECT 1, ‘anotheruser’, ‘doesnt matter’, 1– 报错注入"
     },
     {
       "title": "命令执行漏洞",
@@ -159,7 +159,7 @@
       "title": "sql注入简记",
       "url": "https://baimeow.cn/posts/ctf/sql1/",
       "date": "2022-09-21",
-      "summary": "信息的获取 SELECT version() 数据库版本 user() 数据库用户名 database 数据库名 @@datadir 数据库路径 @@version_compile_os 操作系统版本 其他 show columns from table_name; 列信息 show databases; 所有数据库名 show tables; 所有表名 注入 1' order by 2 # 检查记录数量 字符串拼接 concat(str1,str2,…) 能够将你查询的字段连接在一起 concat_ws(separator,str1,str2,) 能够自定义分隔符来将你查询的字段链接在一起 group_concat([DISTINCT] column [Order BY ASC/DESC column] [Separator separator]) Example SELECT concat ( table_name , ' ' , column_name ) FROM information_schema . COLUMNS WHERE TABLE_SCHEMA = DATABASE (); SELECT group_concat ( table_name , column_name separator '_' ) FROM information_schema . COLUMNS WHERE TABLE_SCHEMA = DATABASE (); 关键字被过滤 简单的有: 大小写混用(seLect,whEre&hellip;) SEL<>ECT(php) 空格 -> () = -> like 但是极其容易被堵,其他方法有以下"
+      "summary": "信息的获取 SELECT version() 数据库版本 user() 数据库用户名 database 数据库名 @@datadir 数据库路径 @@version_compile_os 操作系统版本 其他 show columns from table_name; 列信息 show databases; 所有数据库名 show tables; 所有表名 注入 1' order by 2 # 检查记录数量 字符串拼接 concat(str1,str2,…) 能够将你查询的字段连接在一起 concat_ws(separator,str1,str2,) 能够自定义分隔符来将你查询的字段链接在一起 group_concat([DISTINCT] column [Order BY ASC/DESC column] [Separator separator]) Example SELECT concat ( table_name , ' ' , column_name ) FROM information_schema . COLUMNS WHERE TABLE_SCHEMA = DATABASE (); SELECT group_concat ( table_name , column_name separator '_' ) FROM information_schema . COLUMNS WHERE TABLE_SCHEMA = DATABASE (); 关键字被过滤 简单的有: 大小写混用(seLect,whEre…) SEL<>ECT(php) 空格 -> () = -> like 但是极其容易被堵,其他方法有以下"
     },
     {
       "title": "人机恋作品漫谈",

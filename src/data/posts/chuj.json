@@ -15,7 +15,7 @@
       "title": "About",
       "url": "https://chujdk.github.io/about-en.html",
       "date": "2023-08-13",
-      "summary": "CN ver whoami I&rsquo;m chuj, a noob binary sercurity researcher. I am currently focusing on Linux kernel security. I used to use NixOS as my primary operating system on a daily basis. I am an experienced user of Neovim. I enjoy running and road biking. I enjoy playing games, but I&rsquo;m more of a laid-back player. Also I enjoy watching movies and listening to music. id -nG Member of Vidar-Team Actively competed in CTF (pwn) from 2021 to 2022. Interned at Chaitin Tech in 2022 for a period of time. Interned at LightYear Lab of AntGroup in 2023 for a period of time. Currently working at HangZhou. links SGColin 的博客 rogerthat esonhugh summer owl Switch Xi4oyu Potat0 4nsw3r ek1ng nameless h4kuy4 Rlesbyfe tOhka d1gger trOuble HuJJ-NB"
+      "summary": "CN ver whoami I’m chuj, a noob binary sercurity researcher. I am currently focusing on Linux kernel security. I used to use NixOS as my primary operating system on a daily basis. I am an experienced user of Neovim. I enjoy running and road biking. I enjoy playing games, but I’m more of a laid-back player. Also I enjoy watching movies and listening to music. id -nG Member of Vidar-Team Actively competed in CTF (pwn) from 2021 to 2022. Interned at Chaitin Tech in 2022 for a period of time. Interned at LightYear Lab of AntGroup in 2023 for a period of time. Currently working at HangZhou. links SGColin 的博客 rogerthat esonhugh summer owl Switch Xi4oyu Potat0 4nsw3r ek1ng nameless h4kuy4 Rlesbyfe tOhka d1gger trOuble HuJJ-NB"
     },
     {
       "title": "About",
@@ -321,7 +321,7 @@
       "title": "计划表",
       "url": "https://chujdk.github.io/mess/1398.html",
       "date": "2021-06-11",
-      "summary": "[login] [goal title=&ldquo;小目标&rdquo;] [item check=&ldquo;false&rdquo;] 整理一下最近写的两个小玩具（fuse 和混合符号执行引擎 demo）的实现细节，争取写两篇博客出来（很久没写了，赶紧水水） [/item]"
+      "summary": "[login] [goal title=“小目标”] [item check=“false”] 整理一下最近写的两个小玩具（fuse 和混合符号执行引擎 demo）的实现细节，争取写两篇博客出来（很久没写了，赶紧水水） [/item]"
     },
     {
       "title": "PWNABLE.TW-food_store-分析",

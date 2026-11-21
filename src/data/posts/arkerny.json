@@ -6,12 +6,6 @@
   },
   "posts": [
     {
-      "title": "「arkerny 和 cHAR0N 的 HDU 食用指北」目录",
-      "url": "https://blog.akn.moe/2233/01/01/hdu-food-list/",
-      "date": "2233-01-01",
-      "summary": "本文档已不做目录整理。 可以通过筛选标签 #食用指北 来查阅目录"
-    },
-    {
       "title": "arkerny Network NG Part.1 与自建 TailScale Derper 中继服务器",
       "url": "https://blog.akn.moe/2026/10/17/tailscale-derper/",
       "date": "2026-10-17",

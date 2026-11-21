@@ -75,17 +75,6 @@ export function ImmersiveScrollbar() {
       show();
     };
 
-    const onTrackPointerDown = (event: PointerEvent) => {
-      if (event.target !== track) return;
-      const trackHeight = track.clientHeight;
-      const maxScroll = root.scrollHeight - root.clientHeight;
-      const thumbHeight = thumb.offsetHeight;
-      const ratio =
-        (event.clientY - track.getBoundingClientRect().top - thumbHeight / 2) /
-        (trackHeight - thumbHeight);
-      root.scrollTop = Math.min(Math.max(ratio, 0), 1) * maxScroll;
-    };
-
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", update);
@@ -93,7 +82,6 @@ export function ImmersiveScrollbar() {
     thumb.addEventListener("pointermove", onThumbPointerMove);
     thumb.addEventListener("pointerup", onThumbPointerUp);
     thumb.addEventListener("pointercancel", onThumbPointerUp);
-    track.addEventListener("pointerdown", onTrackPointerDown);
 
     const observer = new ResizeObserver(update);
     observer.observe(document.body);
@@ -106,7 +94,6 @@ export function ImmersiveScrollbar() {
       thumb.removeEventListener("pointermove", onThumbPointerMove);
       thumb.removeEventListener("pointerup", onThumbPointerUp);
       thumb.removeEventListener("pointercancel", onThumbPointerUp);
-      track.removeEventListener("pointerdown", onTrackPointerDown);
       observer.disconnect();
       window.clearTimeout(hideTimer);
     };

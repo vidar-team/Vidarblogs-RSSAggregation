@@ -22,6 +22,13 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/favicon.png",
   },
+  alternates: {
+    types: {
+      "application/rss+xml": [
+        { url: "/feed.xml", title: "Vidarblogs | 博客聚合" },
+      ],
+    },
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

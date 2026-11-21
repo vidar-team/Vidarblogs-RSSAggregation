@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { Author, MemberFeed, Post } from "./types";
@@ -27,22 +28,26 @@ function loadFeeds(): MemberFeed[] {
     });
 }
 
-function slugify(input: string): string {
-  return input
+function authorSlug(id: string): string {
+  const ascii = id
     .toLowerCase()
-    .replace(/^https?:\/\//, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
+  return ascii || `m-${createHash("sha1").update(id).digest("hex").slice(0, 8)}`;
 }
 
-export const posts: Post[] = loadFeeds()
-  .flatMap((feed) =>
-    feed.posts.map((post, index) => ({
+const allFeeds = loadFeeds();
+const feedUrls = loadFeedUrls();
+
+export const posts: Post[] = allFeeds
+  .flatMap((feed) => {
+    const slug = authorSlug(feed.author.id);
+    return feed.posts.map((post, index) => ({
       ...post,
-      id: `${slugify(feed.author.id)}-${index}`,
+      id: `${slug}-${index}`,
       author: feed.author,
-    })),
-  )
+    }));
+  })
   .sort((a, b) => b.date.localeCompare(a.date));
 
 export type Member = Author & {
@@ -50,9 +55,7 @@ export type Member = Author & {
   feedUrl?: string;
 };
 
-const feedUrls = loadFeedUrls();
-
-export const members: Member[] = loadFeeds()
+export const members: Member[] = allFeeds
   .map((feed) => ({
     ...feed.author,
     postCount: feed.posts.length,

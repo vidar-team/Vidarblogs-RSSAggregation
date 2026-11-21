@@ -9,7 +9,7 @@
       "title": "教育src记录——从弱密码使用vpn网关到内网成功建立frp",
       "url": "https://lewis1766.github.io/posts/20261021/",
       "date": "2026-10-21",
-      "summary": "####主要想说说如何用frp进行内网穿透 统一认证弱密码 进行社会工程学攻击，比如搜奖学金公示名单拿到学号姓名再查社工库这样的&hellip; 方法很多不赘述 成功登进VPN 内网扫描 使用fscan扫描10.x.x.x发现很多是蜜罐 我就想到先指定端口，不进行太多端口的扫描，全是蜜罐根本扫不出来 先试了一些80端口 fscan -h 10.1.252.1/16 -p 80 发现了很多资产，不一一赘述了，这里挑http://10.1.252.220/来说 Kuboard Spray 是一款图形化的 Kubernetes 集群离线安装、维护与升级工具。 默认用户名 ： admin 默认密码 ： Kuboard123 成功登录 拓扑图 frp内网穿透 这里ssh连接10.1.252.218 下载frp： [ root@node2-db-1 ~ ] # wget https://mirrors.nju.edu.cn/github-release/fatedier/frp/LatestRelease/frp_0.71.1_linux_amd64.tar.gz --2026-10-21 16:07:08-- https://mirrors.nju.edu.cn/github-release/fatedier/frp/LatestRelease/frp_0.71.1_linux_amd64.tar.gz Resolving mirrors.nju.edu.cn ( mirrors.nju.edu.cn ) ... 210.28.130.3, 2001:da8:1007:4011::3 Connecting to mirrors.nju.edu.cn ( mirrors.nju.edu.cn ) |210.28.130.3|:443... connected. HTTP request"
+      "summary": "####主要想说说如何用frp进行内网穿透 统一认证弱密码 进行社会工程学攻击，比如搜奖学金公示名单拿到学号姓名再查社工库这样的… 方法很多不赘述 成功登进VPN 内网扫描 使用fscan扫描10.x.x.x发现很多是蜜罐 我就想到先指定端口，不进行太多端口的扫描，全是蜜罐根本扫不出来 先试了一些80端口 fscan -h 10.1.252.1/16 -p 80 发现了很多资产，不一一赘述了，这里挑http://10.1.252.220/来说 Kuboard Spray 是一款图形化的 Kubernetes 集群离线安装、维护与升级工具。 默认用户名 ： admin 默认密码 ： Kuboard123 成功登录 拓扑图 frp内网穿透 这里ssh连接10.1.252.218 下载frp： [ root@node2-db-1 ~ ] # wget https://mirrors.nju.edu.cn/github-release/fatedier/frp/LatestRelease/frp_0.71.1_linux_amd64.tar.gz --2026-10-21 16:07:08-- https://mirrors.nju.edu.cn/github-release/fatedier/frp/LatestRelease/frp_0.71.1_linux_amd64.tar.gz Resolving mirrors.nju.edu.cn ( mirrors.nju.edu.cn ) ... 210.28.130.3, 2001:da8:1007:4011::3 Connecting to mirrors.nju.edu.cn ( mirrors.nju.edu.cn ) |210.28.130.3|:443... connected. HTTP request"
     },
     {
       "title": "CVE-2023-54391 复现：Proxmox VE 认证绕过",
@@ -33,7 +33,7 @@
       "title": "GitHub Copilot CLI 体验",
       "url": "https://lewis1766.github.io/posts/20260519/",
       "date": "2026-05-19",
-      "summary": "前言 最近在 GitHub 学生包里发现了一个好东西—— GitHub Copilot CLI &hellip; Copilot CLI 听说这个产品是 Claude Code 的竞品，刚看新闻说微软让员工从Claude Code转用它 正好对比体验一下 大一 C 语言实践作业 翻到之前大一的 C 语言作业—— 学生管理系统 &hellip; 当时懵懂无知，完全不懂什么是 agent&hellip; 用 DeepSeek 改了又改，虽然（but still）仍然不会古法编程&hellip; 现在用 Copilot CLI，几分钟就能写好，完全不用手。 搭一个网页版吧 核心代码 from flask import Flask, g, render_template, request, redirect, url_for import sqlite3 import os BASE_DIR = os . path . dirname(__file__) DB_PATH = os . path . join(BASE_DIR, 'student.db' ) app = Flask(__name__, instance_path = BASE_DIR) def get_db (): db = getattr(g, '_database' , None ) if db is None : db = g . _database = sqlite3 . connect(DB_PATH) db . row_factory = sqlite3 . Row return db def init_db (): db = get_db() cur = db . cursor() cur . execute( ''' CREATE TABLE IF NOT EXISTS students ( id T"
+      "summary": "前言 最近在 GitHub 学生包里发现了一个好东西—— GitHub Copilot CLI … Copilot CLI 听说这个产品是 Claude Code 的竞品，刚看新闻说微软让员工从Claude Code转用它 正好对比体验一下 大一 C 语言实践作业 翻到之前大一的 C 语言作业—— 学生管理系统 … 当时懵懂无知，完全不懂什么是 agent… 用 DeepSeek 改了又改，虽然（but still）仍然不会古法编程… 现在用 Copilot CLI，几分钟就能写好，完全不用手。 搭一个网页版吧 核心代码 from flask import Flask, g, render_template, request, redirect, url_for import sqlite3 import os BASE_DIR = os . path . dirname(__file__) DB_PATH = os . path . join(BASE_DIR, 'student.db' ) app = Flask(__name__, instance_path = BASE_DIR) def get_db (): db = getattr(g, '_database' , None ) if db is None : db = g . _database = sqlite3 . connect(DB_PATH) db . row_factory = sqlite3 . Row return db def init_db (): db = get_db() cur = db . cursor() cur . execute( ''' CREATE TABLE IF NOT EXISTS students ( id T"
     },
     {
       "title": "挖到第一个漏洞：杭州鼎文国际学校API未授权访问",
@@ -45,7 +45,7 @@
       "title": "关于我",
       "url": "https://lewis1766.github.io/about/",
       "date": "2026-04-17",
-      "summary": "很高兴你能来到这里。 本人目前处在CTF（Capture the Flag，夺旗赛）知识的学习中，研究主要是web方向，萌新一枚，请多指教。 本人对AI也非常感兴趣，欢迎志同道合的人和我畅所欲言。在这里我将主要分享我的学习过程和实战心得，也可能夹带一些个人生活（说实话我还没想好发什么）。 我的爱好：音乐/电影/美剧/旅游 我的微信：Q2FsaWYwcm5pYWRyZWFtaW4=（请解码） 最后是乔布斯的一句话，我认为终身受用 &ldquo;Stay Hungry, Stay Foolish.&rdquo;"
+      "summary": "很高兴你能来到这里。 本人目前处在CTF（Capture the Flag，夺旗赛）知识的学习中，研究主要是web方向，萌新一枚，请多指教。 本人对AI也非常感兴趣，欢迎志同道合的人和我畅所欲言。在这里我将主要分享我的学习过程和实战心得，也可能夹带一些个人生活（说实话我还没想好发什么）。 我的爱好：音乐/电影/美剧/旅游 我的微信：Q2FsaWYwcm5pYWRyZWFtaW4=（请解码） 最后是乔布斯的一句话，我认为终身受用 “Stay Hungry, Stay Foolish.”"
     },
     {
       "title": "第一篇文章",

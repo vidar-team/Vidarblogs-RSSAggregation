@@ -33,7 +33,7 @@
       "title": "About",
       "url": "https://mxgcccc4.github.io/about/",
       "date": "2019-01-21",
-      "summary": "Me Also as known as mxgc, evilddog Education 2013 - 2017 HDU Vidar 2017 - now SJTU GoSSIP Intern Experience 2015.9 - 2016.1 DBAPPSecurity 2016.3 - 2016.8 Chaitin Security Research Web Security CTFer Binary Security This blog Just write sth in public&hellip; —— mxgcccc4"
+      "summary": "Me Also as known as mxgc, evilddog Education 2013 - 2017 HDU Vidar 2017 - now SJTU GoSSIP Intern Experience 2015.9 - 2016.1 DBAPPSecurity 2016.3 - 2016.8 Chaitin Security Research Web Security CTFer Binary Security This blog Just write sth in public… —— mxgcccc4"
     },
     {
       "title": "[Euro S&P] Open Doors for Bob and Mallory: Open Port Usage in Android Apps and Security Implications",
@@ -45,7 +45,7 @@
       "title": "[CCS 18] EviHunter: Identifying Digital Evidence in the Permanent Storage of Android Devices via Static Analysis",
       "url": "https://mxgcccc4.github.io/post/2018-12-09-evihunter-identifying-digital-evidence-in-the-permanent-storage-of-android-devices-via-static-analysis/",
       "date": "2018-12-09",
-      "summary": "作者： Chris Chao-Chun Cheng, Chen Shi, Neil Zhenqiang Gong, Yong Guan 单位： Iowa State University, NIST Center of Excellence in Forensic Science - CSAFE 出处： CCS&rsquo;18 资料： Paper , Slides , GitHub ABSTRACT & INTRODUCTION 由于移动网络的发展，智能手机上的数字证据在犯罪调查中发挥着越来越重要的作用。数字证据可以存在于智能手机的内存和文件系统中。虽然内存取证方面有很大的进展，但在针对文件系统的取证仍然比较困难。大多数关于文件系统取证的现有研究依赖于手动分析或基于关键字的静态扫描。手动分析代价很高，而关键字匹配通常会错过不包含关键字的数据。在本文中，作者开发了一个名为EviHunter的工具，用于自动识别Android设备文件系统中的数据。 作者认为数据是由应用程序产生的，应用程序的代码包含有关应用程序可能写入文件系统的数据类型以及所写入数据的文件相关的信息。因此，EviHunter首先通过对大量应用程序的静态分析来预先计算App Evidence Database（AED）。 然后，EviHunter将Android文件系统上的存在的文件与AED进行匹配，以识别可存储证据数据的文件，所以构建AED是EviHunter的重点。 事实上，已经有大量的静态分析工具用于检测Android应用程序中从Source到Sinks的敏感数据流。这些工具可以检测到App会收集GPS并将其保存到文件系统，但是它们并不关心GPS信息写入了哪个文件。作者认为，这些工具是出于安全和隐私检测的目的而设计的，在隐私泄漏方面写入敏感数据的文件的位置并不重要。所以EviHunter在几个方面扩展了An"
+      "summary": "作者： Chris Chao-Chun Cheng, Chen Shi, Neil Zhenqiang Gong, Yong Guan 单位： Iowa State University, NIST Center of Excellence in Forensic Science - CSAFE 出处： CCS’18 资料： Paper , Slides , GitHub ABSTRACT & INTRODUCTION 由于移动网络的发展，智能手机上的数字证据在犯罪调查中发挥着越来越重要的作用。数字证据可以存在于智能手机的内存和文件系统中。虽然内存取证方面有很大的进展，但在针对文件系统的取证仍然比较困难。大多数关于文件系统取证的现有研究依赖于手动分析或基于关键字的静态扫描。手动分析代价很高，而关键字匹配通常会错过不包含关键字的数据。在本文中，作者开发了一个名为EviHunter的工具，用于自动识别Android设备文件系统中的数据。 作者认为数据是由应用程序产生的，应用程序的代码包含有关应用程序可能写入文件系统的数据类型以及所写入数据的文件相关的信息。因此，EviHunter首先通过对大量应用程序的静态分析来预先计算App Evidence Database（AED）。 然后，EviHunter将Android文件系统上的存在的文件与AED进行匹配，以识别可存储证据数据的文件，所以构建AED是EviHunter的重点。 事实上，已经有大量的静态分析工具用于检测Android应用程序中从Source到Sinks的敏感数据流。这些工具可以检测到App会收集GPS并将其保存到文件系统，但是它们并不关心GPS信息写入了哪个文件。作者认为，这些工具是出于安全和隐私检测的目的而设计的，在隐私泄漏方面写入敏感数据的文件的位置并不重要。所以EviHunter在几个方面扩展了An"
     },
     {
       "title": "[ASIA CCS 18] Dazed Droids: A Longitudinal Study of Android Inter App Vulnerabilities",
@@ -69,19 +69,19 @@
       "title": "[Asia CCS 18] Don’t throw me away: Threats Caused by the Abandoned Internet Resources Used by Android Apps",
       "url": "https://mxgcccc4.github.io/post/2018-07-04-dont-throw-me-away-threats-caused-by-the-abandoned-internet-resources-used-by-android-apps/",
       "date": "2018-07-04",
-      "summary": "作者： Elkana Pariwono, Daiki Chiba, Mitsuaki Akiyama, Tatsuya Mori 单位： Waseda University, NTT Secure Platform Laboratories 出处： Asia CCS&rsquo;18 资料： Paper 1 INTRODUCTION 现代APP为了提供更丰富的额外功能大多会采用一些网络服务，例如语音识别、天气预报等。这些直接由服务端提供的服务使开发者能偶较为容易地在移动端实现这些功能。但是这些支持移动应用的服务因为存在于服务端，当程序被发布之后，开发人员可能会因为维护成本渐渐地不再维护这些网络资源。本文中，作者对Android移动应用程序的开发者们进行调查，发现78%的开发人员没有定期更新发布的应用程序。还有66%的开发人员不是全职开发人员。因此这些应用程序使用的互联网资源将缺乏维护。而且这些资源的所有权会带来变更：域名或IP信息可能会被重新注册。本文中，作者进行了大规模的调查，通过对110万个应用的分析，作者发现尽管很多应用已经很久没有更新而且网络资源不再可用，但是依旧有很多来自移动用户的流量。本文中作者做了如下工作： 分析了移动应用中被废弃的网络资源可能存在安全问题。 通过对100万+的应用的分析，作者发现7331个应用中有3628个不再可使用的网络资源。其中有15个APP的安装次数超过一百万。 不仅仅是Android平台，很多应用同时有iOS版本，它们依旧存在这些问题。 作者讨论了对于由于网络服务归属权的变更带来的问题的解决方案。"
+      "summary": "作者： Elkana Pariwono, Daiki Chiba, Mitsuaki Akiyama, Tatsuya Mori 单位： Waseda University, NTT Secure Platform Laboratories 出处： Asia CCS’18 资料： Paper 1 INTRODUCTION 现代APP为了提供更丰富的额外功能大多会采用一些网络服务，例如语音识别、天气预报等。这些直接由服务端提供的服务使开发者能偶较为容易地在移动端实现这些功能。但是这些支持移动应用的服务因为存在于服务端，当程序被发布之后，开发人员可能会因为维护成本渐渐地不再维护这些网络资源。本文中，作者对Android移动应用程序的开发者们进行调查，发现78%的开发人员没有定期更新发布的应用程序。还有66%的开发人员不是全职开发人员。因此这些应用程序使用的互联网资源将缺乏维护。而且这些资源的所有权会带来变更：域名或IP信息可能会被重新注册。本文中，作者进行了大规模的调查，通过对110万个应用的分析，作者发现尽管很多应用已经很久没有更新而且网络资源不再可用，但是依旧有很多来自移动用户的流量。本文中作者做了如下工作： 分析了移动应用中被废弃的网络资源可能存在安全问题。 通过对100万+的应用的分析，作者发现7331个应用中有3628个不再可使用的网络资源。其中有15个APP的安装次数超过一百万。 不仅仅是Android平台，很多应用同时有iOS版本，它们依旧存在这些问题。 作者讨论了对于由于网络服务归属权的变更带来的问题的解决方案。"
     },
     {
       "title": "[NDSS 18] Finding Clues for Your Secrets: Semantics-Driven, Learning-Based Privacy Discovery in Mobile Apps",
       "url": "https://mxgcccc4.github.io/post/2018-07-01-finding-clues-for-your-secrets-semantics-driven-learning-based-privacy-discovery-in-mobile-apps/",
       "date": "2018-07-01",
-      "summary": "作者： Yuhong Nan, Zhemin Yang, Xiaofeng Wang, Yuan Zhang, Donglai Zhu, Min Yang 单位： Fudan University, Shanghai Insitute of Intelligent Electronics & Systems, Shanghai Key Laboratory of Data Science 出处： NDSS&rsquo;18 资料： Paper , Slide , Video 对于检测移动应用中的隐私泄露问题来说，自动化检测是一个长期存在的挑战。现有的解决方案则是通过系统API和APP服务端返回内容去着手分析。本文作者提出了一种分析Android APP的新方案。作者认为，程序代码中的方法名、变量名、常量等信息，尽管在轻量级混淆的情况下依旧包含着丰富的语义信息。所以作者通过自然语言处理（NLP）去自动化地定位程序中变量名、方法名等敏感元素，然后使用基于学习的程序框架分析这些真正存在敏感内容的代码。作者通过这种方法分析了445668个app。"
+      "summary": "作者： Yuhong Nan, Zhemin Yang, Xiaofeng Wang, Yuan Zhang, Donglai Zhu, Min Yang 单位： Fudan University, Shanghai Insitute of Intelligent Electronics & Systems, Shanghai Key Laboratory of Data Science 出处： NDSS’18 资料： Paper , Slide , Video 对于检测移动应用中的隐私泄露问题来说，自动化检测是一个长期存在的挑战。现有的解决方案则是通过系统API和APP服务端返回内容去着手分析。本文作者提出了一种分析Android APP的新方案。作者认为，程序代码中的方法名、变量名、常量等信息，尽管在轻量级混淆的情况下依旧包含着丰富的语义信息。所以作者通过自然语言处理（NLP）去自动化地定位程序中变量名、方法名等敏感元素，然后使用基于学习的程序框架分析这些真正存在敏感内容的代码。作者通过这种方法分析了445668个app。"
     },
     {
       "title": "[ACSAC 2017] Supporting Transparent Snapshot for Bare-metal Malware Analysis on Mobile Devices",
       "url": "https://mxgcccc4.github.io/post/2018-06-08-supporting-transparent-snapshot-for-bare-metal-malware-analysis-on-mobile-devices/",
       "date": "2018-06-08",
-      "summary": "作者： Le Guan, Shijie Jia, Bo Chen, Fengwei Zhang, Bo Luo&hellip; 单位： Pennsylvania State University, Data Assurance and Communication Security Research Center, Michigan Technological University 出处： ACSAC 2017 资料： Paper ABSTRACT 随着针对移动设备的网络犯罪数量的激增，对于移动恶意软件分析平台有很大的需求。因为许多恶意软件都包含出虚拟机检测能力，所以大多数情况下都直接采用真机作为分析平台。然而现有的工作的关注点主要在如何能够通过真机分析提取恶意软件的行为。但是当恶意应用分析结束之后，能够把真机恢复到分析恶意软件之前也很重要。然而对于移动平台现有的最佳的解决方案只能恢复硬盘存储空间，并且需要花费时间重启。另外先有的工作还需要在分析平台中依赖一部分组件才能完成恢复工作。因此，有些kernel-level级别的恶意软件仍然能够检测到这些组件的存在。 作者提出了Bolt这样一个透明的恢复机制在不需要重启的情况下把移动分析平台恢复到恶意软件分析之前的状态。 Bolt这种不需要重启的恢复机制能够同时对disk和memory制作快照。内存快照是通过存在于ARM TrustZone的一个独立的操作系统（BoltOS）去实现的。而disk的快照是通过一块固件经过定制（BoltFTl）的闪存设备去实现的。因为BoltOS和BoltFTL都独立于guestOS（论文中为了方便，作者把所有直接运行恶意软件的操作系统统一称为guestOS），所以就算是kernel-level的恶意软件也不会影响恢复行为。而且，Bolt不需要对guestOS进行任何的修改。因此，Bolt是第一个做到能"
+      "summary": "作者： Le Guan, Shijie Jia, Bo Chen, Fengwei Zhang, Bo Luo… 单位： Pennsylvania State University, Data Assurance and Communication Security Research Center, Michigan Technological University 出处： ACSAC 2017 资料： Paper ABSTRACT 随着针对移动设备的网络犯罪数量的激增，对于移动恶意软件分析平台有很大的需求。因为许多恶意软件都包含出虚拟机检测能力，所以大多数情况下都直接采用真机作为分析平台。然而现有的工作的关注点主要在如何能够通过真机分析提取恶意软件的行为。但是当恶意应用分析结束之后，能够把真机恢复到分析恶意软件之前也很重要。然而对于移动平台现有的最佳的解决方案只能恢复硬盘存储空间，并且需要花费时间重启。另外先有的工作还需要在分析平台中依赖一部分组件才能完成恢复工作。因此，有些kernel-level级别的恶意软件仍然能够检测到这些组件的存在。 作者提出了Bolt这样一个透明的恢复机制在不需要重启的情况下把移动分析平台恢复到恶意软件分析之前的状态。 Bolt这种不需要重启的恢复机制能够同时对disk和memory制作快照。内存快照是通过存在于ARM TrustZone的一个独立的操作系统（BoltOS）去实现的。而disk的快照是通过一块固件经过定制（BoltFTl）的闪存设备去实现的。因为BoltOS和BoltFTL都独立于guestOS（论文中为了方便，作者把所有直接运行恶意软件的操作系统统一称为guestOS），所以就算是kernel-level的恶意软件也不会影响恢复行为。而且，Bolt不需要对guestOS进行任何的修改。因此，Bolt是第一个做到能"
     },
     {
       "title": "[NDSS 18] InstaGuard: Instantly Deployable Hot-patches for Vulnerable System Programs on Android",
