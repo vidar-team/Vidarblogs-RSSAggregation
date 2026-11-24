@@ -6,6 +6,12 @@
   },
   "posts": [
     {
+      "title": "DCS-5020L 漏洞复现",
+      "url": "https://c0d4.ink/posts/dlink-dcs5020l/",
+      "date": "2026-11-23",
+      "summary": "协会培训准备整一个视觉效果比较明显的漏洞利用，于是看上了摄像头 海鲜市场上50收了一台带云台的古早监控摄像头 Dlink DCS-5020L 固件版本 v1.01 A2 ，存在 CVE-2017-17020 命令注入 下面是复现过程 unblob 解出 rootfs ╭────────────────────────────────────────────────── unblob (26.6.4) ───────────────────────────────────────────────────╮ │ Output path: /original/dcs5020l_v101_b2.bin_extract │ │ Extracted files: 598 │ │ Extracted directories: 95 │ │ Extracted links: 88 │ │ Extraction directory size: 58.05 MB │ ╰────────────────────────────────────────────────────── Summary ───────────────────────────────────────────────────────╯ Chunks distribution ┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓ ┃ Chunk type ┃ Size ┃ Ratio ┃ ┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩ │ CPIO_PORTABLE_ASCII │ 16.14 MB │ 34.69% │ │ LZMA │ 12.24 MB │ 26.30% │ │ ELF32 │ 11.58 MB │ 24.89% │ │ UNKN"
+    },
+    {
       "title": "x86asm(intel syntax)",
       "url": "https://c0d4.ink/posts/x86asmintel-syntax/",
       "date": "2026-10-08",
