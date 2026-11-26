@@ -6,6 +6,12 @@
   },
   "posts": [
     {
+      "title": "香港服务器调用 OpenAI API 也许最佳实践",
+      "url": "https://www.intmian.com/archives/vKI8j3h0",
+      "date": "2026-11-25",
+      "summary": "在香港服务器上接入 OpenAI API，会遇到 403 unsupported_country_region_territory 的错误。为了绕过地区限制，我先后试了 Cloudflare Workers 和 Vercel Serverless Functions 做转发。结果 Cloudflar"
+    },
+    {
       "title": "人类将何去何从",
       "url": "https://www.intmian.com/archives/MvqqN8Fk",
       "date": "2026-11-24",
